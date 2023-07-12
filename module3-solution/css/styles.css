@@ -1,3 +1,4 @@
+
  body {
  	font-family: 'Poppins', sans-serif;
  	height: 1990px;
@@ -44,7 +45,7 @@
  }
  .lorem {
  	 	padding: 15px 10px 15px;
- 	 	font-size: 1.65rem
+ 	 	font-size: 1.65rem;
  }
 
   @media (min-width: 768px) {
@@ -87,7 +88,7 @@ footer {
 }
 
 footer p {
-	font-size: 1.9 rem
+	font-size: 1.9 rem;
 	color: white;
 	font-weight: bold;
 	margin: 50px 50px;
@@ -98,3 +99,6 @@ footer > p > a {
 	text-decoration: none;
 	list-style-type: none;
 } 
+
+
+
