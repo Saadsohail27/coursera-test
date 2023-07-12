@@ -1,0 +1,100 @@
+ body {
+ 	font-family: 'Poppins', sans-serif;
+ 	height: 1990px;
+ }
+
+ header {
+ 	 	background-color: #A995C0;
+ 	 	border-top: 3px solid black;
+ 	 	border-bottom: 3px solid black;
+ 	 	
+
+
+ }
+ .navbar-default {
+ 	background-color:  #A995C0;
+ 	border: 0px;
+ }
+ .navbar-header {
+ 	background-color: #A995C0;
+ }
+
+
+ .navbar-brand {
+ 	font-size: 35px;
+ 	font-weight: bold;
+ 	position: absolute;
+ 	color: black; 	
+ }
+ h1 {
+ 	margin-bottom:  40px;
+ }
+ .chicken-box, .beef-box, .sushi-box {
+ 	text-align: center;
+ 	font-size: 3rem;
+ 	padding: 10px 0 0 0;
+ }
+
+ .big-box {
+ 	border: 2px solid black;
+ 	margin: 30px 0;
+ 	background-color: #A995C0;
+ 	width: 98%;
+ 	margin: 30px auto;
+ }
+ .lorem {
+ 	 	padding: 15px 10px 15px;
+ 	 	font-size: 1.65rem
+ }
+
+  @media (min-width: 768px) {
+  	 	#bs-example-navbar-collapse-1 .navbar-nav>li>a {
+		display: none;
+	}
+ 
+}
+
+.desktop-nav > li{
+	float: right;
+	text-decoration: none;
+	list-style-type: none;
+	display: inline;
+	margin: 0 5px;
+	font-size: 3rem;
+}
+
+.desktop-nav > li:hover {
+	text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  	 	 #bs-example-navbar-collapse-1 > ul.desktop-nav {
+		display: none;
+	}
+ 
+}
+
+#back-to-top {
+	margin: 50px 15px;
+	margin-bottom: 180px;
+}
+
+footer {
+	background-color: #A995C0;
+	height: 190px;
+	width: 100%;
+	padding: 30px;
+}
+
+footer p {
+	font-size: 1.9 rem
+	color: white;
+	font-weight: bold;
+	margin: 50px 50px;
+}
+
+footer > p > a {
+	font-size: 2rem;
+	text-decoration: none;
+	list-style-type: none;
+} 
