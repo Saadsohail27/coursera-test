@@ -738,9 +738,17 @@ div.accordian-content p {
 .swiper-pagination-bullet-active{
   background-color: #4070F4;
 }
+@media screen and (max-width: 768px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .swiper-navBtn{
+    display: none;
+  }
+}
 
 section.dental-chairs {
-	margin-top: 200px;
+	margin-top: 80px;
 }
 
 section.dental-chairs .elite-preview, .classic-preview, .elegence-preview, .mate-preview, .indus-preview, .silk-preview h2{
@@ -1156,7 +1164,7 @@ footer li {
 }
 
 @media all and (max-width: 641px) {
-    section.dental-chairs {
+    section.dental-chairs p {
         padding-right: 20px;
         padding-left: 20px;
     }
@@ -1262,12 +1270,10 @@ footer li {
   #about-head {
  	display: flex;
  	align-items: center;
+    background-color: #EDEDEE;
  }
 
- #about-head img {
- 	width: 50%;
- 	height: auto;
- }
+
 
 
  #about-head div {
@@ -1420,6 +1426,11 @@ hr {
         align-items: center;
     }
 
+    .elite-preview, .classic-preview, .elegence-preview, .mate-preview, .indus-preview, .silk-preview {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
 }
 
 .products-section {
@@ -1460,7 +1471,8 @@ hr {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 90vh;
+    height: fit-content;
+    padding: 170px 0px;
 }
 
 .description-of-product {
@@ -1488,9 +1500,11 @@ hr {
 
     .dental-operatory-systems, .dental-units, .central-compressors, .suctions, .gynae-chairs, .operation-tables {
         flex-direction: column-reverse;
-        padding: 10px 20px;
-        height: 150vh;
+        padding: 70px 20px;
+        height: fit-content;
     }
+
+    
 }
 
 
@@ -1508,8 +1522,7 @@ hr {
         text-align: center;
     }
 }
-
-
+        
 @media all and (max-width: 953px) {
 
     .products-section {
@@ -1517,3 +1530,65 @@ hr {
     }
 
 }
+
+section#about-head {
+    margin-top: 72px;
+}
+
+@media all and (max-width: 774px) {
+    #about-head {
+        flex-direction: column;
+        padding: 40px 15px;
+    }
+
+    #about-head h2 {
+        margin-top: 40px;
+    }
+}
+
+#contact-details {
+     margin-top: 100px;
+   }
+ 
+
+@media all and (min-width: 954px) {
+    #about-head h2 {
+        margin-top: 110px;
+    }
+
+    #contact-details {
+        margin-top: 130px;
+    }
+    section.dental-chairs {
+        margin-top: 150px;
+    }
+}
+
+@media all and (max-width: 774px) {
+    #contact-details {
+        flex-direction: column;
+        padding: 30px 0px;
+    }
+
+    section#contact-details .details {
+        padding: 30px 40px;
+        width: 100%;
+    }
+
+    #contact-details div.map {
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 926px) {
+    #form-details {
+        flex-direction: column-reverse;
+        padding: 80px 20px;
+
+    }
+
+    #form-details form {
+        width: 100%;
+    }
+}
+
