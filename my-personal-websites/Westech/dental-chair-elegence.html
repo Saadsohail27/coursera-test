@@ -20,32 +20,35 @@
     <span class="logo">
         <a href="index.html"><img src="images/westech-logo-50.png"></a>
     </span>
-        <div class="nav-container">
+    <div class="nav-container">
         <hr style="width: 105%;">
         <nav>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dental-chairs.html" class="active">Dental Chairs</a></li>
-            <li class="dropdown">
-                <a href="products.html" class="dropbtn">Products</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Dental Operatory Systems</a></li>
-                    <li><a href="#">Dental Units</a></li>
-                    <li><a href="#">Central Compressors</a></li>
-                    <li><a href="#">Suctions</a></li>
-                    <li><a href="#">Gynae Chairs</a></li>
-                    <li><a href="#">Operation Tables</a></li>
-                </ul>
-            </li>
-            <li><a href="index.html#browse-section" style="scroll-behavior: smooth; transition: 0.9s;">The Digital Showroom</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <div class="follow mobile-nav-follow">
-                <h4>Follow US</h4>
-                <div class="icon">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="dental-chairs.html">Dental Chairs</a></li>
+                <li class="dropdown">
+                    <a href="products.html" class="dropbtn">Products</a>
+                    <button class="dropdown-btn"></button>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Dental Operatory Systems</a></li>
+                        <li><a href="#">Dental Units</a></li>
+                        <li><a href="#">Central Compressors</a></li>
+                        <li><a href="#">Suctions</a></li>
+                        <li><a href="#">Gynae Chairs</a></li>
+                        <li><a href="#">Operation Tables</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#browse-section" style="scroll-behavior: smooth; transition: 0.9s;">The Digital Showroom</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <div class="follow mobile-nav-follow">
+                    <h4>Follow US</h4>
+                    <div class="icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
                 </div>
-            </div>
+            </ul>
         </nav>
         <i class="fas fa-bars hamburger"></i>
     </div>
@@ -214,6 +217,12 @@
 
 	</section>
 
+<div class="whatsapp-icon">
+    <a href="https://wa.me/+923331870881" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</div>
+
 
 <footer style="margin-top: 50px;">
 		<div class="col">
@@ -240,8 +249,8 @@
 
 		<div class="col">
 			<h4>Explore</h4>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="dental-chairs.html" class="active">Dental Chairs</a></li>
+			<li><a href="index.html" class="active">Home</a></li>
+			<li><a href="dental-chairs.html">Dental Chairs</a></li>
 			<li><a href="products.html">Products</a></li>
 			<li><a href="#browse-section" style="scroll-behavior: smooth; transition: 0.9s;">The Digital Showroom</a></li>
 			<li><a href="about.html">About</a></li>
@@ -259,7 +268,7 @@
 		
 
 		<div class="copyright">
-			<p>&copy; 2024 Westech PVT LTD</p>
+			<p>&copy; 2024 Westech Enterprises</p>
 		</div>
 	</footer>
 
@@ -275,6 +284,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const header = document.querySelector("header");
     const nav = document.querySelector("nav");
     const hamburger = document.querySelector(".hamburger");
+    const dropdownBtn = document.querySelector(".dropdown-btn");
+    const dropdownContent = document.querySelector(".dropdown-content");
 
     function updateHamburgerVisibility() {
         if (header.classList.contains("header-sticky")) {
@@ -320,6 +331,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Toggle dropdown content
+    dropdownBtn.addEventListener("click", function(event) {
+        event.stopPropagation(); // Prevent the document click event from firing
+        dropdownContent.classList.toggle("show");
+    });
+
     // Ensure the hamburger is hidden initially when the page loads
     header.classList.remove("header-sticky");
     updateHeaderState();
@@ -335,23 +352,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Close dropdown if user clicks outside of it
     document.addEventListener("click", function(event) {
-        const dropdowns = document.querySelectorAll('.dropdown-content');
-        dropdowns.forEach(dropdown => {
-            if (!dropdown.parentNode.contains(event.target)) {
-                dropdown.style.display = 'none';
-            }
-        });
-    });
-
-    // Open dropdown when hovering over the Products link
-    document.querySelector('.dropbtn').addEventListener("mouseover", function() {
-        const dropdown = this.nextElementSibling;
-        dropdown.style.display = 'block';
-    });
-
-    document.querySelector('.dropdown').addEventListener("mouseleave", function() {
-        const dropdown = this.querySelector('.dropdown-content');
-        dropdown.style.display = 'none';
+        if (!dropdownBtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+            dropdownContent.classList.remove("show");
+        }
     });
 });
 </script>
