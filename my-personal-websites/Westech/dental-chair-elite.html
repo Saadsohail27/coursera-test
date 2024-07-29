@@ -16,7 +16,8 @@
 	<script src="https://kit.fontawesome.com/3bb3ead891.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<header id="header" class="header-sticky" style="background-color: rgba(0, 0, 0, 0.8);">
+	
+<header id="header" class="header-sticky" style="background-color: rgba(0, 0, 0, 0.8);">
     <span class="logo">
         <a href="index.html"><img src="images/westech-logo-50.png"></a>
     </span>
@@ -24,19 +25,20 @@
         <hr style="width: 105%;">
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="dental-chairs.html">Dental Chairs</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dental-chairs.html" class="active">Dental Chairs</a></li>
                 <li class="dropdown">
                     <a href="products.html" class="dropbtn">Products</a>
-                    <button class="dropdown-btn"></button>
                     <ul class="dropdown-content">
-                        <li><a href="#">Dental Operatory Systems</a></li>
-                        <li><a href="#">Dental Units</a></li>
-                        <li><a href="#">Central Compressors</a></li>
-                        <li><a href="#">Suctions</a></li>
-                        <li><a href="#">Gynae Chairs</a></li>
-                        <li><a href="#">Operation Tables</a></li>
+                        <li><a href="dental-operatory-systems.html">Dental Operatory Systems</a></li>
+                        <li><a href="dental-chairs.html">Dental Units</a></li>
+                        <li><a href="stools.html">Stools</a></li>
+                        <li><a href="compressors.html">Compressors</a></li>
+                        <li><a href="suctions.html">Suctions</a></li>
+                        <li><a href="gynae-chairs.html">Gynae Chairs</a></li>
+                        <li><a href="operation-tables.html">Operation Tables</a></li>
                     </ul>
+                    <button class="dropdown-btn"></button>
                 </li>
                 <li><a href="index.html#browse-section" style="scroll-behavior: smooth; transition: 0.9s;">The Digital Showroom</a></li>
                 <li><a href="about.html">About</a></li>
@@ -95,12 +97,12 @@
 
 	<div class="product-name" style="text-align: center;">
 				<h6 style="color: #363636;">Dental Chairs/Units</h6>
-				<h2>Elite</h2>
-				<h4>The best of best</h4>
+				<h2>Classic</h2>
+				<h4>Classic description</h4>
 		</div>
 			
 			<div class="product-details">
-    <h2>Product Details</h2>
+    <h2>Product Features of elite</h2>
 
     <div class="feature-section">
         <h3>Dental Chair</h3>
@@ -149,7 +151,7 @@
             <li>Programmable Dental light with chair movement and pre-set positions + Touch On/Off at Dr. and Assistant control panel.</li>
             <li>The Dental Light is compact, well balanced and easy to move to any position.</li>
             <li>Excellent light focusing pattern for patient convenience.</li>
-            <li>Daylight shadow less and heatless light for optimal results.</li>
+            <li>Daylight shadowless and heatless light for optimal results.</li>
             <li>Dental light is very easy to keep hygienically clean.</li>
             <li>This Dental light is compatible with all Dental Systems.</li>
             <li>Input 240/220V.</li>
@@ -294,7 +296,7 @@
 				<h4>Contact</h4>
 				</div>
 				<p><strong style="color: #461F52;">Adress:</strong> Bambian Stop,<br>Opp. Mian Munshi Hospital,<br>Near Boby Plaza Main Band Road,<br>Lahore.</p>
-				<p><strong style="color: #461F52;">Phone:</strong> <a href="tel: +923331870881" hover="color: #088178;">+92 333 1870881</a></p>
+				<p><strong style="color: #461F52;">Phone:</strong> <a class="phone-number" href="tel: +923331870881">+92 333 1870881</a></p>
 				<p><strong style="color: #461F52;">Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
 			
 			
@@ -312,8 +314,8 @@
 
 		<div class="col">
 			<h4>Explore</h4>
-			<li><a href="index.html" class="active">Home</a></li>
-			<li><a href="dental-chairs.html">Dental Chairs</a></li>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="dental-chairs.html" class="active">Dental Chairs</a></li>
 			<li><a href="products.html">Products</a></li>
 			<li><a href="#browse-section" style="scroll-behavior: smooth; transition: 0.9s;">The Digital Showroom</a></li>
 			<li><a href="about.html">About</a></li>
@@ -351,23 +353,46 @@ for (let i = 0; i < thumbnails.length; i++) {
     });
 }
 
-
 const buttonRight = document.getElementById('slideRight');
 const buttonLeft = document.getElementById('slideLeft');
+const slider = document.getElementById('slider');
 
 buttonLeft.addEventListener('click', function() {
-    document.getElementById('slider').scrollBy({
-        left: -180,
+    slider.scrollBy({
+        left: -200,
         behavior: 'smooth'
     });
+    checkScroll();
 });
 
 buttonRight.addEventListener('click', function() {
-    document.getElementById('slider').scrollBy({
-        left: 180,
+    slider.scrollBy({
+        left: 200,
         behavior: 'smooth'
     });
+    checkScroll();
 });
+
+function checkScroll() {
+    if (slider.scrollLeft <= 0) {
+        buttonLeft.style.opacity = '0';
+        buttonLeft.style.transition = '0.3s';
+    } else {
+        buttonLeft.style.opacity = '1';
+        buttonLeft.style.transition = '0.3s';
+    }
+
+    if (slider.scrollWidth - slider.clientWidth - slider.scrollLeft <= 0) {
+        buttonRight.style.opacity = '0';
+        buttonLeft.style.transition = '0.3s';
+    } else {
+        buttonRight.style.opacity = '1';
+        buttonLeft.style.transition = '0.3s';
+    }
+}
+
+// Initial check to set arrow visibility on page load
+checkScroll();
 	</script>
 <script>
 
@@ -407,7 +432,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateHeaderState() {
-        if (window.innerWidth <= 953) {
+        if (window.innerWidth <= 1017) {
             header.classList.add("header-sticky");
         } else if (window.pageYOffset <= header.offsetTop) {
             header.classList.remove("header-sticky");

@@ -20,6 +20,17 @@ p {
 	color: #BFA181;
 }
 
+button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* You can do the same for links */
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /* General Header Styles */
 header {
     background-color: transparent;
@@ -138,24 +149,28 @@ div.nav-container {
     margin: 20px;
     justify-self: center;
 }
-/*Dropdown styles*/
+
+/* Dropdown styles */
 nav .dropdown {
     display: flex;
     align-items: center;
     position: relative;
 }
 
+/* Dropdown button styles */
 .dropdown-btn {
-    background: none;
-    border: none;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background to blend with the header */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border to make the button distinct */
     color: white;
     font-size: 1.1em;
     cursor: pointer;
     margin-left: 5px;
+    padding: 5px; /* Added padding for better click area */
+    border-radius: 50%; /* Makes the button circular */
     position: relative;
     width: 20px; /* Adjust width as needed */
     height: 20px; /* Adjust height as needed */
-    transition: transform 0.3s ease; /* Add transition for smooth transformation */
+    transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease; /* Add transition for smooth transformation */
 }
 
 .dropdown-btn::before, .dropdown-btn::after {
@@ -179,12 +194,18 @@ nav .dropdown {
     transform: translateY(-50%) rotate(90deg);
 }
 
-.dropdown-content.show ~ .dropdown-btn::after {
+nav .dropdown-content.show ~ .dropdown-btn::after {
     transform: translateY(-50%) rotate(-45deg);
 }
 
-.dropdown-content.show ~ .dropdown-btn::before {
+nav .dropdown-content.show ~ .dropdown-btn::before {
     transform: translateY(-50%) rotate(45deg);
+}
+
+/* Hover effect for dropdown button */
+.dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.3); /* Slightly more opaque background on hover */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Slightly darker border on hover */
 }
 
 /* Other existing styles */
@@ -1001,6 +1022,14 @@ footer a{
 	margin-bottom: 10px;
 }
 
+a.phone-number {
+    color: #002DC4;
+}
+
+a.phone-number:hover {
+    color: #021f80;
+}
+
 footer li {
 	font-size: 13px;
 	text-decoration: none;
@@ -1046,9 +1075,7 @@ footer li {
  	justify-content: space-between;
  }
 
-  #contact-details .details {
-  	width: 40%;
-  }
+ 
 
   #contact-details .details span, #form-details form span {
   	font-size: 12px;
@@ -1068,8 +1095,26 @@ footer li {
   #contact-details .details li {
   	list-style: none;
   	display: flex;
+    flex-wrap: wrap;
   	padding: 10px 0;
   }
+
+  em.note {
+    margin-left: 20px;
+  }
+
+  @media all and (max-width: 425px) {
+    em.note {
+        position: relative;
+        top: 20px;
+    }
+  }
+
+    @media all and (max-width: 384px) {
+       #contact-details .details li p.timings {
+            font-size: 3.2vw;
+        }
+    }
 
 
   #contact-details .details li i {
@@ -1466,11 +1511,11 @@ hr {
     text-decoration: none;
 }
 
-.dental-operatory-systems, .central-compressors, .gynae-chairs {
+.dental-operatory-systems, .stools, .suctions, .operation-tables{
     background-color: #F8F8F8;
 }
 
-.dental-units, .suctions, .operation-tables {
+.dental-units, .central-compressors,.gynae-chairs, {
     background-color: #EDEDEE;
 }
 
@@ -1488,7 +1533,7 @@ hr {
 }
 
 
-.dental-operatory-systems, .dental-units, .central-compressors, .suctions, .gynae-chairs, .operation-tables {
+.dental-operatory-systems, .dental-units, .stools, .central-compressors, .suctions, .gynae-chairs, .operation-tables {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -1804,4 +1849,15 @@ section#about-head {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media all and (max-width: 500px) {
+    img.thumbnail {
+        max-width: 50px;
+    }
+
+    img.arrow {
+        width: 40px;
+        height: 40px;
+    }
 }
