@@ -29,6 +29,10 @@ header.sticky {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+header.sticky #logo {
+    color: white;
+}
+
 #logo img {
     height: 50px;
 }
@@ -54,22 +58,24 @@ header.sticky nav ul li a {
     color: white;
 }
 
+#logo {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 #hero {
-    background-image: url('images/hero-image.jpg');
-    background-size: cover;
-    background-position: center;
     color: white;
     text-align: center;
     padding: 100px 20px;
 }
 
 #hero-content {
-    max-width: 600px;
-    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
 }
+
 
 .btn {
     display: inline-block;
