@@ -1605,6 +1605,10 @@ hr {
 
 }
 
+div.details {
+    padding: 10px 30px;
+}
+
 #about-head {
     margin-top: 130px;
 }
@@ -1677,14 +1681,15 @@ hr {
 .single-product-section .large-image-container {
     width: 100%;
 }
-.single-product-section .large-image-container img {
+.large-image-container img {
     object-fit: cover;
 }
 
 #featured {
+    height: 100%;
     width: 100%;
-    border: 2px solid black;
-    max-height: 600px;
+    border: 1px solid black;
+    object-fit: cover;
 }
 
 .thumbnail {
