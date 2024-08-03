@@ -841,7 +841,7 @@ section.dental-chairs .silk-preview {
 }
 
 .section-p1 {
-	padding: 40px 80px;
+	padding: 40px 10px;
 }
 
 .browse {
@@ -1564,7 +1564,7 @@ hr {
         max-width: none;
     }
 
-    .dental-operatory-systems, .dental-units, .central-compressors, .suctions, .gynae-chairs, .operation-tables {
+    .dental-operatory-systems, .dental-units, .stools, .central-compressors, .suctions, .gynae-chairs, .operation-tables {
         flex-direction: column-reverse;
         padding: 70px 20px;
         height: fit-content;
@@ -1860,4 +1860,52 @@ section#about-head {
         width: 40px;
         height: 40px;
     }
+}
+
+.feature-section {
+    margin-bottom: 20px;
+}
+
+.expandable-header {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.3s;
+}
+
+.expandable-header:hover {
+    color: #8094DA /* Optional: Change color on hover */
+}
+
+.expand-icon {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.feature-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-out;
+}
+
+.feature-list.show {
+    max-height: 1000px; /* Adjust as needed to fit content */
+}
+
+.expand-icon.rotate {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+@media all and (max-width: 500px) {
+ .feature-list.show {
+    max-height: 10000px;
+ }
+}
+
+.product-details h2 {
+    line-height: 45px;
 }
