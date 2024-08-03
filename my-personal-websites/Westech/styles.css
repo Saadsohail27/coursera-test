@@ -1320,9 +1320,7 @@ footer li {
   	line-height: 25px;
   }
 
-  .product-name {
-
-  }
+  
 
   .product-details {
   	margin-top: 100px;
@@ -1335,6 +1333,8 @@ footer li {
 
   #about-head {
  	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
  	align-items: center;
     background-color: #EDEDEE;
  }
@@ -1343,11 +1343,19 @@ footer li {
 
 
  #about-head div {
- 	padding-left: 40px;
+ 	padding-left: 10px;
  }
 
  #about-head p {
  	color: #121212;
+    max-width: 800px;
+    line-height: 35px;
+ }
+
+ @media all and (max-width:953px) {
+    section#about-head {
+        margin-top: 70px;
+    }
  }
 
 
@@ -1597,8 +1605,8 @@ hr {
 
 }
 
-section#about-head {
-    margin-top: 72px;
+#about-head {
+    margin-top: 130px;
 }
 
 @media all and (max-width: 774px) {
