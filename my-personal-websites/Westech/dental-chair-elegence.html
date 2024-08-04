@@ -465,7 +465,7 @@ buttonRight.addEventListener('click', function() {
 
 function checkScroll() {
     if (slider.scrollLeft <= 0) {
-        buttonLeft.style.opacity = '0';
+        buttonLeft.style.opacity = '0.3';
         buttonLeft.style.transition = '0.3s';
     } else {
         buttonLeft.style.opacity = '1';
@@ -473,7 +473,7 @@ function checkScroll() {
     }
 
     if (slider.scrollWidth - slider.clientWidth - slider.scrollLeft <= 0) {
-        buttonRight.style.opacity = '0';
+        buttonRight.style.opacity = '0.3';
         buttonLeft.style.transition = '0.3s';
     } else {
         buttonRight.style.opacity = '1';
