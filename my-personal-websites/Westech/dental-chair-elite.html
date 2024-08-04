@@ -69,26 +69,19 @@
 					<img id="slideLeft" class="arrow" src="images/arrow-left.png">	
 						<div id="slider" class="slider">
 							<img class="thumbnail selected-image" src="images/dental-units/elite/elite-chair.jpeg">
+
+							<img class="thumbnail" src="images/dental-units/elite/elite-3.jpg">
+
+							<img class="thumbnail" src="images/dental-units/elite/elite-chair2.jpeg">
 						
-							<img class="thumbnail" src="images/dental-units/mate/mate-1.jpg">
+							<img class="thumbnail" src="images/dental-units/elite/elite-tray.jpeg">
 
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
+							<img class="thumbnail" src="images/dental-units/elite/elite-assist-panel.jpeg">
 
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
+							<img class="thumbnail" src="images/dental-units/elite/elite-foot-switch.jpeg">
 
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
+							<img class="thumbnail" src="images/dental-units/elite/elite-screen.jpeg">
 
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
-
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
-
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
-
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
-
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
-
-							<img class="thumbnail" src="images/dental-units/mate/mate-5-180.jpg">
 						</div>
 						<img id="slideRight" class="arrow" src="images/arrow-right.png">
 					</div>
@@ -431,7 +424,7 @@ buttonRight.addEventListener('click', function() {
 
 function checkScroll() {
     if (slider.scrollLeft <= 0) {
-        buttonLeft.style.opacity = '0';
+        buttonLeft.style.opacity = '0.3';
         buttonLeft.style.transition = '0.3s';
     } else {
         buttonLeft.style.opacity = '1';
@@ -439,7 +432,7 @@ function checkScroll() {
     }
 
     if (slider.scrollWidth - slider.clientWidth - slider.scrollLeft <= 0) {
-        buttonRight.style.opacity = '0';
+        buttonRight.style.opacity = '0.3';
         buttonLeft.style.transition = '0.3s';
     } else {
         buttonRight.style.opacity = '1';
