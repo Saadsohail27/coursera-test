@@ -417,15 +417,41 @@ function checkScroll() {
 
     if (slider.scrollWidth - slider.clientWidth - slider.scrollLeft <= 0) {
         buttonRight.style.opacity = '0.3';
-        buttonLeft.style.transition = '0.3s';
+        buttonRight.style.transition = '0.3s';
     } else {
         buttonRight.style.opacity = '1';
-        buttonLeft.style.transition = '0.3s';
+        buttonRight.style.transition = '0.3s';
     }
 }
 
 // Initial check to set arrow visibility on page load
 checkScroll();
+
+// Add wheel event for mouse wheel navigation
+slider.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    slider.scrollBy({
+        left: e.deltaY > 0 ? 200 : -200,
+        behavior: 'smooth'
+    });
+    checkScroll();
+});
+
+// Add touch events for swiping
+slider.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchend', () => {});
+
+slider.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // scroll-fast
+    slider.scrollLeft = scrollLeft - walk;
+    checkScroll();
+});
 	</script>
 <script>
 

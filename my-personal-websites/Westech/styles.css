@@ -1733,6 +1733,11 @@ div.details {
     opacity: .5;
 }
 
+.slider.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
 .product-details {
     max-width: 800px;
     margin: 20px auto;
