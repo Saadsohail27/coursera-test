@@ -1791,14 +1791,15 @@ div.details {
 .color-palette {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    row-gap: 60px;
     justify-content: center;
     margin: 20px 0;
+    gap: 20px;
+    row-gap: 60px;
 }
 
 .color-card {
-    width: 100px;
+    flex: 1 1 calc(33.333% - 40px); /* 1/3 width minus the gap (20px on each side) */
+    max-width: 100px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -1806,6 +1807,7 @@ div.details {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
+    margin: 10px; /* to create a consistent gap around each card */
 }
 
 .color-card p {
@@ -1815,6 +1817,27 @@ div.details {
     width: 100%;
     font-weight: bold;
     color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .color-card {
+        flex: 1 1 calc(50% - 40px); /* Two items per line on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .color-card {
+        flex: 1 1 calc(100% - 40px); /* One item per line on very small screens */
+    }
+}
+
+.color-pallete-paragraph {
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40px;
 }
 
 .cta-container {
