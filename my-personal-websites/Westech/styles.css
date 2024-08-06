@@ -1462,6 +1462,7 @@ hr {
 .elite-preview, .classic-preview, .elegence-preview, .mate-preview, .indus-preview, .silk-preview {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .description-of-chair {
@@ -1791,6 +1792,7 @@ div.details {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    row-gap: 60px;
     justify-content: center;
     margin: 20px 0;
 }
@@ -1808,7 +1810,7 @@ div.details {
 
 .color-card p {
     position: absolute;
-    bottom: 0;
+    bottom: -45px;
     text-align: center;
     width: 100%;
     font-weight: bold;
