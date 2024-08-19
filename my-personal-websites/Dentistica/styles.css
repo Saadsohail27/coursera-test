@@ -1,0 +1,767 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+header {
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: top 0.3s ease-in-out;
+}
+
+/* Sticky Header Styles */
+.sticky {
+    position: fixed;
+    top: 0; /* Slightly reduce initial hidden position */
+    width: 100%;
+    animation: slideDown 0.4s forwards ease-in-out; /* Adjusted animation */
+}
+@keyframes slideDown {
+    from {
+        top: -80px;
+        opacity: 0; /* Add opacity for smoother fade */
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/* Add some space below the sticky header */
+body {
+    padding-top: 1px; /* Adjust based on header height */
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: #008CBA;
+    color: white;
+}
+
+@media (max-width: 1105px) {
+  .top-bar {
+    display: none;
+  }
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.appointment-btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #333;
+}
+
+nav .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.hero {
+    background: url('./images/dentistica-clinic.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adds a dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure the content is above the overlay */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out; /* Optional fade-in animation */
+}
+
+@media all and (max-width:400px) {
+   .hero h1 {
+    font-size: 9.5vw;
+   } 
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out; /* Optional fade-in animation */
+}
+
+.cta-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+    background-color: #25D366; /* WhatsApp color */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #1EBE58;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance hover state */
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cta-btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cta-btn:hover {
+    background-color: #cb6b17;
+}
+
+.cta-btn.secondary {
+    background-color: #008CBA;
+}
+
+
+header {
+  position: relative;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+
+ul.mobile-nav {
+    display: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers buttons horizontally */
+  gap: 1rem; /* Adds space between buttons */
+}
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1105px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 10000;
+  }
+
+  /* Mobile Navigation Menu */
+.nav-links.mobile-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        flex-direction: column;
+        background-color: #444;
+        padding-top: 60px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-links.mobile-nav.open {
+        display: block;
+        right: 0;
+    }
+
+    .nav-links.mobile-nav li {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    #follow-us {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    #follow-us p {
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: #fff;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+    .social-icons a:hover {
+        color: #A9A9A9;
+    }
+
+    .nav-links hr {
+        border: none;
+        border-top: 1px solid #ccc;
+        margin: 1rem 0;
+    }
+
+
+/* Hamburger Animation to X */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+}
+/* About Us Section */
+
+@media (max-width: 768px) {
+    .about-us, .team-members, .service-cards, .location-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text, .team-member, .service-card {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+.about-us {
+    padding: 80px 10%;
+    display: flex;
+    align-items: center;
+}
+
+.about-content {
+    height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+a.about-cta {
+   position: relative;
+   top: 50px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #c9daff; /* Add a subtle hover effect */
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+
+
+/* Services Section */
+.services {
+    padding: 80px 5%;
+    background-color: #f4f4f4;
+    text-align: center;
+
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service-card {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 16px;
+}
+
+/* Team Section */
+.team {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 80px 10%;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow: auto;
+}
+
+.testimonial {
+    flex: 1;
+    margin-right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.testimonial p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.testimonial h4 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Appointment Section */
+.appointment {
+    padding: 80px 10%;
+    text-align: center;
+    background-color: #008CBA;
+    color: white;
+}
+
+.appointment h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.appointment p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* Location and Hours Section */
+.location-hours {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.location-hours h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.location-info {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.location-info iframe {
+    width: 100%;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.hours {
+    flex: 1;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.hours p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 60px 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+}
+
+@media all and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+}
+
+.footer-column h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-column p,
+.footer-column ul {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe58; /* Slightly darker on hover */
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .whatsapp-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .whatsapp-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+.cta-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-button {
+    background-color: #25D366; /* WhatsApp green */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.cta-button i {
+    margin-right: 10px;
+}
+
+.cta-button:hover {
+    background-color: #1EBEA5;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.whatsapp-icon img {
+    width: 70%;
+    height: 70%;
+}
+
+.whatsapp-icon a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #ffffff; /* White color for the icons */
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #A9A9A9; /* WhatsApp green on hover */
+}
+
+/* Adjust the size of the icons for smaller screens */
+@media (max-width: 768px) {
+    .social-icon {
+        font-size: 18px;
+    }
+}

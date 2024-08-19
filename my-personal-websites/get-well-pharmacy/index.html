@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Well Pharmacy</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link
+	 rel="stylesheet"
+	 href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+	/>
+</head>
+<body>
+    <header id="header">
+        <a href="index.html" id="logo">Get Well Pharmacy</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="our-branches.html">Our Branches</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div id="hero-content">
+            <div class="swiper mySwiper">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide">Slide 1</div>
+		      <div class="swiper-slide">Slide 2</div>
+		      <div class="swiper-slide">Slide 3</div>
+		      <div class="swiper-slide">Slide 4</div>
+		    </div>
+		    <div class="swiper-button-next"></div>
+		    <div class="swiper-button-prev"></div>
+		    <div class="swiper-pagination"></div>
+		  </div>
+        </div>
+    </section>
+
+    
+
+    <footer id="footer">
+        <p>&copy; 2024 Get Well Pharmacy. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 5,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+</html>

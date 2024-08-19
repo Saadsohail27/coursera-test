@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dentistica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Other meta tags and stylesheets -->
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="top-bar">
+            <div class="contact-info">
+                <span>+92321 3055370</span>
+                <span>Email: info@dentistica.com</span>
+            </div>
+		            <div class="social-icons">
+		    <a href="https://www.facebook.com/dentisticapk/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+		    <a href="https://www.instagram.com/dentistica.pk/?hl=en" class="social-icon"><i class="fab fa-instagram"></i></a>
+		</div>            <!-- Book an Appointment Button -->
+			<button class="cta-button" onclick="bookAnAppointment()">
+        <i class="fab fa-whatsapp"></i> Book an Appointment
+    </button>
+
+        </div>
+
+  
+  <nav id="navbar">
+    <div class="logo">Dentistica</div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Meet the Doctors</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<ul class="nav-links mobile-nav" id="mobile-nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Meet the Doctors</a></li>
+    <li><a href="#">Testimonials</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <hr>
+    <div id="follow-us">
+        <p>Follow Us</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/dentisticapk/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/dentistica.pk/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</ul>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Smile, Our Priority</h1>
+            <p>Providing Comprehensive Dental Care with a Personal Touch</p>
+           <div class="hero-cta">
+           <button class="cta-button" onclick="bookAnAppointment()">
+		        <i class="fab fa-whatsapp"></i> Book an Appointment
+		    </button>
+            <a href="#" class="cta-btn secondary">Learn More About Us</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Welcome to Our Clinic</h2>
+                <p>We are dedicated to providing top-quality dental care in a comfortable and friendly environment. Our team of professionals are here to help you achieve and maintain a healthy smile.</p>
+                <a href="#" class="cta-btn">Read More</a>
+            </div>
+            <div class="about-image">
+                <img src="images/dentistica-clinic-2.jpg" alt="Our Clinic">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Dental Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="service1.jpg" alt="General Dentistry">
+                <h3>General Dentistry</h3>
+                <p>Comprehensive care for your overall dental health.</p>
+            </div>
+            <div class="service-card">
+                <img src="service2.jpg" alt="Cosmetic Dentistry">
+                <h3>Cosmetic Dentistry</h3>
+                <p>Enhancing the appearance of your smile.</p>
+            </div>
+            <div class="service-card">
+                <img src="service3.jpg" alt="Orthodontics">
+                <h3>Orthodontics</h3>
+                <p>Aligning your teeth for a healthier, more beautiful smile.</p>
+            </div>
+        </div>
+        <a href="#" class="cta-btn about-cta">Explore All Services</a>
+    </section>
+
+    <!-- Meet the Team Section -->
+    <section class="team">
+        <h2>Meet the doctors</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="dentist1.jpg" alt="Dr. Taimur Hassan Picture">
+                <h3>Dr. Taimur Hassan</h3>
+                <p>Lead Dentist with X years of experience in dentistry.</p>
+            </div>
+            <div class="team-member">
+                <img src="dentist2.jpg" alt="Dr Tayyab Picture">
+                <h3>Dr Tayyab</h3>
+                <p>Specialist in Orthodontics and X.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Great experience! The staff is friendly, and the care is top-notch. My smile has never looked better!"</p>
+                <h4>– Patient 1.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The best dental care I've ever received. Highly recommend this clinic."</p>
+                <h4>– Patient 2.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Booking Section -->
+    <section class="appointment">
+        <h2>Ready for a Healthy Smile?</h2>
+        <p>Schedule your appointment today.</p>
+        <button class="cta-button" onclick="bookAnAppointment()">
+		        <i class="fab fa-whatsapp"></i> Book Now
+		    </button>
+    </section>
+
+    <!-- Location and Hours Section -->
+    <section class="location-hours">
+        <h2>Visit Us</h2>
+        <div class="location-info">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.9632354727996!2d74.41793127469543!3d31.49769434826363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190f8e29bb0cb1%3A0xf48497fa86fced67!2sDentistica!5e0!3m2!1sen!2s!4v1724036637458!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="hours">
+                <p>Dentistica</p>
+                <p>Mon-Fri: 12:00 PM - 10:00 PM</p>
+                <p>Sat: 12:00 PM - 10:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Dentistica</h4>
+                <p>Your trusted partner in dental care.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Meet the Doctors</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Contact</a></li>
+                     <a class="social-icon" href="https://www.facebook.com/dentisticapk/" aria-label="Facebook" style="margin-right: 20px;"><i class="fab fa-facebook-f"></i></a>
+            <a class="social-icon" href="https://www.instagram.com/dentistica.pk/?hl=en" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Phone: +92321 3055370</p>
+                <p>Email: info@dentistica.com</p>
+            </div>
+            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dentistica. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+    	document.getElementById('hamburger').addEventListener('click', function() {
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.toggle('open');
+
+    // Animate hamburger into X
+    this.classList.toggle('active');
+});
+	const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('mobile-nav');
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+});
+</script>
+<script>
+	// Sticky Header Functionality
+window.onscroll = function() {stickyHeader()};
+
+var header = document.querySelector("header");
+var sticky = header.offsetTop;
+
+function stickyHeader() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+<script>
+	function bookAnAppointment() {
+            const phoneNumber = "923213055370"; // Replace with your WhatsApp number
+            const message = "Hi, I would like to book an appointment.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+</script>
+</body>
+</html>
