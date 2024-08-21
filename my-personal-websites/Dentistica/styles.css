@@ -52,6 +52,11 @@ body {
     color: white;
 }
 
+.top-bar a {
+    text-decoration: none;
+    color: #e7e7ef;
+}
+
 @media (max-width: 1203px) {
   .top-bar {
     display: none;
@@ -608,7 +613,7 @@ footer {
     margin-right: 20px;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 860px) {
     .footer-content {
         flex-direction: column;
         row-gap: 50px;
@@ -637,6 +642,10 @@ footer {
 .footer-column ul li a {
     color: white;
     text-decoration: none;
+}
+.footer-column .phone-number {
+    text-decoration: none;
+    color: #b6dfff;
 }
 
 .footer-bottom {
