@@ -52,7 +52,7 @@ body {
     color: white;
 }
 
-@media (max-width: 1105px) {
+@media (max-width: 1203px) {
   .top-bar {
     display: none;
   }
@@ -80,7 +80,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 0 10%;
     background-color: #333;
 }
 
@@ -271,7 +271,7 @@ ul.mobile-nav {
 
 
 /* Responsive Styles */
-@media (max-width: 1105px) {
+@media (max-width: 1203px) {
   .nav-links {
     display: none;
   }
@@ -279,6 +279,10 @@ ul.mobile-nav {
   .hamburger {
     display: flex;
     z-index: 10000;
+  }
+
+  nav {
+    padding: 0 5%;
   }
 
   /* Mobile Navigation Menu */
