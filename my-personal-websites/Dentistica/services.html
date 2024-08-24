@@ -146,38 +146,55 @@
 
 
     <script>
-    	document.getElementById('hamburger').addEventListener('click', function() {
+    	document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobile-nav');
-    mobileNav.classList.toggle('open');
+    const navLinks = document.querySelector('.nav-links');
+    const header = document.querySelector('header');
+    const sticky = header.offsetTop;
 
-    // Animate hamburger into X
-    this.classList.toggle('active');
-});
-	const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
+    // Function to toggle mobile navigation
+    function toggleMobileNav() {
+        mobileNav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('mobile-nav');
+    }
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('mobile-nav');
-    hamburger.classList.toggle('open');
-    navLinks.classList.toggle('open');
+    // Event listener for hamburger click
+    hamburger.addEventListener('click', function(event) {
+        event.stopPropagation(); // Prevents click from bubbling up to document
+        toggleMobileNav();
+    });
+
+    // Event listener for clicks outside the mobile navigation
+    document.addEventListener('click', function(event) {
+        if (!hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
+            if (mobileNav.classList.contains('open')) {
+                toggleMobileNav(); // Close the mobile nav
+            }
+        }
+    });
+
+    // Prevent closing mobile nav when clicking inside it
+    mobileNav.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // Sticky Header Functionality
+    function stickyHeader() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add('sticky');
+        } else {
+            header.classList.remove('sticky');
+        }
+    }
+
+    // Initial check and scroll event listener for sticky header
+    stickyHeader();
+    window.addEventListener('scroll', stickyHeader);
 });
 </script>
-<script>
-	// Sticky Header Functionality
-window.onscroll = function() {stickyHeader()};
-
-var header = document.querySelector("header");
-var sticky = header.offsetTop;
-
-function stickyHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
-<script>
+        <script>
 	function bookAnAppointment() {
             const phoneNumber = "923213055370"; // Replace with your WhatsApp number
             const message = "Hi, I would like to book an appointment.";

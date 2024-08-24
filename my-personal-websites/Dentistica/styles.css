@@ -367,7 +367,6 @@ ul.mobile-nav {
 @media (max-width: 768px) {
     .about-us, .team-members, .service-cards, .location-info {
         flex-direction: column;
-        align-items: center;
     }
     .about-text, .team-member, .service-card {
         margin-bottom: 20px;
@@ -467,6 +466,16 @@ nav ul li a:hover {
 
 .service-card p {
     font-size: 16px;
+}
+
+.service-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+    min-width: 150px;
 }
 
 /* Team Section */
@@ -950,13 +959,13 @@ footer {
     background-color: #f4f4f4;
 }
 
-.service-grid {
+.services-section .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
     gap: 20px; /* Space between the grid items */
 }
 
-.service-card {
+.services-section .service-card {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -966,23 +975,23 @@ footer {
     min-width: 150px;
 }
 
-.service-card:hover {
+.services-section .service-card:hover {
     transform: translateY(-10px);
 }
 
-.service-card img {
+.services-section .service-card img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.service-card h2 {
+.services-section .service-card h2 {
     font-size: 24px;
     margin-bottom: 15px;
     color: #333;
 }
 
-.service-card p {
+.services-section .service-card p {
     font-size: 16px;
     margin-bottom: 20px;
     color: #666;
@@ -1005,19 +1014,19 @@ footer {
 }
 
 @media (max-width: 1068px) {
-    .service-grid {
+   .services-section .service-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
 }
 
 @media (max-width: 480px) {
-    .service-grid {
+    .services-section .service-grid {
         grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
 
 @media (max-width: 693px) {
-    .service-grid {
+   .services-section .service-grid {
         grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
