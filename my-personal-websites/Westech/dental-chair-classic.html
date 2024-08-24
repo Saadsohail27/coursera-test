@@ -434,7 +434,8 @@
 		</script>
 
 	<script>
-		let thumbnails = document.getElementsByClassName('thumbnail');
+			// Thumbnail click functionality
+let thumbnails = document.getElementsByClassName('thumbnail');
 let selectedImages = document.getElementsByClassName('selected-image');
 
 for (let i = 0; i < thumbnails.length; i++) {
@@ -448,6 +449,7 @@ for (let i = 0; i < thumbnails.length; i++) {
     });
 }
 
+// Slider navigation
 const buttonRight = document.getElementById('slideRight');
 const buttonLeft = document.getElementById('slideLeft');
 const slider = document.getElementById('slider');
@@ -489,7 +491,7 @@ function checkScroll() {
 // Initial check to set arrow visibility on page load
 checkScroll();
 
-// Add wheel event for mouse wheel navigation
+// Mouse wheel navigation
 slider.addEventListener('wheel', (e) => {
     e.preventDefault();
     slider.scrollBy({
@@ -499,13 +501,13 @@ slider.addEventListener('wheel', (e) => {
     checkScroll();
 });
 
-// Add touch events for swiping
+// Touch events for swiping the thumbnail slider
+let startX, scrollLeft;
+
 slider.addEventListener('touchstart', (e) => {
     startX = e.touches[0].pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
 });
-
-slider.addEventListener('touchend', () => {});
 
 slider.addEventListener('touchmove', (e) => {
     e.preventDefault();
@@ -514,6 +516,69 @@ slider.addEventListener('touchmove', (e) => {
     slider.scrollLeft = scrollLeft - walk;
     checkScroll();
 });
+
+// Featured image swipe functionality with smoother transition
+const featuredImage = document.getElementById('featured');
+let startXFeatured, distanceFeatured, isDragging = false;
+
+featuredImage.addEventListener('touchstart', (e) => {
+    startXFeatured = e.touches[0].pageX;
+    isDragging = true;
+    featuredImage.style.transition = 'none'; // Disable transition for smooth dragging
+});
+
+featuredImage.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX;
+    distanceFeatured = x - startXFeatured;
+    featuredImage.style.transform = `translateX(${distanceFeatured}px)`; // Slide the image
+});
+
+featuredImage.addEventListener('touchend', () => {
+    isDragging = false;
+    featuredImage.style.transition = 'transform 0.3s ease'; // Add transition back
+
+    if (Math.abs(distanceFeatured) > 50) { // Threshold for swipe distance
+        if (distanceFeatured > 0) {
+            showPreviousThumbnail();
+        } else {
+            showNextThumbnail();
+        }
+    }
+    // Reset the position after swipe
+    featuredImage.style.transform = 'translateX(0)';
+});
+
+function showPreviousThumbnail() {
+    const currentIndex = Array.from(thumbnails).findIndex(thumbnail => thumbnail.classList.contains('selected-image'));
+    if (currentIndex > 0) {
+        transitionImage(thumbnails[currentIndex], thumbnails[currentIndex - 1], 'left');
+    }
+}
+
+function showNextThumbnail() {
+    const currentIndex = Array.from(thumbnails).findIndex(thumbnail => thumbnail.classList.contains('selected-image'));
+    if (currentIndex < thumbnails.length - 1) {
+        transitionImage(thumbnails[currentIndex], thumbnails[currentIndex + 1], 'right');
+    }
+}
+
+function transitionImage(currentThumbnail, nextThumbnail, direction) {
+    featuredImage.style.transition = 'none'; // Disable transition to prepare for swipe
+    const offset = direction === 'left' ? -100 : 100;
+    featuredImage.style.transform = `translateX(${offset}%)`; // Move the current image out of view
+
+    setTimeout(() => {
+        // Switch the image source and reset the position
+        featuredImage.src = nextThumbnail.src;
+        nextThumbnail.classList.add('selected-image');
+        currentThumbnail.classList.remove('selected-image');
+
+        // Bring the new image into view with a smooth transition
+        featuredImage.style.transition = 'transform 0.3s ease';
+        featuredImage.style.transform = 'translateX(0)';
+    }, 50); // Short delay to apply the transition after switching the image
+}
 	</script>
 <script>
 
