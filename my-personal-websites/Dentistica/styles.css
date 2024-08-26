@@ -899,6 +899,11 @@ footer {
     color: #3C3F43;
 }
 
+@media all and (max-width: 500px) {
+.team  {
+    height: 230vh;
+}
+}
 .testimonials-section {
     padding: 80px 10%;
     background-color: #f4f4f4;
