@@ -319,13 +319,28 @@ nav .follow .icon i:hover {
 .active {
     color: #636367;
 }
+@media all and (min-width: 1000px) {
+    section.hero {
 
-section.hero {
+        top: 0;
+   max-height: 100vh;
+}
+}
+@media all and (max-width: 500px) {
+    .hero-content {
+    top: 10%;
+    left: 20px; /* Adjust left position to your preference */
+}
+}
+
+.hero {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 10px 25px 28px rgba(0, 0, 0, 0.3);
-    height: 700px; /* Set the height of the hero section */
+    height: fit-content; /* Set the height of the hero section */
+    top: 70px;
+    background-color: black;
 }
 
 .swiper-container {
@@ -333,10 +348,24 @@ section.hero {
     height: 100%;
 }
 
+.swiper-slide {
+    display: flex; /* Flexbox to center the image */
+    justify-content: center;
+    align-items: center;
+}
+
 .swiper-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Ensures image scales without distortion */
+    max-height: 100%; /* Prevents overflow */
+    object-fit: contain; /* Maintains aspect ratio and ensures image is fully visible */
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+    .swiper-slide img {
+        object-fit: contain; /* Use contain for smaller screens if cropping is an issue */
+    }
 }
 
 .hero-content {
@@ -346,7 +375,7 @@ section.hero {
     transform: translateY(-50%);
     z-index: 10;
     color: white;
-    width: 80%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     max-width: 800px; /* Limit width if necessary */
 }
 
@@ -394,6 +423,7 @@ section.hero {
 .swiper-pagination-bullet {
 	bottom: 500px;
 }
+
 
 
 
