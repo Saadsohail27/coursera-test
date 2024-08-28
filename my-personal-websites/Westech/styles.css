@@ -326,7 +326,13 @@ nav .follow .icon i:hover {
    max-height: 100vh;
 }
 }
-@media all and (max-width: 500px) {
+
+@media all and (max-width: 600px) {
+    div.hero-content h1 {
+    font-size: 4vw
+}
+}
+@media all and (max-width: 768px) {
     div.hero-content {
     top: 15%;
     left: 20px; /* Adjust left position to your preference */
@@ -382,8 +388,8 @@ div.hero-content h1 {
 
 .hero-content {
     position: absolute;
-    top: 50%;
-    left: 60px; /* Adjust left position to your preference */
+    top: 40%;
+    left: 20px; /* Adjust left position to your preference */
     transform: translateY(-50%);
     z-index: 10;
     color: white;
