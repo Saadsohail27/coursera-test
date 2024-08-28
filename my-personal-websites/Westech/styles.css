@@ -327,10 +327,18 @@ nav .follow .icon i:hover {
 }
 }
 @media all and (max-width: 500px) {
-    .hero-content {
-    top: 10%;
+    div.hero-content {
+    top: 15%;
     left: 20px; /* Adjust left position to your preference */
+    font-size: 1.2rem;
 }
+
+div.hero-content button {
+    font-size: 12px;
+    padding: 15px 15px;
+    background-color: transparent;
+}
+
 }
 
 .hero {
