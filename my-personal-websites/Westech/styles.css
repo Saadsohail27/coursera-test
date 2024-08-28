@@ -327,11 +327,7 @@ nav .follow .icon i:hover {
 }
 }
 
-@media all and (max-width: 600px) {
-    div.hero-content h1 {
-    font-size: 4vw
-}
-}
+
 @media all and (max-width: 768px) {
     div.hero-content {
     top: 15%;
