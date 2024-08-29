@@ -754,7 +754,7 @@ form button {
 }
 
 .mywork-section {
-	display: block;
+	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
 	row-gap: 200px;
@@ -777,12 +777,13 @@ form button {
 }
 
 .work-in-progress {
+	display: none;
 	text-align: center;
 	font-size: 24px;
 }
 
 .mywork-container {
-	display: none;
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 }

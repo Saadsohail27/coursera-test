@@ -364,13 +364,27 @@ ul.mobile-nav {
 }
 /* About Us Section */
 
+.team-members hr {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    .about-us, .team-members, .service-cards, .location-info {
+    .about-us, .service-cards, .location-info {
         flex-direction: column;
     }
     .about-text, .team-member, .service-card {
         margin-bottom: 20px;
         text-align: center;
+    }
+}
+
+@media (max-width: 862px) {
+    .team-members {
+        flex-direction: column;
+    }
+
+    .team-members hr {
+        display: block;
     }
 }
 
@@ -480,7 +494,7 @@ nav ul li a:hover {
 
 /* Team Section */
 .team {
-    padding: 80px 10%;
+    padding: 80px 2%;
     text-align: center;
 }
 
@@ -516,7 +530,7 @@ nav ul li a:hover {
 
 /* Testimonials Section */
 .testimonials {
-    padding: 80px 10%;
+    padding: 80px 5%;
     background-color: #f4f4f4;
     text-align: center;
 }
@@ -547,6 +561,11 @@ nav ul li a:hover {
 .testimonial h4 {
     font-size: 20px;
     font-weight: bold;
+}
+
+.testimonials .cta-btn {
+    position: relative;
+    top: 25px;
 }
 
 /* Appointment Section */
@@ -867,11 +886,6 @@ footer {
     text-align: center;
 }
 
-.team-members {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
 
 .team-member {
     flex: 1;
@@ -883,6 +897,8 @@ footer {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 20px;
+    max-width: 332px;
+    max-height: 442px;
 }
 
 .team-member h3 {
