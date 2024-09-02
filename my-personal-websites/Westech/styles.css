@@ -320,7 +320,7 @@ nav .follow .icon i:hover {
     color: #636367;
 }
 @media all and (min-width: 1000px) {
-    section.hero {
+    main.hero {
 
         top: 0;
    max-height: 100vh;
