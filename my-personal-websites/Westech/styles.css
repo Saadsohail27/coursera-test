@@ -712,6 +712,11 @@ div.accordian-content p {
 	justify-content: center;
 	background-color: #EFEFEF;
 }
+
+p.destination {
+    margin: 5px;
+}
+
 .slide-container{
   max-width: 1120px;
   width: 100%;
@@ -782,6 +787,8 @@ div.accordian-content p {
   color: #333;
 }
 .description{
+  margin-top: 7px;
+  margin-bottom: ;
   font-size: 14px;
   color: #707070;
   text-align: center;
