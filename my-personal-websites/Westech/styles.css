@@ -87,6 +87,7 @@ header {
 /* Navbar Styles */
 nav {
     display: flex;
+    transition: all 0.3s ease;
 }
 
 nav ul {
@@ -112,6 +113,99 @@ nav li a {
 
 nav li a:hover {
     color: #C7CBD6;
+}
+
+
+/* Keep links in a row for sticky header when screen width > 1181px */
+@media screen and (min-width: 1181px) {
+    header.header-sticky nav ul {
+        flex-direction: row; /* Links in a row for sticky header */
+    }
+}
+
+/* Keep links in a row for non-sticky header when screen width > 1181px */
+@media screen and (min-width: 1181px) {
+    header:not(.header-sticky) nav ul {
+        flex-direction: row; /* Links in a row for non-sticky header */
+    }
+
+    header:not(.header-sticky) nav li {
+        margin: 10px 20px; /* Restore margin for row layout */
+        width: auto;
+    }
+
+    header:not(.header-sticky) nav li a {
+        padding: 10px;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 1181px) {
+    header.header-sticky nav ul {
+        flex-direction: column; /* Column layout for sticky header */
+        width: 100%;
+    }
+
+    header.header-sticky nav li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    header.header-sticky nav li a {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+    }
+}
+
+
+
+
+/* Original behavior for smaller screens, <= 953px */
+@media screen and (max-width: 953px) {
+    nav {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    nav li a {
+        padding: 15px 0;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media screen and (max-width: 1181px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Sticky header hamburger behavior */
+.header-sticky {
+    padding: 0 10px;
+}
+
+.header-sticky nav ul {
+    flex-direction: column;
 }
 
 .hamburger {
@@ -273,7 +367,7 @@ nav .follow .icon i:hover {
     color: #636367;
 }
 
-@media screen and (max-width: 953px) {
+@media screen and (max-width: 1005px) {
     nav {
         flex-direction: column;
         width: 100%;
@@ -1286,6 +1380,8 @@ footer li {
     section.dental-chairs p {
         padding-right: 20px;
         padding-left: 20px;
+        font-size: 19px;
+        text-align: left;
     }
 }
 
