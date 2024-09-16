@@ -888,7 +888,8 @@ p.destination {
   text-align: center;
 }
 .degrees {
-    font-size: 12px;
+    text-align: center;
+    font-size: 15px;
     color: #666;
     margin: none;
 }
@@ -1714,6 +1715,14 @@ hr {
     max-width: 600px;
     line-height: 35px;
     font-size: 1.4rem;
+    color: #63774e;
+}
+
+@media all and (max-width: 650px) {
+    div.description-of-product p {
+        font-size: 18px;
+        text-align: left;
+    }
 }
 
 @media all and (max-width: 1065px) {
