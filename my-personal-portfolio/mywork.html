@@ -140,6 +140,30 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      // Toggle the menu on click of the hamburger
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+// Close the menu when a nav link is clicked
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
+
+// Close the menu when clicking outside of it
+document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+});
+    </script>
+    <script>
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
 
