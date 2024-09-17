@@ -74,7 +74,7 @@
       <div class="saad-pic-container">
             <img
               class="saad-pic"
-              src="images/saad-picture-2.jpg"
+              src="images/saad-picture-2.webp"
               alt="Picture of Saad"
             />
       </div>
@@ -195,6 +195,40 @@ document.addEventListener("click", (e) => {
         navMenu.classList.remove("active");
     }
 });
+    </script>
+    <script>
+      <script>
+// Handle form submission with AJAX
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent form from submitting the traditional way
+
+    const formData = new FormData(this);  // Collect form data
+
+    fetch('process-form.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json()) // Parse JSON response
+    .then(data => {
+        const messageDiv = document.getElementById("formMessage");
+
+        // Display success or error message
+        if (data.status === "success") {
+            messageDiv.textContent = data.message;
+            messageDiv.style.color = "green";  // Success message in green
+        } else {
+            messageDiv.textContent = data.message;
+            messageDiv.style.color = "red";    // Error message in red
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        const messageDiv = document.getElementById("formMessage");
+        messageDiv.textContent = "An error occurred. Please try again.";
+        messageDiv.style.color = "red";
+    });
+});
+</script>
     </script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>

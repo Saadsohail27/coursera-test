@@ -1,5 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    header('Content-Type: application/json');  // Set content type to JSON
+
     // Collect form data
     $name = htmlspecialchars(trim($_POST['name']));
     $email = htmlspecialchars(trim($_POST['email']));
@@ -28,10 +30,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Message: $message\n";
 
     // Set email headers
-    $headers = "From: $email";
+   $headers = "From: no-reply@yourdomain.com\r\n" .
+           "Reply-To: $email\r\n" .
+           "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    // Use -f parameter to set the return path
+    $parameters = "-f no-reply@yourdomain.com";  // Replace with your actual domain email
 
     // Send email
-    if (mail($to, $subject, $body, $headers)) {
+    if (mail($to, $subject, $body, $headers, $parameters)) {
         echo json_encode(["status" => "success", "message" => "Message sent successfully!"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Message failed to send."]);

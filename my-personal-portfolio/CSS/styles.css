@@ -864,6 +864,7 @@ form button {
  {
 		.hamburger {
 			display: block;
+			z-index: 10000000000000000000;
 		}
 
 		.hamburger.active .bar:nth-child(2) {
@@ -897,6 +898,8 @@ form button {
 
 			 ul.nav-menu {
 				position: fixed;
+				top: 0;
+				margin-top: 0;
 			}
 		}
 
@@ -995,14 +998,35 @@ h3.subheadings {
 	text-align: center;
 }
 
-.message {
-  display: none;
-  padding: 10px;
-  margin-top: 10px;
+#formMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    z-index: 10000000000000000000000000; /* Ensure it appears above other content */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation properties */
 }
-.message.success {
-	 color: green;
+
+#formMessage.success {
+    background-color: #4CAF50; /* Green for success */
 }
-.message.error {
-  color: red;
+
+#formMessage.error {
+    background-color: #f44336; /* Red for error */
+}
+
+#formMessage.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) translateX(0); /* Slide in from left */
+}
+
+#formMessage.hide {
+    transform: translate(-50%, -50%) translateX(-100vw); /* Slide out to the left */
 }
