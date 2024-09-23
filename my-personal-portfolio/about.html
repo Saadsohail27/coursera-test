@@ -211,6 +211,25 @@ document.addEventListener("click", (e) => {
             document.querySelector('.popup-image').style.display = 'none';
          }
 
+         // Show the popup and set the image source
+    document.querySelectorAll('.image-container img').forEach(image => {
+        image.onclick = () => {
+            document.querySelector('.popup-image').style.display = 'block';
+            document.querySelector('.popup-image img').src = image.getAttribute('src');
+        }
+    });
+
+    // Close the popup when clicking the close icon
+    document.querySelector('.popup-image span').onclick = () => {
+        document.querySelector('.popup-image').style.display = 'none';
+    }
+
+    // Close the popup when clicking anywhere outside the image
+    document.querySelector('.popup-image').onclick = (e) => {
+        if (e.target !== document.querySelector('.popup-image img')) {
+            document.querySelector('.popup-image').style.display = 'none';
+        }
+    }
      </script>
 </body>
 

@@ -975,7 +975,7 @@ section.testimonials {
 	font-weight: bolder;
 	color: #fff;
 	cursor: pointer;
-	z-index: 100;
+	z-index: 1000;
 }
 
 .popup-image img {
@@ -990,7 +990,7 @@ section.testimonials {
 
 @media (max-width:768px) {
 	.popup-image img {
-		width: 95%;
+		width: 90%;
 	}
 }
 
