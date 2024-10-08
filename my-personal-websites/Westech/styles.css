@@ -1703,7 +1703,7 @@ hr {
 }
 
 .elite-preview, .classic-preview, .elegence-preview, .mate-preview, .indus-preview, .silk-preview {
-    height: 100vh;
+    height: 105vh;
 }
 
 @media all and (max-width: 1035px) {
@@ -1831,7 +1831,9 @@ hr {
     
 }
 
-
+.cta-container {
+    background-color: #efd5d5;
+}
 
 @media all and (max-width: 764px) {
     .description-of-product {
