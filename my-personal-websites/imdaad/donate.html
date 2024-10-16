@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imdaad Organization - Helping Those in Need</title>
+    <script src="https://kit.fontawesome.com/3bb3ead891.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate</a>
+            <a href="#about">About&nbsp;Us</a>
+            <a href="#about">Gallery</a>
+        </nav>
+        
+        <div class="logo-container">
+            <a href="index.html"><img src="images/imdaad-logo.jpg" alt="Imdaad Logo"></a>
+        </div>
+
+        <nav class="nav-right">
+            <a href="#projects">Projects</a>
+            <a href="#get-involved">Get&nbsp;Involved</a>
+            <a href="#contact">Contact&nbsp;Us</a>
+        </nav>
+    </div>
+</header>
+
+<section class="donations">
+        <h2>Support Imdaad</h2>
+        
+        <!-- Donation Buttons -->
+        <div class="donation-buttons">
+            <button class="donation-button" data-method="sadapay">
+                <img src="images/logos/sadapay-logo.webp" alt="Sadapay" class="donation-icon">
+                <span>SadaPay</span>
+            </button>
+            <button class="donation-button" data-method="jazzcash">
+                <img src="images/logos/jazzcash-logo.png" alt="JazzCash" class="donation-icon">
+                <span>JazzCash</span>
+            </button>
+            <button class="donation-button donation-button-bank" data-method="banktransfer">
+                <i class="fas fa-university"></i>
+                <span>Bank Transfer</span>
+            </button>
+        </div>
+        
+        <!-- Donation Instructions and Confirmation Form -->
+        <div class="donation-content">
+            <!-- Sadapay Instructions -->
+            <div class="donation-method" id="sadapay">
+                <h3>Donate with SadaPay</h3>
+                <div class="donation-instructions">
+                    <p>Follow these steps to donate via SadaPay:</p>
+                    <ol>
+                        <li>Log in to your SadaPay account.</li>
+                        <li>Select the 'Send Money' or 'Transfer' option.</li>
+                        <li>Enter our SadaPay account details below:</li>
+                        <ul>
+                            <li><strong>Account Name:</strong> Imdaad NGO</li>
+                            <li><strong>Account Number:</strong> 9876543210</li>
+                            <li><strong>Branch:</strong> SadaPay Branch</li>
+                        </ul>
+                        <li>Enter the donation amount and complete the transfer.</li>
+                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                    </ol>
+                </div>
+                <form action="confirm_donation.php" method="POST" class="donation-form">
+                    <h4>Confirm Your Donation</h4>
+                    <label for="donor_name_sadapay">Your Name:</label>
+                    <input type="text" id="donor_name_sadapay" name="donor_name" required>
+                    
+                    <label for="donor_email_sadapay">Your Email:</label>
+                    <input type="email" id="donor_email_sadapay" name="donor_email" required>
+                    
+                    <label for="transaction_id_sadapay">Transaction ID:</label>
+                    <input type="text" id="transaction_id_sadapay" name="transaction_id" required>
+                    
+                    <label for="amount_sadapay">Donation Amount (PKR):</label>
+                    <input type="number" id="amount_sadapay" name="amount" min="100" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+            <!-- JazzCash Instructions -->
+            <div class="donation-method" id="jazzcash">
+                <h3>Donate with JazzCash</h3>
+                <div class="donation-instructions">
+                    <p>Follow these steps to donate via JazzCash:</p>
+                    <ol>
+                        <li>Log in to your JazzCash account.</li>
+                        <li>Select the 'Send Money' or 'Transfer' option.</li>
+                        <li>Enter our JazzCash account details below:</li>
+                        <ul>
+                            <li><strong>Account Name:</strong> Imdaad NGO</li>
+                            <li><strong>Account Number:</strong> 1234567890</li>
+                            <li><strong>Branch:</strong> JazzCash Branch</li>
+                        </ul>
+                        <li>Enter the donation amount and complete the transfer.</li>
+                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                    </ol>
+                </div>
+                <form action="confirm_donation.php" method="POST" class="donation-form">
+                    <h4>Confirm Your Donation</h4>
+                    <label for="donor_name_jazzcash">Your Name:</label>
+                    <input type="text" id="donor_name_jazzcash" name="donor_name" required>
+                    
+                    <label for="donor_email_jazzcash">Your Email:</label>
+                    <input type="email" id="donor_email_jazzcash" name="donor_email" required>
+                    
+                    <label for="transaction_id_jazzcash">Transaction ID:</label>
+                    <input type="text" id="transaction_id_jazzcash" name="transaction_id" required>
+                    
+                    <label for="amount_jazzcash">Donation Amount (PKR):</label>
+                    <input type="number" id="amount_jazzcash" name="amount" min="100" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+            <!-- Bank Transfer Instructions -->
+            <div class="donation-method" id="banktransfer">
+                <h3>Donate via Bank Transfer</h3>
+                <div class="donation-instructions">
+                    <p>Follow these steps to donate via Bank Transfer:</p>
+                    <ol>
+                        <li>Log in to your online banking or mobile banking app.</li>
+                        <li>Select the 'Transfer' or 'Send Money' option.</li>
+                        <li>Enter the following details:</li>
+                        <ul>
+                            <li><strong>Account Name:</strong> Imdaad NGO</li>
+                            <li><strong>Account Number:</strong> 1234567890</li>
+                            <li><strong>Branch:</strong> Meezan Bank, [Your Branch Name]</li>
+                            <li><strong>IBAN:</strong> PK00 1234 5678 9012 3456 7890</li>
+                            <li><strong>Swift Code:</strong> MEZNPKKA</li>
+                        </ul>
+                        <li>Enter the donation amount and complete the transfer.</li>
+                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                    </ol>
+                </div>
+                <form action="confirm_donation.php" method="POST" class="donation-form">
+                    <h4>Confirm Your Donation</h4>
+                    <label for="donor_name_bank">Your Name:</label>
+                    <input type="text" id="donor_name_bank" name="donor_name" required>
+                    
+                    <label for="donor_email_bank">Your Email:</label>
+                    <input type="email" id="donor_email_bank" name="donor_email" required>
+                    
+                    <label for="transaction_id_bank">Transaction ID:</label>
+                    <input type="text" id="transaction_id_bank" name="transaction_id" required>
+                    
+                    <label for="amount_bank">Donation Amount (PKR):</label>
+                    <input type="number" id="amount_bank" name="amount" min="100" required>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer>
+    <p>&copy; 2024 Imdaad Organization. All Rights Reserved.</p>
+</footer>
+
+
+
+<script src="js/script.js"></script>
+<script src="js/donation-methods-script.js"></script>
+</body>
+</html>
