@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    background-color: #f3ffb6;
+    background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -188,10 +188,12 @@ p {
     padding: 10px 30px;
 }
 
-
+.stats .container {
+     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Adjust values as needed */
+}
 
 .stats {
-    background-color: #f3ffb6; /* Use the NGO's signature color */
+    background-color: lightblue;
     padding: 40px 0;
     text-align: center;
 }
@@ -202,6 +204,7 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
+
 }
 
 
