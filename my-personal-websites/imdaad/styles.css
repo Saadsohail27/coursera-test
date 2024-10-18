@@ -377,6 +377,121 @@ footer {
     border-radius: 0 0 10px 10px;
 }
 
+/* Footer Container (for 3 columns) */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+/* Left Column Styling */
+.footer-left {
+    flex: 1;
+    padding: 10px;
+}
+
+.footer-left p {
+    display: flex; /* Use flexbox to align text and links in a row */
+    align-items: center; /* Vertically centers the items within the <p> tag */
+    margin: 8px 0; /* Adds vertical spacing between each <p> */
+}
+
+.footer-left a {
+    margin-left: 5px; /* Adds space between the label and the link */
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 300;
+}
+
+.footer-left a:hover {
+    color: #ff4785;
+}
+
+.footer-left .footer-logo {
+    max-width: 200px; /* Adjust logo size */
+    margin-bottom: 15px;
+}
+
+.footer-left p {
+    margin: 5px 0;
+}
+
+/* Middle Column Styling */
+.footer-middle {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-middle h4 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-middle ul li {
+    margin: 8px 0;
+}
+
+.footer-middle ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.footer-middle ul li a:hover {
+    color: #ff4785;
+}
+
+/* Right Column Styling */
+.footer-right {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-right h4 {
+    margin-bottom: 10px;
+}
+
+.footer-right .footer-social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.footer-right .footer-social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-logo {
+        max-width: 150px;
+    }
+}
+
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -819,4 +934,177 @@ footer {
 
 .swiper-pagination-bullet {
     background-color: #fff;
+}
+
+/* Section Styling */
+.your-ideas {
+    padding: 40px 30px;
+    background-color: #fce0f0; /* Soft pink background for a cute feel */
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: flex-start; /* Align content to the top to prevent overlap */
+    text-align: center;
+}
+
+/* Container to manage form layout */
+.ideas-container {
+    max-width: 1000px; /* Maximum width of the form container */
+    width: 100%; /* Ensure it takes up full available width */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content from top */
+    align-items: center;
+    margin: 0 auto; /* Center the form container horizontally */
+}
+
+/* Section Header Styling */
+.your-ideas h2 {
+    font-size: 2rem;
+    color: #8f566e; /* Playful pink color for the header */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Section Description Styling */
+.your-ideas p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Strong emphasis on Call-to-Action Text */
+.your-ideas p strong {
+    color: #ff4785;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Ensure the form groups take full width */
+    text-align: left;
+}
+
+form {
+    width: 100%;
+}
+
+/* Form Inputs Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%; /* Allow input fields to expand to the full width of their parent */
+    max-width: 1000px; /* Constrain width to 1000px */
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 2px solid #ff4785; /* Soft pink border */
+    background-color: #fff7f7; /* Light background to complement the section's theme */
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+/* Focused Input Fields Styling */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: #ff7bb3; /* Darker pink border on focus */
+    outline: none;
+}
+
+/* Textarea Styling */
+textarea {
+    height: 150px;
+    resize: none; /* Disable resizing */
+}
+
+/* Submit Button Styling */
+.send-cta-button {
+    background-color: #ff4785; /* Bright pink background */
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for Submit Button */
+.send-cta-button:hover {
+    background-color: #ff7bb3; /* Lighter pink on hover */
+    transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .your-ideas {
+        padding: 30px 20px;
+    }
+
+    .your-ideas h2 {
+        font-size: 1.8rem;
+    }
+
+    .send-cta-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+.footer-social-icon {
+    width: 30px;  /* Adjust the size here */
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social-icon path {
+    fill: white; /* Initial color */
+}
+
+.footer-social-icon:hover path {
+    fill: #ff4785; /* Change color on hover */
+    transform: scale(1.1); /* Optional hover effect */
+}
+
+/* Add initial styles for the sections to be off-screen */
+.stats,
+.projects,
+.get-involved,
+.your-ideas {
+    opacity: 0;
+    transform: translateX(-100px); /* Move sections off-screen initially */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Animation for form fields */
+.form-group {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Style for button hover */
+.send-cta-button {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Trigger animation on scroll or page load */
+.show {
+    opacity: 1;
+    transform: translateX(0); /* Move the sections and input fields into place */
 }

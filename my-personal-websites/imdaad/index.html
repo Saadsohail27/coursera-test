@@ -66,11 +66,8 @@
     </div>
 </section>
 
-
-
 <section id="projects" class="projects" style="margin-top: 50px;">
     <h2>Our Past Projects</h2>
-
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -103,15 +100,80 @@
         <li>Partner with Us: Other organizations can reach out to us and partner with us to expand our reach and impact.</li>
     </ul>
 
-     <div class="get-involved-buttons">
+    <div class="get-involved-buttons">
         <a href="donate.html"><button class="get-involved-button">Become a Volunteer</button></a>
         <a href="donate.html"><button class="get-involved-button inverted">Partner with Us!</button></a>
+    </div>
+</section>
+
+<section id="yourIdeas" class="your-ideas">
+    <div class="ideas-container">
+        <h2>Share Your Ideas, Shape Our Future!</h2>
+        <p>At Imdaad Organization, we believe the best ideas come from those who care. What do you think we should tackle next? Whether it's a local initiative or a global cause, we want to hear how we can make an even bigger difference together!</p>
+        <p><strong>Submit your ideas and help us create the next big project to uplift those in need. Your voice matters!</strong></p>
+
+        <form action="/submit-idea" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Your Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="idea">Your Idea:</label>
+                <textarea id="idea" name="idea" rows="5" required placeholder="Tell us your idea for our next project!"></textarea>
+            </div>
+
+            <button type="submit" class="send-cta-button">Submit Your Idea</button>
+        </form>
     </div>
 </section>
 
 
 
 <footer>
+    <div class="footer-container">
+        <!-- Left Column: Logo and Contact Information -->
+        <div class="footer-left">
+        <img src="path-to-your-logo.png" alt="Imdaad Organization Logo" class="footer-logo">
+        <p><strong>Contact Us</strong></p>
+        <p><strong>Phone: </strong><a href="tel:+923000000000">+92 0000000000</a></p>
+        <p><strong>Email: </strong><a href="mailto:info@imdaad.org">info@imdaad.org</a></p>
+    </div>
+        
+        <!-- Middle Column: Quick Links -->
+        <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Right Column: Follow Us -->
+        <div class="footer-right">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/_imdaadorganisation/" target="_blank">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!-- SVG Path here -->
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+    <hr>
     <p>&copy; 2024 Imdaad Organization. All Rights Reserved.</p>
 </footer>
 
@@ -119,5 +181,24 @@
 
 <script src="js/script.js"></script>
 <script src="js/swiper-script.js"></script>
+<script>
+    // Detect when the section is in view
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('.stats, .projects, .get-involved, .your-ideas, .form-group, .send-cta-button');
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });  // Trigger animation when 20% of the element is visible
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
 </body>
 </html>
