@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imdaad Organization - Helping Those in Need</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -13,7 +15,7 @@
         <nav class="nav-left">
             <a href="index.html">Home</a>
             <a href="donate.html">Donate</a>
-            <a href="#about">About&nbsp;Us</a>
+            <a href="about.html">About&nbsp;Us</a>
         </nav>
         
         <div class="logo-container">
@@ -23,7 +25,7 @@
         <nav class="nav-right">
             <a href="#projects">Projects</a>
             <a href="#get-involved">Get&nbsp;Involved</a>
-            <a href="#contact">Contact&nbsp;Us</a>
+            <a href="contact.html">Contact&nbsp;Us</a>
         </nav>
     </div>
 </header>
@@ -33,9 +35,9 @@
         <h1>Welcome to Imdaad Organization</h1>
         <p>Imdaad Organization is dedicated to helping those in need through various humanitarian programs and initiatives. Join us in making a difference!</p>
         <div class="button-container">
-            <button class="cta-button">Become a Volunteer</button>
-            <a href="donate.html"><button class="donate-button">Donate Now</button></a>
             <button class="cta-button">Our Projects</button>
+            <a href="donate.html"><button class="donate-button">Donate Now</button></a>
+            <button class="cta-button">Become a Volunteer</button>
         </div>
     </div>
     <div class="image-section">
@@ -64,41 +66,50 @@
     </div>
 </section>
 
-<div id="about" class="about">
-    <h2>About Us</h2>
-    <p>At Imdaad Organization, our mission is to provide aid to those in need. We focus on initiatives that bring real change to communities by addressing basic human needs, such as food, education, and healthcare.</p>
-    <p><strong>Our Vision:</strong> To create a world where every person has access to essential resources.</p>
-    <p><strong>Our Mission:</strong> To serve underprivileged communities by delivering programs that address hunger, education, and healthcare needs.</p>
-</div>
 
-<div id="projects" class="projects">
+
+<section id="projects" class="projects" style="margin-top: 50px;">
     <h2>Our Past Projects</h2>
-    <p>Imdaad Organization is currently running the following initiatives:</p>
-    <ul>
-        <li><strong>Rashan Distribution Program:</strong> Providing food supplies to families in need.</li>
-        <li><strong>Furry Friends:</strong> Food distribution to ensure 200+ animals are fed.</li>
-        <li><strong>Summer Clothing Drive:</strong> We collected over 2000 clothing articles that were carefully packed abd distributed to orphanages and old age homes.</li>
-    </ul>
-    <a href="donate.html"><button class="cta-button">Support a Project</button></a>
-</div>
 
-<div id="get-involved" class="get-involved">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/imdaad-logo-2.jpg" alt="Project 1" style="margin: 0;">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/imdaad-logo-2.jpg" alt="Project 2" style="margin: 0;">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/imdaad-logo-2.jpg" alt="Project 3" style="margin: 0;">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="cta-buttons">
+        <a href="donate.html"><button class="project-cta-button support-project">Support a Project</button></a>
+        <a href="projects.html"><button class="project-cta-button view-projects">View All Projects</button></a>
+    </div>
+</section>
+
+<section id="get-involved" class="get-involved">
     <h2>Get Involved</h2>
     <p>We need your support! Here’s how you can help Imdaad Organization:</p>
     <ul>
         <li>Become a Volunteer: Join our on-ground efforts to help those in need.</li>
         <li>Donate: Every little bit counts! Help us keep our programs running.</li>
-        <li>Partner with Us: Partner with us to expand our reach and impact.</li>
+        <li>Partner with Us: Other organizations can reach out to us and partner with us to expand our reach and impact.</li>
     </ul>
-</div>
 
-<div id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>If you have any questions or want to learn more about our work, feel free to reach out!</p>
-    <p>Email: info@imdaad.org</p>
-    <p>Phone: +92 333 1234567</p>
-    <p>Address: 123, Main Street, Lahore, Pakistan</p>
-</div>
+     <div class="get-involved-buttons">
+        <a href="donate.html"><button class="get-involved-button">Become a Volunteer</button></a>
+        <a href="donate.html"><button class="get-involved-button inverted">Partner with Us!</button></a>
+    </div>
+</section>
+
+
 
 <footer>
     <p>&copy; 2024 Imdaad Organization. All Rights Reserved.</p>
@@ -107,5 +118,6 @@
 
 
 <script src="js/script.js"></script>
+<script src="js/swiper-script.js"></script>
 </body>
 </html>
