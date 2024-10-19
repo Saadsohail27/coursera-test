@@ -372,13 +372,13 @@ p, ul {
 }
 
 main .cta-button {
-    background-color: transparent;
-    color: #015b78;
+    background-color: #FCFAF9;
+    color: #001001;
 }
 
 main .cta-button:hover {
-    color: white;
-    background-color: #008CBA;
+    color: #001001;
+    background-color: #FCFAFF;
 }
 
 /* Footer Styling */
