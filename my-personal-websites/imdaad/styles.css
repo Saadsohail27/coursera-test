@@ -84,11 +84,9 @@ nav {
 }
 
 .logo-container img {
-    width: 120px;
-    height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid white;
+    border: 1px solid #001021;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -302,7 +300,6 @@ main p {
     color: #001021;
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1); /* Create soft shadow */
     border-radius: 8px; /* Optional: rounded corners to complement the shadow */
-    margin-top: 50px;
 }
 
 .get-involved-button {
@@ -366,10 +363,9 @@ main p {
 
 /* Stats section styling */
 .stats {
-    background-color: lightblue;
+    background: linear-gradient(135deg, #685044, #275DAD);
     padding: 40px 0;
     text-align: center;
-    margin-top: 30px;
 }
 
 /* Container for stats items */
@@ -571,11 +567,12 @@ footer {
     text-align: left;
 }
 
-.footer-right .footer-social-icon {
-    width: 40px;
+.footer-social-icon {
+    width: 40px;  /* Adjust the size here */
     height: 40px;
-    transition: transform 0.3s ease;
-    justify-self: flex-start;
+    opacity: 0;  /* Initial opacity set to 0 */
+    transform: translateX(-100px);  /* Move off-screen initially */
+    transition: transform 0.6s ease, opacity 0.6s ease;  /* Smooth transition */
 }
 
 .footer-right .footer-social-icon:hover {
@@ -971,9 +968,13 @@ footer {
     width: 100%;
     margin: 0;
     padding: 20px;
-    background: linear-gradient(135deg, #A8D8F0, #FFFFFF);
+    background: linear-gradient(210deg, #685044, #275DAD);
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+.projects h2 {
+    color: white;
 }
 
 .projects-left {
@@ -1223,11 +1224,7 @@ textarea:focus {
         width: 100%;
     }
 }
-.footer-social-icon {
-    width: 30px;  /* Adjust the size here */
-    height: 30px;
-    transition: transform 0.3s ease;
-}
+
 
 .footer-social-icon path {
     fill: white; /* Initial color */
@@ -1290,4 +1287,8 @@ footer p {
 .show {
     opacity: 1;
     transform: translateX(0); /* Move the sections and input fields into place */
+}
+
+.about h1 {
+    color: #001021;
 }

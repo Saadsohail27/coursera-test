@@ -19,7 +19,7 @@
         </nav>
         
         <div class="logo-container">
-            <a href="index.html"><img src="images/imdaad-logo.jpg" alt="Imdaad Logo"></a>
+            <a href="index.html"><img src="images/imdaad-logo-navbar.jpg" alt="Imdaad Logo"></a>
         </div>
 
         <nav class="nav-right">
@@ -77,7 +77,7 @@
     </div>
 </section>
 
-<section id="projects" class="projects" style="margin-top: 50px;">
+<section id="projects" class="projects">
      <section class="projects-left">
          <h2>Our Past Projects</h2>
          <div class="cta-buttons">
@@ -90,13 +90,13 @@
          <div class="swiper-container">
              <div class="swiper-wrapper">
                  <div class="swiper-slide">
-                     <img src="images/project-images/image-1.png" alt="Project 1" style="margin: 0;">
+                     <img src="images/imdaad-logo-2.jpg" alt="Project 1" style="margin: 0;">
                  </div>
                  <div class="swiper-slide">
-                     <img src="images/project-images/image-2.png" alt="Project 2" style="margin: 0;">
+                     <img src="images/imdaad-logo-2.jpg" alt="Project 2" style="margin: 0;">
                  </div>
                  <div class="swiper-slide">
-                     <img src="images/project-images/image-3.jpeg" alt="Project 3" style="margin: 0;">
+                     <img src="images/imdaad-logo-2.jpg" alt="Project 3" style="margin: 0;">
                  </div>
              </div>
              <!-- Swiper Pagination -->
@@ -249,36 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 </script>
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-    // Select all the footer links and paragraph tags
-    const footerLinks = document.querySelectorAll('footer ul li');
-    const footerParagraphs = document.querySelectorAll('footer p'); // Select footer p tags
-
-    // Combine both NodeLists into a single array
-    const footerElements = [...footerLinks, ...footerParagraphs];
-
-    // Options for the Intersection Observer
-    const observerOptions = {
-        root: null, // Use the viewport as the root
-        threshold: 0.1, // Trigger when 10% of the footer is visible
-    };
-
-    // Create the Intersection Observer
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('footer-slide-in'); // Add class to slide in
-                observer.unobserve(entry.target); // Stop observing after the animation
-            }
-        });
-    }, observerOptions);
-
-    // Observe each footer link and paragraph
-    footerElements.forEach(element => {
-        observer.observe(element);
-    });
-});
-</script>
+<script src="js/footer-script.js"></script>
 </body>
 </html>
