@@ -1266,11 +1266,18 @@ footer ul li {
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* Class to apply when footer links come into view */
+footer p {
+    opacity: 0;
+    transform: translateX(-100px); /* Move the paragraphs off-screen to the left */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Class to apply when footer content comes into view */
 .footer-slide-in {
     opacity: 1;
-    transform: translateX(0); /* Slide the links to their original position */
+    transform: translateX(0); /* Slide the elements to their original position */
 }
+
 
 /* Style for button hover */
 .send-cta-button {

@@ -42,9 +42,9 @@
         <h1>Welcome to Imdaad Organization</h1>
         <p>Imdaad Organization is dedicated to helping those in need through various humanitarian programs and initiatives. Join us in making a difference!</p>
         <div class="button-container">
-            <button class="cta-button">Our Projects</button>
-            <a href="donate.html"><button class="donate-button">Donate Now</button></a>
-            <button class="cta-button">Become a Volunteer</button>
+            <button class="cta-button">Our&nbsp;Projects</button>
+            <a href="donate.html"><button class="donate-button">Donate&nbsp;Now</button></a>
+            <button class="cta-button">Become&nbsp;a&nbsp;Volunteer</button>
         </div>
     </div>
     <div class="image-section">
@@ -250,31 +250,35 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Select all the footer links
-        const footerLinks = document.querySelectorAll('footer ul li');
-        
-        // Options for the Intersection Observer
-        const observerOptions = {
-            root: null, // Use the viewport as the root
-            threshold: 0.1, // Trigger when 10% of the footer is visible
-        };
+   document.addEventListener('DOMContentLoaded', function() {
+    // Select all the footer links and paragraph tags
+    const footerLinks = document.querySelectorAll('footer ul li');
+    const footerParagraphs = document.querySelectorAll('footer p'); // Select footer p tags
 
-        // Create the Intersection Observer
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('footer-slide-in'); // Add class to slide in
-                    observer.unobserve(entry.target); // Stop observing after the animation
-                }
-            });
-        }, observerOptions);
+    // Combine both NodeLists into a single array
+    const footerElements = [...footerLinks, ...footerParagraphs];
 
-        // Observe each footer link
-        footerLinks.forEach(link => {
-            observer.observe(link);
+    // Options for the Intersection Observer
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        threshold: 0.1, // Trigger when 10% of the footer is visible
+    };
+
+    // Create the Intersection Observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('footer-slide-in'); // Add class to slide in
+                observer.unobserve(entry.target); // Stop observing after the animation
+            }
         });
+    }, observerOptions);
+
+    // Observe each footer link and paragraph
+    footerElements.forEach(element => {
+        observer.observe(element);
     });
+});
 </script>
 </body>
 </html>
