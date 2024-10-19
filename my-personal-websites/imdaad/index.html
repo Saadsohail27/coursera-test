@@ -30,6 +30,13 @@
     </div>
 </header>
 
+<section id="hero">
+    
+        <h1>Your trusted platform<br>For helping those in need</h1>
+        <a href="donate.html"><button class="hero-donate-button">Donate Now</button></a>
+    
+</section>
+
 <main id="home">
     <div class="text-section">
         <h1>Welcome to Imdaad Organization</h1>
@@ -71,29 +78,35 @@
 </section>
 
 <section id="projects" class="projects" style="margin-top: 50px;">
-    <h2>Our Past Projects</h2>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="images/imdaad-logo-2.jpg" alt="Project 1" style="margin: 0;">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/imdaad-logo-2.jpg" alt="Project 2" style="margin: 0;">
-            </div>
-            <div class="swiper-slide">
-                <img src="images/imdaad-logo-2.jpg" alt="Project 3" style="margin: 0;">
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
+     <section class="projects-left">
+         <h2>Our Past Projects</h2>
+         <div class="cta-buttons">
+             <a href="donate.html"><button class="project-cta-button support-project">Support a Project</button></a>
+             <a href="projects.html"><button class="project-cta-button view-projects">View All Projects</button></a>
+         </div>
+     </section>
 
-    <div class="cta-buttons">
-        <a href="donate.html"><button class="project-cta-button support-project">Support a Project</button></a>
-        <a href="projects.html"><button class="project-cta-button view-projects">View All Projects</button></a>
-    </div>
-</section>
+     <section class="projects-right">
+         <div class="swiper-container">
+             <div class="swiper-wrapper">
+                 <div class="swiper-slide">
+                     <img src="images/project-images/image-1.png" alt="Project 1" style="margin: 0;">
+                 </div>
+                 <div class="swiper-slide">
+                     <img src="images/project-images/image-2.png" alt="Project 2" style="margin: 0;">
+                 </div>
+                 <div class="swiper-slide">
+                     <img src="images/project-images/image-3.jpeg" alt="Project 3" style="margin: 0;">
+                 </div>
+             </div>
+             <!-- Swiper Pagination -->
+             <div class="swiper-pagination"></div>
+             <!-- Swiper Navigation -->
+             <div class="swiper-button-next"></div>
+             <div class="swiper-button-prev"></div>
+         </div>
+     </section>
+ </section>
 
 <section id="get-involved" class="get-involved">
     <h2>Get Involved</h2>
@@ -211,6 +224,57 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(section);
     });
 });
+</script>
+<script>
+     // Function to observe when sections enter the viewport
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.stats, .projects, .get-involved, .your-ideas');
+        
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            threshold: 0.1, // Trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in'); // Add fade-in class
+                    observer.unobserve(entry.target); // Stop observing after fade-in
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section); // Observe each section
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all the footer links
+        const footerLinks = document.querySelectorAll('footer ul li');
+        
+        // Options for the Intersection Observer
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            threshold: 0.1, // Trigger when 10% of the footer is visible
+        };
+
+        // Create the Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('footer-slide-in'); // Add class to slide in
+                    observer.unobserve(entry.target); // Stop observing after the animation
+                }
+            });
+        }, observerOptions);
+
+        // Observe each footer link
+        footerLinks.forEach(link => {
+            observer.observe(link);
+        });
+    });
 </script>
 </body>
 </html>
