@@ -1292,3 +1292,111 @@ footer p {
 .about h1 {
     color: #001021;
 }
+
+.involved-section {
+    margin: 40px 20px;
+    padding: 20px;
+    background-color: #DCC8A8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.get-involved-title {
+    text-align: center;
+    color: #FCFAF9;
+}
+
+.involved-section h2 {
+    font-size: 28px;
+    color: #001021;
+}
+
+.involved-section p {
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+    color: #001021;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #685044;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #020e1a;
+}
+
+.form-container {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FCFAF9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Hide forms by default */
+.hidden {
+    display: none;
+}
+
+.form-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #001021;
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    font-size: 16px;
+    color: #001021;
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #DCC8A8;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #F5F3EE;
+    color: #001021;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    outline: none;
+    border-color: #685044;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: #685044;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #020e1a;
+}
+
+/* Hide the dynamic form fields initially */
+#volunteers-number, #financial-amount {
+    display: none;
+}

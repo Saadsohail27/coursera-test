@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imdaad Organization - Helping Those in Need</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body style="background-color: #593434;">
+
+<header>
+    <div class="nav-container">
+        <nav class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="donate.html">Donate</a>
+            <a href="about.html">About&nbsp;Us</a>
+        </nav>
+        
+        <div class="logo-container">
+            <a href="index.html"><img src="images/imdaad-logo-navbar.jpg" alt="Imdaad Logo"></a>
+        </div>
+
+        <nav class="nav-right">
+            <a href="projects.html">Projects</a>
+            <a href="get-involved.html">Get&nbsp;Involved</a>
+            <a href="contact.html">Contact&nbsp;Us</a>
+        </nav>
+    </div>
+</header>
+
+    <h1 class="get-involved-title">Get invloved in making a positive impact in society</h1>
+
+
+
+<section id="volunteer" class="involved-section">
+    <h2>1. Volunteer Your Time</h2>
+    <p>Join us in creating positive change by becoming a volunteer. Your time and skills are invaluable in helping us make a difference in the lives of those in need.</p>
+    <a href="#volunteer-form" class="button" id="volunteer-btn">Sign Up as a Volunteer</a>
+</section>
+
+<section id="partner-with-us" class="involved-section">
+    <h2>2. Partner with Us</h2>
+    <p>We work with businesses, NGOs, and institutions to broaden our reach and impact. Together, we can achieve more. Join us as a partner to contribute to our cause.</p>
+    <a href="#partner-form" class="button" id="partner-btn">Partner With Us</a>
+</section>
+
+<section class="involved-section">
+    <h2>3. Donate to Support Our Cause</h2>
+    <p>Your donations help fund our programs and provide essential resources to communities in need. Every donation counts!</p>
+    <a href="donate.html" class="button">Donate Now</a>
+</section>
+
+    <!-- Volunteer Form -->
+<section id="volunteer-form" class="form-container hidden">
+    <h2>Volunteer Signup Form</h2>
+
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="age">Your Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="phone">Your Phone Number (WhatsApp):</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="event">Which event are you willing to volunteer for?</label>
+    <input type="text" id="event" name="event" required>
+
+    <label>Are you willing to help in future events organized by Imdaad?</label>
+    <select id="future-volunteer" name="future-volunteer" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label>I confirm my presence that I will arrive at the specified location on the time and day specified by Imdaad:</label>
+    <select id="confirmation" name="confirmation" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="yes">Yes</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</section>
+
+<!-- Partner Form -->
+<section id="partner-form" class="form-container hidden">
+    <h2>Partnership Form</h2>
+
+    <label for="org-name">Organization Name:</label>
+    <input type="text" id="org-name" name="org-name" required>
+
+    <label for="established">When was this organization established?</label>
+    <input type="text" id="established" name="established" required>
+
+    <label>How are you willing to help us?</label>
+    <select id="help-option" name="help-option" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="volunteers">Provide Volunteers</option>
+        <option value="financial">Provide Financial Aid</option>
+    </select>
+
+    <div id="volunteers-number">
+        <label for="volunteers">How many volunteers can you provide?</label>
+        <input type="number" id="volunteers" name="volunteers">
+    </div>
+
+    <div id="financial-amount">
+        <label for="financial">How much money are you willing to contribute (PKR)?</label>
+        <input type="number" id="financial" name="financial">
+    </div>
+
+    <label for="owner-phone">Owner's Phone Number (WhatsApp):</label>
+    <input type="tel" id="owner-phone" name="owner-phone" required>
+
+    <label for="org-email">Organization's Email (Or the Email of the person filling out this form):</label>
+    <input type="email" id="org-email" name="org-email" required>
+
+    <button type="submit">Submit</button>
+</section>
+
+
+<footer>
+    <div class="footer-container">
+        <!-- Left Column: Logo and Contact Information -->
+        <div class="footer-left">
+        <img src="images/imdaad-logo-2.jpg" alt="Imdaad Organization Logo" class="footer-logo">
+        <p><strong>Contact Us</strong></p>
+        <p><strong>Phone: </strong><a href="tel:+923264467474">+92 3264467474</a></p>
+        <p><strong>Email: </strong><a href="mailto:info@imdaad.org">info@imdaad.org</a></p>
+    </div>
+        
+        <!-- Middle Column: Quick Links -->
+        <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="get-involved.html">Get Involved</a></li>
+                <li><a href="team-members.html">Our Team Members</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        
+        <!-- Right Column: Follow Us -->
+        <div class="footer-right">
+            <h4>Follow Us</h4>
+            <a href="https://www.instagram.com/_imdaadorganisation/" target="_blank">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!-- SVG Path here -->
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+    <hr>
+    <p>&copy; 2024 Imdaad Organization. All Rights Reserved.</p>
+</footer>
+
+
+
+<script src="js/script.js"></script>
+<script src="get-involved-forms.js"></script>
+<script src="js/footer-script.js"></script>
+</body>
+</html>
