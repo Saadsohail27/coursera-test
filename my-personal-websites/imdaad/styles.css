@@ -299,7 +299,6 @@ main p {
     background-color: #DCC8A8;
     color: #001021;
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1); /* Create soft shadow */
-    border-radius: 8px; /* Optional: rounded corners to complement the shadow */
 }
 
 .get-involved-button {
@@ -970,7 +969,6 @@ footer {
     padding: 20px;
     background: linear-gradient(210deg, #685044, #275DAD);
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
 }
 
 .projects h2 {
