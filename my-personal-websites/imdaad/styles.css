@@ -578,6 +578,20 @@ footer {
     transform: scale(1.1);
 }
 
+.projects-header-social-icon {
+    width: 40px;  /* Adjust the size here */
+    height: 40px;
+}
+
+
+.projects-header-social-icon path {
+    fill: white; /* Initial color */
+}
+
+.projects-header-social-icon:hover path {
+    fill: #ff4785; /* Change color on hover */
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .footer-container {
@@ -985,7 +999,7 @@ footer {
 /* Swiper Container */
 .swiper-container {
     max-width: 400px;    /* Fixed width */
-    max-height: 400px;   /* Fixed height */
+    max-height: 600px;   /* Fixed height */
     width: 100%;         /* Allow it to be responsive */
     height: 100%;        /* Allow it to scale within its parent container */
     overflow: hidden;
@@ -998,6 +1012,22 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Enables absolute positioning for the text */
+}
+
+.image-text {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a background for readability */
+    padding: 10px 20px; /* Optional: Add padding around the text */
+    border-radius: 10px; /* Optional: Rounded corners for the text background */
 }
 
 /* Swiper Images */
@@ -1020,7 +1050,7 @@ footer {
     z-index: 100;
 }
 
-.projects .project-cta-button {
+.project-cta-button {
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 12px 24px;
@@ -1036,13 +1066,13 @@ footer {
 }
 
 /* Inverted colors for 'Support a Project' button */
-.projects a button.support-project {
+a button.support-project {
     background-color: #f0f0f0;
     color: black;
     border: 2px solid black;
 }
 
-.projects a button.support-project:hover {
+a button.support-project:hover {
     background-color: black;
     color: #f0f0f0;
 }
@@ -1397,4 +1427,194 @@ footer p {
 /* Hide the dynamic form fields initially */
 #volunteers-number, #financial-amount {
     display: none;
+}
+
+/* General layout */
+.projects-intro {
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+    background-color: rgba(0, 16, 2, 0.9); /* Dark background for intro */
+}
+
+.projects-intro p {
+    color: #FCFAF9;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.projects-intro p.projects-subheading {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.projects-intro p {
+    color: #FCFAF9;
+}
+
+/* Flex container for project sections */
+.project-container {
+    display: flex;
+    flex-direction: row; /* Default to row layout */
+    align-items: center; /* Center align items vertically */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Project section styling */
+.project-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: fit-content;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative; /* Needed for child elements */
+    overflow: hidden;
+    transition: background-position 0.5s; /* Smooth transition for the background */
+}
+
+/* Alternating background colors */
+
+.project-section:nth-child(odd)::before {
+    background-color: #e0f7fa;
+}
+
+.project-section:nth-child(odd) {
+    background-color: rgba(224, 247, 250, 1); /* Light blue */
+}
+
+.project-section:nth-child(even)::before {
+    background-color: #ffe0b2;
+}
+
+.project-section:nth-child(even) {
+    background-color: rgba(255, 224, 178, 1); /* Light orange */
+}
+
+/* Overlay for contrast */
+.project-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1; /* Keeps it behind the content */
+    transition: transform 0.3s ease; /* Smooth parallax effect */
+}
+
+/* Common styling for the project reel */
+.project-reel {
+    max-width: 400px; /* Limit max width for the video */
+    margin-right: 15px; /* Space between video and info */
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Project info styling */
+.project-info {
+    display: flex;
+    flex-direction: column; /* Stack title and impact vertically */
+}
+
+/* Project details and impact */
+.project-details,
+.project-impact {
+    width: 100%; /* Set to full width */
+    max-width: 400px; /* Adjust as necessary */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for details */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0; /* Reduced margin for consistent spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Styles for video aspect ratios */
+.reel-video-landscape {
+    aspect-ratio: 16 / 9; /* Aspect ratio for landscape videos */
+}
+
+.reel-video-portrait {
+    aspect-ratio: 9 / 16; /* Aspect ratio for portrait videos */
+}
+
+.reel-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .project-section {
+        padding: 40px 10px;
+    }
+
+    .project-reel,
+    .project-details,
+    .project-impact {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 100%; /* Remove max width */
+    }
+
+    .project-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center; /* Center items */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-details h2, .project-impact h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Alternating layout for odd/even projects */
+.project-section:nth-child(odd) {
+    flex-direction: row; /* Title and impact on the left */
+}
+
+.project-section:nth-child(even) {
+    flex-direction: row-reverse; /* Title and impact on the right */
+}
+
+/* Add consistent spacing between video and info for all projects */
+.project-reel, .project-info {
+    margin-top: 20px; /* Adjust this value for desired spacing */
+}
+
+.projects-cta {
+    background: linear-gradient(210deg, #685044, #275DAD);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.projects-cta h2 {
+    color: #FCFAF9;
+}
+
+.projects-cta p {
+    color: #FCFAF9;
+}
+
+.projects-cta button {
+    background-color: black;
+    color: #F0F0F0;
+    margin: 0 20px;
+}
+
+.cta-project-buttons {
+    display: flex;
+    justify-content: center;
 }
