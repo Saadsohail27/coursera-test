@@ -107,11 +107,7 @@ nav a:hover {
 
 /* Responsive Layout for Small Screens */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    
     nav {
         justify-content: center;
         margin: 10px 0;
@@ -1617,4 +1613,221 @@ footer p {
 .cta-project-buttons {
     display: flex;
     justify-content: center;
+}
+
+header .medium-screen-nav {
+    display: none;
+}
+
+.mobile-screen-nav {
+        display: none;
+    }
+
+@media all and (max-width: 1106px) {
+
+    .mobile-screen-nav {
+        display: none;
+    }
+
+    header .medium-screen-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    header .nav-left, header .nav-right, .logo-container {
+        display: none;
+    }
+
+    nav.medium-screen-nav a.medium-screen-nav-logo img {
+        border: 1px solid black;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.medium-screen-nav a.medium-screen-nav-logo:hover {
+        background-color: transparent; /* Remove the hover background */
+    }
+
+
+}
+
+
+/* Hide mobile menu links by default */
+.mobile-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px; /* Adjust based on header height */
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+
+/* Hamburger icon styling */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    margin-right: 40px;
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+/* Show the mobile links when active */
+.mobile-links.active {
+    display: flex;
+}
+
+@media all and (max-width: 1013px) {
+    /* Hide medium-screen nav */
+    header .medium-screen-nav {
+        display: none;
+    }
+
+    /* Show mobile-screen nav */
+    .mobile-screen-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Center the logo */
+    .mobile-screen-nav-logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Mobile logo styling */
+    .mobile-screen-nav-logo img {
+        border: 1px solid black;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hamburger icon styling */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    margin-right: 20px; /* Aligns to the right */
+    position: absolute;
+    right: 20px;
+    z-index: 1001; /* Ensures it stays on top of other elements */
+}
+
+.hamburger-icon span {
+    display: block;
+    width: 25px; /* Equal width for all bars */
+    height: 3px;
+    background-color: #333;
+    border-radius: 3px;
+    transition: 0.3s ease; /* Smooth transition */
+}
+
+/* Active class to form an "X" */
+.hamburger-icon.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-icon.active span:nth-child(2) {
+    opacity: 0; /* Middle bar hidden */
+}
+
+.hamburger-icon.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+    /* Hide mobile menu links by default */
+    .mobile-links {
+    display: flex; /* Ensure the container is a flex container */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 40px; /* Adjust based on header height */
+    background-color: #EEE7D4; /* Change background color */
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 0; /* Start hidden */
+    overflow: hidden; /* Hide overflow */
+    transition: max-height 0.5s ease; /* Smooth transition for height */
+}
+
+    /* Show mobile links when active */
+    .mobile-links.active {
+        display: flex;
+        position: absolute;
+        top: 40px;
+        background-color: #EEE7D4;
+        max-height: 500px; /* Set this value to accommodate all links */
+    }
+
+    /* Mobile links styling */
+    .mobile-links a {
+        text-align: left; /* Align links to the left */
+        padding: 10px 15px; /* Add padding for better clickability */
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .mobile-links a:hover {
+        background-color: #e7dec8; /* Hover color */
+    }
+}
+
+.mobile-nav-donate-button {
+    background-color: black;
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 10px 0; /* Add some vertical spacing */
+}
+div.donate-instagram-links{
+    align-self: center; /* Center the button in its row */
+}
+
+a.mobile-nav-donate-link:hover {
+    background-color: transparent;
+}
+.mobile-nav-donate-button:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-header-social-icon {
+    width: 40px;  /* Adjust the size here */
+    height: 40px;
+    position: relative;
+    top: 12px;
+}
+
+
+.mobile-header-social-icon path {
+    fill: black; /* Initial color */
+}
+
+.mobile-header-social-icon:hover path {
+    fill: #ff4785; /* Change color on hover */
+}
+
+a.mobile-header-social-icon-link:hover {
+    background-color: transparent;
 }
