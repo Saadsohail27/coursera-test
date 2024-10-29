@@ -1,17 +1,35 @@
-var swiper = new Swiper('.swiper-container', {
-    loop: true, // Enables continuous loop mode
-    slidesPerView: 1, // Shows one slide at a time
-    spaceBetween: 30, // Space between slides (optional)
+const swiper = new Swiper('.swiper-container', {
+    // Basic Swiper configuration
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
     pagination: {
         el: '.swiper-pagination',
-        clickable: true, // Make pagination bullets clickable
+        clickable: true,
     },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    autoplay: {
-        delay: 3000, // Auto slide every 3 seconds
-        disableOnInteraction: false, // Keep autoplay running on interaction
-    },
 });
+
+// Pause autoplay initially
+swiper.autoplay.stop();
+
+// IntersectionObserver to start autoplay when in viewport
+const swiperContainer = document.querySelector('.swiper-container');
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            swiper.autoplay.start(); // Start autoplay when visible
+            observer.unobserve(swiperContainer); // Stop observing
+        }
+    });
+}, { threshold: 0.5 }); // Adjust threshold as needed
+
+// Observe the Swiper container
+observer.observe(swiperContainer);
