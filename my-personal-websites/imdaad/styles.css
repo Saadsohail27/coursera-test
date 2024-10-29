@@ -482,6 +482,23 @@ footer {
     padding-bottom: 20px;
 }
 
+@media all and (max-width: 879px){
+
+    .footer-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    div.footer-left, div.footer-middle, div.footer-right {
+        justify-self: flex-start;
+    }
+
+    svg.footer-social-icon {
+        transform: translateX(0);
+    }
+
+
+}
+
 /* Left Column Styling */
 .footer-left {
     flex: 1;
@@ -615,7 +632,6 @@ footer {
 
     nav a {
         padding: 10px 14px;
-        font-size: 14px;
     }
 
     .cta-button {
@@ -1663,6 +1679,8 @@ header .medium-screen-nav {
     left: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Allows scrolling if content overflows */
 }
 
 
@@ -1772,7 +1790,7 @@ header .medium-screen-nav {
         position: absolute;
         top: 40px;
         background-color: #EEE7D4;
-        max-height: 500px; /* Set this value to accommodate all links */
+        max-height: 650px; /* Set this value to accommodate all links */
     }
 
     /* Mobile links styling */
@@ -1782,6 +1800,7 @@ header .medium-screen-nav {
         color: black;
         text-decoration: none;
         font-weight: bold;
+        font-size: 1rem;
         margin-bottom: 5px;
     }
 
@@ -1803,6 +1822,7 @@ header .medium-screen-nav {
 }
 div.donate-instagram-links{
     align-self: center; /* Center the button in its row */
+    justify-self: flex-end;
 }
 
 a.mobile-nav-donate-link:hover {
@@ -1830,4 +1850,39 @@ a.mobile-nav-donate-link:hover {
 
 a.mobile-header-social-icon-link:hover {
     background-color: transparent;
+}
+
+.projects h2.mobile-screen-size {
+    display: none;
+}
+
+.projects .mobile-screen-size-buttons {
+    display: none;
+}
+
+@media all and (max-width: 985px) {
+    .projects {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .projects h2.normal-screen-size {
+        display: none;
+    }
+
+    .projects h2.mobile-screen-size {
+        display: block;
+    }
+
+    .projects .normal-screen-size-buttons {
+        display: none;
+    }
+
+    .projects .mobile-screen-size-buttons {
+        display: block;
+    }
+
+    .projects .swiper-container {
+        top: -200px;
+    }
 }
