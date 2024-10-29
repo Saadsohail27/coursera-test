@@ -168,6 +168,12 @@ nav a:hover {
     align-self: center;
 }
 
+@media all and (max-width: 480px) {
+    #hero h1 {
+        font-size: 7vw; /* Updated font size */
+    }
+}
+
 
 
 .hero-donate-button {
@@ -229,6 +235,18 @@ h1 {
     color: #fff;
 }
 
+@media all and (max-width: 570px) {
+    h1 {
+        font-size: 6vw; /* Updated font size */
+    }
+}
+
+@media all and (max-width: 510px) {
+    h1 {
+        font-size: 24px; /* Updated font size */
+    }
+}
+
 main p {
     color: #fff;
     margin-bottom: 20px;
@@ -240,6 +258,35 @@ main p {
     display: flex;
     gap: 20px; /* Space between buttons */
 }
+
+@media all and (max-width: 839px) {
+    main {
+        flex-direction: column-reverse;
+        height: fit-content;
+    }
+
+    .text-section {
+        align-self: center;
+        max-width: 100%;
+    }
+
+    .button-container {
+        top: 0;
+        margin-top: 80px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-section {
+        display: none;
+    }
+
+    .projects-right {
+        width: 100%;
+        justify-self: center;
+    }
+}
+
 
 /* Image Section Styles */
 .image-section {
@@ -365,11 +412,36 @@ main p {
 
 /* Container for stats items */
 .container {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+}
+
+.container img {
+        width: 70px;
+        height: 70px;
+    }
+
+@media all and (max-width: 920px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width: 450px) {
+    .container p {
+        font-size: 4vw;
+    }
+
+    .container p span {
+        font-size: 6vw;
+    }
+
+    .container img {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 /* Styling for each stat item */
@@ -1879,10 +1951,23 @@ a.mobile-header-social-icon-link:hover {
     }
 
     .projects .mobile-screen-size-buttons {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        position: relative;
+        top: -100px;
+    }
+
+    .projects .mobile-screen-size-buttons a button {
+        margin-bottom: 20px;
     }
 
     .projects .swiper-container {
         top: -200px;
+    }
+
+    .projects-right {
+        display: flex;
+        justify-content: center;
     }
 }
