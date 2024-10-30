@@ -1611,6 +1611,10 @@ div.project-section:nth-child(even) {
     flex-direction: column; /* Title and impact on the right */
 }
 
+div.project-reel {
+    margin-right: 0; /* Space between video and info */
+}
+
 }
 
 /* Overlay for contrast */
