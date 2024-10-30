@@ -168,11 +168,33 @@ nav a:hover {
     align-self: center;
 }
 
-@media all and (max-width: 480px) {
+@media all and (max-width: 490px) {
+    #hero {
+        height: 45vh;
+        grid-template-rows: repeat(2, 1fr);
+        align-items: center;
+    }
+
     #hero h1 {
-        font-size: 7vw; /* Updated font size */
+        font-size: 5vw; /* Updated font size */
+    }
+
+    button.hero-donate-button {
+        font-size: 14px;
+        padding: 7px 15px;
+        position: relative;
+        top: -70px;
+    }
+
+}
+
+@media all and (max-width: 400px) {
+    button.hero-donate-button {
+        font-size: 3.7vw;
+        padding: 7px 15px;
     }
 }
+
 
 
 
