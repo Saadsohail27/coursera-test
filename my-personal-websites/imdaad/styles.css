@@ -1598,6 +1598,21 @@ footer p {
     background-color: rgba(255, 224, 178, 1); /* Light orange */
 }
 
+@media all and (max-width: 845px) {
+    div.project-section {
+        flex-direction: column;
+    }
+
+    div.project-section:nth-child(odd) {
+    flex-direction: column; /* Title and impact on the left */
+}
+
+div.project-section:nth-child(even) {
+    flex-direction: column; /* Title and impact on the right */
+}
+
+}
+
 /* Overlay for contrast */
 .project-section::before {
     content: "";
