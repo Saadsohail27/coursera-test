@@ -1615,6 +1615,29 @@ div.project-reel {
     margin-right: 0; /* Space between video and info */
 }
 
+.cta-project-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+section.projects-cta {
+    height: 70vh;
+}
+
+section.projects-cta p {
+    margin-bottom: 20px;
+}
+.projects-cta .cta-project-buttons button {
+    margin-bottom: 30px;
+}
+
+}
+
+@media all and (max-width: 456px) {
+    section.projects-cta {
+    height: 90vh;
+}
 }
 
 /* Overlay for contrast */
