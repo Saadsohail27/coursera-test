@@ -1864,6 +1864,10 @@ header .medium-screen-nav {
         transform: translateX(-50%);
     }
 
+    .mobile-screen-nav-logo:hover {
+        background-color: transparent;
+    }
+
     /* Mobile logo styling */
     .mobile-screen-nav-logo img {
         border: 1px solid black;
@@ -2033,5 +2037,75 @@ a.mobile-header-social-icon-link:hover {
     .projects-right {
         display: flex;
         justify-content: center;
+    }
+}
+
+.team-section {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Section heading styling */
+.department-heading {
+    font-size: 2em;
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #2d2d2d;
+}
+
+/* Grid layout for team cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Card styling */
+.team-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 200px;
+    width: 100%;
+}
+
+/* Image styling */
+.team-image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #f3ffb6;
+}
+
+/* Name styling */
+.team-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #2d2d2d;
+}
+
+/* Hover effects */
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .department-heading {
+        font-size: 1.8em;
+    }
+
+    .team-card {
+        padding: 15px;
+    }
+
+    .team-name {
+        font-size: 1em;
     }
 }
