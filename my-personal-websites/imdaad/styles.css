@@ -2077,7 +2077,8 @@ a.mobile-header-social-icon-link:hover {
 .team-image {
     width: 100%;
     height: auto;
-    border-radius: 50%;
+    object-fit: contain; /* or "cover" for a cropped effect */
+    border-radius: 4px;
     margin-bottom: 15px;
     border: 3px solid #f3ffb6;
 }
