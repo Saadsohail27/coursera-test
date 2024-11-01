@@ -1073,11 +1073,19 @@ footer {
     }
     
     .donation-button {
-        width: 200px;
+        width: 400px;
     }
     
     .donation-method {
         padding: 20px;
+    }
+}
+
+@media all and (max-width: 460px) {
+    .donation-button {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
