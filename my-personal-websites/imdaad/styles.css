@@ -966,7 +966,9 @@ footer {
 
 .donation-icon {
     margin-bottom: 10px;
+    width: 100%;
 }
+
 
 .fa-university {
     font-size: 6rem;
