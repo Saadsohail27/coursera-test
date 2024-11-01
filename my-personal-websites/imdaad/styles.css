@@ -1363,6 +1363,11 @@ textarea:focus {
         gap: 0;
     }
 
+
+    .share-your-idea {
+        margin-top: 20px;
+    }
+
     .form-left, .form-right {
         flex: 1;
         width: 100%;
@@ -1400,6 +1405,8 @@ textarea:focus {
     transform: translateX(-100px);
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
+
+
 
 footer ul li {
     opacity: 0;
