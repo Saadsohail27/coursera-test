@@ -520,6 +520,10 @@ h2::after {
     bottom: -10px;
 }
 
+h2.department-heading::after {
+    content: none;
+}
+
 p, ul {
     font-size: 1rem;
     margin-bottom: 20px;
@@ -2059,7 +2063,6 @@ a.mobile-header-social-icon-link:hover {
 
 .team-section {
     width: 100%;
-    max-width: 1200px;
 }
 
 /* Section heading styling */
@@ -2072,6 +2075,7 @@ a.mobile-header-social-icon-link:hover {
 
 /* Grid layout for team cards */
 .team-grid {
+    margin-bottom: 250px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
