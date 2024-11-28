@@ -1,0 +1,369 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif; /* Modern, sleek font */
+  background-color: #1A1A1A; /* Dark theme background */
+  color: #D3D3D3; /* Light gray text color */
+}
+
+
+a {
+  text-decoration: none;
+  color: #C0C0C0; /* Silver text color */
+}
+
+h1, h2, h3 {
+  color: #FFFFFF; /* White for headings */
+  font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Desktop Navbar */
+.desktop-nav {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.desktop-nav li {
+  display: inline;
+}
+
+.desktop-nav li a {
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.desktop-nav li a:hover {
+  color: #FF0000;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001; /* Ensure hamburger stays on top */
+}
+
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  margin: 3.5px 0;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  /* Hide the desktop navbar and show hamburger */
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile Navbar */
+  .navbar-mobile {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000; /* Make navbar-mobile appear below hamburger */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar-mobile.open {
+    display: flex; /* Show the menu when it's opened */
+    right: 0; /* Slide in the menu */
+  }
+
+  .navbar-mobile ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar-mobile li {
+    padding: 15px;
+    text-align: center;
+  }
+
+  .navbar-mobile a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Add a transition effect for hover */
+  }
+
+  .navbar-mobile a:hover {
+  color: #FF0000; /* Change the color on hover (same as desktop) */
+}
+
+  /* Hamburger Animation for "X" */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg); /* Rotate the first span */
+    position: relative;
+    top: 11px; /* Adjust position */
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle span */
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg); /* Rotate the third span */
+    position: relative;
+    top: -11px; /* Adjust position */
+  }
+}
+
+/* Desktop Styles - Ensure navbar-mobile is hidden on larger screens */
+@media (min-width: 769px) {
+  .navbar-mobile {
+    display: none !important; /* Forcefully hide navbar-mobile on larger screens */
+  }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh; /* Full-screen height */
+  background-image: url("images/showroom-building/showroom-building.jpg");
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Fixes the image while scrolling */
+  position: relative; /* Makes it easier to overlay elements */
+
+  /* Overlay to darken the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF; /* Ensures text contrast */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensures the overlay is above the background */
+}
+
+.hero-content {
+  position: relative; /* Keeps the text above the overlay */
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds subtle shadow for readability */
+}
+
+@media all and (max-width: 632px) {
+  div.hero-content h1 {
+    font-size: 28px;
+    padding: 0 10px;
+  }
+
+  div.hero-content p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Enhances visibility */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #FF0000; /* Red button for attention */
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+}
+
+.cta-button:hover {
+  background-color: #C0C0C0; /* Silver hover for button */
+  color: #1A1A1A;
+}
+
+/* Inventory Section */
+.inventory {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.car-card {
+  background-color: #1A1A1A;
+  padding: 1rem;
+  border: 2px solid #FF0000; /* Red border for emphasis */
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.car-card img {
+  max-width: 400px;
+  max-height: 250px;
+  height: auto;
+  width: 100%;
+  object-fit: cover;"
+}
+
+.car-card:hover {
+  transform: scale(1.02); /* Slightly larger hover effect for modern vibe */
+}
+
+/* Button Group Styles */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+/* View Details Button */
+.details-button {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: gold;
+  color: black;
+  font-weight: 600;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.details-button:hover {
+  background-color: #C0C0C0; /* Silver hover */
+  color: #1A1A1A;
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background-color: #1EBE54; /* WhatsApp Green */
+  color: #FFFFFF;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #20B958; /* Slightly darker green on hover */
+}
+
+.whatsapp-button i {
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+/* Services Section */
+.services {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media all and (max-width: 734px) {
+  div.service-list {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+
+.service-item {
+  background-color: #1A1A1A;
+  padding: 2rem;
+  border: 2px solid #FF0000;
+  border-radius: 10px;
+  max-width: 200px;
+  text-align: center;
+}
+
+/* About Section */
+.about {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contact {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #111; /* Dark background */
+  color: #D3D3D3; /* Consistent text color */
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.contact iframe {
+  margin-top: 1rem;
+  border: 2px solid #FF0000;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #111;
+  font-size: 0.9rem;
+}

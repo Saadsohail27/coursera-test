@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+	<title>Car World - Premium Car Showroom</title>
+  	<link rel="stylesheet" href="styles.css">
+  	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+  	<script>
+		$(document).ready(function() {
+			// Get the car name from the heading
+			$('.whatsapp-button').each(function() {
+				var carName = $(this).closest('.car-card').find('h3').text(); // Get the car name
+				var message = "I'm%20interested%20in%20the%20" + encodeURIComponent(carName); // Prepare the WhatsApp message
+				$(this).attr('href', function(i, val) {
+					return val.replace(/(?:\?text=)[^\&]*/, '?text=' + message); // Replace the text in the URL
+				});
+			});
+		});
+	</script>
+
+</head>
+<body>
+	 <!-- Header Section -->
+  <header class="navbar">
+  <div class="logo">Car World</div>
+  <nav>
+    <ul class="desktop-nav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#inventory">Cars</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  <!-- Mobile Navigation -->
+  <div class="navbar-mobile">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#inventory">Cars</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Discover Your Next Drive</h1>
+      <p>Experience the finest selection of premium cars at Car World.</p>
+      <a href="#inventory" class="cta-button">Browse Cars</a>
+    </div>
+  </section>
+
+  <!-- Cars Section -->
+<section id="inventory" class="inventory">
+  <h2>Our Featured Cars</h2>
+  <div class="car-grid">
+    <div class="car-card">
+      <img src="images/cars/corolla.jpg" alt="Car 1">
+      <h3>Toyota Corolla Altis 2019 Model</h3>
+      <p>Price: PKR 49,00,000</p>
+      <div>
+        <a href="#" class="details-button">View Details</a>
+        <a href="https://wa.me/923008879799?text=" 
+           class="whatsapp-button" 
+           target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="car-card">
+      <img src="images/cars/civic.jpg" alt="Car 2">
+      <h3>Honda Civic 1.5 RS Turbo 2021 Model</h3>
+      <p>Price: PKR 60,00,000</p>
+      <div>
+        <a href="#" class="details-button">View Details</a>
+        <a href="https://wa.me/923008879799?text=" 
+           class="whatsapp-button" 
+           target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="car-card">
+      <img src="images/cars/sonata.jpg" alt="Car 3">
+      <h3>Hyundai Sonata 2.0 2023 Model</h3>
+      <p>Price: PKR 97,00,000</p>
+      <div>
+        <a href="#" class="details-button">View Details</a>
+        <a href="https://wa.me/923008879799?text=" 
+           class="whatsapp-button" 
+           target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service-item"> 
+        <h3>Car Financing</h3>
+        <p>Flexible loan options to suit your needs.</p>
+      </div>
+      <div class="service-item">
+        <h3>Trade-In</h3>
+        <p>Exchange your old car for your dream ride.</p>
+      </div>
+      <div class="service-item">
+        <h3>Maintenance</h3>
+        <p>Keep your car in top-notch condition.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Car World is a premium car showroom offering the latest models from top brands. Our mission is to provide an exceptional car-buying experience.</p>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact" class="contact">
+  <h2>Contact Us</h2>
+  <p>Email: info@carworld.com | Phone: +92333-456-7890</p>
+  <p>Address: DHA Main Boulevard, Lahore Cantt, Lahore, Pakistan</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212.63518305440067!2d74.37660807048555!3d31.49220512884823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919050066418eb1%3A0x39a695d773df272b!2sCar%20World%20DHA!5e0!3m2!1sen!2s!4v1732762814714!5m2!1sen!2s" 
+    width="100%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Car World. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/responsive-header.js"></script>
+  
+</body>
+</html>
