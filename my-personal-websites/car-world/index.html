@@ -25,7 +25,7 @@
 <body>
 	 <!-- Header Section -->
   <header class="navbar">
-  <div class="logo">Car World</div>
+  <div class="logo"><a href="index.html">Car World</a></div>
   <nav>
     <ul class="desktop-nav">
       <li><a href="#home">Home</a></li>
@@ -51,6 +51,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
+  <div class="navbar-overlay"></div>
 </header>
 
   <!-- Hero Section -->
@@ -136,7 +137,7 @@
   <!-- Contact Section -->
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
-  <p>Email: info@carworld.com | Phone: +92333-456-7890</p>
+  <p>Email: <a href="mailto:sales@carworld.com">sales@carworld.com</a> | <a href="tel:+923008879799">+92 300 8879799</a></p>
   <p>Address: DHA Main Boulevard, Lahore Cantt, Lahore, Pakistan</p>
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212.63518305440067!2d74.37660807048555!3d31.49220512884823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919050066418eb1%3A0x39a695d773df272b!2sCar%20World%20DHA!5e0!3m2!1sen!2s!4v1732762814714!5m2!1sen!2s" 
     width="100%" 
@@ -151,8 +152,39 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 Car World. All rights reserved.</p>
-  </footer>
+    <footer class="footer">
+  <div class="footer-container">
+    <!-- Contact Info Column -->
+    <div class="footer-column">
+      <h3>Contact Info</h3>
+      <p>Phone:&nbsp;</p><a href="tel:+923008879799">+92 300 8879799</a>
+      <p>Email:&nbsp;</p><a href="mailto:sales@carworld.com">sales@carworld.com</a>
+      <p>Address: DHA Main Boulevard, Lahore Cantt</p>
+    </div>
+
+    <!-- Quick Links Column -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#inventory">Cars</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Icons Column -->
+    <div class="footer-column footer-socials">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <p>&copy; 2024 Car World. All rights reserved.</p>
+</footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="js/responsive-header.js"></script>

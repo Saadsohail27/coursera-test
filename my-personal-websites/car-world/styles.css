@@ -32,6 +32,7 @@ h1, h2, h3 {
 .navbar .logo {
   font-size: 1.8rem;
   font-weight: bold;
+  margin-right: auto;
 }
 
 /* Desktop Navbar */
@@ -39,6 +40,7 @@ h1, h2, h3 {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin-left: auto; /* Pushes the navigation to the right */
 }
 
 .desktop-nav li {
@@ -85,8 +87,8 @@ h1, h2, h3 {
   .navbar-mobile {
     position: fixed;
     top: 0;
-    right: -250px; /* Start off-screen */
-    width: 250px;
+    right: -450px; /* Start off-screen */
+    width: 60%;
     height: 100%;
     background-color: #333;
     transition: right 0.3s ease-in-out;
@@ -121,6 +123,25 @@ h1, h2, h3 {
 
   .navbar-mobile a:hover {
   color: #FF0000; /* Change the color on hover (same as desktop) */
+}
+
+/* Overlay Styles */
+.navbar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 999; /* Below the hamburger, above the mobile nav */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar-overlay.open {
+  opacity: 1;
+  visibility: visible;
 }
 
   /* Hamburger Animation for "X" */
@@ -366,4 +387,81 @@ footer {
   padding: 1.5rem 0;
   background-color: #111;
   font-size: 0.9rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  gap: 1.5rem; /* Spacing between columns */
+}
+
+.footer-column {
+  flex: 1; /* Each column takes equal width by default */
+  min-width: 200px; /* Ensures columns don't shrink too much on smaller screens */
+}
+
+.footer-column h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-column p,
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #ff0000; /* Highlight on hover */
+}
+
+.footer-socials .social-icons a {
+  color: #fff;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer-socials .social-icons a:hover {
+  color: #ff0000; /* Highlight social icons on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    flex: none;
+    width: 100%; /* Ensure columns stack vertically */
+  }
+
+  .footer-socials .social-icons a {
+    margin-right: 0.5rem;
+  }
 }
