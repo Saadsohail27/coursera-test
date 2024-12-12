@@ -101,76 +101,80 @@
     <a href="donate.html" class="button">Donate Now</a>
 </section>
 
-    <!-- Volunteer Form -->
-<section id="volunteer-form" class="form-container hidden">
+  <!-- Volunteer Form -->
+<section id="volunteer-form-section" class="form-container hidden">
     <h2>Volunteer Signup Form</h2>
+    <form id="volunteer-form" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" required>
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" name="age" required>
 
-    <label for="age">Your Age:</label>
-    <input type="number" id="age" name="age" required>
+        <label for="phone">Your Phone Number (WhatsApp):</label>
+        <input type="tel" id="phone" name="phone" required>
 
-    <label for="phone">Your Phone Number (WhatsApp):</label>
-    <input type="tel" id="phone" name="phone" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
 
-    <label for="email">Your Email:</label>
-    <input type="email" id="email" name="email" required>
+        <label for="event">Which event are you willing to volunteer for?</label>
+        <input type="text" id="event" name="event" required>
 
-    <label for="event">Which event are you willing to volunteer for?</label>
-    <input type="text" id="event" name="event" required>
+        <label>Are you willing to help in future events organized by Imdaad?</label>
+        <select id="future-volunteer" name="future-volunteer" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
 
-    <label>Are you willing to help in future events organized by Imdaad?</label>
-    <select id="future-volunteer" name="future-volunteer" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-    </select>
+        <label>I confirm my presence that I will arrive at the specified location on the time and day specified by Imdaad:</label>
+        <select id="confirmation" name="confirmation" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes</option>
+        </select>
 
-    <label>I confirm my presence that I will arrive at the specified location on the time and day specified by Imdaad:</label>
-    <select id="confirmation" name="confirmation" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="yes">Yes</option>
-    </select>
-
-    <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
+    </form>
 </section>
 
 <!-- Partner Form -->
-<section id="partner-form" class="form-container hidden">
+<section id="partner-form-section" class="form-container hidden">
     <h2>Partnership Form</h2>
 
-    <label for="org-name">Organization Name:</label>
-    <input type="text" id="org-name" name="org-name" required>
+    <form id="partner-form" action="partner_form_handler.php" method="POST">
+        <label for="org-name">Organization Name:</label>
+        <input type="text" id="org-name" name="org-name" required>
 
-    <label for="established">When was this organization established?</label>
-    <input type="text" id="established" name="established" required>
+        <label for="established">When was this organization established?</label>
+        <input type="month" id="established" name="established" required>
 
-    <label>How are you willing to help us?</label>
-    <select id="help-option" name="help-option" required>
-        <option value="" disabled selected>Select an option</option>
-        <option value="volunteers">Provide Volunteers</option>
-        <option value="financial">Provide Financial Aid</option>
-    </select>
+        <label>How are you willing to help us?</label>
+        <select id="help-option" name="help-option" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="volunteers">Provide Volunteers</option>
+            <option value="financial">Provide Financial Aid</option>
+        </select>
 
-    <div id="volunteers-number">
-        <label for="volunteers">How many volunteers can you provide?</label>
-        <input type="number" id="volunteers" name="volunteers">
-    </div>
+        <div id="volunteers-number" style="display: none;">
+            <label for="volunteers">How many volunteers can you provide?</label>
+            <input type="number" id="volunteers" name="volunteers">
+        </div>
 
-    <div id="financial-amount">
-        <label for="financial">How much money are you willing to contribute (PKR)?</label>
-        <input type="number" id="financial" name="financial">
-    </div>
+        <div id="financial-amount" style="display: none;">
+            <label for="financial">How much money are you willing to contribute (PKR)?</label>
+            <input type="number" id="financial" name="financial">
+        </div>
 
-    <label for="owner-phone">Owner's Phone Number (WhatsApp):</label>
-    <input type="tel" id="owner-phone" name="owner-phone" required>
+        <label for="owner-phone">Owner's Phone Number (WhatsApp):</label>
+        <input type="tel" id="owner-phone" name="owner-phone" required>
 
-    <label for="org-email">Organization's Email (Or the Email of the person filling out this form):</label>
-    <input type="email" id="org-email" name="org-email" required>
+        <label for="org-email">Organization's Email (Or the Email of the person filling out this form):</label>
+        <input type="email" id="org-email" name="org-email" required>
 
-    <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
+    </form>
 </section>
+
 
 
 <footer>
@@ -217,6 +221,81 @@
 <script src="js/script.js"></script>
 <script src="js/header-script.js"></script>
 <script src="js/get-involved-forms.js"></script>
+<script>
+    document.querySelector('#volunteer-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+
+    fetch('volunteer_signup.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showPopup(data.message, 'success'); // Show success message
+                this.reset(); // Reset the form fields
+            } else {
+                showPopup(data.message, 'error'); // Show error message
+            }
+        })
+        .catch(() => {
+            showPopup('Network Error, please check your internet connection and try again.', 'error');
+        });
+});
+
+function showPopup(message, type) {
+    const popup = document.createElement('div');
+    popup.className = `popup-message ${type}`;
+    popup.textContent = message;
+
+    document.body.appendChild(popup);
+
+    // Remove the popup after 5 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 5000);
+}
+</script>
+
+<script>
+document.querySelector('#partner-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+
+    fetch('partner_form_handler.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showPopup(data.message, 'success'); // Show success message
+                this.reset(); // Reset the form fields
+            } else {
+                showPopup(data.message, 'error'); // Show error message
+            }
+        })
+        .catch(() => {
+            showPopup('Network Error, please check your internet connection and try again.', 'error');
+        });
+});
+
+function showPopup(message, type) {
+    const popup = document.createElement('div');
+    popup.className = `popup-message ${type}`;
+    popup.textContent = message;
+
+    document.body.appendChild(popup);
+
+    // Remove the popup after 5 seconds
+    setTimeout(() => {
+        popup.remove();
+    }, 5000);
+}
+</script>
 <script src="js/footer-script.js"></script>
 </body>
 </html>

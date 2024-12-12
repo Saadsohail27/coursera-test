@@ -1,0 +1,673 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+/* Header Styling */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100000000000000000; /* Keeps it above the content */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 10%;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, padding 0.3s ease-in-out;
+    background: transparent; /* Initially transparent */
+    box-shadow: none; /* No shadow initially */
+}
+
+
+@media all and (max-width: 1294px) {
+    .header {
+        padding: 0.5rem 8%; /* Slightly reduce padding */
+    }
+
+    nav ul {
+        gap: 2.5rem; /* Reduce gap between nav links */
+    }
+
+    button.phone-number-button {
+        padding: 8px 18px; /* Slightly reduce padding */
+        font-size: 0.85rem; /* Adjust size */
+    }
+}
+
+@media all and (max-width: 1053px) {
+    .header {
+        padding: 0.5rem 5%; /* Reduce padding more as the screen gets narrower */
+    }
+
+    nav ul {
+        gap: 2rem; /* Further reduce gap between nav links */
+    }
+
+    nav ul li a {
+        font-size: 0.8rem; /* Adjust font size for nav links */
+    }
+
+    button.phone-number-button {
+        padding: 5px 15px; /* Further reduce padding */
+        font-size: 0.8rem; /* Adjust size */
+    }
+}
+
+@media all and (max-width: 800px) {
+    .header {
+        padding: 0.3rem 3%; /* Minimal padding for narrow screens */
+    }
+
+    nav ul {
+        gap: 1.5rem; /* Compact the nav links further */
+    }
+
+    nav ul li a {
+        font-size: 0.75rem; /* Reduce font size for nav links */
+    }
+
+    button.phone-number-button {
+        padding: 3px 10px; /* Minimal button padding */
+        font-size: 0.75rem; /* Reduce button font size */
+    }
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+/* Navigation */
+nav {
+    padding: 0.5rem;
+    padding: 0.5rem 20%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    position: relative;
+    display: inline-block; /* Inline-block ensures the pseudo-element aligns properly */
+}
+
+
+.nav-links:hover {
+    color: #1C779B;
+}
+
+/* The sliding line */
+.nav-links:after {
+    content: "";
+    position: absolute;
+    background-color: #1C779B;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: -10px; /* Adjust the position of the line */
+    transition: width 0.2s ease; /* Smooth sliding animation */
+}
+
+.nav-links:hover:after {
+    width: 100%; /* Expand the line */
+}
+
+.phone-number-container {
+    margin-left: auto; /* Push to the right */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+button.phone-number-button {
+    background: linear-gradient(to right, #133E4F, #1B6E8E);  /* Apply gradient */
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+button.phone-number-button:hover {
+    background: linear-gradient(to right, #102B36, #146C8D);  /* Darker gradient on hover */
+}
+
+/* When the header has scrolled, add a white background */
+header.scrolled {
+    background-color: white; /* When scrolled, the background will be white */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    color: black; /* Changes text color to black when header is white */
+}
+
+/* Smooth fade-in animation */
+header.scrolled {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide desktop navigation and phone button on smaller screens */
+@media all and (max-width: 1053px) {
+    nav, .phone-number-container {
+        display: none; /* Hide desktop nav and call button */
+    }
+
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        z-index: 10000000000000000000;
+    }
+
+    .hamburger-menu span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+
+header.scrolled .hamburger-menu span {
+    background: black; /* White bars when scrolled */
+}
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: -100%; /* Start off-screen above the viewport */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    height: 100vh; /* Ensure full screen height */
+    padding-top: 20px;
+    transition: transform 0.7s ease-in-out; /* Smooth sliding animation */
+}
+
+/* Slide-in animation (open mobile nav) */
+.mobile-nav.active {
+    transform: translateY(0); /* Slide into the viewport */
+    top: 0; /* Reset top position */
+}
+
+/* Slide-out animation (close mobile nav) */
+.mobile-nav.closing {
+    transform: translateY(-100%); /* Slide out upwards */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding-out animation */
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    text-align: left; /* Align links to the left */
+}
+
+.mobile-nav ul li {
+    padding: 10px 20px;
+    margin: 1.5rem 0;
+}
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Hamburger to X transition */
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background: black;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0; /* Hide middle span */
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    background: black;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between; /* Align content to the left and image to the right */
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background: url('images/medium-shot-doctor-wearing-white-coat.jpg') no-repeat right center; /* Background image */
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: white; /* Text color */
+}
+
+/* Gradient overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)); /* Gradient from black to transparent */
+    z-index: 3;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 100;
+    padding: 2rem;
+    max-width: 50%;
+    padding: 20px 5%;
+}
+
+/* Heading */
+.hero h1 {
+    font-size: 3rem;
+    font-family: "EB Garamond", serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph */
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+}
+
+/* Button */
+a.btn-primary {
+    background: linear-gradient(to right, #133E4F, #1B85AF);  /* Apply gradient */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 1.5rem 2.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+a.btn-primary:hover {
+    background: linear-gradient(to right, #102B36, #146C8D);  /* Darker gradient on hover */
+}
+
+@media all and (max-width: 792px) {
+    
+/* Heading */
+section.hero h1 {
+    font-size: 6vw;
+}
+
+/* Button */
+a.btn-primary {
+    font-size: 16px;
+    padding: 1rem 1.5rem;
+}
+}
+
+@media all and (max-width: 530px) {
+    .hero-content {
+    max-width: 60%;
+}
+}
+
+@media all and (max-width: 470px) {
+    .hero-content {
+    max-width: 70%;
+}
+
+    section.hero h1 {
+    font-size: 8vw;
+}
+
+/* Button */
+a.btn-primary {
+    font-size: 16px;
+    padding: 0.9rem 1.3rem;
+}
+}
+
+@media all and (max-width: 447px) {
+.hero-content {
+    max-width: 70%;
+}
+
+    a.btn-primary {
+    font-size: 16px;
+    padding: 0.9rem 1rem;
+}
+}
+
+#about {
+    background: #f9f9f9;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #004aad;
+}
+
+#about p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+#contact {
+    background: #eaf6ff;
+    padding: 2rem 0;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #004aad;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact button {
+    background: #004aad;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact button:hover {
+    background: #003380;
+}
+
+/* Services Section */
+#services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 2rem;
+}
+
+.service {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.services-heading {
+     font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #004aad;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service h3 {
+    font-size: 1.5rem; /* Default size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.service:hover h3{
+    transform: scale(1.1); /* Enlarges the text */
+    color: #004aad; /* Changes the color (optional) */
+}
+
+.service p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(to right, #102B36, #146C8D);
+    color: white;
+    padding: 2rem 10%;
+    text-align: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Footer Columns */
+.footer-column {
+    text-align: center;
+}
+
+.footer-logo {
+   margin-bottom: 1rem;
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #1B85AF;
+}
+
+/* Quick Links */
+.quick-links {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links li {
+    margin-bottom: 0.5rem;
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-block;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1B85AF;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 15px; /* Increased padding for a bigger icon */
+    color: white;
+    font-size: 2.5rem; /* Slightly larger icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+.swiper-container {
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: stretch; /* Ensures all slides have equal height */
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    height: 100%; /* Ensures all slides stretch to the same height */
+    background-color: #D32732;
+    padding: 150px 50px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Custom style for navigation arrows */
+.swiper-button-next, .swiper-button-prev {
+    color: #fff;
+    background-color: #D32732;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: #A91C25;
+}
+
+/* Style for the bullets (pagination) */
+.swiper-pagination-bullet {
+    background-color: #D32732;
+    opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #fff;
+    opacity: 1;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 1000px; /* Adjust the max width */
+    margin: 0 auto; /* Center the map */
+    padding: 20px; /* Optional padding for better spacing */
+}
+
+iframe {
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visual appeal */
+}

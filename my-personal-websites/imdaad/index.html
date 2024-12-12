@@ -256,40 +256,51 @@
 <section id="yourIdeas" class="your-ideas">
     <div class="ideas-container">
         <h2>Share Your Ideas, Shape Our Future!</h2>
-        <p>At Imdaad Organization, we believe the best ideas come from those who care. What do you think we should tackle next? Whether it's a local initiative or a global cause, we want to hear how we can make an even bigger difference together!</p>
-        <p><strong>Submit your ideas and help us create the next big project to uplift those in need. Your voice matters!</strong></p>
+        <p>
+            At Imdaad Organization, we believe the best ideas come from those who care. 
+            What do you think we should tackle next? Whether it's a local initiative or a global cause, 
+            we want to hear how we can make an even bigger difference together!
+        </p>
+        <p>
+            <strong>
+                Submit your ideas and help us create the next big project to uplift those in need. 
+                Your voice matters!
+            </strong>
+        </p>
 
-        <form action="/submit-idea" method="POST">
-    <div class="form-left">
-        <div class="form-group">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-        </div>
+        <form id="ideaForm" action="submit-idea.php" method="POST">
+            <div class="form-left">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
 
-        <div class="form-group">
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-        </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
 
-        <div class="form-group">
-            <label for="phone">Your Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-        </div>
-    </div>
+                <div class="form-group">
+                    <label for="phone">Your Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+            </div>
 
-    <div class="form-right">
-        <div class="form-group share-your-idea">
-            <label for="idea">Share Your Idea:</label>
-            <textarea id="idea" name="idea" rows="5" required placeholder="Tell us your idea for our next project!"></textarea>
-        </div>
-    </div>
+            <div class="form-right">
+                <div class="form-group share-your-idea">
+                    <label for="idea">Share Your Idea:</label>
+                    <textarea id="idea" name="idea" rows="5" required placeholder="Tell us your idea for our next project!"></textarea>
+                </div>
+            </div>
+        </form>
 
-    
-</form>
-
-<button type="submit" class="send-cta-button">Submit Your Idea</button>
+        <!-- Submit button placed outside the form -->
+        <button type="button" class="send-cta-button" onclick="submitForm()">Submit Your Idea</button>
     </div>
 </section>
+
+<!-- Status Message Box -->
+<div id="statusMessage" class="status-message" style="display: none;"></div>
 
 
 
@@ -379,6 +390,52 @@ document.addEventListener('DOMContentLoaded', function () {
             observer.observe(section); // Observe each section
         });
     });
+</script>
+
+<script>
+    // JavaScript function to trigger form submission
+    function submitForm() {
+        document.getElementById('ideaForm').submit();
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // JavaScript function to trigger form submission via Ajax
+    function submitForm() {
+        // Hide the status message box before submitting
+        $('#statusMessage').hide();
+
+        // Create a FormData object to handle the form data
+        var formData = $('#ideaForm').serialize();
+
+        // Use Ajax to submit the form data
+        $.ajax({
+            type: 'POST',
+            url: $('#ideaForm').attr('action'), // action URL from the form
+            data: formData,
+            success: function(response) {
+                // Display the success message if submission is successful
+                $('#statusMessage').text('Your idea was sent successfully. Thank you for your contribution :)')
+                    .css('background-color', 'green')
+                    .css('color', 'white')
+                    .fadeIn()
+                    .delay(4000)
+                    .fadeOut();
+
+                // Clear the form fields after successful submission
+                $('#ideaForm')[0].reset();
+            },
+            error: function() {
+                // Display an error message if submission fails
+                $('#statusMessage').text('Network Error. Please check your internet connection and try again.')
+                    .css('background-color', 'red')
+                    .css('color', 'white')
+                    .fadeIn()
+                    .delay(4000)
+                    .fadeOut();
+            }
+        });
+    }
 </script>
 <script src="js/footer-script.js"></script>
 </body>

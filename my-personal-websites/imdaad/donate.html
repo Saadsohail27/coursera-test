@@ -115,25 +115,23 @@
                             <li><strong>Branch:</strong> THE SPACESTATION</li>
                         </ul>
                         <li>Enter the donation amount and complete the transfer.</li>
-                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                        <li>After transferring, please spare a few minutes to submit us your transaction details to confirm your donation. This helps us verify and keep track of all donations.</li>
                     </ol>
                 </div>
                 <form action="confirm_donation.php" method="POST" class="donation-form">
                     <h4>Confirm Your Donation</h4>
-                    <label for="donor_name_sadapay">Your Name:</label>
+                    <label for="donor_name_sadapay">Your Name (Should match the name on your Account from which you donated):</label>
                     <input type="text" id="donor_name_sadapay" name="donor_name" required>
-                    
-                    <label for="donor_email_sadapay">Your Email:</label>
-                    <input type="email" id="donor_email_sadapay" name="donor_email" required>
-                    
-                    <label for="transaction_id_sadapay">Transaction ID:</label>
-                    <input type="text" id="transaction_id_sadapay" name="transaction_id" required>
-                    
+
+                    <label for="donation_date_sadapay">Date and Time of Donation:</label>
+                    <input type="datetime-local" id="donation_date_sadapay" name="donation_date" required>
+
                     <label for="amount_sadapay">Donation Amount (PKR):</label>
                     <input type="number" id="amount_sadapay" name="amount" min="100" required>
-                    
+
                     <button type="submit">Submit</button>
                 </form>
+
             </div>
             
             <!-- JazzCash Instructions -->
@@ -151,23 +149,20 @@
                             <li><strong>Branch:</strong> MOBICASH</li>
                         </ul>
                         <li>Enter the donation amount and complete the transfer.</li>
-                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                        <li>After transferring, please spare a few minutes to submit us your transaction details to confirm your donation. This helps us verify and keep track of all donations.</li>
                     </ol>
                 </div>
                 <form action="confirm_donation.php" method="POST" class="donation-form">
                     <h4>Confirm Your Donation</h4>
-                    <label for="donor_name_jazzcash">Your Name:</label>
+                    <label for="donor_name_jazzcash">Your Name (Should match the name on your Account from which you donated):</label>
                     <input type="text" id="donor_name_jazzcash" name="donor_name" required>
-                    
-                    <label for="donor_email_jazzcash">Your Email:</label>
-                    <input type="email" id="donor_email_jazzcash" name="donor_email" required>
-                    
-                    <label for="transaction_id_jazzcash">Transaction ID:</label>
-                    <input type="text" id="transaction_id_jazzcash" name="transaction_id" required>
-                    
+
+                    <label for="donation_date_jazzcash">Date and Time of Donation:</label>
+                    <input type="datetime-local" id="donation_date_jazzcash" name="donation_date" required>
+
                     <label for="amount_jazzcash">Donation Amount (PKR):</label>
                     <input type="number" id="amount_jazzcash" name="amount" min="100" required>
-                    
+
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -184,28 +179,24 @@
                         <ul>
                             <li><strong>Account Name:</strong> MUHAMMAD ABUBAKAR</li>
                             <li><strong>Account Number:</strong> 11370110443924</li>
-                            <li><strong>Branch:</strong> Meezan Bank, [Your Branch Name]</li>
-                            <li><strong>IBAN:</strong> PK00 1234 5678 9012 3456 7890</li>
-                            <li><strong>Swift Code:</strong> MEZNPKKA</li>
+                            <li><strong>Branch:</strong> Meezan Bank - State Life Society, Lahore</li>
+                            <li><strong>IBAN:</strong> PK58MEZN0011370110443924</li>
                         </ul>
                         <li>Enter the donation amount and complete the transfer.</li>
-                        <li>After transferring, please <a href="contact.html">contact us</a> with your transaction ID to confirm your donation.</li>
+                        <li>After transferring, please spare a few minutes to submit us your transaction details to confirm your donation. This helps us verify and keep track of all donations.</li>
                     </ol>
                 </div>
                 <form action="confirm_donation.php" method="POST" class="donation-form">
                     <h4>Confirm Your Donation</h4>
-                    <label for="donor_name_bank">Your Name:</label>
+                    <label for="donor_name_bank">Your Name (Should match the name on your Account from which you donated):</label>
                     <input type="text" id="donor_name_bank" name="donor_name" required>
-                    
-                    <label for="donor_email_bank">Your Email:</label>
-                    <input type="email" id="donor_email_bank" name="donor_email" required>
-                    
-                    <label for="transaction_id_bank">Transaction ID:</label>
-                    <input type="text" id="transaction_id_bank" name="transaction_id" required>
-                    
+
+                    <label for="donation_date_bank">Date and Time of Donation:</label>
+                    <input type="datetime-local" id="donation_date_bank" name="donation_date" required>
+
                     <label for="amount_bank">Donation Amount (PKR):</label>
                     <input type="number" id="amount_bank" name="amount" min="100" required>
-                    
+
                     <button type="submit">Submit</button>
                 </form>
             </div>
@@ -256,6 +247,48 @@
 <script src="js/script.js"></script>
 <script src="js/header-script.js"></script>
 <script src="js/donation-methods-script.js"></script>
+<script>
+    // Function to display the popup messages
+    function showPopup(message, type) {
+        const popup = document.createElement('div');
+        popup.className = `popup-message ${type}`; // Add type-specific class (success or error)
+        popup.innerText = message; // Set the popup text
+        document.body.appendChild(popup); // Append the popup to the body
+
+        // Remove the popup after 4 seconds
+        setTimeout(() => {
+            popup.remove();
+        }, 6000);
+    }
+
+    // Add event listeners to all forms
+    document.querySelectorAll('.donation-form').forEach(form => {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form's default submit action
+
+            const formData = new FormData(this); // Collect form data
+
+            // Send the form data to the PHP handler
+            fetch('confirm_donation.php', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.json()) // Parse the JSON response
+                .then(data => {
+                    if (data.success) {
+                        showPopup(data.message, 'success'); // Show success message
+                        form.reset(); // Clear the form
+                    } else {
+                        showPopup(data.message, 'error'); // Show error message
+                    }
+                })
+                .catch(() => {
+                    // Show a network error if the request fails
+                    showPopup('Network Error. Please check your internet connection and try again.', 'error');
+                });
+        });
+    });
+</script>
 <script src="js/footer-script.js"></script>
 </body>
 </html>
