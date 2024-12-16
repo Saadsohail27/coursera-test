@@ -23,5 +23,5 @@ function bookAppointment() {
 }
 
 function consultationHours() {
-    window.open('https://wa.me/923334288889?text=What%20are%20your%20consultation%20hours?', '_blank');
+    window.open('https://wa.me/923334288889?text=What%20are%20Dr%20Usmans%20consultation%20hours?', '_blank');
 }
