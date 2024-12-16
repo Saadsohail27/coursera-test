@@ -403,98 +403,97 @@ a.btn-primary {
 }
 }
 
-.card-section {
-    background-color: lightgray;
-    height: 80vh;
-}
-
+/* General Container Styling */
 .card-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 2rem auto;
+    gap: 20px;
     max-width: 1200px;
-    padding: 1rem;
-}
+    margin: 0 auto;
+    padding: 2rem 1rem;
 
-@media all and (max-width: 901px) {
-     .card-container {
-    flex-direction: column;
-}
+    /* Apply gradient as a single background */
+    background: linear-gradient(to right, #102B36, #146C8D);
+    border-radius: 10px;
+    position: relative;
 }
 
 .card {
-    flex: 1;
-    max-width: 300px;
-    border-radius: 10px;
-    padding: 1.5rem;
+    background: transparent; /* Cards are transparent to show the gradient */
     color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    max-width: 400px;
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Adds a hover effect */
+    transform: translateY(-10px);
 }
 
-/* Left Card */
-.card-left {
-    background-color: #164A5E;
-    height: 450px;
-}
-
-/* Middle Card */
-.card-middle {
-    background-color: #1A6C8D;
-    height: 500px; /* Taller height for the middle card */
-}
-
-/* Right Card */
-.card-right {
-    background-color: #1B80AA;
-    height: 450px;
-}
-
-/* Call to Action Button */
-.card-middle .cta-button {
-    background-color: white;
-    color: #1A6C8D;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.card-middle .cta-button:hover {
-    background-color: #f0f0f0;
-}
-
-/* Card Text Styling */
-.card h3 {
+/* Icon Styling */
+.icon img {
+    width: 40px;
+    height: 40px;
     margin-bottom: 1rem;
-    font-size: 1.5rem;
 }
 
-.card p {
+/* Typography */
+h4 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+p {
     font-size: 1rem;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
 
-.card a {
-    color: white;
-    text-decoration: underline;
+/* Rating Customization */
+.rating {
+    font-size: 3rem;
     font-weight: bold;
+    color: #ffffff;
 }
 
+/* Button Styling */
+.cta-button {
+    background-color: transparent;
+    color: #FFF;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    color: #102B36;
+    background-color: #FFF;
+}
+
+/* Responsive Design */
+@media (max-width: 901px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
 #about {
     background: #f9f9f9;
     padding: 2rem 0;
@@ -518,6 +517,13 @@ a.btn-primary {
 #contact {
     background: #eaf6ff;
     padding: 2rem 0;
+}
+
+@media all and (max-width: 645px) {
+    #contact {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
 }
 
 #contact h2 {
@@ -567,6 +573,13 @@ a.btn-primary {
   gap: 10px;
   grid-auto-flow: dense; /* Fill gaps automatically */
   padding: 20px;
+}
+
+.services-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #004aad;
+    text-align: center;
 }
 
 .service {
@@ -624,16 +637,161 @@ a.btn-primary {
   grid-column: span 2;
 }
 
+@media (max-width: 670px) {
+  .service:nth-child(1),
+  .service:nth-child(7),
+  .service:nth-child(8) {
+    grid-column: span 1; /* Reset to default single column */
+    grid-row: span 1;
+  }
+}
+
 @media (max-width: 768px) {
   .services-section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 480px) {
+
+
+@media (max-width: 500px) {
   .services-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* One column layout */
   }
+
+  .service {
+    grid-row: span 1; /* Ensure each service occupies one row */
+    height: auto; /* Allow dynamic height */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  .service {
+    flex-direction: column;
+  }
+
+  .service span {
+    display: block; /* Ensure span occupies full width */
+    margin-bottom: 10px; /* Add spacing between heading and button */
+  }
+
+  .service a {
+    position: static; /* Button directly follows heading */
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 1; /* Always visible */
+  }
+}
+
+/* Blog Section Styles */
+.blog-section {
+    text-align: center;
+    background-color: #fefdf8;
+    padding: 2rem 1rem;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.section-title .highlight {
+    color: 1f7ca1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.blog-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.blog-card {
+    flex: 0 0 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.blog-title {
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1B85AF;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: #133E4F;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.carousel-navigation {
+    margin-top: 1rem;
+}
+
+.carousel-navigation .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-navigation .dot.active {
+    background-color: #1B85AF;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-card {
+        flex: 0 0 100%;
+    }
+
+    .arrow {
+        font-size: 1rem;
+        padding: 0.3rem 0.6rem;
+    }
 }
 
 
