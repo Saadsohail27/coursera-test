@@ -801,6 +801,7 @@ footer {
     color: white;
     padding: 2rem 10%;
     text-align: center;
+    margin-top: 80px;
 }
 
 .footer-container {
@@ -1094,3 +1095,275 @@ iframe {
     .whatsapp-button:hover {
         background-color: #1da85d;
     }
+
+/* Our Team Section */
+.our-team {
+    padding: 50px 20px;
+    background-color: #f9f7f5;
+    text-align: center;
+}
+
+.team-description {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-card {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.team-card h4 {
+    color: #4a4a6a;
+    margin-bottom: 5px;
+}
+
+.team-card p {
+    color: #d9534f;
+}
+
+/* Accreditations Section */
+.accreditations {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.accreditation-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.accreditation-logos img {
+    width: 100px;
+    height: auto;
+}
+
+/* Excellence Section */
+.excellence {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f9f7f5;
+    padding: 50px 20px;
+}
+
+.excellence-stats {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.excellence-stats div h3 {
+    color: #d9534f;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.excellence-stats div p {
+    color: #777;
+}
+
+.excellence-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.excellence-content h2 {
+    color: #4a4a6a;
+    margin-bottom: 20px;
+}
+
+.excellence-content p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accreditation-logos {
+        flex-direction: column;
+    }
+
+    .excellence {
+        flex-direction: column;
+    }
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.story-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.story-text p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.story-image {
+    flex: 1;
+    text-align: center;
+}
+
+.story-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .story-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story-image img {
+        max-width: 100%;
+    }
+}
+
+.appointment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 70px 40px;
+    background: linear-gradient(to right, #133E4F, #1B85AF);
+    color: white;
+    max-width: 70%;
+    text-align: center;
+}
+@media all and (max-width: 823px) {
+    .appointment-content h2 {
+        font-size: 3.8vw;
+    }
+
+    .appointment-content p {
+        margin-top: 50px;
+    }
+}
+
+@media all and (max-width: 723px) {
+    .appointment-content h2 {
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width: 602px) {
+    .appointment-content h2 {
+        font-size: 20px;
+    }
+
+    .appointment-content p {
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 602px) {
+    .appointment-content h2 {
+        font-size: 18px;
+    }
+
+}
+
+@media all and (max-width: 523px) {
+    .appointment-content h2 {
+        font-size: 18px;
+    }
+
+    .appointment-content p {
+        font-size: 16px;
+    }
+
+    .appointment-content a {
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 513px) {
+    .appointment-content h2 {
+        font-size: 16px;
+    }
+
+    .appointment-content p {
+        font-size: 14px;
+    }
+
+    .appointment-content a {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 468px) {
+    .appointment-content h2 {
+        font-size: 3.2vw;
+        font-weight: 600;
+    }
+
+    .appointment-content p {
+        font-size: 3vw;
+    }
+
+    .appointment-content a {
+        font-size: 3vw;
+    }
+}
+.about-whatsapp-button {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-whatsapp-button:hover {
+    background-color: #1ebe57;
+}
