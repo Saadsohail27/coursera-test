@@ -1284,6 +1284,10 @@ iframe {
     .accreditation-logos img {
     width: 130px;
 }
+
+div.appointment-content {
+        max-width: 90%;
+    }
 }
 
 
@@ -1367,7 +1371,7 @@ iframe {
 
 @media all and (max-width: 468px) {
     .appointment-content h2 {
-        font-size: 3.2vw;
+        font-size: 3.7vw;
         font-weight: 600;
     }
 
@@ -1378,6 +1382,8 @@ iframe {
     .appointment-content a {
         font-size: 3vw;
     }
+
+
 }
 .about-whatsapp-button {
     display: inline-block;
