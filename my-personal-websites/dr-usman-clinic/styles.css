@@ -1275,6 +1275,17 @@ iframe {
 }
 }
 
+@media (max-width: 470px) {
+
+    .accreditation-logos {
+        padding: 40px 70px;
+    }
+
+    .accreditation-logos img {
+    width: 130px;
+}
+}
+
 
 .appointment-section {
     margin-top: 100px;
