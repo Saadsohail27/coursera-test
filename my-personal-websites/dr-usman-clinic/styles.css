@@ -1149,11 +1149,11 @@ iframe {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 100px;
 }
 
 .accreditation-logos img {
-    width: 100px;
+    width: 150px;
     height: auto;
 }
 
@@ -1207,8 +1207,12 @@ iframe {
     }
 
     .accreditation-logos {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-items: center;
     }
+
 
     .excellence {
         flex-direction: column;
@@ -1263,6 +1267,17 @@ iframe {
     .story-image img {
         max-width: 100%;
     }
+}
+
+@media (max-width: 1192px) {
+    .accreditation-logos img {
+    width: 100px;
+}
+}
+
+
+.appointment-section {
+    margin-top: 100px;
 }
 
 .appointment-content {
