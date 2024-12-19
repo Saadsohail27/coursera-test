@@ -25,6 +25,7 @@ body {
     overflow: hidden; /* Ensures the header size stays fixed */
     display: flex;
     align-items: center; /* Centers content vertically */
+    overflow: visible; /* Change this from hidden to visible */
 }
 
 .header .container {
@@ -64,25 +65,219 @@ nav.navbar {
     color: #a8e832;
 }
 
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+.dropdown-toggle {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    z-index: 1000;
+}
+
+.dropdown-toggle:hover {
+    color: #a8e832;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Dropdown Styling */
+ul.dropdown-menu {
+    position: fixed;
+    top: 90px; /* Adjusted to the header height */
+    left: 0;
+    width: 100vw; /* Full width */
+    height: calc(100vh - 90px); /* Full height minus the header height */
+    background: rgba(0, 26, 77, 0.95); /* Semi-transparent dark blue background */
+    color: #fff;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr); /* Four equal rows */
+    grid-template-columns: repeat(3, 1fr); /* Four equal columns */
+    gap: 20px; /* Space between links */
+    padding: 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px); /* Smooth slide-in */
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    z-index: 2000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Reset transform */
+}
+
+/* Links within the dropdown */
+.dropdown-menu a {
+    font-size: 1.5rem;
+    color: #fff; /* Accent color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    color: black; /* Dark text on hover */
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        align-items: stretch;
+    }
+    .dropdown-menu a {
+        width: 100%; /* Full-width links for mobile */
+        text-align: center;
+        padding: 15px; /* Adjusted for better touch targets */
+    }
+}
+
+/* Button Styling */
 nav a.cta-btn {
+    position: relative;
     background: transparent;
     color: #fff;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #fff;
+    border: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background 0.3s, color 0.3s;
+    transition: color 0.3s;
+    z-index: 1;
+    overflow: hidden;
 }
+
 nav a.cta-btn:hover {
-    background: #7171a4;
-    color: #fff;
+    color: #7171a4;
 }
+
+/* Border Animation */
+nav a.cta-btn::before, 
+nav a.cta-btn::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    z-index: -1;
+}
+
+/* Top-left Dot */
+nav a.cta-btn::before {
+    width: 1px;
+    height: 8px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    animation: none;
+}
+
+/* Bottom-right Dot */
+nav a.cta-btn::after {
+    width: 1px;
+    height: 8px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    animation: none;
+}
+
+/* Border Animation on Hover */
+nav a.cta-btn:hover::before {
+    animation: draw-border-top 0.5s linear forwards, connect-top 0.5s 0.5s linear forwards, fill-border 1s 1s linear forwards;
+}
+
+nav a.cta-btn:hover::after {
+    animation: draw-border-bottom 0.5s linear forwards, connect-bottom 0.5s 0.5s linear forwards, fill-border 1s 1s linear forwards;
+}
+
+/* Keyframes for Top-left Corner (Top Border) */
+@keyframes draw-border-top {
+    0% {
+        width: 8px;
+        height: 8px;
+    }
+    100% {
+        width: 100%; /* Line expands horizontally */
+        height: 1px;
+    }
+}
+
+@keyframes connect-top {
+    0% {
+        width: 1px;
+        height: 1px;
+        top: 0;
+        left: 100%; /* Starts at the end of the top border */
+    }
+    100% {
+        width: 1px;
+        height: 100%; /* Extends downwards */
+        left: 100%;
+    }
+}
+
+/* Keyframes for Bottom-right Corner (Bottom Border) */
+@keyframes draw-border-bottom {
+    0% {
+        width: 8px;
+        height: 8px;
+    }
+    100% {
+        width: 100%; /* Line expands horizontally */
+        height: 1px;
+    }
+}
+
+@keyframes connect-bottom {
+    0% {
+        width: 1px;
+        height: 1px;
+        bottom: 0;
+        right: 100%; /* Starts at the end of the bottom border */
+    }
+    100% {
+        width: 1px;
+        height: 100%; /* Extends upwards */
+        right: 100%;
+    }
+}
+
+/* New Keyframe to Preserve Full Border */
+@keyframes fill-border {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1; /* Keeps the border fully visible */
+    }
+}
+
 
 /* Hero Section Styling */
 .hero {
     position: relative;
     background: url('images/teammates-working-late-office.jpg') no-repeat center center/cover;
+    background-position: fixed;
     color: #fff;
     padding: 100px 20px;
     display: flex;
