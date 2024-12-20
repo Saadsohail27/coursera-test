@@ -28,11 +28,12 @@ body {
     overflow: visible; /* Change this from hidden to visible */
 }
 
-.header .container {
+.header .container-full-width {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.3rem;
+    width: 100%;
 }
 
 /* Updated Logo Styling */
@@ -493,9 +494,6 @@ nav a.cta-btn:hover::after {
         display: none;
     }
 
-    .about-sales-saaz-container {
-        display: block;
-    }
 
     div.about-sales-saaz-content {
         right: 0;
@@ -524,6 +522,21 @@ nav a.cta-btn:hover::after {
 .images-about {
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 721px) {
+    .about-sales-saaz-content {
+        padding: 100px 30px;
+    }
+
+    .about-sales-saaz-container {
+        display: block;
+    }
+
+    .about-sales-saaz-section {
+        padding: 0;
+    }
+
 }
 
 .what-we-do-section {
