@@ -476,9 +476,30 @@ nav a.cta-btn:hover::after {
     height: auto;
     margin-bottom: 30px;
     position: relative;
-    left: 200px;
+    left: 25%;
     border: 10px solid #038DEB;
     z-index: 100;
+}
+
+/*@media (max-width: 1333px) {
+
+    .about-sales-saaz-images {
+        left: 0;
+    }
+}*/
+
+@media (max-width: 1176px) {
+    .about-sales-saaz-images {
+        display: none;
+    }
+
+    .about-sales-saaz-container {
+        display: block;
+    }
+
+    div.about-sales-saaz-content {
+        right: 0;
+    }
 }
 
 .about-sales-saaz-images:hover {
