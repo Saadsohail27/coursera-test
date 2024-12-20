@@ -66,22 +66,30 @@ nav.navbar {
     gap: 20px;
 }
 
+/* Flex container for navigation links */
 .navbar ul {
-    list-style: none;
     display: flex;
-    gap: 40px;
+    align-items: center; /* Ensures vertical alignment */
+    justify-content: space-between; /* Equal spacing */
+    gap: 40px; /* Space between links */
+}
+
+.navbar ul li {
+    list-style-type: none;
 }
 .navbar ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+    padding: 10px 15px; /* Equal padding */
+    line-height: 1.5; /* Ensures consistent height */
 }
 .navbar ul li a:hover {
     color: #a8e832;
 }
 
-@media all and (max-width: 1264px) {
+@media all and (max-width: 1305px) {
         .navbar ul {
         gap: 30px;
     }
@@ -91,7 +99,7 @@ nav.navbar {
     }
 }
 
-@media all and (max-width: 1198px) {
+@media all and (max-width: 1217px) {
     nav.navbar ul li a {
         font-size: 1rem;
     }
@@ -108,9 +116,9 @@ nav.navbar {
     }
 }
 
-@media all and (max-width: 1159px) {
+@media all and (max-width: 1212px) {
     .navbar ul {
-        gap: 20px;
+        gap: 5px;
     }
 
     nav.navbar ul li a {
@@ -179,13 +187,13 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    text-align: center;
 }
 
 .mobile-nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
+    text-align: left;
 }
 
 /* Mobile Dropdown */
@@ -208,13 +216,14 @@ nav.navbar {
     transition: transform 0.3s ease;
 }
 
+/* Override for .mobile-dropdown-menu */
 .mobile-dropdown-menu {
-    list-style: none;
-    margin-top: 10px;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 20px;
+    list-style: none; /* Maintain default */
+    padding: 0; /* Reset padding */
+    display: none; /* Ensure hidden by default */
+    flex-direction: column; /* Maintain structure */
+    gap: 0; /* Reset gap */
+    text-align: left; /* Align text to the left */
 }
 
 .mobile-dropdown-menu.active {
@@ -225,16 +234,23 @@ nav.navbar {
     transform: rotate(45deg);
 }
 
-/* Default state: Hide the mobile dropdown menu */
-.mobile-dropdown-menu {
-    display: none;
+/* Ensure dropdown menus are hidden by default */
+ul.mobile-dropdown-menu {
+    display: none; /* Hide by default */
     list-style: none;
     padding-left: 1rem; /* Optional: Indent submenu items for better clarity */
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
-/* When the dropdown is active (revealed) */
+
+/* When the dropdown is active */
 .mobile-dropdown.active .mobile-dropdown-menu {
     display: block;
+    max-height: 500px; /* Adjust according to content height */
+    opacity: 1;
 }
 
 /* Style the "+" icon to rotate when active (optional) */
@@ -269,6 +285,7 @@ nav.navbar {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     color: #fff;
     text-decoration: none;
@@ -400,6 +417,62 @@ nav a.cta-btn:hover::after {
     width: 100%; /* Expands horizontally */
     height: 100%; /* Expands vertically */
 }
+
+/* Button Styling */
+.mobile-nav ul li a.cta-button {
+    position: relative;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: color 0.3s;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.mobile-nav ul li a.cta-button:hover {
+    color: #7171a4;
+}
+
+/* Full Border Styling */
+.mobile-nav ul li a.cta-button::before, 
+.mobile-nav ul li a.cta-button::after {
+    content: '';
+    position: absolute;
+    border: 1px solid #fff;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+/* Top-left and Bottom-right Corners */
+.mobile-nav ul li a.cta-button::before {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px; /* Top and left border */
+}
+
+.mobile-nav ul li a.cta-button::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0; /* Bottom and right border */
+}
+
+/* Hover Animation for Full Rectangle */
+.mobile-nav ul li a.cta-button:hover::before {
+    width: 100%; /* Expands horizontally */
+    height: 100%; /* Expands vertically */
+}
+
+.mobile-nav ul li a.cta-button:hover::after {
+    width: 100%; /* Expands horizontally */
+    height: 100%; /* Expands vertically */
+}
+
 
 
 /* Hero Section Styling */
