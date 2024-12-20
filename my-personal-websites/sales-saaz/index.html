@@ -10,38 +10,74 @@
 
 </head>
 <body>
-     <header class="header">
+<header class="header">
     <div class="container">
         <div class="branding">
             <a href="index.html"><img src="images/logos/sales-saaz-logo-no-bg.png" alt="Sales Saaz Logo" class="logo"></a>
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
-                    <a href="#services" class="dropdown-toggle">
+                    <a href="services.html" class="dropdown-toggle">
                         Services <span class="arrow">&#9660;</span>
                     </a>
                     <ul class="dropdown-menu">
-                        <a href="#web-development">Web Development</a>
-                        <a href="#app-development">App Development</a>
-                        <a href="#seo-ppc">SEO & PPC</a>
-                        <a href="#social-media">Social Media Marketing</a>
-                        <a href="#content-design">Content & Design</a>
-                        <a href="#product-photography">Product Photography</a>
-                        <a href="#youtube-automation">YouTube Automation</a>
-                        <a href="#digital-marketing">Digital Marketing</a>
+                        <a href="web-development.html">Web Development</a>
+                        <a href="app-development.html">App Development</a>
+                        <a href="seo-ppc.html">SEO & PPC</a>
+                        <a href="social-media.html">Social Media Marketing</a>
+                        <a href="content-design.html">Content & Design</a>
+                        <a href="product-photography.html">Product Photography</a>
+                        <a href="youtube-automation.html">YouTube Automation</a>
+                        <a href="digital-marketing.html">Digital Marketing</a>
                     </ul>
                 </li>
-                <li><a href="#about">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#clients">Our Clients</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="clients.html">Our Clients</a></li>
             </ul>
         </nav>
-        <nav><a href="#quote" class="cta-btn">Get a Quote</a></nav>
+        <!-- "Get a Quote" Button -->
+        <nav>
+            <a href="#quote" class="cta-btn">Get a Quote</a>
+        </nav>
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="mobile-dropdown">
+                    <a href="services.html" class="mobile-dropdown-toggle">
+                        Services <span class="icon">+</span>
+                    </a>
+                    <ul class="mobile-dropdown-menu">
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="seo-ppc.html">SEO & PPC</a></li>
+                        <li><a href="social-media.html">Social Media Marketing</a></li>
+                        <li><a href="content-design.html">Content & Design</a></li>
+                        <li><a href="product-photography.html">Product Photography</a></li>
+                        <li><a href="youtube-automation.html">YouTube Automation</a></li>
+                        <li><a href="digital-marketing.html">Digital Marketing</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="clients.html">Our Clients</a></li>
+                <li><a href="#quote" class="cta-btn">Get a Quote</a></li>
+            </ul>
+        </div>
     </div>
 </header>
+
     <section class="hero">
         <div class="hero-content">
             <h1>Welcome to Sales Saaz</h1>
@@ -184,5 +220,6 @@
     </a>
 
   <script src="js/script.js"></script>
+  <script src="js/header-script.js"></script>
 </body>
 </html>
