@@ -89,7 +89,7 @@ nav.navbar {
     color: #a8e832;
 }
 
-@media all and (max-width: 1305px) {
+@media all and (max-width: 1321px) {
         .navbar ul {
         gap: 30px;
     }
@@ -99,7 +99,7 @@ nav.navbar {
     }
 }
 
-@media all and (max-width: 1217px) {
+@media all and (max-width: 1239px) {
     nav.navbar ul li a {
         font-size: 1rem;
     }
@@ -116,7 +116,7 @@ nav.navbar {
     }
 }
 
-@media all and (max-width: 1212px) {
+@media all and (max-width: 1233px) {
     .navbar ul {
         gap: 5px;
     }
@@ -187,6 +187,8 @@ nav.navbar {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-left: 70px;
+    padding-right: 50px;
 }
 
 .mobile-nav ul li a {
@@ -260,7 +262,7 @@ ul.mobile-dropdown-menu {
 }
 
 
-@media all and (max-width: 1033px) {
+@media all and (max-width: 1049px) {
     nav.navbar ul li a,
     nav a.cta-btn {
         display: none;
