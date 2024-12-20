@@ -166,7 +166,7 @@ nav.navbar {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #000000;
+    background: #00002B;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -419,7 +419,7 @@ nav a.cta-btn:hover::after {
 }
 
 /* Button Styling */
-.mobile-nav ul li a.cta-button {
+.mobile-nav ul li a.cta-btn {
     position: relative;
     background: transparent;
     color: #fff;
@@ -433,13 +433,12 @@ nav a.cta-btn:hover::after {
     overflow: hidden;
 }
 
-.mobile-nav ul li a.cta-button:hover {
+.mobile-nav ul li a.cta-btn:hover {
     color: #7171a4;
 }
 
-/* Full Border Styling */
-.mobile-nav ul li a.cta-button::before, 
-.mobile-nav ul li a.cta-button::after {
+.mobile-nav ul li a.cta-btn::before,
+.mobile-nav ul li a.cta-btn::after {
     content: '';
     position: absolute;
     border: 1px solid #fff;
@@ -449,28 +448,22 @@ nav a.cta-btn:hover::after {
     transition: all 0.5s ease-in-out;
 }
 
-/* Top-left and Bottom-right Corners */
-.mobile-nav ul li a.cta-button::before {
+.mobile-nav ul li a.cta-btn::before {
     top: 0;
     left: 0;
-    border-width: 1px 0 0 1px; /* Top and left border */
+    border-width: 1px 0 0 1px;
 }
 
-.mobile-nav ul li a.cta-button::after {
+.mobile-nav ul li a.cta-btn::after {
     bottom: 0;
     right: 0;
-    border-width: 0 1px 1px 0; /* Bottom and right border */
+    border-width: 0 1px 1px 0;
 }
 
-/* Hover Animation for Full Rectangle */
-.mobile-nav ul li a.cta-button:hover::before {
-    width: 100%; /* Expands horizontally */
-    height: 100%; /* Expands vertically */
-}
-
-.mobile-nav ul li a.cta-button:hover::after {
-    width: 100%; /* Expands horizontally */
-    height: 100%; /* Expands vertically */
+.mobile-nav ul li a.cta-btn:hover::before,
+.mobile-nav ul li a.cta-btn:hover::after {
+    width: 100%;
+    height: 100%;
 }
 
 
