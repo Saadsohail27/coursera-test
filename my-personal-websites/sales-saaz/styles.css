@@ -36,6 +36,7 @@ body {
     width: 100%;
 }
 
+
 /* Updated Logo Styling */
 .branding .logo {
     height: auto; /* Increased logo height */
@@ -45,6 +46,20 @@ body {
 .branding .logo:hover {
     transform: scale(1.1); /* Adds hover effect */
 }
+
+@media (max-width: 500px) {
+    .branding .logo:hover {
+        transform: none;
+    }
+}
+
+
+@media (max-width: 393px) {
+    .branding .logo {
+        width: 150px;
+    }
+}
+
 nav.navbar {
     display: flex;
     justify-content: space-between;
@@ -444,6 +459,46 @@ nav a.cta-btn:hover::after {
     color: #fff;
 }
 
+@media all and (max-width: 653px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media all and (max-width: 594px) {
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media all and (max-width: 594px) {
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.8rem;
+    }
+
+    .btn-primary {
+    font-size: 0.8rem;
+    }
+}
+
+@media all and (max-width: 408px) {
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
 /* Hero Image */
 .hero-image img {
     max-width: 100%;
@@ -482,16 +537,14 @@ nav a.cta-btn:hover::after {
     z-index: 100;
 }
 
-/*@media (max-width: 1333px) {
-
-    .about-sales-saaz-images {
-        left: 0;
-    }
-}*/
 
 @media (max-width: 1176px) {
     .about-sales-saaz-images {
         display: none;
+    }
+
+    .about-sales-saaz-container {
+        display: block;
     }
 
 
