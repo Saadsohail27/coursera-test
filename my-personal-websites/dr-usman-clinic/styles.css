@@ -14,6 +14,11 @@ body {
     padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
 
@@ -606,10 +611,10 @@ p {
   font-size: 1.7rem;
 }
 
-.service a {
+div.service a {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 15px; /* Position the button at the top left */
+  left: 15px;
   padding: 5px 15px;
   font-size: 0.9rem;
   font-weight: bold;
@@ -619,13 +624,13 @@ p {
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.4);
   opacity: 0;
+  z-index: 2; /* Ensure the button appears above the gradient overlay */
   transition: all 0.3s ease;
 }
 
-.service:hover a {
-  opacity: 1;
+div.service:hover a {
+  opacity: 1; /* Make the button visible on hover */
 }
-
 /* Grid-specific adjustments */
 .service:nth-child(1) {
   grid-column: span 2;
@@ -680,6 +685,31 @@ p {
     margin-top: 10px;
     opacity: 1; /* Always visible */
   }
+}
+
+/* Gradient overlay */
+.service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #133E4F, #1B85AF);
+  opacity: 0.7; /* Adjust transparency of the overlay */
+  z-index: 1; /* Ensure the overlay sits above the image */
+  transition: opacity 0.3s ease; /* Smooth transition on hover */
+}
+
+.service:hover::before {
+  opacity: 1; /* Make the overlay more visible on hover */
+}
+
+/* Adjust z-index for existing content */
+.service span,
+.service a {
+  position: relative; /* Ensure content appears above the overlay */
+  z-index: 2;
 }
 
 /* Blog Section Styles */
@@ -1650,4 +1680,144 @@ iframe {
     .custom-contact-details {
         margin-top: 1rem;
     }
+}
+
+
+/* Header Section */
+.hair-transplant-header {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+}
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 832px) {
+    
+    .hair-transplant-header {
+        padding: 20px 30px;
+    }
+
+    .header-container {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+
+.header-text {
+    flex: 1;
+    max-width: 60%;
+    padding-right: 20px;
+}
+
+@media (max-width: 832px) {
+    .header-text {
+        max-width: none;
+    }
+}
+
+.header-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.header-info {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.header-info-item {
+    text-align: center;
+}
+
+.header-info-item h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.header-image {
+    flex: 1;
+    text-align: center;
+}
+
+.header-image img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 480px) {
+    .header-image img {
+        max-width: 100%;
+    }
+}
+
+/* Hair Transplant Details Section */
+
+.hair-transplant-details {
+    padding: 40px 80px;
+}
+
+.hair-transplant-details h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.hair-transplant-methods {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.hair-transplant-methods li {
+    margin-bottom: 10px;
+}
+
+/* Benefits Section */
+.hair-transplant-benefits {
+    background-color: #f0f8ff;
+    padding: 40px 20px;
+}
+
+.hair-transplant-benefits h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 758px) {
+    .benefits-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.benefit-item {
+    background: #fff;
+    padding: 40px 80px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item h3 {
+    margin-bottom: 10px;
+    color: #007bff;
 }
