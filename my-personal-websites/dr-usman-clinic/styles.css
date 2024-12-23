@@ -1821,3 +1821,63 @@ iframe {
     margin-bottom: 10px;
     color: #007bff;
 }
+
+.page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .headline {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+
+        .text-section {
+            margin-bottom: 30px;
+        }
+
+        .text-section p {
+            margin-bottom: 15px;
+        }
+
+        .text-section ul, .text-section ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .text-section li {
+            margin-bottom: 10px;
+        }
+
+        .visual-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .visual-section img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .highlight-box {
+            background-color: #eef7fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .visual-section {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
