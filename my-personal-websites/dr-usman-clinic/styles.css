@@ -1767,33 +1767,33 @@ iframe {
     }
 }
 
-/* Hair Transplant Details Section */
+/* Treatment Details Section */
 
-.hair-transplant-details {
+.treatment-details {
     padding: 40px 80px;
 }
 
-.hair-transplant-details h2 {
+.treatment-details h2 {
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
-.hair-transplant-methods {
+.treatment-methods {
     margin: 10px 0;
     padding-left: 20px;
 }
 
-.hair-transplant-methods li {
+.treatment-methods li {
     margin-bottom: 10px;
 }
 
 /* Benefits Section */
-.hair-transplant-benefits {
+.treatment-benefits {
     background-color: #f0f8ff;
     padding: 40px 20px;
 }
 
-.hair-transplant-benefits h2 {
+.treatment-benefits h2 {
     text-align: center;
     margin-bottom: 30px;
 }
