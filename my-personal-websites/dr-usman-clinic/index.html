@@ -396,8 +396,10 @@
     (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target); // Stop observing once the animation is applied
+          requestAnimationFrame(() => {
+            entry.target.classList.add("in-view");
+          });
+          observer.unobserve(entry.target); // Stop observing after animation
         }
       });
     },
