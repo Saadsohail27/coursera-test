@@ -295,6 +295,18 @@ header.scrolled .hamburger-menu span {
     background: black;
 }
 
+/* Fade-in Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -306,6 +318,8 @@ header.scrolled .hamburger-menu span {
     background-position: center center;
     position: relative;
     color: white; /* Text color */
+    opacity: 0; /* Initially hidden for fade-in */
+    animation: fadeIn 1.5s ease-out forwards; /* Fade-in animation */
 }
 
 /* Gradient overlay */
@@ -320,14 +334,29 @@ header.scrolled .hamburger-menu span {
     z-index: 3;
 }
 
+/* Content Fade-in Animation */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Start from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
 /* Hero Content */
 .hero-content {
-    position: relative;
+    position: relative; /* Ensure it stays in place */
     z-index: 100;
     padding: 2rem;
     max-width: 50%;
     padding: 20px 5%;
+    opacity: 0; /* Initially hidden */
+    animation: fadeInContent 1.5s ease-out 0.3s forwards; /* Content fade-in with delay */
 }
+
 
 /* Heading */
 .hero h1 {
@@ -352,13 +381,18 @@ a.btn-primary {
     padding: 1.5rem 2.5rem;
     text-decoration: none;
     border-radius: 50px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for transform */
     cursor: pointer;
+    position: relative; /* Make the button relative */
+    z-index: 5; /* Ensure the button stays above the gradient */
+    top: 0;
 }
 
-/* Hover effect */
+/* Hover effect for button */
 a.btn-primary:hover {
     background: linear-gradient(to right, #102B36, #146C8D);  /* Darker gradient on hover */
+    top: 10px;
+    transition: top 0.1s ease-in-out;
 }
 
 @media all and (max-width: 792px) {
@@ -710,6 +744,19 @@ div.service:hover a {
 .service a {
   position: relative; /* Ensure content appears above the overlay */
   z-index: 2;
+}
+
+/* Add initial state for animation */
+.service {
+  transform: scale(0.8); /* Start smaller */
+  opacity: 0; /* Invisible initially */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Add the animated state */
+.service.in-view {
+  transform: scale(1); /* Scale to original size */
+  opacity: 1; /* Fully visible */
 }
 
 /* Blog Section Styles */

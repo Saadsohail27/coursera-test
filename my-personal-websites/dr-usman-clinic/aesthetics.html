@@ -152,5 +152,26 @@
     </a>
     <script src="js/header-script.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const services = document.querySelectorAll(".service");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target); // Stop observing once the animation is applied
+        }
+      });
+    },
+    { threshold: 0.2 } // Trigger when 20% of the element is visible
+  );
+
+  services.forEach(service => {
+    observer.observe(service);
+  });
+});
+    </script>
 </body>
 </html>
