@@ -946,6 +946,27 @@ footer {
     color: #1B85AF;
 }
 
+/* Ensure footer elements are styled properly */
+
+.footer-column p,
+.footer-column .social-icons a {
+    opacity: 0;
+     transform: translateX(-100px); /* Move the paragraphs off-screen to the left */
+    transition: transform 0.9s ease, opacity 1s ease;
+}
+
+footer .footer-column li a {
+    opacity: 0;
+     transform: translateX(-100px) !important; /* Move the paragraphs off-screen to the left */
+    transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+
+/* Class to apply when elements come into view */
+.footer-slide-in {
+    opacity: 1 !important; /* Make sure the opacity takes effect */
+    transform: translateX(0) !important; /* Reset translation */
+}
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;

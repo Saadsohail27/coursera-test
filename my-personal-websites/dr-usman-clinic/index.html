@@ -363,11 +363,11 @@
         <div class="footer-column">
             <h3>Quick Links</h3>
             <ul class="quick-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a class="footer-middle-links" href="index.html">Home</a></li>
+                <li><a class="footer-middle-links"  href="about.html">About</a></li>
+                <li><a class="footer-middle-links"  href="services.html">Services</a></li>
+                <li><a class="footer-middle-links"  href="contact.html">Contact</a></li>
+                <li><a class="footer-middle-links"  href="blog.html">Blog</a></li>
             </ul>
         </div>
 
@@ -403,7 +403,7 @@
         }
       });
     },
-    { threshold: 0.2 } // Trigger when 20% of the element is visible
+    { threshold: 0.1 } // Trigger when 10% of the element is visible
   );
 
   services.forEach(service => {
@@ -520,5 +520,6 @@ window.addEventListener('resize', () => {
 
 startAutoSlide();
     </script>
+    <script src="js/footer-script.js"></script>
 </body>
 </html>
