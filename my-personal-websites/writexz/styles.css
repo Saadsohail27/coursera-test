@@ -5,24 +5,26 @@ body {
     padding: 0;
     color: #1a1a1a;
     background-color: #f9f9f9;
+    overflow-x: hidden;
 }
 
 
 
-/* Header */
+/* General Header Styling */
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background: #ffffff;
     color: #1a1a1a;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 30px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 30px 40px;
-    transition: padding 0.3s ease; /* Smooth transition for padding */
+    transition: padding 0.3s ease;
 }
+
 
 .header.scrolled {
     padding: 10px 40px; /* Reduced padding when scrolled */
@@ -39,45 +41,171 @@ body {
     color: black;
 }
 
-.nav ul {
-    list-style: none;
-    padding: 0;
+
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex; /* Always visible on larger screens */
+}
+
+.desktop-nav .nav-links {
     display: flex;
-    justify-content: flex-end;
+    gap: 1.5rem;
 }
 
-.nav ul li {
-    margin: 0 1rem;
+.desktop-nav .nav-links li {
+    list-style-type: none;
 }
 
-.nav ul li a {
+.desktop-nav .nav-links li a {
     color: #1a1a1a;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
-.nav ul li a:hover {
+.desktop-nav .nav-links li a:hover {
     color: #007BFF;
 }
 
-/* Button Styling */
-nav ul li a.quote-btn {
+/* Quote Button */
+.nav ul li a.quote-btn {
     position: relative;
-    background: black;
-    color: #fff;
-    text-decoration: none;
+    background-color: transparent;
+    color: black;
     padding: 10px 20px;
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 5px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
     z-index: 1;
-    overflow: hidden;
 }
 
-nav ul li a.quote-btn:hover {
-    color: #7171a4;
+.nav ul li a.quote-btn:hover {
+    color: white;
+    background-color: black;
+}
+
+
+
+
+.nav .nav-links li {
+    margin: 0;
+    padding: 10px 20px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none; /* Hidden by default for larger screens */
+}
+
+.mobile-nav .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.mobile-nav .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav .nav-links {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    list-style-type: none;
+    transform: translateY(-100%);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-nav .nav-links a {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.mobile-nav .nav-links.active {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Active Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Navigation */
+/* Media Queries */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none; /* Hide desktop navigation */
+    }
+
+    .mobile-nav {
+        display: flex; /* Show mobile navigation */
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
 }
 
 /* Full Border Styling */
@@ -217,6 +345,9 @@ nav ul li a.quote-btn:hover::after {
 
 .hero-image img {
     max-width: 100%;
+    height: 450px;
+    width: auto;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -280,7 +411,7 @@ nav ul li a.quote-btn:hover::after {
 
 /* Contact Section */
 .contact {
-    padding: 4rem 1rem;
+    padding: 4rem 2rem;
     background: #ffffff;
 }
 
@@ -304,7 +435,7 @@ nav ul li a.quote-btn:hover::after {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 90%;
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -336,4 +467,28 @@ nav ul li a.quote-btn:hover::after {
     text-align: center;
     padding: 1.5rem 0;
     font-size: 0.875rem;
+}
+
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 15px; /* Increased padding for a bigger icon */
+    color: white;
+    font-size: 2.5rem; /* Slightly larger icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }

@@ -6,3 +6,12 @@ document.addEventListener('scroll', () => {
         header.classList.remove('scrolled');
     }
 });
+
+const hamburger = document.querySelector('.mobile-nav .hamburger');
+const mobileNavLinks = document.querySelector('.mobile-nav .nav-links');
+
+hamburger.addEventListener('click', () => {
+    mobileNavLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+});
+
