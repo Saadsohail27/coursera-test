@@ -158,6 +158,21 @@ nav ul li a {
     width: 100%; /* Expand the line */
 }
 
+/* Active state styling */
+.nav-links.active {
+    color: #1C779B;
+}
+
+.nav-links.active:after {
+    content: "";
+    position: absolute;
+    background-color: #1C779B;
+    height: 2px;
+    width: 100%; /* Keep the line expanded */
+    left: 0;
+    bottom: -10px; /* Adjust the position of the line */
+}
+
 .phone-number-container {
     margin-left: auto; /* Push to the right */
     white-space: nowrap; /* Prevent wrapping */
