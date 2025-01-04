@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Playwrite+IE+Guides&family=Playwrite+IS:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Playwrite+IE+Guides&family=Playwrite+IS:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 /* Global Styles */
 body {
@@ -541,19 +541,43 @@ nav ul li a.quote-btn:hover::after {
 .about {
     padding: 4rem 1rem;
     text-align: center;
-    background: #f9f9f9;
+    background: linear-gradient(
+        to bottom,
+        #000000 0%,
+        #000000 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    ), 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='Artboard-5' fill='%23ede7f5' fill-opacity='0.11' fill-rule='nonzero'%3E%3Cpath d='M6 18h12V6H6v12zM4 4h16v16H4V4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
 }
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    text-align: left;
+}
+
 
 .about h2 {
     margin-bottom: 1.5rem;
+    font-family: "Exo 2", serif;
     font-size: 2.5rem;
-    color: #1a1a1a;
+    color: white;
 }
 
 .about p {
-    font-size: 1.125rem;
+    font-size: 1.7rem;
     line-height: 1.8;
-    color: #3a3a3a;
+    color: white;
+    max-width: 60%;
+}
+
+.about-image img {
+    height: 400px;
+    width: auto;
 }
 
 /* Contact Section */
