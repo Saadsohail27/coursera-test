@@ -73,6 +73,30 @@
         </div>
     </section>
 
+    <section class="stats">
+    <div class="stats-container">
+        <div class="stat-item">
+            <img src="images/icons/projects.png" alt="Projects Completed">
+            <p><span class="counter" data-target="250">0</span></p>
+            <p>Projects Completed</p>
+        </div>
+        <div class="stat-item">
+            <img src="images/icons/happy-clients.png" alt="Happy Clients">
+            <p><span class="counter" data-target="150">0</span></p>
+            <p>Happy Clients</p>
+        </div>
+        <div class="stat-item">
+            <img src="images/icons/successful-tenders.png" alt="Successful Tenders">
+            <p><span class="counter" data-target="100">0</span></p>
+            <p>Successful Tenders</p>
+        </div>
+        <div class="stat-item">
+            <img src="images/icons/industries.png" alt="Industries Served">
+            <p><span class="counter" data-target="20">0</span></p>
+            <p>Industries Served</p>
+        </div>
+    </div>
+</section>
     <section id="services" class="services">
     <div class="container">
         <h2>Our Services</h2>
@@ -155,26 +179,57 @@
             <h2>Contact Us</h2>
             <form action="#" method="post">
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" placeholder="Name" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" placeholder="Email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <textarea id="message" placeholder="Your message..." name="message" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn">Submit</button>
             </form>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Writexz. All Rights Reserved.</p>
+    <footer>
+    <div class="footer-container">
+        <!-- Left Column: Logo and Contact Information -->
+        <div class="footer-left">
+        <img src="images/.jpg" alt="Writexz Logo" class="footer-logo">
+        <p><strong>Contact Us</strong></p>
+        <p><strong>Phone: </strong><a href="tel:+923060495942">+92 3060495942</a></p>
+        <p><strong>Email: </strong><a href="mailto:info@writexz.com">info@writexz.com</a></p>
+    </div>
+        
+        <!-- Middle Column: Quick Links -->
+        <div class="footer-middle">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li> 
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-    </footer>
+        
+        <!-- Right Column: Follow Us -->
+        <div class="footer-right">
+            <h4>Follow Us</h4>
+            <a href="https://www.facebook.com">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/></svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!-- SVG Path here -->
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+        </a>
+        </div>
+    </div>
+    <hr>
+    <p>&copy; 2025 Writexz. All Rights Reserved.</p>
+</footer>
 
     <a href="https://api.whatsapp.com/send?phone=+923060495942" target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
@@ -182,5 +237,56 @@
 
     <script src="js/header-script.js"></script>
     <script src="js/header--dropdown-script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const statItems = document.querySelectorAll('.stats-container .stat-item');
+    const counters = document.querySelectorAll('.counter');
+
+    // Options for the Intersection Observer
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        threshold: 0.2, // Trigger when 20% of the element is visible
+    };
+
+    // Function to animate counters
+    function animateCounter(counter) {
+        const target = +counter.dataset.target; // Get the target value
+        const speed = 50; // Speed of the counter increment
+        const increment = Math.ceil(target / speed);
+
+        const updateCounter = () => {
+            const currentValue = +counter.innerText;
+
+            if (currentValue < target) {
+                counter.innerText = currentValue + increment;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.innerText = target; // Ensure the counter ends at the target value
+            }
+        };
+
+        updateCounter();
+    }
+
+    // Create the Intersection Observer
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('stats-slide-in'); // Add slide-in animation
+                const counter = entry.target.querySelector('.counter');
+                if (counter) animateCounter(counter); // Start counter animation
+                observer.unobserve(entry.target); // Stop observing after the animation
+            }
+        });
+    }, observerOptions);
+
+    // Observe each stat-item
+    statItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+    </script>
+    <script src="js/why-us-script.js"></script>
+    <script src="js/footer-script.js"></script>
 </body>
 </html>
