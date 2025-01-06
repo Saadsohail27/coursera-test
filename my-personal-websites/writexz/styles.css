@@ -12,26 +12,29 @@ body {
 
 
 
-/* General Header Styling */
-.header {
+/* Header styling */
+header.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background: #ffffff;
-    color: #1a1a1a;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 30px 40px;
-    position: sticky;
+    justify-content: space-between;
+    background: transparent; /* Transparent at the top */
+    color: white;
+    padding: 0 2rem;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
-    transition: padding 0.3s ease;
+    margin: 0 auto;
+    transition: all 0.3s ease; /* Smooth transition for padding and background */
 }
-
 
 .header.scrolled {
-    padding: 10px 40px; /* Reduced padding when scrolled */
-    transition: padding 0.3s ease; /* Smooth transition for padding */
+    background: #ffffff; /* White background after scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 40px;
 }
+
 
 @media (max-width: 691px) {
     .header.scrolled {
@@ -39,9 +42,17 @@ body {
     }
 }
 
-.header .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+.desktop-nav {
+    max-width: 1200px;
+    color: white;
+}
+
+/* Center logo properly and control spacing */
+.logo {
+    position: relative;
+    z-index: 2; /* Keeps it above any overlapping items */
+    flex-shrink: 0; /* Prevents the logo from shrinking */
+    text-align: center;
 }
 
 .logo a {
@@ -49,24 +60,41 @@ body {
     color: black;
 }
 
+.nav-left {
+    justify-content: flex-end; /* Push left-side links to the left */
+}
 
-/* Desktop Navigation */
+.nav-right {
+    justify-content: flex-start; /* Push right-side links to the right */
+}
+
+/* Adjust desktop navigation for split layout */
 .desktop-nav {
-    display: flex; /* Always visible on larger screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.desktop-nav .logo {
+    flex: 0 0 auto; /* Keeps the logo in the center without stretching */
+    padding: 0 1rem; /* Adds balanced spacing on both sides of the logo */
 }
 
 .desktop-nav .nav-links {
     display: flex;
     gap: 1.5rem;
+    flex: 1; /* Ensures equal spacing for both sides */
+}
+
+.desktop-nav .nav-links li {
+    list-style-type: none;
 }
 
 .desktop-nav .dropdown {
     position: relative;
 }
 
-.desktop-nav .nav-links li {
-    list-style-type: none;
-}
 
 .desktop-nav .nav-links li a {
     color: #1a1a1a;
@@ -75,7 +103,7 @@ body {
     transition: color 0.3s;
 }
 
-.desktop-nav .nav-links li a:hover {
+.nav-links li a:hover {
     color: #007BFF;
 }
 
