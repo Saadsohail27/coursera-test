@@ -406,13 +406,15 @@ nav ul li a.quote-btn:hover::after {
 }
 
 .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin-bottom: 1rem;
     line-height: 1.2;
+    max-width: 70%;
+    justify-self: center;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     margin-top: 3rem;
     margin-bottom: 2rem;
     line-height: 1.6;
