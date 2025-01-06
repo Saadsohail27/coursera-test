@@ -1,11 +1,12 @@
 document.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
-    if (window.scrollY > -20) {
+    if (window.scrollY > 100) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
     }
 });
+
 
 const hamburger = document.querySelector('.mobile-nav .hamburger');
 const mobileNavLinks = document.querySelector('.mobile-nav .nav-links');
