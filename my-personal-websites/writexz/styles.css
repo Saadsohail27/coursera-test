@@ -728,6 +728,16 @@ section.hero::before {
     max-width: 60%;
 }
 
+@media all and (max-width: 1061px) {
+    .about p {
+        max-width: none;
+    }
+
+    .about-image img {
+        display: none;
+    }
+}
+
 .about-image img {
     height: 400px;
     width: auto;
