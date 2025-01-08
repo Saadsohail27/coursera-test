@@ -154,6 +154,10 @@ header.header {
     color: #bdc1e9; /* Highlight on hover */
 }
 
+.header.scrolled .nav-links li a:hover {
+    color: #5e64a4; /* Highlight on hover */
+}
+
 /* Quote Button */
 .nav ul li a.quote-btn {
     position: relative;
@@ -434,6 +438,7 @@ section.hero {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Keeps the background in place */
     color: white;
     text-align: center;
     position: relative; /* Ensures ::before is positioned relative to this */
