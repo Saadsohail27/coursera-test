@@ -285,7 +285,7 @@ header.header {
 }
 
 .mobile-nav .nav-links a:hover {
-    color: #007BFF; /* Highlight on hover */
+    color: #bbbfea; /* Highlight on hover */
 }
 
 /* Smooth slide-out when the menu closes */
@@ -425,8 +425,18 @@ nav ul li a.quote-btn:hover::after {
     flex-direction: column;
     margin: 0;
     gap: 20px;
-    text-align: center;
 }
+
+.mobile-nav .nav-links.active a {
+    font-size: 20px;
+}
+
+.mobole-nav-logo {
+    position: static; /* Ensures the logo is positioned relative to the header */
+    z-index: 10; /* Ensures the logo is on top of other elements */
+    cursor: pointer; /* Adds pointer to indicate it's clickable */
+}
+
 
 /* Hero Section */
 section.hero {
