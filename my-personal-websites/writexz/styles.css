@@ -36,8 +36,6 @@ header.header {
 .header.scrolled {
     background: #ffffff; /* White background after scroll */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
 }
 
 .header.scrolled .desktop-nav .nav-links li a {
@@ -81,6 +79,15 @@ header.header {
     transition: color 0.3s ease;
     display: inline-block; /* Ensures the entire area of the link is clickable */
     padding: 10px; /* Adds some padding to make it easier to click */
+    display: inline-block; /* Ensures the anchor wraps only around the image */
+    padding: 0; /* Removes any extra padding */
+    margin: 0; /* Removes any extra margin */
+}
+
+.logo img {
+    display: block; /* Ensures there is no extra space around the image */
+    width: 180px; /* Replace with your actual image width */
+    height: 180px; /* Replace with your actual image height */
 }
 
 .nav-left,
@@ -144,7 +151,7 @@ header.header {
 }
 
 .nav-links li a:hover {
-    color: #007BFF; /* Highlight on hover */
+    color: #bdc1e9; /* Highlight on hover */
 }
 
 /* Quote Button */

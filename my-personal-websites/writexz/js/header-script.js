@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             header.classList.add('scrolled'); // Add the scrolled class
-            logo.src = 'images/logos/logo-2-ta-black.png'; // Set black logo
+            logo.src = 'images/logos/180black.png'; // Set black logo
         } else {
             header.classList.remove('scrolled'); // Remove the scrolled class
-            logo.src = 'images/logos/logo-2-ta-white-.png'; // Set white logo
+            logo.src = 'images/logos/180-x180.png'; // Set white logo
         }
     });
 
