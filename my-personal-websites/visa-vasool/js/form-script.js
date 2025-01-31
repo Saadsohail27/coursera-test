@@ -30,3 +30,14 @@ document.addEventListener("click", (event) => {
     }
   }
 });
+
+
+document.querySelectorAll(".role-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    // Remove 'active' class from all buttons
+    document.querySelectorAll(".role-btn").forEach(btn => btn.classList.remove("active"));
+    
+    // Add 'active' class to the clicked button
+    button.classList.add("active");
+  });
+});
