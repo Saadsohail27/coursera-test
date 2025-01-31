@@ -602,7 +602,10 @@ a.see-more-reviews:hover {
   box-sizing: border-box;
 }
 
-.next-btn {
+/* Apply the same styles to next, back, and submit buttons */
+.next-btn, 
+.back-btn, 
+.submit-btn {
   background-color: #ff5a5f;
   color: white;
   font-size: 1em;
@@ -614,9 +617,13 @@ a.see-more-reviews:hover {
   transition: background-color 0.3s;
 }
 
-.next-btn:hover {
+/* Hover effect */
+.next-btn:hover, 
+.back-btn:hover, 
+.submit-btn:hover {
   background-color: #e14d51;
 }
+
 
 .pagination-dots {
   margin-top: 20px;
