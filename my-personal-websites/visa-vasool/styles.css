@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", ""Inter", Arial, sans-serif;
-"Montserrat", "Verdana", "Arial", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", Arial,
+"Montserrat", "Verdana" , sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -70,6 +70,35 @@ nav ul li a.lets-talk-button {
 
 nav ul li a.lets-talk-button:hover {
 	background: linear-gradient(to right, rgb(136, 23, 28), rgb(136, 23, 28));
+}
+
+/* Sticky Header Effect */
+header.sticky {
+    position: fixed;
+    top: 0;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for visibility */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change text color in sticky mode */
+header.sticky nav ul li a {
+    color: black;
+}
+
+/* Ensure dropdown arrow also changes color */
+header.sticky nav ul li a.dropdown::after {
+    color: black;
+}
+
+/* Modify Let's Talk button for sticky mode */
+header.sticky nav ul li a.lets-talk-button {
+    background: linear-gradient(to right, #EF5053, #FD714C); /* Keep same gradient */
+    color: white;
+}
+
+header.sticky nav ul li a.lets-talk-button:hover {
+    background: linear-gradient(to right, rgb(136, 23, 28), rgb(136, 23, 28));
 }
 
 main {
@@ -665,18 +694,18 @@ a.see-more-reviews:hover {
 
 .faq-container {
     width: 100%;
-    max-width: 800px;
-    background: white;
+    max-width: 1000px;
+    background: #f7f9fc;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .faq-container h2 {
     text-align: center;
-    font-size: 24px;
+    font-size: 2.3rem;
     font-weight: bold;
     margin-bottom: 20px;
+    color: #333456;
 }
 
 .faq {
@@ -689,13 +718,14 @@ a.see-more-reviews:hover {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+    color: #353658;
     font-size: 16px;
     background: none;
     border: none;
     outline: none;
     cursor: pointer;
     text-align: left;
-    font-weight: bold;
+    font-weight: 400;
     transition: background 0.3s ease;
 }
 
