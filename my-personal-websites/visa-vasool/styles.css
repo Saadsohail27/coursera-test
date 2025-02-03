@@ -86,6 +86,11 @@ header.sticky nav ul li a {
     color: black;
 }
 
+header.sticky nav ul li a:hover {
+    color: rgb(115, 116, 125);
+    transition: color 0.3s ease;
+}
+
 /* Ensure dropdown arrow also changes color */
 header.sticky nav ul li a.dropdown::after {
     color: black;
