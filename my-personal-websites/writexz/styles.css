@@ -268,7 +268,13 @@ header.header {
     width: 80%;
     max-width: 300px;
     height: 100%;
-    background-color: #1a1a1a;
+    
+    /* Increased transparency */
+    background-color: rgba(26, 26, 26, 0.7); /* Now 70% opaque, 30% transparent */
+    
+    /* Stronger blur effect */
+    backdrop-filter: blur(15px);
+
     color: white;
     text-align: left;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -276,6 +282,7 @@ header.header {
     z-index: 1000;
     list-style-type: none;
 }
+
 
 .mobile-nav .nav-links a {
     text-decoration: none;
