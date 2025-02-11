@@ -4,16 +4,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.querySelector('.mobile-nav .hamburger');
     const mobileNavLinks = document.querySelector('.mobile-nav .nav-links');
 
-    // Change logo on scroll
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled'); // Add the scrolled class
-            logo.src = 'images/logos/180black.png'; // Set black logo
-        } else {
-            header.classList.remove('scrolled'); // Remove the scrolled class
-            logo.src = 'images/logos/180-x180.png'; // Set white logo
-        }
-    });
+    // Detect if the current page is the homepage (index.html or root '/')
+    const currentPath = window.location.pathname.split('/').pop(); // Get the last part of the path
+    const isHomePage = currentPath === '' || currentPath === 'index.html';
+
+    if (!isHomePage) {
+        // Apply scrolled styles by default for all pages except the homepage
+        header.classList.add('scrolled');
+        logo.src = 'images/logos/180black.png'; // Set black logo
+    } else {
+        // Change logo on scroll (only for homepage)
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled'); // Add the scrolled class
+                logo.src = 'images/logos/180black.png'; // Set black logo
+            } else {
+                header.classList.remove('scrolled'); // Remove the scrolled class
+                logo.src = 'images/logos/180-x180.png'; // Set white logo
+            }
+        });
+    }
 
     // Toggle menu visibility on hamburger click
     hamburger.addEventListener('click', (event) => {
