@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.header'); // Select the header
-    const logo = document.querySelector('.logo img'); // Select the logo image
     const hamburger = document.querySelector('.mobile-nav .hamburger');
     const mobileNavLinks = document.querySelector('.mobile-nav .nav-links');
-
-    // Change logo on scroll
-    window.addEventListener('scroll', function () {
-
-            logo.src = 'images/logos/180black.png'; // Set black logo
- 			mobileNavLinks.style.color = 'black';
-    });
 
     // Toggle menu visibility on hamburger click
     hamburger.addEventListener('click', (event) => {
