@@ -29,7 +29,7 @@ header div.logo {
 
 nav ul {
 	display: flex;
-	gap: 50px;
+	gap: 100px;
 }
 
 nav ul li {
@@ -79,6 +79,58 @@ header.sticky a img {
     height: 53px;
     object-fit: cover;
     transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px; /* Adjust width to match the screenshot */
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Flaticon Images */
+.dropdown-menu li img {
+    width: 20px; /* Set appropriate width */
+    height: 20px; /* Set appropriate height */
+    object-fit: contain; /* Ensures proper icon rendering */
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.dropdown-menu li:hover {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+/* Show dropdown when hovering over "Our Services" */
+.dropdown-container:hover .dropdown-menu {
+    display: flex;
+}
+/* Sticky Header Support */
+header.sticky .dropdown-menu {
+    background: white;
 }
 
 header.sticky {
