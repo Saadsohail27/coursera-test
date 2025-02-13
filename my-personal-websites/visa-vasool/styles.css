@@ -79,8 +79,6 @@ nav ul li a.lets-talk-button:hover {
 /* Sticky Header Effect */
 
 header.sticky a img {
-    width: 93px;
-    height: 53px;
     object-fit: cover;
     transition: width 0.3s ease, height 0.3s ease;
 }
