@@ -953,7 +953,7 @@ a.see-more-reviews:hover {
     font-family: "Arial", sans-serif;
     color: #333;
     padding: 80px 0;
-    background: #F9F9F9;
+    background: linear-gradient(135deg, #019C55, #5D96FF, #FE6363);;
 }
 
 /* Flex Container */
@@ -1002,6 +1002,10 @@ a.see-more-reviews:hover {
     color: #FE6363;
     font-weight: bold;
     margin-right: 10px;
+}
+
+.text-content .terms-and-conditions {
+    font-size: 10px;
 }
 
 /* Apply Button */
