@@ -1370,3 +1370,68 @@ footer p,
     transform: scale(1.1);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
+
+.single-service-page {
+    padding: 80px 40px;
+}
+
+.service-picture-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.service-text-content h2 {
+    font-size: 1.7rem;
+}
+
+.service-text-content p {
+    line-height: 1.9rem;
+    max-width: 70%;
+    font-size: 1.3rem;
+}
+
+.service-page-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Checklist Styling */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.checklist li {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Adjust emoji sizes */
+.checklist li::before {
+    content: "✅";
+    font-size: 1.4rem;
+}
+
+.images-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.service-cta-section {
+    text-align: center;
+    background-color: #4a7fbb;
+    color: white;
+    padding: 90px 50px;
+}
+
+.service-cta-section h3 {
+    font-size: 2.3rem;
+}
