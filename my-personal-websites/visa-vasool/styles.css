@@ -299,7 +299,6 @@ main {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    height: 50vh;
     color: white;
     padding-top: 80px; /* Add space equal to the height of the header */
 }
@@ -315,10 +314,34 @@ main .main-content {
 	font-size: 36px;
 }
 
+@media all and (max-width: 935px) {
+    .main-content h2 {
+        font-size: 24px;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .main-content h2 {
+        font-size: 18px;
+    }
+}
+
 .main-content h1 {
 	font-size: 16px;
 	max-width: 70%;
 	text-align: center;
+}
+
+@media all and (max-width: 999px) {
+    .main-content h1 {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 824px) {
+    .main-content h1 {
+        font-size: 12px;
+    }
 }
 
 .red-background-hero {
@@ -340,6 +363,20 @@ main .main-content {
 	color: #FE6B3F;
 	font-weight: bold;
 	text-decoration: none;
+}
+
+@media all and (max-width: 800px) {
+    .red-background-hero {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px 60px;
+        height: 45vh;
+    }
+
+    .left-col {
+        max-width: 100%;
+    }
+
 }
 
 section.services-section {
