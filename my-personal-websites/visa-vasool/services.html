@@ -9,63 +9,102 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-	<header> 
-    <a href="index.html"><img src="images/logos/alogo.png"></a>
+	<header>
+  <!-- Logo -->
+  <a href="index.html" class="logo">
+    <img src="images/logos/alogo.png" alt="Logo" />
+  </a>
 
-    <nav>
-        <ul>
-            <li class="dropdown-container">
-                <a href="services.html" class="dropdown">Our Services</a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <img src="images/icons/united-states.png" alt="US University Icon">
-                        <a href="us-admissions.html">US Universities Admissions Counseling</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/united-kingdom.png" alt="UK Flag Icon">
-                        <a href="uk-admissions.html">UK Universities Admissions Counseling</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/european-union.png" alt="Europe Globe Icon">
-                        <a href="europe-admissions.html">Europe Universities Admissions Counseling</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/canada.png" alt="Canada Maple Leaf Icon">
-                        <a href="canada-admissions.html">Canada Universities Admissions Counseling</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/australia.png" alt="Australia Flag Icon">
-                        <a href="australia-admissions.html">Australia Universities Admissions Counseling</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/pen.png" alt="SOP Writing Icon">
-                        <a href="sop-writing.html">SOP Writing</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown-container">
-                <a href="about.html" class="dropdown">About Us</a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <img src="images/icons/target.png" alt="US University Icon">
-                        <a href="about.html#mission">Mission</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/team.png" alt="UK Flag Icon">
-                        <a href="about.html#team">Team</a>
-                    </li>
-                    <li>
-                        <img src="images/icons/goal.png" alt="Europe Globe Icon">
-                        <a href="about.html#journey">Our Journey</a>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="ambassador-program.html">Ambassador Program</a></li>
-            <li><a href="velievers.html"><span style="color: #5D96FF; font-size: 1.3rem; font-weight: bold;">V</span><span style="color: #019C55;">elievers</span></a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="index.html#form" class="lets-talk-button">Let's Talk</a></li>
+  <!-- Desktop Navigation (unchanged) -->
+  <nav>
+    <ul>
+      <li class="dropdown-container">
+        <a href="services.html" class="dropdown">Our Services</a>
+        <ul class="dropdown-menu">
+          <li>
+            <img src="images/icons/united-states.png" alt="US University Icon">
+            <a href="us-admissions.html">US Universities Admissions Counseling</a>
+          </li>
+          <li>
+            <img src="images/icons/united-kingdom.png" alt="UK Flag Icon">
+            <a href="uk-admissions.html">UK Universities Admissions Counseling</a>
+          </li>
+          <li>
+            <img src="images/icons/european-union.png" alt="Europe Globe Icon">
+            <a href="europe-admissions.html">Europe Universities Admissions Counseling</a>
+          </li>
+          <li>
+            <img src="images/icons/canada.png" alt="Canada Maple Leaf Icon">
+            <a href="canada-admissions.html">Canada Universities Admissions Counseling</a>
+          </li>
+          <li>
+            <img src="images/icons/australia.png" alt="Australia Flag Icon">
+            <a href="australia-admissions.html">Australia Universities Admissions Counseling</a>
+          </li>
+          <li>
+            <img src="images/icons/pen.png" alt="SOP Writing Icon">
+            <a href="sop-writing.html">SOP Writing</a>
+          </li>
         </ul>
-    </nav>
+      </li>
+      <li class="dropdown-container">
+        <a href="about.html" class="dropdown">About Us</a>
+        <ul class="dropdown-menu">
+          <li>
+            <img src="images/icons/target.png" alt="US University Icon">
+            <a href="about.html#mission">Mission</a>
+          </li>
+          <li>
+            <img src="images/icons/team.png" alt="UK Flag Icon">
+            <a href="about.html#team">Team</a>
+          </li>
+          <li>
+            <img src="images/icons/goal.png" alt="Europe Globe Icon">
+            <a href="about.html#journey">Our Journey</a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="ambassador-program.html">Ambassador Program</a></li>
+      <li>
+        <a href="velievers.html">
+          <span style="color: #5D96FF; font-size: 1.3rem; font-weight: bold;">V</span>
+          <span class="velievers-text" style="color: #019C55;">elievers</span>
+        </a>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#form" class="lets-talk-button">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hamburger Menu (hidden by default above 1209px) -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Mobile Navigation (hidden by default above 1209px) -->
+  <nav class="mobile-nav">
+    <ul>
+     <li>   
+        <a href="index.html" class="logo">
+            <img src="images/logos/alogo.png" alt="Logo" />
+        </a>
+      </li> 
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Our Services</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="ambassador-program.html">Ambassador Program</a></li>
+      <li>
+        <a href="velievers.html">
+          <span style="color: #5D96FF; font-size: 1.3rem; font-weight: bold;">V</span>
+          <span class="velievers-text" style="color: #fff;">elievers</span>
+        </a>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#form" class="lets-talk-button">Let's Talk</a></li>
+    </ul>
+  </nav>
 </header>
 
 	<section class="services-section">
@@ -206,5 +245,6 @@
     </footer>
 
     <script src="js/header-script.js"></script>
+    <script src="js/responsive-header-script.js"></script>
 </body>
 </html>

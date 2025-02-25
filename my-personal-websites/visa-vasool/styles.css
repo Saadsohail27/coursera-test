@@ -1208,6 +1208,12 @@ a.see-more-reviews:hover {
     overflow: hidden;
 }
 
+@media all and (max-width: 920px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+}
+
 /* Text Content */
 .text-content {
     flex: 1;
