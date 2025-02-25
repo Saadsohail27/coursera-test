@@ -605,6 +605,31 @@ a.start-your-journey-button:hover {
 	line-height: 27px;
 }
 
+@media all and (max-width: 1150px) {
+    .meet-our-counselors p {
+    max-width: 50%;
+}
+}
+
+@media all and (max-width: 970px) {
+        .meet-our-counselors {
+        padding: 50px 60px;
+    }
+}
+
+@media all and (max-width: 900px) {
+        .meet-our-counselors {
+        padding: 50px 40px;
+        flex-direction: column-reverse;
+    }
+
+        .meet-our-counselors p {
+        max-width: 100%;
+    }
+}
+
+
+
 .meet-our-college-counselors {
 	background: linear-gradient(to right, #EF5053, #FD714C);
     padding: 7px 30px;
@@ -645,9 +670,27 @@ a.start-your-journey-button:hover {
 .who-you-will-work-with-grid {
 	display: grid;
 	padding: 40px 20px;
+    justify-items: center;
+    align-items: center;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	row-gap: 50px;
+    column-gap: 50px;
+}
+
+@media all and (max-width: 1182px) {
+    .who-you-will-work-with-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media all and (max-width: 776px) {
+    .who-you-will-work-with-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        min-width: 320px;
+    }
 }
 
 .who-you-will-work-with-card {
@@ -656,6 +699,7 @@ a.start-your-journey-button:hover {
      border-radius: 8px;
      padding: 1.5rem;
      max-width: 320px;
+     min-width: 250px;
 	 text-align: left;
 }
 
@@ -722,7 +766,20 @@ a.book-a-consultation:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 300px;
+  min-width: 300px;
   text-align: center;
+}
+
+@media all and (max-width: 1170px) {
+    .what-our-students-say {
+          grid-template-columns: repeat(2, minmax(0px, 1fr));
+    }
+}
+
+@media all and (max-width: 795px) {
+    .what-our-students-say {
+          grid-template-columns: repeat(1, minmax(0px, 1fr));
+    }
 }
 
 .student-image img {
