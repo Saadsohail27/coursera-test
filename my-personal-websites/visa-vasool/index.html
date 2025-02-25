@@ -112,6 +112,25 @@
 			<h2>98% Acceptance Rate To Your Top College Choices</h2>
 			<h1>Visa Vasool is the leading #1 college conuslting company, helping students get into the Ivy League and Top 15 schools at up to 7x the average rate. Let our experts guide you ro success.</h1>
 		</div>
+		<div class="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <h1 class="university-name">Cornell University</h1>
+            <img src="images/students/student-1.webp" alt="Student" class="student-img">
+        </div>
+        <div class="carousel-item">
+            <h1 class="university-name">NYU</h1>
+            <img src="images/students/student-1.webp" alt="Student" class="student-img">
+        </div>
+        <div class="carousel-item">
+            <h1 class="university-name">Harvard</h1>
+            <img src="images/students/student-1.webp" alt="Student" class="student-img">
+        </div>
+    </div>
+</div>
+
+
+
 		<div class="red-background-hero">
 			<div class="left-col">
 				<h4>Our Early Admissions Results Are In!</h4>
@@ -624,6 +643,22 @@
 
     <script src="js/header-script.js"></script>
     <script src="js/responsive-header-script.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const items = document.querySelectorAll(".carousel-item");
+    const totalItems = items.length;
+
+    function showNextSlide() {
+        items[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % totalItems;
+        items[currentIndex].classList.add("active");
+    }
+
+    setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+});
+
+    </script>
 	<script src="js/script.js"></script>
 	<script src="js/form-script.js"></script>
 	<script src="js/faq-script.js"></script>
