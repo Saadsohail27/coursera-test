@@ -1375,7 +1375,7 @@ footer p,
     padding: 80px 40px;
 }
 
-.service-picture-container {
+.service-page-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -1434,4 +1434,40 @@ footer p,
 
 .service-cta-section h3 {
     font-size: 2.3rem;
+}
+
+@media all and (max-width: 997px) {
+
+        .single-service-page {
+        padding: 40px 40px;
+    }
+
+    .service-text-content p {
+        max-width: 100%;
+    }
+
+        .service-page-container {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 768px) { 
+    .images-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .service-page-image {
+        display: none; /* Hide all images by default */
+    }
+
+    .service-page-image:first-child { 
+        display: block; /* Show only the first image */
+        width: 100%; /* Make it responsive */
+        margin-top: 20px; /* Space after the heading */
+    }
+
+    .service-text-content h2 + p {
+        margin-bottom: 20px; /* Ensure spacing between the heading and the image */
+    }
 }

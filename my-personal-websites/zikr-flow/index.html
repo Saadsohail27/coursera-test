@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zikar Flow - Learn the Quran with Excellence</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
@@ -12,20 +13,25 @@
         <div class="logo"><a href="index.html">Zikar<span>Flow</a></span></div>
         <nav>
             <ul>
-                <li><a href="#benefits">Home</a></li>
-                <li><a href="#benefits">About</a></li>
-                <li><a href="#benefits">What Our Students Say</a></li>
-                <li><a href="#benefits">Why Us</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#register" class="header-cta">Register Now</a></li>
+                <li><a href="index.html" class="current-link">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <!--<li><a href="testimonials.html">What Our Students Say</a></li>-->
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="index.html#register" class="header-cta">Register Now</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>Master the Quran with Excellence</h1>
-        <p>Personalized, expert-led Quran learning for all ages.</p>
-        <a href="#register" class="cta-button">Start Learning Now</a>
+     <div class="text-content-container">
+            <h1>Master the Quran with Excellence</h1>
+            <p>Personalized, expert-led Quran learning for all ages.</p>
+            <a href="#register" class="cta-button">Start Learning Now</a>
+        </div>
+        <div class="image-container">
+            <img class="teacher-picture" src="images/abbas-picture-2.jpg" alt="Picture of Muhammad Abbas">
+        </div>
     </section>
 
     <section id="benefits" class="benefits">
@@ -56,9 +62,70 @@
         </form>
     </section>
 
+    <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What is Zikr Flow?</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Zikr Flow is an online Quran academy dedicated to providing high-quality Islamic education.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How are the classes conducted?</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Classes are conducted online via interactive live sessions on Skype, Zoom, Meet with our qualified teacher Muhammad Abbas.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What courses do you offer?</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                We offer Quran recitation, memorization (Hifz), Tajweed, Salah Technique and ways of other Islamic practices.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is there a free trial available?</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes! We offer a free trial class so you can experience our teaching methods before enrolling.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>What languages do you teach in?</span>
+                <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+                English, Urdu and Pashto
+            </div>
+        </div>
+    </div>
+</section>
+
     <footer>
         <p>&copy; 2025 Zikar Flow. All Rights Reserved.</p>
     </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=923254307068" target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    </a>
+
+<script src="js/faq-script.js"></script>
 
 </body>
 </html>
