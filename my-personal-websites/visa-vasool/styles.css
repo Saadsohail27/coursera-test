@@ -14,45 +14,54 @@ body {
     overflow-x: hidden;
 }
 
+/**************************************************************
+  EXISTING DESKTOP STYLES (unchanged)
+**************************************************************/
+
 header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 40px;
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent); /* Optional gradient for better readability */	padding: 20px 40px;
-	position: absolute; /* Make header overlay the main content */
-	top: 0;
-	width: 100%; /* Full-width header */
-	z-index: 1000; /* Ensure header is above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent); 
+    padding: 20px 40px;
+    position: absolute; /* Make header overlay the main content */
+    top: 0;
+    width: 100%; /* Full-width header */
+    z-index: 1000; /* Ensure header is above other elements */
 }
 
+/* If you want a .logo class on your <a>:
+   <a href=\"index.html\" class=\"logo\"><img ... /></a>
+   Then we can style it specifically, but let's leave it as is. */
+
 header div.logo {
-	width: 80px;
-	height: 80px;
+    width: 80px;
+    height: 80px;
 }
 
 nav ul {
-	display: flex;
-	gap: 80px;
+    display: flex;
+    gap: 80px;
 }
 
 nav ul li {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 nav ul li a {
-	text-decoration: none;
-	color: white;
-	font-size: 14px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
 }
 
 nav ul li a:hover {
-	color: rgb(115, 116, 125);
-	transition: color 0.3s ease;
+    color: rgb(115, 116, 125);
+    transition: color 0.3s ease;
 }
 
 nav ul li a.dropdown::after {
-    content: "▼"; /* Unicode character for the arrow */
+    content: \"▼\"; /* Unicode character for the arrow */
     font-size: 10px; /* Adjust arrow size */
     margin-left: 8px; /* Add some spacing between the text and arrow */
     color: white; /* Match the arrow color with text */
@@ -73,11 +82,10 @@ nav ul li a.lets-talk-button {
 }
 
 nav ul li a.lets-talk-button:hover {
-	background: linear-gradient(to right, rgb(136, 23, 28), rgb(136, 23, 28));
+    background: linear-gradient(to right, rgb(136, 23, 28), rgb(136, 23, 28));
 }
 
 /* Sticky Header Effect */
-
 header.sticky a img {
     object-fit: cover;
     transition: width 0.3s ease, height 0.3s ease;
@@ -126,10 +134,11 @@ header.sticky a img {
     border-radius: 5px;
 }
 
-/* Show dropdown when hovering over "Our Services" */
+/* Show dropdown when hovering */
 .dropdown-container:hover .dropdown-menu {
     display: flex;
 }
+
 /* Sticky Header Support */
 header.sticky .dropdown-menu {
     background: white;
@@ -144,7 +153,7 @@ header.sticky {
 }
 
 /* Change text color in sticky mode */
-header.sticky nav ul li a {
+header.sticky nav:not(.mobile-nav) ul li a {
     color: black;
 }
 
@@ -167,6 +176,122 @@ header.sticky nav ul li a.lets-talk-button {
 header.sticky nav ul li a.lets-talk-button:hover {
     background: linear-gradient(to right, rgb(136, 23, 28), rgb(136, 23, 28));
 }
+
+.mobile-nav {
+    display: none;
+}
+
+/**************************************************************
+  RESPONSIVE OVERRIDES FOR MOBILE (MAX-WIDTH: 1209px)
+**************************************************************/
+@media screen and (max-width: 1209px) {
+    /* Hide the desktop nav entirely at mobile sizes */
+    nav ul {
+        display: none;
+    }
+
+    /* We want the header content centered on mobile. 
+       Make sure we can place the hamburger on the right. */
+    header {
+        justify-content: center; /* center the logo horizontally */
+        position: fixed;
+    }
+
+    /* Hamburger icon styles */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        z-index: 110000000000;
+        position: fixed;
+        right: 10px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 4px;
+        border-radius: 10px;
+        background: white;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    header.sticky .hamburger span {
+        background-color: black;
+        z-index: 1000000000000;
+        border-radius: 10px;
+    }
+
+    /* X icon transformation */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Mobile nav container (hidden off-canvas by default) */
+    .mobile-nav {
+        display: block; /* show the mobile nav element */
+    }
+
+    .mobile-nav ul {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #000; /* from your screenshot suggestion */
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        padding: 60px 20px 20px 20px;
+        transition: left 0.3s ease;
+        z-index: 1099; /* so it's on top of content, behind hamburger */
+        gap: 30px;
+    }
+
+    /* Slide in the mobile nav when active */
+    .mobile-nav ul.active {
+        left: 0;
+    }
+
+    .mobile-nav ul li {
+        margin-bottom: 5px;
+    }
+
+    .mobile-nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .mobile-nav ul li a:hover {
+        color: #FD714C;
+    }
+
+    /* Overlay to darken the rest of the screen when menu is open */
+    .mobile-nav .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 1098; /* behind the nav but above page content */
+    }
+
+    .mobile-nav .overlay.active {
+        display: block;
+    }
+}
+
+
 
 main {
 	background-image: url("images/hero-background-image.webp");
@@ -1138,12 +1263,12 @@ a.see-more-reviews:hover {
 
 
 .project-section:nth-child(odd) {
-    background: linear-gradient(to bottom, #FAD4C0, #F28C8C);
+    background: linear-gradient(to bottom, #0D1B2A, #1B3A4B);
     color: #ffffff; /* White text for contrast */
 }
 
 .project-section:nth-child(even) {
-    background: linear-gradient(to bottom, #027A45, #015C35);
+    background: linear-gradient(to bottom, #8B5E83, #FAD4C0);
     color: #ffffff; /* White text for contrast */
 }
 
@@ -1226,7 +1351,7 @@ section.projects-cta p {
 .project-impact {
     width: 100%; /* Set to full width */
     max-width: 400px; /* Adjust as necessary */
-    background-color: rgb(61 29 29 / 90%);
+    background: #3E2F40;
     padding: 20px;
     border-radius: 8px;
     margin: 10px 0; /* Reduced margin for consistent spacing */

@@ -29,3 +29,4 @@ if (isHomePage) {
     logo.src = "images/logos/logo-black-80.png"; // Use sticky logo
     elieversText.style.color = "#019C55"; // Keep "elievers" text green in sticky header
 }
+
