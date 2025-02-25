@@ -669,7 +669,6 @@ a.start-your-journey-button:hover {
 
 .who-you-will-work-with-grid {
 	display: grid;
-	padding: 40px 20px;
     justify-items: center;
     align-items: center;
 	grid-template-columns: repeat(3, 1fr);
@@ -713,7 +712,21 @@ a.start-your-journey-button:hover {
     }
 }
 
+@media all and (max-width: 700px) {
 
+    .who-you-will-work-with {
+        padding: 2rem 2rem;
+    }
+
+}
+
+@media all and (max-width: 500px) {
+
+    .who-you-will-work-with {
+        padding: 2rem 1rem;
+    }
+
+}
 .who-you-will-work-with-card h3 {
             font-size: 1.25rem;
             color: #464AC9;
