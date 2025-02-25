@@ -698,9 +698,19 @@ a.start-your-journey-button:hover {
      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
      border-radius: 8px;
      padding: 1.5rem;
-     max-width: 320px;
-     min-width: 250px;
 	 text-align: left;
+}
+
+@media all and (max-width: 450px) {
+
+    .who-you-will-work-with-grid {
+        width: 100%;
+    }
+
+    .who-you-will-work-with-card {
+        max-width: none;
+        min-width: 0;
+    }
 }
 
 
@@ -766,7 +776,6 @@ a.book-a-consultation:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 300px;
-  min-width: 300px;
   text-align: center;
 }
 
