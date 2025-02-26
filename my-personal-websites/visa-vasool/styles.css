@@ -1626,7 +1626,8 @@ section.projects-cta p {
 
 .founder-caption {
     font-size: 14px;
-    color: gray;
+    font-weight: bold;
+    color: white;
     margin-top: 8px;
     text-align: center;
 }
