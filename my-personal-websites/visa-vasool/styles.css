@@ -326,6 +326,12 @@ main .main-content {
     }
 }
 
+@media all and (max-width: 460px) {
+    .main-content h2 {
+        font-size: 15.5px;
+    }
+}
+
 .main-content h1 {
 	font-size: 16px;
 	max-width: 70%;
@@ -343,6 +349,10 @@ main .main-content {
         font-size: 12px;
     }
 }
+
+
+
+
 
 .red-background-hero {
 	display: flex;
