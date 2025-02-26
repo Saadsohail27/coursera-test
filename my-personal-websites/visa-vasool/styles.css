@@ -1599,3 +1599,72 @@ section.projects-cta p {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+
+.founders-message {
+    margin-top: 150px;
+    padding: 40px 60px;
+}
+
+.founder-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between image and text */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.founder-image {
+    flex: 0 0 250px; /* Controls image width */
+    text-align: center;
+}
+
+.founder-image img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+}
+
+.founder-caption {
+    font-size: 14px;
+    color: gray;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.founder-text {
+    flex: 1;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* New styles for extra images */
+.founder-extra-images {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.founder-extra-images img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+@media (max-width: 768px) {
+    .founder-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-image {
+        flex: none;
+    }
+
+    .founder-text {
+        text-align: center;
+    }
+
+    .founder-extra-images {
+        justify-content: center; /* Centers images on mobile */
+    }
+}
