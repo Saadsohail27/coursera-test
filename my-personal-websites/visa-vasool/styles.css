@@ -1748,3 +1748,189 @@ section.projects-cta p {
         justify-content: center; /* Centers images on mobile */
     }
 }
+
+.us-container {
+        margin-top: 80px;
+        padding: 20px 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .us-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(135deg, #019C55, #5D96FF);
+        color: white;
+        padding: 80px 0;
+    }
+
+    .us-hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+    .text-picture-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.us-hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+ .us-hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+    .us-btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #FE6363;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 50px;
+    }
+    .us-grid {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .us-process {
+    background: linear-gradient(135deg, #019C55, #5D96FF);
+    color: white;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.us-section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.us-step-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto 40px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+
+.us-step-section {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+
+.us-step-section.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.us-step-image {
+    background-image: url('https://source.unsplash.com/800x600/?education,university');
+}
+
+.us-step-text {
+    width: 50%;
+    padding: 40px;
+    color: #333;
+    text-align: left;
+}
+
+.us-step-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #019C55;
+}
+
+.us-step-desc {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.us-step-image {
+    width: 50%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .us-step-section {
+        flex-direction: column;
+    }
+    .us-step-text, .us-step-image {
+        width: 100%;
+        text-align: center;
+    }
+    .us-step-text {
+        padding: 30px;
+    }
+}
+
+/* Scroll Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.us-step-section.animated {
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+
+    .us-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .us-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .us-testimonial-slider {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+    }
+    .us-testimonial {
+        background: #5D96FF;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .us-cta {
+        background: #FE6363;
+        color: white;
+        padding: 50px 0;
+    }
