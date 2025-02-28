@@ -1803,7 +1803,7 @@ section.projects-cta p {
         justify-content: center;
     }
 
-    .us-process {
+   .us-process {
     background: linear-gradient(135deg, #019C55, #5D96FF);
     color: white;
     text-align: center;
@@ -1812,99 +1812,46 @@ section.projects-cta p {
 
 .us-section-title {
     font-size: 2rem;
-    margin-bottom: 50px;
-    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
-.us-step-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.us-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     width: 80%;
-    margin: 0 auto 40px;
+    margin: auto;
+}
+
+.us-step {
     background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
-    transform: translateY(30px);
-    opacity: 0;
-    transition: all 0.6s ease-in-out;
-}
-
-.us-step-section {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-}
-
-
-.us-step-section.show {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.us-step-image {
-    background-image: url('https://source.unsplash.com/800x600/?education,university');
-}
-
-.us-step-text {
-    width: 50%;
-    padding: 40px;
     color: #333;
-    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.us-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.us-step-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .us-step-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #019C55;
 }
 
 .us-step-desc {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.8;
 }
 
-.us-step-image {
-    width: 50%;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-}
-
-.reverse {
-    flex-direction: row-reverse;
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-    .us-step-section {
-        flex-direction: column;
-    }
-    .us-step-text, .us-step-image {
-        width: 100%;
-        text-align: center;
-    }
-    .us-step-text {
-        padding: 30px;
-    }
-}
-
-/* Scroll Animation */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.us-step-section.animated {
-    animation: fadeInUp 0.8s ease-in-out;
-}
 
 
     .us-card {
@@ -1929,8 +1876,182 @@ section.projects-cta p {
         padding: 20px;
         border-radius: 10px;
     }
-    .us-cta {
-        background: #FE6363;
-        color: white;
-        padding: 50px 0;
+/* Flexbox for Side-by-Side Layout */
+.cta-marquee-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Adjust spacing */
+    padding: 50px 80px;
+    background: #019C55; /* Keeps Visa Vasool theme */
+}
+
+/* Call to Action - Left */
+.us-cta {
+    flex: 1; /* Takes available space */
+    color: white;
+}
+
+.us-container {
+    text-align: left;
+}
+
+.start-journey-cta {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #EF5053, #FD714C);
+    background-size: 200%;
+    color: ghostwhite;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0); /* Default position */
+}
+
+.start-journey-cta:hover {
+    background-position: left;
+    transform: translateY(-5px); /* Moves the button slightly up */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Optional: Adds a subtle shadow effect */
+}
+
+/* Marquee - Right */
+.university-marquee {
+    flex: 1; /* Takes more space */
+    overflow: hidden;
+    background: linear-gradient(to right, #019C55, #5D96FF);
+    padding: 20px;
+    white-space: nowrap;
+    position: relative;
+    border-radius: 10px;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 50px;
+    animation: marquee 20s linear infinite;
+}
+
+.university {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px; /* Adjust as needed */
+}
+
+.university img {
+    width: auto; /* Adjust logo size */
+    height: 100px;
+}
+
+.university p {
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
     }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause animation on hover */
+.university-marquee:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Responsive - Stack on Smaller Screens */
+@media (max-width: 1024px) {
+    .cta-marquee-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .us-cta, .university-marquee {
+        width: 100%;
+    }
+
+    .marquee-content {
+        justify-content: center;
+    }
+}
+
+.meet-counselor {
+    background-image: url("images/backgrounds/background-1.jpg");
+    background-attachment: fixed;
+    padding: 50px 10px;
+}
+
+.meet-counselor h2 {
+    text-align: center;
+    color: white;
+}
+
+.counselor-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; /* Space between image and text */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}   
+
+.counselor-image {
+    flex: 0 0 250px; /* Controls image width */
+    text-align: center;
+}
+
+.counselor-image img {
+    width: 100%;
+    max-width: 250px;
+    display: block;
+}
+
+.counselor-caption {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.counselor-text {
+    flex: 1;
+    text-align: left;
+    font-size: 20px;
+    line-height: 2.5rem;
+}
+
+/* New styles for extra images */
+.counselor-extra-images {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.counselor-extra-images img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+@media (max-width: 768px) {
+    .counselor-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .counselor-image {
+        flex: none;
+    }
+
+    .counselor-extra-images {
+        justify-content: center; /* Centers images on mobile */
+    }
+}
+
