@@ -3,6 +3,10 @@ html {
 }
 
 
+* {
+    box-sizing: border-box;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -12,69 +16,168 @@ body {
     color: white;
 }
 
-/* Header */
+/* HEADER */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 90px;
-    background: black;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 90px;
+  background: black;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
+/* LOGO */
 .logo a {
-    font-size: 28px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 .logo span {
-    color: red;
+  color: red;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+/* DESKTOP NAV */
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
 }
 
-nav ul li {
-    display: inline;
+.desktop-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    transition: 0.3s;
-}
 
-nav ul li a:hover {
-    color: red;
+
+.desktop-nav ul li a:hover {
+  color: red;
 }
 
 a.header-cta {
-    background-color: #E11C1C;
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    border-radius: 3px;
-    transition: 0.3s;
+  background-color: #E11C1C;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 0.3s;
 }
 
 a.header-cta:hover {
-    background-color: #B61919;
-    color: white;
+  background-color: #B61919;
+  color: white;
 }
 
 .current-link {
-    color: #B61919;
+  color: #B61919;
+}
+
+/* HAMBURGER MENU (Hidden by default, shown below 850px) */
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: none; /* hidden on large screens */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1100; /* above mobile nav */
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* ANIMATION - HAMBURGER TO "X" */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE NAV OVERLAY */
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none; /* hidden by default */
+}
+
+.mobile-nav-overlay.open {
+  display: block;
+}
+
+/* MOBILE NAV (slides in from the left) */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hide offscreen to the left */
+  width: 70%;
+  height: 100%;
+  background: black;
+  transition: 0.4s ease;
+  z-index: 1000;
+  padding: 80px 20px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-nav.open {
+  left: 0; /* Slides into view */
+}
+
+/* MOBILE NAV STYLES */
+.mobile-nav ul {
+  list-style: none;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 20px;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.mobile-nav ul li a:hover {
+  color: red;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 850px) {
+  /* Hide desktop nav on smaller screens */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
 }
 
 /* Hero Section */
@@ -135,6 +238,41 @@ a.header-cta:hover {
     object-fit: contain; /* Ensures the image covers the circular area properly */
 }
 
+@media all and (max-width: 947px) {
+    .hero {
+        padding: 60px 30px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+@media all and (max-width: 885px) {
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+
+@media all and (max-width: 661px) {
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 470px) {
+    .hero h1 {
+        font-size: 20px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+}
+
+
 /* Benefits Section */
 .benefits {
     padding: 50px;
@@ -162,6 +300,17 @@ a.header-cta:hover {
 
 .benefit h3 {
     color: red;
+}
+
+@media all and (max-width: 881px) {
+    .benefit-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 80%;
+    }
 }
 
 /* Registration Section */
@@ -298,4 +447,92 @@ footer {
 .faq-item.active .faq-icon {
     transform: rotate(180deg);
     color: #FE6363;
+}
+
+/* Course Section */
+.courses {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #000, #1a1a1a); /* Dark gym-inspired theme */
+    color: white;
+    text-align: center;
+}
+
+/* Course Container */
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Course Card */
+.course-card {
+    background: rgba(255, 255, 255, 0.08); /* Glass effect */
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 0, 0, 0.4); /* Subtle red border for gym-style effect */
+}
+
+/* Hover Effect */
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4); /* Red glow effect */
+}
+
+/* Course Image */
+.course-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-image {
+    transform: scale(1.1);
+}
+
+/* Course Title */
+.course-heading {
+    font-size: 22px;
+    margin: 15px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff4d4d; /* Red for gym-like highlight */
+}
+
+/* Course Description */
+.course-description {
+    font-size: 16px;
+    opacity: 0.8;
+    padding: 0 10px;
+}
+
+/* Button */
+.course-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.course-btn:hover {
+    background: #b30000;
 }
