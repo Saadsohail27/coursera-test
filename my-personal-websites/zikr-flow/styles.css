@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 90px;
+  padding: 20px 70px;
   background: black;
   position: fixed;
   width: 100%;
@@ -57,7 +57,7 @@ header {
 
 
 
-.desktop-nav ul li a:hover {
+.desktop-nav ul li a:not(.header-cta):hover {
   color: red;
 }
 
@@ -133,7 +133,7 @@ a.header-cta:hover {
 .mobile-nav {
   position: fixed;
   top: 0;
-  left: -250px; /* Hide offscreen to the left */
+  left: -950px; /* Hide offscreen to the left */
   width: 70%;
   height: 100%;
   background: black;
@@ -153,7 +153,7 @@ a.header-cta:hover {
 }
 
 .mobile-nav ul li {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .mobile-nav ul li a {
@@ -163,7 +163,7 @@ a.header-cta:hover {
   transition: 0.3s;
 }
 
-.mobile-nav ul li a:hover {
+.mobile-nav ul li a:not(.header-cta):hover {
   color: red;
 }
 
@@ -211,11 +211,39 @@ a.header-cta:hover {
     border-radius: 5px;
     margin-top: 50px;
     transition: 0.3s;
+    margin-right: 10px;
 }
 
 .cta-button:hover {
     background: #b30000;
 }
+
+.second-cta-button {
+    background: #674e4e;
+    padding: 10px 20px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 50px;
+    transition: 0.3s;
+}
+
+.second-cta-button:hover {
+    background: black;
+    color: white;
+}
+@media all and (max-width: 450px) {
+    .cta-button, .second-cta-button {
+        font-size: 0.9rem;
+    }
+}
+@media all and (max-width: 390px) {
+    .cta-button, .second-cta-button {
+        font-size: 0.8rem;
+    }
+}
+
 
 
 .text-content-container {
@@ -279,6 +307,11 @@ a.header-cta:hover {
     text-align: center;
     background: #222;
 }
+@media all and (max-width: 445px) {
+    .benefits {
+        padding: 50px 10px;
+    }
+}
 
 .benefit-container {
     display: flex;
@@ -302,7 +335,7 @@ a.header-cta:hover {
     color: red;
 }
 
-@media all and (max-width: 881px) {
+@media all and (max-width: 1042px) {
     .benefit-container {
         flex-direction: column;
         align-items: center;
@@ -310,6 +343,14 @@ a.header-cta:hover {
 
     .benefit {
         width: 80%;
+        padding: 30px;
+    }
+}
+
+@media all and (max-width: 742px) {
+
+    .benefit {
+        width: 100%;
     }
 }
 
@@ -535,4 +576,88 @@ footer {
 
 .course-btn:hover {
     background: #b30000;
+}
+
+/* ABOUT SECTION (Black + Red Theme) */
+.about-section {
+  background-color: #000; /* Dark background */
+  padding: 80px 5%;
+  color: #fff; /* Default text color is white */
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* SECTION TITLE */
+.about-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #B61919; /* Red accent from your theme */
+}
+
+/* DESCRIPTION */
+.about-description {
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: #ccc; /* Slightly lighter text for readability */
+}
+
+/* FOUNDER SECTION LAYOUT */
+.founder-section {
+  display: flex;
+  flex-wrap: wrap;        /* Allows items to wrap on smaller screens */
+  align-items: center;    /* Vertically center content */
+  gap: 30px;              /* Spacing between image and text */
+  justify-content: center;/* Centers the entire section horizontally */
+}
+
+/* FOUNDER IMAGE */
+.founder-image {
+  flex: 1 1 300px;
+  max-width: 300px;
+}
+
+.founder-image img {
+  width: 100%;
+  border-radius: 10px; 
+  border: 3px solid #B61919; /* Red border for a bold accent */
+}
+
+/* FOUNDER INFO */
+.founder-info {
+  flex: 1 1 500px;
+}
+
+.founder-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #E11C1C; /* Another red accent variant */
+}
+
+.founder-bio {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc; /* Slightly lighter text for readability */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .founder-section {
+    flex-direction: column;  /* Stack image and text vertically */
+    text-align: center;
+  }
+  .founder-image, .founder-info {
+    max-width: 100%;         /* Ensure elements fill width on mobile */
+  }
+
+  .founder-image img {
+    height: 450px;
+  }
 }
