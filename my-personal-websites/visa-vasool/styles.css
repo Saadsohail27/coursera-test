@@ -1813,6 +1813,17 @@ section.projects-cta p {
     width: 100%;
     max-width: 500px;
 }
+
+@media (max-width: 889px) {
+    section.us-hero .text-picture-container {
+        flex-direction: column-reverse;
+        row-gap: 50px;
+    }
+
+    .us-hero-content {
+        max-width: none;
+    }
+}
     .us-btn {
         display: inline-block;
         padding: 15px 30px;
