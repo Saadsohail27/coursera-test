@@ -36,6 +36,36 @@ header {
   text-decoration: none;
 }
 
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+
+
+
+
+@media (max-width: 460px) {
+    .logo img {
+        height: 60px;
+        width: auto;
+    }
+}
+
+@media (max-width: 422px) {
+    .logo img {
+        height: 50px;
+        width: auto;
+    }
+}
+
+@media (max-width: 392px) {
+    .logo img {
+        height: 40px;
+        width: auto;
+    }
+}
+
 .logo span {
   color: red;
 }
@@ -75,8 +105,12 @@ a.header-cta:hover {
   color: white;
 }
 
-.current-link {
+ul li a.current-link {
   color: #B61919;
+}
+
+.mobile-nav ul li a.current-link {
+    color: #B61919;
 }
 
 /* HAMBURGER MENU (Hidden by default, shown below 850px) */
@@ -140,6 +174,22 @@ a.header-cta:hover {
   z-index: 1000;
   padding: 80px 20px;
   box-shadow: 2px 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-nav ul li img {
+    height: 60px;
+}
+
+@media (max-width: 488px) {
+    .mobile-nav {
+        padding: 60px 5px;
+    }
+}
+
+@media (max-width: 421px) {
+    .mobile-nav ul li img {
+        height: 50px;
+    }
 }
 
 .mobile-nav.open {

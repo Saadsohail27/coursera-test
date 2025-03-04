@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!isHomePage) {
         // Apply scrolled styles by default for all pages except the homepage
         header.classList.add('scrolled');
-        logo.src = 'images/logos/180black.png'; // Set black logo
+        logo.src = 'images/logos/writexz-logo-black.png'; // Set black logo
     } else {
         // Change logo on scroll (only for homepage)
         window.addEventListener('scroll', function () {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled'); // Add the scrolled class
-                logo.src = 'images/logos/180black.png'; // Set black logo
+                logo.src = 'images/logos/writexz-logo-black.png'; // Set black logo
             } else {
                 header.classList.remove('scrolled'); // Remove the scrolled class
-                logo.src = 'images/logos/180-x180.png'; // Set white logo
+                logo.src = 'images/logos/writexz-logo-white.png'; // Set white logo
             }
         });
     }

@@ -6,6 +6,11 @@
     <title>Zikar Flow - Learn the Quran with Excellence</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Default Favicon -->
+    <link rel="icon" href="images/logo/book-logo-black.png" type="image/png">
+
+    <!-- Dark Mode Favicon -->
+    <link rel="icon" href="images/logo/book-logo-white.png" type="image/png" media="(prefers-color-scheme: dark)">
 </head>
 <body>
 
@@ -13,7 +18,7 @@
   <header>
     <!-- LOGO -->
     <div class="logo">
-      <a href="index.html">Zikar<span>Flow</span></a>
+      <a href="index.html"><img src="images/logo/zikar-flow-logo-white.png"></a>
     </div>
 
     <!-- DESKTOP NAVIGATION -->
@@ -40,6 +45,7 @@
     <!-- MOBILE NAV (slides in from the left) -->
     <nav class="mobile-nav" id="mobileNav">
       <ul>
+        <li><img src="images/logo/zikar-flow-logo-white.png"></li>
         <li><a href="index.html" class="current-link">Home</a></li>
         <li><a href="about.html">About</a></li>
         <!-- <li><a href="testimonials.html">What Our Students Say</a></li> -->
@@ -85,14 +91,21 @@
     </section>
 
     <section id="register" class="register">
-        <h2>Register for Free Trial</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <input type="text" placeholder="(WhatsApp) Phone Number" required>
-            <button type="submit">Start Learning</button>
-        </form>
-    </section>
+    <h2>Register for Free Trial</h2>
+    <form id="registerForm" action="register.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="(WhatsApp) Phone Number" required>
+
+        <!-- Google reCAPTCHA -->
+        <div class="g-recaptcha" data-sitekey="6Lc6iegqAAAAANyOoAIJsamEKnKPPVPNm6iB4fKJ"></div>
+
+        <button type="submit">Start Learning</button>
+    </form>
+</section>
+
+<!-- Status Pop-Up -->
+<div id="statusPopup" class="hidden"></div>
 
     <section class="faq-section">
     <h2>Frequently Asked Questions</h2>
@@ -157,6 +170,10 @@
     <i class="fab fa-whatsapp"></i>
     </a>
 <script src="js/header-script.js"></script>
+<!-- Load jQuery & reCAPTCHA -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="js/script.js"></script> <!-- External JS File -->
 <script src="js/faq-script.js"></script>
 
 </body>
