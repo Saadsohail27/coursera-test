@@ -1675,6 +1675,12 @@ section.projects-cta p {
     padding: 40px 60px;
 }
 
+@media (max-width: 547px) {
+    .founders-message {
+        padding: 40px 20px;
+    }
+}
+
 .founders-message h2 {
     font-size: 2.5rem;
 }
