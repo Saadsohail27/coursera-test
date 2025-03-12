@@ -1294,6 +1294,10 @@ footer p,
     opacity: 0.8;
 }
 
+footer .logo-img {
+    width: 200px;
+}
+
 .newsletter-form {
     display: flex;
     margin-top: 10px;
