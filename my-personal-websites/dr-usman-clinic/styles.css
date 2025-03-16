@@ -35,7 +35,7 @@ html {
     text-align: center;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 10%;
+    padding: 0.5rem 8%;
     align-items: center;
     transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, padding 0.3s ease-in-out;
     background: transparent; /* Initially transparent */
@@ -58,7 +58,7 @@ html {
     }
 }
 
-@media all and (max-width: 1053px) {
+@media all and (max-width: 1130px) {
     .header {
         padding: 0.5rem 5%; /* Reduce padding more as the screen gets narrower */
     }
@@ -107,7 +107,7 @@ header p {
 
 /* Navigation */
 nav {
-    padding: 0.5rem 20%;
+    padding: 0.5rem 15%;
 }
 @media all and (max-width: 1267px) {
     nav {
@@ -217,7 +217,7 @@ header.scrolled {
 }
 
 /* Hide desktop navigation and phone button on smaller screens */
-@media all and (max-width: 1053px) {
+@media all and (max-width: 1130px) {
     nav, .phone-number-container {
         display: none; /* Hide desktop nav and call button */
     }
@@ -285,7 +285,7 @@ header.scrolled .hamburger-menu span {
 
 .mobile-nav ul li {
     padding: 10px 20px;
-    margin: 1.5rem 0;
+    margin: 1.2rem 0;
 }
 
 .mobile-nav ul li a {
@@ -646,6 +646,7 @@ p {
   align-items: center;
   text-align: center;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .service span {
@@ -660,26 +661,6 @@ p {
   font-size: 1.7rem;
 }
 
-div.service a {
-  position: absolute;
-  top: 15px; /* Position the button at the top left */
-  left: 15px;
-  padding: 5px 15px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  border: 2px solid white;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  z-index: 2; /* Ensure the button appears above the gradient overlay */
-  transition: all 0.3s ease;
-}
-
-div.service:hover a {
-  opacity: 1; /* Make the button visible on hover */
-}
 /* Grid-specific adjustments */
 .service:nth-child(1) {
   grid-column: span 2;
