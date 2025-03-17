@@ -1950,3 +1950,313 @@ iframe {
                 align-items: center;
             }
         }
+
+/* ABHRS Section Styles */
+.abhrs-section {
+  margin-top: 90px;
+  padding: 60px 20px;
+  background-color: #f5f5f5; /* Light background color */
+}
+
+
+.abhrs-header {
+    background: linear-gradient(to right, #102B36, #146C8D);
+    color: white;
+    padding: 40px 30px;
+    width: 100%;
+}
+
+/* Section Title */
+.abhrs-section .section-title {
+  text-align: center;
+  color: whitesmoke; /* Adjust to your site's primary color */
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 554px) {
+    .abhrs-section .section-title {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 504px) {
+    .abhrs-section .section-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* Intro Paragraph */
+.abhrs-section .intro-paragraph {
+  text-align: center;
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* Content Row */
+.abhrs-section .content-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Text Column */
+.abhrs-section .text-col {
+  flex: 1 1 50%;
+  padding: 10px;
+}
+
+.text-col h3 {
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #4a4a6a;
+}
+
+.text-col p {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+}
+
+/* Image Column */
+.abhrs-section .img-col {
+  flex: 1 1 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.abhrs-section .img-col img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Dr. Usman Info Section */
+.abhrs-section .dr-usman-info {
+  background: linear-gradient(to right, #102B36, #146C8D);
+  padding: 50px 30px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.abhrs-section .dr-usman-info h3 {
+  color: ghostwhite;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+@media (max-width: 930px) {
+    section.abhrs-section .dr-usman-info h3 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid white;
+    }
+}
+
+@media (max-width: 765px) {
+    section.abhrs-section .dr-usman-info h3 {
+      font-size: 1.4rem;
+    }
+}
+
+
+.abhrs-section .dr-usman-info p {
+    color: white;
+  margin-bottom: 15px;
+  line-height: 2.2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 679px) {
+    section.abhrs-section .dr-usman-info h3 {
+      font-size: 1.2rem;
+    }
+
+    .abhrs-section .dr-usman-info p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    section.abhrs-section .dr-usman-info h3 {
+      font-size: 1.1rem;
+    }
+
+    .abhrs-section .dr-usman-info p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 506px) {
+    section.abhrs-section .dr-usman-info h3 {
+      font-size: 1rem;
+    }
+
+    .abhrs-section .dr-usman-info p {
+        font-size: 1rem;
+    }
+}
+
+/* Verification Section */
+.abhrs-section .verification-section {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.abhrs-section .verification-section h3 {
+  color: #0C828F;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+@media (max-width: 709px) {
+    .abhrs-section .verification-section h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 597px) {
+    .abhrs-section .verification-section h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 495px) {
+    .abhrs-section .verification-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+.abhrs-section .verification-section p {
+  margin-bottom: 15px;
+  line-height: 2.2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 495px) {
+    .abhrs-section .verification-section p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 454px) {
+    .abhrs-section .verification-section p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 427px) {
+    .abhrs-section .verification-section p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Verification Link */
+.abhrs-section .verify-link {
+  display: inline-block;
+  background: linear-gradient(to right, #133E4F, #1B6E8E);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.abhrs-section .verify-link:hover {
+  background: linear-gradient(to right, #102B36, #146C8D)
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .abhrs-section .content-row {
+    flex-direction: column;
+  }
+  
+  .abhrs-section .text-col, 
+  .abhrs-section .img-col {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+.abhrs-accreditation-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.abhrs-accreditation-logos img {
+    width: 200px;
+    height: auto;
+}
+
+.abhrs-accreditation-logos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 100px; /* space between grid items */
+  padding: 40px 0; /* top & bottom spacing if needed */
+}
+
+.accreditation-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* center the text below the image */
+  max-width: 200px;   /* optional, to keep items from stretching too wide */
+}
+
+.accreditation-item img {
+  width: 200px;
+  height: auto;
+}
+
+.accreditation-item p {
+  margin-top: 8px;
+  font-size: 0.9rem; 
+  color: #333;
+}
+
+@media (max-width: 670px) {  
+  .accreditation-item img {
+    width: 160px;
+  }
+}
+
+/* 2) Max-width: 539px */
+@media (max-width: 539px) {
+  .accreditation-item img {
+    width: 140px;
+  }
+}
+
+/* 3) Max-width: 470px */
+@media (max-width: 470px) {
+  /* Add some side padding if needed on smaller screens */
+  .abhrs-accreditation-logos {
+    padding: 40px 70px;
+  }
+
+  .accreditation-item img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 476px) {
+  .accreditation-item p {
+    font-size: 3.2vw;
+  }
+}
+
+/* 4) Max-width: 459px */
+@media (max-width: 459px) {
+  .accreditation-item img {
+    width: 120px;
+  }
+}
