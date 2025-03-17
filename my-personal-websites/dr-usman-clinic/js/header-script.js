@@ -35,3 +35,19 @@ window.addEventListener('scroll', function () {
         header.classList.remove('scrolled');
     }
 });
+
+// --- New Code Added: Close Mobile Nav on Link Click ---
+const mobileNavLinks = document.querySelectorAll('#mobile-nav a');
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (mobileNav.classList.contains('active')) {
+            mobileNav.classList.remove('active');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.style.display = 'none';
+                mobileNav.classList.remove('closing');
+            }, 700);
+            hamburgerMenu.classList.remove('active');
+        }
+    });
+});
