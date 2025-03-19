@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writexz - Tender Services</title>
+    <!-- Default Mode Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logos/32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/logos/64x64.png">
+
+    <!-- Dark Mode Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logos/16x16-white.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logos/32x32-white.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="180x180" href="images/logos/180-x180.png" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" sizes="300x300" href="images/logos/300x300-white.png" media="(prefers-color-scheme: dark)">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/180black.png">
+
+    <!-- Manifest for Progressive Web Apps -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0RSE3726FP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0RSE3726FP');
+</script>
+</head>
+
+
+
+<body>
+
+<header class="header">
+    <!-- Logo in the center -->
+    <div class="logo"><a href="index.html"><img src="images/logos/writexz-logo-white.png"></a></div>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav desktop-nav">
+        <ul class="nav-links nav-left">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="tender-writing.html">Tender Writing</a></li>
+                    <li><a href="tender-drafting.html">Tender Drafting</a></li>
+                    <li><a href="tender-review.html">Tender Review</a></li>
+                    <li><a href="consultation.html">Consultation</a></li>
+                    <li><a href="submission-assistance.html">Submission Assistance</a></li>
+                    <li><a href="policy-creation.html">Policy Creation</a></li>
+                    <li><a href="cqc-registration.html">CQC Registration Services</a></li>
+                    <li><a href="ofsted-registration.html">Ofsted Registration Services</a></li>
+                    <li><a href="website-development.html">Website Development</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <ul class="nav-links nav-right">
+            <li><a href="open-tenders.html">Open Tenders</a></li> 
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="quote.html" class="quote-btn">Get a Quote</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="nav mobile-nav">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <div class="mobile-nav-logo"><a href="index.html"><img src="images/logos/180-x180.png" style="width: 100px; height: 100px;"></a></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="open-tenders.html">Open Tenders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="quote.html" class="quote-btn">Get a Quote</a></li>
+        </ul>
+    </nav>
+</header>
+
+	<section class="contact" style="margin-top: 90px;">
+    <h2>The first step towards your success!</h2>
+    <form id="contact-form">
+        <div class="form-group">
+            <input type="text" placeholder="Name" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder="Email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <input type="tel" placeholder="Phone Number" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="services">What service do you require?</label>
+            <select id="services" name="services" required style="width: 100%; padding: 0.75rem; box-sizing: border-box; border-radius: 8px;">
+                <option value="" disabled selected>Select an option</option>
+                <option value="tender-writing">Tender Writing</option>
+                <option value="tender-drafting">Tender Drafting</option>
+                <option value="tender-review">Tender Review</option>
+                <option value="consultation">Consultation</option>
+                <option value="submission-assistance">Submission Assistance</option>
+                <option value="policy-creation">Policy Creation</option>
+                <option value="cqc-registration">CQC Registration</option>
+                <option value="ofsted-registration">Ofsted Registration</option>
+                <option value="website-development">Website Development</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <textarea id="message" placeholder="Please tell us a bit about your business" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</section>
+
+
+
+<footer class="footer">
+        <div class="footer-container">
+            <!-- Left Section: Logo & Copyright -->
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="images/logos/writexz-logo-white.png" alt="Writexz Logo" class="logo-img">
+                </div>
+                <p class="footer-subtext">TENDER WRITING SPECIALIST</p>
+                <p>&copy; 2025 Writexz. All rights reserved.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Middle Left Section: Contact Info -->
+            <div class="footer-links">
+                <h3>Get in Touch</h3>
+                <p>47 Ellora Road, London, England, SW16 6JG</p>
+                <p><a href="mailto:info@writexz.co.uk">info@writexz.co.uk</a></p>
+                <p><a href="tel:+442038921833">+442038921833</a></p>
+            </div>
+
+            <!-- Middle Right Section: Learn More -->
+            <div class="footer-links">
+                <h3>Learn More</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="feedback.html">Share Your Feedback</a></li>
+                    <li><a href="why-us.html">Why Writexz</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Newsletter -->
+            <div class="footer-newsletter">
+                <h3>Our Newsletter</h3>
+                <p>Subscribe to our newsletter to get our news & deals delivered to you.</p>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletter-email" placeholder="Email Address" required>
+                    <button type="submit" id="newsletter-submit">Join</button>
+                </div>
+
+                <!-- Popup Notification -->
+                <div id="newsletter-popup-message"></div>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="https://api.whatsapp.com/send?phone=442038921833" target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    <script src="js/header-script.js"></script>
+    <script src="js/mobile-header-script.js"></script>
+    <script src="js/header-dropdown-script.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/footer-script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/newsletter-script.js"></script>
+</body>
+</html>
