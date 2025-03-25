@@ -735,7 +735,7 @@ section.hero::before {
 .why-us {
     background-color: #262B32;
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
     font-family: 'Arial', sans-serif;
 }
 
@@ -744,22 +744,24 @@ section.hero::before {
     margin: 0 auto;
 }
 
+/* Section Title */
 .section-title {
     font-size: 36px;
-    color: white;
+    color: #f0f0f0;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .section-title span {
-    color: #007bff;
+    color: #e0e0e0;
 }
 
 .section-subtitle {
     font-size: 18px;
-    color: white;
+    color: #ddd;
     max-width: 600px;
-    margin: 0 auto 40px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
 }
 
 /* Features Grid */
@@ -777,6 +779,8 @@ section.hero::before {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .feature-box:hover {
@@ -799,6 +803,47 @@ section.hero::before {
 .feature-box p {
     font-size: 16px;
     color: #666;
+    line-height: 1.6;
+}
+
+/* Additional Content */
+.why-us-content {
+    margin-top: 60px;
+}
+
+.content-box {
+    background: #1E2228;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.content-box h3 {
+    font-size: 24px;
+    color: #f0f0f0;
+    margin-bottom: 15px;
+}
+
+.content-box p {
+    font-size: 18px;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.content-box ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #ccc;
+}
+
+.content-box ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
 }
 
 /* Responsive Design */
@@ -810,6 +855,23 @@ section.hero::before {
     .section-title {
         font-size: 30px;
     }
+
+    .content-box {
+        padding: 20px;
+    }
+}
+
+/* Initial State */
+.feature-box, .content-box {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation when element becomes visible */
+.feature-box.animate, .content-box.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* About Section */

@@ -457,6 +457,96 @@ a.btn-primary {
 }
 }
 
+ /* Popup container hidden by default */
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #F8F8F8;
+      color: linear-gradient(to right, #102B36, #146C8D);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      width: 90%;       /* 90% of screen width */
+      max-width: 1100px; /* maximum width for larger screens */
+      text-align: center;
+    }
+    /* Hide the popup by default */
+    .hidden {
+      display: none;
+    }
+    /* Popup content container for positioning the close icon */
+    .popup-content {
+      position: relative;
+    }
+    /* Close icon styling */
+    .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: red;
+      color: white;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    /* Popup heading */
+    #popup h2 {
+      margin-top: 0.5rem;
+      font-size: 2rem;
+    }
+    /* Popup paragraph */
+    #popup p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 1rem 0;
+    }
+    /* CTA button with keyframe animation */
+    .popup-cta-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #102B36, #146C8D);
+      color: #F8F8F8;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 2px solid white;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s ease;
+    }
+    .popup-cta-button:hover {
+      transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 600px) {
+      #popup {
+        padding: 1rem;
+        width: 90%;
+      }
+      .popup-cta-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      #popup h2 {
+        font-size: 1.5rem;
+      }
+      #popup p {
+        font-size: 0.9rem;
+      }
+    }
+
 /* General Container Styling */
 .card-container {
     display: flex;
