@@ -577,6 +577,10 @@ a.btn-primary {
 }
     }
 
+.why-us-container {
+    padding: 20px;
+}
+
 .why-us-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
