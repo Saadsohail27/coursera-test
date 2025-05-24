@@ -397,17 +397,19 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-  let popupShown = false;
+  let popupShown = sessionStorage.getItem('popupShown') === 'true';
   const popup = document.getElementById("popup");
   const cardSection = document.querySelector(".card-section");
   
   // Function to show the popup if not already shown
   function showPopup() {
-    if (!popupShown) {
-      popup.classList.remove("hidden");
-      popupShown = true;
-    }
+  if (!popupShown) {
+    popup.classList.remove("hidden");
+    popupShown = true;
+    sessionStorage.setItem('popupShown', 'true');
   }
+}
+
   
   // Close popup when user clicks the X icon
   document.querySelector(".close-popup").addEventListener("click", function() {
