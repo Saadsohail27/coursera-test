@@ -469,7 +469,7 @@ a.btn-primary {
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       z-index: 1000;
-      width: 90%;       /* 90% of screen width */
+      width: 60%;       /* 90% of screen width */
       max-width: 1100px; /* maximum width for larger screens */
       text-align: center;
     }
@@ -519,7 +519,10 @@ a.btn-primary {
   font-weight: bold;
   font-size: 18px;
   border: 2px solid white;
-  animation: violent-shake-loop 3s infinite;
+  animation: 
+    violent-shake-loop 3s infinite,
+    bounce-loop 2.5s ease-in-out infinite,
+    scale-loop 2.8s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
@@ -553,15 +556,38 @@ a.btn-primary {
     transform: rotate(0deg);
   }
 }
+
+@keyframes bounce-loop {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes scale-loop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
     /* Responsive adjustments for smaller screens */
     @media (max-width: 600px) {
       #popup {
         padding: 1rem;
-        width: 90%;
+        width: fit-content;
       }
       .popup-cta-button {
         padding: 8px 16px;
-        font-size: 0.9rem;
+        font-size: 1.3rem;
       }
       #popup h2 {
         font-size: 1.5rem;
@@ -582,7 +608,9 @@ a.btn-primary {
 }
 
 .why-us-container h1 {
-    font-size: 24px;
+    font-size: 30px;
+    text-align: center;
+    color: #4a4a6a;
     margin-bottom: 20px;
 }
 
