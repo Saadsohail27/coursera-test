@@ -585,16 +585,6 @@ a.btn-primary {
         padding: 1rem;
         width: fit-content;
       }
-      .popup-cta-button {
-        padding: 8px 16px;
-        font-size: 1.3rem;
-      }
-      #popup h2 {
-        font-size: 1.5rem;
-      }
-      #popup p {
-        font-size: 0.9rem;
-      }
 
       .close-popup {
   position: absolute;
