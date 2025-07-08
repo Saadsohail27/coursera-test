@@ -1,0 +1,721 @@
+/* styles.css */
+/* ——————————————————————————————
+   Reset & base
+   —————————————————————————————— */
+/* root brand colours */
+:root {
+  --floral-white: #fdf8f3;
+  --text-dark:    #5a3d38;
+  --accent-dark:  #6b443c;
+  --brown: #6B443C;
+  --purewhite: #FFFFFF;
+}
+
+
+
+/* basic reset */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral-white); color:var(--text-dark); }
+
+/* ——————————————————————————————
+   Header
+   —————————————————————————————— */
+.site-header {
+  background: #F8F4ED;            /* light beige */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #E0DDD9;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #5A3D38;
+  text-decoration: none;
+}
+
+/* Navigation */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.main-nav a {
+  text-decoration: none;
+  color: #5A3D38;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.main-nav a:hover {
+  color: #6B443C;
+}
+
+/* CTA Buttons */
+.cta-group {
+  display: flex;
+  gap: 1rem;
+}
+.btn {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary {
+  background: #6B443C; /* deep brown */
+  color: #FFF;
+}
+.btn-outline {
+  background: transparent;
+  color: #6B443C;
+  border: 2px solid #6B443C;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Base styles from earlier assumed */
+
+.hero-section {
+  background: #FDF8F3;
+  padding: 4rem 2rem;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+/* Text Column */
+.hero-text {
+  flex: 1 1 500px;
+}
+.hero-text .intro-text {
+  font-size: 1rem;
+  color: #8C6C5F;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #5A3D38;
+  margin: 1rem 0;
+}
+.hero-text .description,
+.hero-text .location-text {
+  font-size: 1.1rem;
+  color: #6D524A;
+  margin-bottom: 1.2rem;
+}
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Carousel Column */
+.hero-carousel {
+  flex: 1 1 400px;
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+.carousel-track {
+  display: flex;
+  flex-direction: column;
+  animation: scrollImages 12s linear infinite;
+}
+.carousel-track img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* Scrolling Animation */
+@keyframes scrollImages {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-66.66%); /* Scroll up through 2/3 images */
+  }
+}
+
+.container-large {
+  display: flex;
+}
+
+/* left column */
+.hero-left  { flex:1 1 460px; }
+.intro     { font-size:1rem; color:#8c6c5f; }
+.headline  { font-size:3.2rem; line-height:1.2; margin:1rem 0; }
+.subtext   { font-size:1.125rem; margin:.8rem 0 0; color:#6d524a; }
+
+.cta-row   { display:flex; gap:1rem; margin-top:2rem; }
+.btn { display:inline-block; padding:.65rem 1.6rem; font-weight:600;
+       border-radius:50px; text-decoration:none; transition:.2s ease; }
+.btn-primary { background:var(--accent-dark); color:#fff; }
+.btn-outline { border:2px solid var(--accent-dark); color:var(--accent-dark); background:transparent; }
+.btn:hover   { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.1); }
+
+/* right column scaffold (matches Zen’s classes) */
+.hero-right     { min-width:40%; }
+.flex-horizontal{ display:flex; justify-content:center; align-items:center; width:100%; }
+.flip-svp       { /* left‑to‑right isn’t flipped here, but kept for parity */ }
+.marquee        { position:relative; overflow:hidden; width:100%; height:600px; flex:1; }
+.marquee-cover  { position:absolute; inset:0; z-index:10;
+                  /* top & bottom fade (same trick as Zen) */
+                  background-image:
+                    linear-gradient(to bottom, var(--floral-white) 0%, rgba(253,248,243,0) 20%),
+                    linear-gradient(to top,    var(--floral-white) 0%, rgba(253,248,243,0) 20%); }
+
+.track-vertical { position:absolute; display:flex; flex-direction:column;
+                  will-change:transform; animation:marquee-vertical 40s linear infinite; }
+
+/* images inside the track */
+.track-vertical img{
+  width:100%; height:auto; border-radius:20px; margin-bottom:1rem; object-fit:cover;
+  /* subtle shadow like Zen */
+  box-shadow:0 4px 16px rgba(0,0,0,.05);
+}
+
+/* keyframes: move up by half (because images duplicated) */
+@keyframes marquee-vertical{
+  0%   { transform:translateY(0);      }
+  100% { transform:translateY(-50%); }
+}
+
+/* responsive tweaks */
+@media(max-width:880px){
+  .container-large{ flex-direction:column; }
+  .hero-right{ order:-1; /* images above text on mobile */ }
+  .marquee{ height:400px; }
+}
+
+/* CTA Section (brown block) */
+.cta-section {
+  background: #6B443C; /* same as Zen brown */
+  color: #fff;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta-heading {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-subtext {
+  font-size: 1.1rem;
+  color: #f7eae2;
+  margin-bottom: 2rem;
+}
+
+.btn-light {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: #fff;
+  color: #6B443C;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-light:hover {
+  background: #f2f2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Intro */
+.section-intro {
+  background: #fff;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.intro-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5A3D38;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.intro-subtext {
+  font-size: 1.1rem;
+  color: #8C6C5F;
+}
+
+.experience-stack {
+  background-color: #FFF;
+}
+
+/* sticky “stack” container */
+.stack-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* each card */
+.stack-card {
+  position: sticky;        /* key to the stacking illusion */
+  top: 1rem;               /* where it sticks */
+  margin-bottom: 6.25rem;  /* 100 px spacing, like Zen */
+  transform: scale(0.96);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+  z-index: 1;              /* keeps cards above the previous ones */
+}
+
+.stack-card.is-active {
+  transform: scale(1.06);  /* subtle pop when card is current */
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.1),    /* subtle base shadow */
+    0 24px 36px -10px rgba(0, 0, 0, 0.15); /* stronger bottom shadow */
+}
+
+.stack-card:nth-child(2)  { top: 3rem; }
+.stack-card:nth-child(3)  { top: 5rem; }
+.stack-card:nth-child(4)  { top: 7rem; }
+.stack-card:nth-child(5)  { top: 9rem; }
+/* add more as needed for more cards */
+
+/* inner box */
+.card-inner {
+  background: var(--purewhite);
+  border: 1px solid var(--brown);
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* icon */
+.card-icon {
+  flex: 0 0 9rem;          /* 10 rem in Zen; adjust if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+.card-icon img {
+  width: 100%;
+  height: auto;
+}
+
+/* text block */
+.card-content {
+  flex: 1 1 auto;
+}
+.card-title {
+  margin: 0 0 0.5rem;
+  font-family: RecoletaBold, serif;  /* or your own heading font */
+  font-size: 2rem;
+  color: var(--brown);
+}
+.card-content p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #6d524a;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .card-inner { flex-direction: column; text-align: center; }
+  .card-icon  { margin: 0 0 1rem; }
+}
+
+.book-now-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.book-now-btn {
+  background-color: #6d524a;
+  color: #fff;
+  font-family: 'RecoletaBold', serif; /* or your heading font */
+  font-size: 1.05rem;
+  padding: 0.8rem 2.5rem;
+  border-radius: 999px;
+  box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  margin-bottom: 60px;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0px 12px 32px -8px rgba(0, 0, 0, 0.2);
+}
+
+.amenities-section {
+  background-color: #fff9f3;
+  padding: 5rem 2rem;
+  font-family: 'Recoleta', serif;
+}
+
+.amenities-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.amenities-left {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.amenities-left h2 {
+  font-size: 2.75rem;
+  color: #6d524a;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.amenities-left p {
+  font-family: 'Inter', sans-serif;
+  color: #6d524a;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.amenities-right {
+  flex: 1 1 55%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 1.8rem 2rem;
+  align-items: start;
+}
+
+.amenity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #6d524a;
+}
+
+.amenity img {
+  width: 38px;
+  height: auto;
+  object-fit: contain;
+}
+
+.testimonial-section {
+  padding: 4rem 1rem;
+  background: #fef8f2;
+  font-family: 'Recoleta', serif;
+  color: #5c3b30;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.section-subtitle {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+  color: #9c7b71;
+}
+.testimonial-section {
+  padding: 4rem 1rem;
+  background: #fef8f2;
+  font-family: 'Recoleta', serif;
+  color: #5c3b30;
+  text-align: center; /* CENTER EVERYTHING */
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 50% / 50%;
+  width: 350px;
+  min-height: 350px;
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.1);
+  padding: 2rem 2rem;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  overflow-wrap: break-word;
+}
+
+/* Animation classes */
+.testimonial {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
+.testimonial-quote {
+  font-size: 2rem;
+  color: #9c7b71;
+  margin-bottom: 1rem;
+}
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #5c3b30;
+  margin-bottom: 1.5rem;
+}
+.testimonial-author {
+  font-size: 0.95rem;
+  color: #9c7b71;
+}
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.3rem;
+  gap: 0.4rem;
+}
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+.stars span {
+  color: #f5a623;
+  font-size: 1.1rem;
+}
+.testimonial-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.testimonial-wrapper {
+  position: relative;
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateX(30px);
+  width: 100%;
+  max-width: 400px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.testimonial.active {
+  opacity: 1;
+  transform: translateX(-50%) translateX(0);
+  position: absolute;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.testimonial-prev,
+.testimonial-next {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  transform: scale(1.1);
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #6e4640;
+  color: #fff8f1;
+  padding: 80px 40px 40px;
+  font-family: 'Georgia', serif;
+  text-align: center;
+}
+
+.footer-logo {
+  margin-bottom: 60px;
+}
+
+.brand-logo {
+  font-size: 52px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.footer-logo p {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.footer-location {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-location h2 {
+  font-size: 32px;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.footer-location hr {
+  border: none;
+  border-top: 1px solid #d1bfb6;
+  margin: 10px 0 20px;
+  width: 100%;
+}
+
+.footer-location p,
+.footer-location address {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #fefefe;
+}
+
+.footer-location a {
+  color: #fff8f1;
+  text-decoration: underline;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+.consult-button {
+  margin-top: 30px;
+  padding: 14px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  background-color: #fff8f1;
+  color: #6e4640;
+  font-weight: bold;
+  border: none;
+  font-family: 'Georgia', serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.consult-button:hover {
+  background-color: #f7e8d8;
+}
+
+.footer-bottom {
+  border-top: 1px solid #c2a499;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-bottom p {
+  margin: 5px 0;
+}
+
+.footer-bottom a {
+  color: #fff8f1;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    transform: translateX(-100px);  /* Initially off-screen */
+    opacity: 1;  /* Make sure it's visible */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.footer-right .footer-social-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-social-icon path {
+    fill: white;
+}
+
+.footer-social-icon:hover path {
+    fill: #ff4785;
+    transform: scale(1.1); /* This won't apply unless you animate the whole SVG */
+}
