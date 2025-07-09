@@ -15,7 +15,7 @@
 
 /* basic reset */
 * { box-sizing:border-box; margin:0; padding:0; }
-body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral-white); color:var(--text-dark); }
+body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral-white); color:var(--text-dark); font-size: 1rem;}
 
 /* ——————————————————————————————
    Header
@@ -26,12 +26,18 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   border-bottom: 1px solid #E0DDD9;
 }
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-cta-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem; /* Adjust space between nav and buttons */
 }
+
 
 /* Logo */
 .logo {
@@ -41,16 +47,38 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   text-decoration: none;
 }
 
+@font-face {
+  font-family: 'Averta';
+  src: url('fonts/Averta-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta';
+  src: url('fonts/Averta-Extra-Bold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Navigation */
 .main-nav ul {
   list-style: none;
-  display: flex;
-  gap: 2rem;
+  gap: 4rem;
+    text-transform: capitalize;
+    font-family: 'Averta', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-style: normal;
+    display: flex;
+    margin-left: auto;
 }
 .main-nav a {
   text-decoration: none;
   color: #5A3D38;
-  font-size: 1rem;
+  font-size: 1.1rem;
   transition: color 0.2s;
 }
 .main-nav a:hover {
@@ -67,7 +95,6 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.6rem 1.2rem;
-  border-radius: 50px;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -94,7 +121,6 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
@@ -161,19 +187,46 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   display: flex;
 }
 
-/* left column */
-.hero-left  { flex:1 1 460px; }
-.intro     { font-size:1rem; color:#8c6c5f; }
-.headline  { font-size:3.2rem; line-height:1.2; margin:1rem 0; }
-.subtext   { font-size:1.125rem; margin:.8rem 0 0; color:#6d524a; }
+@font-face {
+  font-family: 'RecoletaBold';
+  src: url('fonts/Recoleta-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
-.cta-row   { display:flex; gap:1rem; margin-top:2rem; }
-.btn { display:inline-block; padding:.65rem 1.6rem; font-weight:600;
-       border-radius:50px; text-decoration:none; transition:.2s ease; }
+@font-face {
+  font-family: 'RecoletaRegular';
+  src: url('fonts/Recoleta-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* left column */
+.hero-left  { 
+  flex: 1 1 460px;
+  padding-right: 70px;
+ }
+.intro     { font-size:1.3rem; font-family: 'RecoletaRegular', serif; font-weight: 600; color:#8c6c5f; }
+.headline  { font-size:4rem; font-family: RecoletaBold, sans-serif; line-height:1.2; margin:1rem 0; }
+.subtext   { font-size:1.45rem; font-family: 'RecoletaRegular', serif; font-weight: 400; margin:1.8rem 0 0; color:#6d524a; }
+
+.cta-row   { 
+  display:flex; 
+  gap:1rem; 
+  margin-top: 5rem; 
+}
+.btn { display:inline-block; padding:.75rem 2rem; font-weight:600;
+       border-radius:3.125rem; text-decoration:none; transition:.2s ease; font-size: 1.1rem; font-family: RecoletaRegular, sans-serif;}
 .btn-primary { background:var(--accent-dark); color:#fff; }
 .btn-outline { border:2px solid var(--accent-dark); color:var(--accent-dark); background:transparent; }
 .btn:hover   { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.1); }
+.btn-primary:hover {
+  border:2px solid var(--accent-dark); color:var(--accent-dark); background:transparent;
+}
 
+.btn-outline:hover { background: var(--accent-dark); color: var(--purewhite);}
 /* right column scaffold (matches Zen’s classes) */
 .hero-right     { min-width:40%; }
 .flex-horizontal{ display:flex; justify-content:center; align-items:center; width:100%; }
@@ -529,6 +582,9 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: auto; /* push to bottom */
+  padding-top: 1rem;
+  position: relative;
 }
 .testimonial-wrapper {
   position: relative;
@@ -584,6 +640,7 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   color: #fff8f1;
   padding: 80px 40px 40px;
   font-family: 'Georgia', serif;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -596,7 +653,6 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   font-weight: bold;
   letter-spacing: 2px;
   margin: 0;
-  text-transform: lowercase;
 }
 
 .footer-logo p {
