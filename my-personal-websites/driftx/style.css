@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: #1C1C1C; /* Dark Gray background /
@@ -76,6 +79,114 @@ header nav a:hover::after {
     width: 60%;   /* adjust thickness of underline */
 }
 
+/* ------------------------- */
+/* MOBILE MENU BUTTON (F1)  */
+/* ------------------------- */
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.mobile-menu-btn span {
+    width: 28px;
+    height: 3px;
+    background: #61C2A2;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 6px rgba(97,194,162,0.7);
+}
+
+/* X Animation */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
+/* ------------------------- */
+/* MOBILE NAV MENU (F1)      */
+/* ------------------------- */
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 65%;
+    height: 100%;
+    background: rgba(15,15,15,0.92);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-left: 30px;
+    transition: right 0.35s ease;
+    z-index: 1500;
+    border-left: 2px solid rgba(97,194,162,0.3);
+}
+
+/* Slide-in */
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 10px;
+    transition: 0.3s ease;
+}
+
+/* F1 hover line */
+.mobile-nav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 0%;
+    background: #61C2A2;
+    transition: 0.3s ease;
+}
+
+.mobile-nav a:hover::before {
+    height: 100%;
+}
+
+.mobile-nav a:hover {
+    color: #61C2A2;
+}
+
+
+
+/* ------------------------- */
+/* RESPONSIVE BREAKPOINT     */
+/* ------------------------- */
+
+@media (max-width: 850px) {
+    nav {
+        display: none; /* hides desktop nav */
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
 /* HERO */
 .hero {
     display: flex;
@@ -127,26 +238,151 @@ header nav a:hover::after {
 
 /* Mission Section */
 .mission {
+    padding: 120px 60px;
+    color: #fff;
+    position: relative;
+}
+
+.mission-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.mission-text {
     text-align: center;
-    padding: 100px 60px;
+    margin-bottom: 40px;
 }
 
 .mission h2 {
+    font-size: 3.2rem;
     color: #61C2A2;
-    font-size: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .mission p {
-    color: #F5F5F5;
+    font-size: 1.15rem;
+    line-height: 1.8;
     max-width: 900px;
-    margin: 20px auto;
-    line-height: 1.7;
+    margin: auto;
 }
 
-.mission-stats h3 {
-    color: white;
-    font-size: 1.6rem;
+.highlight {
+    color: #61C2A2;
+    font-weight: bold;
+}
+
+/* Stats Section */
+.mission-stats {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.stat-box {
+    background: rgba(97,194,162,0.08);
+    padding: 30px 40px;
+    border-radius: 12px;
+    border-left: 4px solid #61C2A2;
+    width: 220px;
+    transition: 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-8px);
+    background: rgba(97,194,162,0.14);
+    box-shadow: 0 0 20px rgba(97,194,162,0.3);
+}
+
+.stat-box h3 {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #61C2A2;
+    letter-spacing: 1px;
+}
+
+.stat-box p {
+    margin: 0;
+    color: #ddd;
+}
+
+.stat-icon {
+    font-size: 2.8rem;
+    color: #61C2A2;
+    margin-bottom: 15px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.stat-box:hover .stat-icon {
+    transform: scale(1.15);
+}
+
+.icon-wrap {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 18px;
+    border-radius: 12px;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            #111 0px,
+            #111 4px,
+            #0d0d0d 4px,
+            #0d0d0d 8px
+        ); /* carbon fiber pattern */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #1d1d1d;
+    transition: 0.3s ease;
+}
+
+/* F1 diagonal angle cut */
+.icon-wrap::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: linear-gradient(
+        135deg,
+        rgba(97, 194, 162, 0.25),
+        transparent 70%
+    );
+    transform: rotate(15deg);
+    transition: 0.4s ease;
+    opacity: 0;
+}
+
+.stat-icon {
+    font-size: 2.2rem;
+    color: #61C2A2;
+    z-index: 2;
+    transition: 0.3s ease;
+    filter: drop-shadow(0 0 4px #61C2A2);
+}
+
+/* Hover Effects — Telemetry Pulse */
+.stat-box:hover .icon-wrap {
+    transform: scale(1.08);
+    border-color: #61C2A2;
+    box-shadow: 0 0 15px rgba(97, 194, 162, 0.6);
+}
+
+.stat-box:hover .icon-wrap::before {
+    opacity: 1;
+}
+
+.stat-box:hover .stat-icon {
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 8px #61C2A2);
 }
 
 /* CAR SECTION */
