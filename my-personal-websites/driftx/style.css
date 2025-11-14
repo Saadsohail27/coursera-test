@@ -29,6 +29,7 @@ header {
 }
 
 
+
 header.scrolled {
     background: rgba(28,28,28,0.55);
     backdrop-filter: blur(10px);
@@ -222,6 +223,87 @@ header nav a:hover::after {
     100% { transform: translateY(0px); }
 }
 
+/* ================================
+   HERO RESPONSIVE DESIGN
+================================ */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        padding: 120px 40px 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 110px;
+        line-height: 105px;
+    }
+
+    .hero-car img {
+        width: 520px;
+    }
+}
+
+/* Mobile Landscape / Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 90px;
+        line-height: 85px;
+    }
+
+    .hero-text p {
+        font-size: 18px;
+        margin: 15px 0 25px;
+    }
+
+    .hero-car img {
+        width: 420px;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile Portrait (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 20px 50px;
+    }
+
+    .hero-text h1 {
+        font-size: 65px;
+        line-height: 60px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+
+    .hero-car img {
+        width: 320px;
+    }
+}
+
+/* Extra-small screens (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero-text h1 {
+        font-size: 55px;
+        line-height: 50px;
+    }
+
+    .hero-car img {
+        width: 270px;
+    }
+}
+
 .btn {
     padding: 12px 25px;
     background: #61C2A2;
@@ -383,6 +465,126 @@ header nav a:hover::after {
 .stat-box:hover .stat-icon {
     transform: scale(1.18);
     filter: drop-shadow(0 0 8px #61C2A2);
+}
+
+@media (max-width: 1024px) {
+    .mission {
+        padding: 100px 40px;
+    }
+
+    .mission-stats {
+        gap: 35px;
+    }
+
+    .stat-box {
+        width: 200px;
+        padding: 25px 30px;
+    }
+
+    .stat-icon {
+        font-size: 2rem;
+    }
+
+    .icon-wrap {
+        width: 70px;
+        height: 70px;
+    }
+
+    .stat-box h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mission {
+        padding: 80px 30px;
+    }
+
+    .mission p {
+        font-size: 1rem;
+    }
+
+    .mission-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .stat-box {
+        width: 100%;
+        padding: 22px 28px;
+        text-align: center;
+    }
+
+    .icon-wrap {
+        width: 65px;
+        height: 65px;
+    }
+
+    .stat-box h3 {
+        font-size: 2rem;
+    }
+
+    .stat-box p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission {
+        padding: 70px 20px;
+    }
+
+    .mission h2 {
+        font-size: 2.3rem;
+    }
+
+    .mission p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .mission-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-box {
+        width: 100%;
+        padding: 20px 24px;
+    }
+
+    .icon-wrap {
+        width: 60px;
+        height: 60px;
+    }
+
+    .stat-icon {
+        font-size: 1.8rem;
+    }
+
+    .stat-box h3 {
+        font-size: 1.8rem;
+    }
+
+    .stat-box p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .mission h2 {
+        font-size: 2rem;
+    }
+
+    .icon-wrap {
+        width: 55px;
+        height: 55px;
+    }
+
+    .stat-box h3 {
+        font-size: 1.6rem;
+    }
 }
 
 /* CAR SECTION */
