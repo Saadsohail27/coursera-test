@@ -730,6 +730,8 @@ header nav a:hover::after {
     height: 250px;
     object-fit: cover;
     border-radius: 14px;
+    object-position: 50% 15%; /* <-- ADJUST THIS VALUE */
+
 }
 
 /* LEFT/RIGHT BUTTONS */
