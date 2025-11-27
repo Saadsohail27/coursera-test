@@ -218,10 +218,55 @@
     a.btn-outline{
       padding:10px 16px;
       border-radius:10px;
-      border:1px var(--text-muted);
       background:transparent;
       font-weight:600;
       text-decoration: none;
+    }
+
+    /* Default (light mode) */
+      :root {
+        --btn-outline-border: rgba(18, 50, 38, 0.4);  /* darker border */
+      }
+
+      /* Dark mode */
+      :root.dark {
+        --btn-outline-border: rgba(255, 255, 255, 0.35); /* lighter border */
+      }
+
+      /* Apply to all .btn-outline buttons */
+      .btn-outline {
+        border: 1.6px solid var(--btn-outline-border);
+      }
+
+      /* Light mode */
+    :root {
+      --btn-outline-text: var(--text-dark);   /* normal text color */
+      --btn-outline-bg: transparent;          /* normal background */
+      --btn-outline-hover-text: var(--offwhite); /* text becomes light */
+      --btn-outline-hover-bg: var(--text-dark);  /* bg becomes dark */
+    }
+
+    /* Dark mode */
+    :root.dark {
+      --btn-outline-text: var(--text-dark); 
+      --btn-outline-bg: transparent;
+
+      /* stays bright in dark mode — guaranteed */
+      --btn-outline-hover-bg: #ffffff;
+      --btn-outline-hover-text: #0d1a16;
+    }
+
+    a.btn-outline {
+      color: var(--btn-outline-text);
+      background-color: var(--btn-outline-bg);
+      border: 1.6px solid var(--btn-outline-border);
+      transition: 0.25s ease;
+    }
+
+    a.btn-outline:hover {
+      color: var(--btn-outline-hover-text)  !important;
+      background-color: var(--btn-outline-hover-bg) !important;
+      border-color: var(--btn-outline-hover-bg) !important;
     }
 
     .btn-primary{
@@ -373,6 +418,19 @@
       gap:18px
     }
 
+    /* MOBILE FIX — stack everything into 1 column */
+@media (max-width: 768px) {
+  section.content {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  /* force all children to take full width */
+  section.content > * {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+
     .product-list{
       display:flex;
       gap:18px;
@@ -390,7 +448,7 @@
 
     .product img{
       max-width:100%;
-      height:140px;
+      width: 200px;
       object-fit:contain;
     }
 
@@ -443,6 +501,39 @@
       background:transparent;
       border:1px solid rgba(18,50,38,0.06);
     }
+
+    .socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #ffffff20;
+  transition: 0.3s ease;
+}
+
+.socials a svg {
+  width: 18px;
+  fill: white;
+  transition: 0.3s ease;
+}
+
+/* Hover effect */
+.socials a:hover {
+  background: white;
+}
+
+.socials a:hover svg {
+  fill: #000;
+  transform: scale(1.1);
+}
+
 
     /* small screens */
     @media (max-width:940px){
@@ -523,6 +614,7 @@
     }
 
 
+  :root.dark {
   --surface-1: #0f1f19;
   --surface-2: #152822;
   --surface-card: #12241f;
@@ -571,8 +663,56 @@
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
+.footer-inner {
+  align-items: flex-start;
+}
+
+.footer-contact {
+  max-width: 260px;
+}
+
+@media(max-width: 780px) {
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer-contact {
+    width: 100%;
+  }
+}
+
+
 .dark .socials a {
   border-color: rgba(255,255,255,0.12);
+}
+
+/* DEFAULT (LIGHT MODE) — icons dark */
+.socials a svg {
+  fill: var(--text-dark); /* dark green-ish text color */
+  transition: 0.3s ease;
+}
+
+/* LIGHT MODE hover */
+.socials a:hover {
+  background: var(--primary);
+}
+.socials a:hover svg {
+  fill: white;
+}
+
+/* DARK MODE — make icons white */
+.dark .socials a svg {
+  fill: white;
+}
+
+/* DARK MODE hover */
+.dark .socials a:hover {
+  background: white;
+}
+.dark .socials a:hover svg {
+  fill: #000;
 }
 
 .theme-toggle {
@@ -600,4 +740,30 @@
 .dark li,
 .dark div {
   color: var(--text-dark) !important;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366; /* WhatsApp green */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float img {
+  width: 33px;
+  height: 33px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
