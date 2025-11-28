@@ -430,6 +430,18 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  /* override the inline flex */
+  #where > div {
+    display: block !important;   /* stack instead of side-by-side */
+    text-align: center;
+  }
+
+  #where > div > div:last-child {
+    margin-top: 16px;             /* spacing under paragraph */
+  }
+}
 
     .product-list{
       display:flex;
@@ -470,6 +482,51 @@
       align-items:center;
       justify-content:space-between;
     }
+
+    /* Responsive layout for newsletter CTA */
+    @media (max-width: 762px) {
+      .cta-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .cta-strip form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .cta-strip form input {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      .cta-strip form button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+  section.content {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    text-align: center;
+  }
+
+  /* Make both inner divs span the full width */
+  section.content > div {
+    grid-column: 1 / -1;
+  }
+
+  /* Center the button block */
+  section.content > div:last-child {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 
     footer.site-footer{
       padding:28px 0;
@@ -766,4 +823,167 @@
 .whatsapp-float:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* --------------------------------------------------
+   SECTION BASE
+-------------------------------------------------- */
+.composition-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--offwhite);
+  padding: 100px 20px;
+}
+
+/* --------------------------------------------------
+   BACKGROUND WAVES
+-------------------------------------------------- */
+.bg-waves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url("data:image/svg+xml,%3Csvg width='1920' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200 Q480 300 960 200 T1920 200 V400 H0 Z' fill='%237bd38b0d'/%3E%3C/svg%3E");
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.dark .bg-waves {
+  background: url("data:image/svg+xml,%3Csvg width='1920' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 200 Q480 300 960 200 T1920 200 V400 H0 Z' fill='%239ff0b00d'/%3E%3C/svg%3E");
+}
+
+/* Keep content above waves */
+.composition-wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width);
+  margin: auto;
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   TITLE
+-------------------------------------------------- */
+.composition-title {
+  font-size: 46px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.composition-title span {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------
+   BUTTON
+-------------------------------------------------- */
+.whats-inside-btn {
+  margin-top: 12px;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #ff3fa5, #5063ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+.whats-inside-btn:hover {
+  transform: scale(1.06);
+}
+
+/* --------------------------------------------------
+   GRID
+-------------------------------------------------- */
+.composition-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Bottle image hover growth */
+.comp-bottle {
+  width: 300px;
+  transition: transform 0.4s ease;
+}
+.comp-bottle:hover {
+  transform: scale(1.10);
+}
+
+/* --------------------------------------------------
+   MINERAL CARDS
+-------------------------------------------------- */
+.composition-col {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+@keyframes float-soft {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.comp-item {
+  animation: float-soft 4s ease-in-out infinite;
+}
+
+.comp-item h3 {
+  font-size: 22px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.comp-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 8px 0;
+}
+
+.comp-item p {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+/* underline */
+.underline {
+  width: 40px;
+  height: 4px;
+  margin: 15px auto 0;
+  background: var(--accent);
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------
+   ANIMATIONS (Smooth fade + float)
+-------------------------------------------------- */
+
+/* Start invisible */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+
+/* Activated when scrolled into view */
+.fade-up.reveal {
+  animation: fadeUp 1s ease forwards;
+}
+
+.fade-up:nth-child(2).reveal { animation-delay: 0.2s; }
+.fade-up:nth-child(3).reveal { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

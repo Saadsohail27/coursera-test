@@ -146,6 +146,78 @@
       </div>
     </section>
 
+    <section class="composition-section">
+  <div class="bg-waves"></div>
+
+  <div class="composition-wrapper">
+
+    <h2 class="composition-title fade-up">
+      Water <span>Composition</span>
+    </h2>
+
+    <button class="whats-inside-btn fade-up">What's Inside?</button>
+
+    <div class="composition-grid">
+
+      <!-- LEFT COLUMN -->
+      <div class="composition-col">
+        <div class="comp-item fade-up">
+          <h3>Calcium Ca2+</h3>
+          <div class="comp-value">240 mg/L</div>
+          <p>About 99% of calcium in our bodies is in our bones and teeth.</p>
+          <span class="underline"></span>
+        </div>
+
+        <div class="comp-item fade-up">
+          <h3>Sodium Na+</h3>
+          <div class="comp-value">5.2 mg/L</div>
+          <p>Important for proper muscle and nerve function.</p>
+          <span class="underline"></span>
+        </div>
+
+        <div class="comp-item fade-up">
+          <h3>Nitrate NO3-</h3>
+          <div class="comp-value">4.4 mg/L</div>
+          <p>Safe to drink with nitrate levels under 10 mg/L.</p>
+          <span class="underline"></span>
+        </div>
+      </div>
+
+      <!-- CENTER BOTTLE -->
+      <div class="composition-center fade-up">
+        <img src="images/brand-images/22.png" alt="Hunza Sparklets Bottle" class="comp-bottle">
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="composition-col">
+        <div class="comp-item fade-up">
+          <h3>Magnesium Mg2+</h3>
+          <div class="comp-value">42 mg/L</div>
+          <p>Magnesium helps the body stay healthy.</p>
+          <span class="underline"></span>
+        </div>
+
+        <div class="comp-item fade-up">
+          <h3>Sulfate SO4(2–)</h3>
+          <div class="comp-value">400 mg/L</div>
+          <p>One of the most important macronutrients in cells.</p>
+          <span class="underline"></span>
+        </div>
+
+        <div class="comp-item fade-up">
+          <h3>Bicarbonate</h3>
+          <div class="comp-value">384 mg/L</div>
+          <p>Helps relieve heartburn and indigestion.</p>
+          <span class="underline"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
     <section class="content" id="products">
       <div style="grid-column:1 / -1">
         <h3 style="font-size:22px;margin-bottom:12px">Our Products</h3>
@@ -193,7 +265,7 @@
       <div style="grid-column:1 / -1" class="cta-strip">
         <div>
           <strong>Join our newsletter</strong>
-          <div style="margin-top:6px;color:rgba(18,50,38,0.75)">Get first access to new flavors, promotions and sustainability updates.</div>
+          <div style="margin-top:6px;color:rgba(18,50,38,0.75)">Get first access to new drinks, promotions and sustainability updates.</div>
         </div>
         <form onsubmit="(function(e){e.preventDefault();alert('Thanks — signup simulated in this demo.');})(event)" style="display:flex;gap:10px;align-items:center">
           <input aria-label="email" type="email" placeholder="Your email" required style="padding:10px 12px;border-radius:10px;border:1px solid rgba(18,50,38,0.08);min-width:220px">
@@ -334,6 +406,32 @@
 
 	setInterval(nextSlide, 6000);
 </script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  // Only fade-up elements (you don't have .float-soft)
+  document.querySelectorAll(".fade-up").forEach(el => {
+    observer.observe(el);
+  });
+
+});
+
+</script>
+
+
 
 
 
