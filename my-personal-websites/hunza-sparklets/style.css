@@ -701,6 +701,7 @@
     .mobile-menu a{
       padding:12px;
       border-radius:8px;
+      text-decoration: none;
     }
 
 
