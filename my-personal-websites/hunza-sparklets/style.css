@@ -1127,9 +1127,7 @@
 }
 
 /* Hover effect (minor highlight) */
-.slide:hover {
-  background: var(--hover);
-}
+
 
 /* ---- ANIMATION ---- */
 @keyframes scroll {
