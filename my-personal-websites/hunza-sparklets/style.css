@@ -557,6 +557,7 @@
     margin-top: 12px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
 }
 
@@ -1877,7 +1878,7 @@
 }
 
 .bp-img {
-  width: 160px;
+  width: 180px;
   margin: auto;
   display: block;
 }
@@ -1971,5 +1972,5 @@
 }
 
 .bp-bundle .bp-img {
-  width: 180px;
+  width: 200px;
 }
