@@ -58,65 +58,66 @@
     </nav>
   </aside>
 
-    <section class="content" id="about" aria-labelledby="aboutHeading">
-		  <div style="grid-column:1 / -1">
-		    <h2 id="aboutHeading" style="font-size:28px;margin-bottom:12px">About Hunza Sparklets</h2>
-		    <p style="max-width:860px;color:rgba(18,50,38,0.8);">
-		      Hunza Sparklets delivers premium RO-treated drinking water, purified through a multi-stage filtration system and balanced with essential minerals. Our approach focuses on minimal intervention — from treatment to bottling — to maintain a refreshing taste.
-		    </p>
-		  </div>
+    <section class="sustain-hero">
+  <h1>Our Commitment to a Greener Pakistan</h1>
+  <p>Towards a cleaner future through responsible water practices, recyclable packaging, and sustainable operations.</p>
 
-		  <!-- Purity Guaranteed -->
-		  <div style="grid-column:1 / 5">
-			  <div class="card">
-			    <div class="icon-wrap">
-			      <img src="images/icons/droplet.png" alt="Purity Icon">
-			    </div>
+  <div class="sustain-hero-image">
+  <img src="images/brand-images/pakistan-mountains.jpg" alt="Pakistan Scenic Mountains">
+</div>
 
-			    <h3 style="margin:0 0 8px">Purity Guaranteed</h3>
-			    <p style="margin:0;color:rgba(18,50,38,0.7)">
-			      Purified using an advanced 8-stage RO filtration system designed to deliver exceptionally clean and balanced drinking water.
-			    </p>
-			  </div>
-			</div>
+</section>
+
+<div class="sustain-pak-ribbon"></div>
+
+<section class="sustain-section">
+  <h2>Why Sustainability Matters to Us</h2>
+  <p>
+    Hunza Sparklets is committed to contributing positively to Pakistan’s environment. From reducing plastic usage to ensuring responsible bottling, our initiatives reflect our belief that every business has a role to play in shaping a greener future.
+  </p>
 
 
-		  <!-- Minimal Processing -->
-		  <div style="grid-column:5 / 9">
-			  <div class="card">
-			    <div class="icon-wrap">
-			      <img src="images/icons/mineral.png" alt="Minimal Processing Icon">
-			    </div>
+</section>
 
-			    <h3 style="margin:0 0 8px">Minimal Processing</h3>
-			    <p style="margin:0;color:rgba(18,50,38,0.7)">
-			      We keep processing minimal to retain natural mineral balance and a crisp, clean flavor.
-			    </p>
-			  </div>
-			</div>
+<section class="sustain-section">
+  <h2>Our Sustainability Practices</h2>
 
+  <div class="sustain-card-grid">
 
-		  <!-- Sustainability -->
-		  <div style="grid-column:9 / -1">
-			<div class="card">
-			    <div class="icon-wrap">
-			      <img src="images/icons/leaf.png" alt="Sustainability Icon">
-			    </div>
+    <div class="sustain-card">
+      <div class="sustain-icon"><img src="images/icons/recycle.png"></div>
+      <h3>Recyclable BPA-Free Bottles</h3>
+      <p>We use food-grade, BPA-free plastic that is lightweight and fully recyclable, ensuring safety and reduced environmental impact.</p>
+    </div>
 
-			    <h3 style="margin:0 0 8px">Sustainability</h3>
-			    <p style="margin:0;color:rgba(18,50,38,0.7)">
-			      Packaging and operations designed with reduced impact and future carbon neutrality in mind.
-			    </p>
-			  </div>
-			</div>
-		</section>
+    <div class="sustain-card">
+      <div class="sustain-icon"><img src="images/icons/leaf.png"></div>
+      <h3>Low-Impact Bottling</h3>
+      <p>Our bottling processes are designed to lower material waste and energy consumption as we work towards future eco-driven upgrades.</p>
+    </div>
+
+    <div class="sustain-card">
+      <div class="sustain-icon"><img src="images/icons/water-factory.png"></div>
+      <h3>Responsible Water Management</h3>
+      <p>Every drop we deliver is processed with efficiency in mind to reduce waste and preserve resources for generations ahead.</p>
+    </div>
+
+    <div class="sustain-card">
+      <div class="sustain-icon"><img src="images/icons/plant.png"></div>
+      <h3>Future Green Initiatives</h3>
+      <p>We’re continuously developing eco-friendly goals such as reduced carbon output, improved recycling channels, and greener logistics.</p>
+    </div>
+
+  </div>
+</section>
+
 
 
     <section class="content" id="sustainability">
   <div style="grid-column:1 / 8">
     <h3 style="font-size:22px;margin-bottom:8px">Sustainability & Environment</h3>
     <p style="color:rgba(18,50,38,0.78);max-width:700px">
-      We invest in local water stewardship, low-impact bottling, and recyclable packaging. Our goal is to preserve the natural habitat while providing a premium product.
+      We invest in low-impact bottling, and recyclable packaging. Our goal is to preserve the natural habitat while providing a premium product.
     </p>
   </div>
 
@@ -135,7 +136,6 @@
 
 </section>
 
-  </main>
 
   <footer class="site-footer">
   <div class="footer-inner">
@@ -253,6 +253,25 @@
     // Save preference
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
+</script>
+
+<script>
+const sustain-revealElements = document.querySelectorAll('.sustain-reveal');
+
+
+const sustain-revealOnScroll = () => {
+sustain-revealElements.forEach(el => {
+const rect = el.getBoundingClientRect().top;
+const windowHeight = window.innerHeight - 120;
+if (rect < windowHeight) {
+el.classList.add('visible');
+}
+});
+};
+
+
+window.addEventListener('scroll', sustain-revealOnScroll);
+window.addEventListener('load', sustain-revealOnScroll);
 </script>
 
 </body>

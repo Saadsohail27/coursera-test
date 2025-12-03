@@ -1635,3 +1635,341 @@
     font-size: 2rem;
   }
 }
+
+/* -------------------------------------------
+   SUSTAINABILITY PAGE — ISOLATED CSS
+   PREFIX: sustain-
+-------------------------------------------- */
+
+/* FIX HERO BACKGROUND FOR LIGHT + DARK MODE */
+.sustain-hero {
+  background: var(--offwhite);       /* Light mode */
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+/* Dark Mode Background */
+:root.dark .sustain-hero {
+  background: var(--surface-1);      /* Matches your dark theme surfaces */
+}
+
+/* Text inside hero uses your adaptive variables */
+.sustain-hero h1,
+.sustain-hero p {
+  color: var(--text-dark) !important;
+}
+
+/* Hero image border radius + shadow */
+.sustain-hero-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+/* Dark mode image shadow */
+:root.dark .sustain-hero-image img {
+  box-shadow: 0 4px 18px rgba(255,255,255,0.10);
+}
+
+
+.sustain-pak-ribbon {
+  background: linear-gradient(90deg, #0a8f3c 0%, #ffffff 50%, #0a8f3c 100%);
+  height: 6px;
+  border-radius: 6px;
+  margin: 40px 0 60px;
+  opacity: 0.8;
+}
+
+/* Sections */
+.sustain-section {
+  padding: 0 20px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.sustain-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+}
+
+.sustain-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #222;
+}
+
+/* Card Grid */
+.sustain-card-grid {
+  margin-top: 40px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Card */
+.sustain-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.sustain-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+.sustain-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.3rem;
+}
+
+.sustain-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Icons */
+.sustain-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 10px;
+}
+
+.sustain-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.sustain-hero-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.sustain-hero-image img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.sustain-hero-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* ===== BUYING PAGE — ALL CLASSES UNIQUE ===== */
+
+/* BUYING PAGE MAIN SECTION — DARK MODE SAFE */
+.bp-section {
+  width: 100%;
+  padding: 4rem 0;
+  background: var(--surface-1); /* switches in dark mode */
+  color: var(--text-dark);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+.bp-container {
+  margin: auto;
+}
+
+.bp-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.bp-header-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.bp-header-subtitle {
+  font-size: 17px;
+  color: #555;
+}
+
+/* ALWAYS 2 COLUMNS BY DEFAULT (mobile + tablet + small screens) */
+.bp-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* DESKTOP — ALLOW EXACTLY 3 COLUMNS */
+@media (min-width: 992px) {
+  .bp-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* BUYING PAGE CARD STYLES — UNIQUE & DARK MODE SAFE */
+.bp-card-wrapper {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
+}
+
+.bp-card {
+  background: var(--surface-card);
+  color: var(--text-dark);
+  border: 1px solid var(--primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.bp-card:hover {
+  background-color: color-mix(in srgb, var(--surface-card) 90%, black 10%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+/* DARK MODE — make hover subtly lighter than dark card bg */
+.dark .bp-card:hover {
+  background-color: color-mix(in srgb, var(--surface-card) 85%, white 15%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Headings inside cards */
+.bp-card-title {
+  color: var(--text-dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Paragraph inside cards */
+.bp-card-text {
+  color: var(--text-dark);
+  opacity: 0.9;
+}
+
+/* Buttons inside cards */
+.bp-card-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--offwhite);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.bp-card-button:hover {
+  background: var(--hover);
+}
+
+.bp-img {
+  width: 160px;
+  margin: auto;
+  display: block;
+}
+
+.bp-name {
+  font-size: 20px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+
+.bp-desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+/* PRICES */
+.bp-price-row {
+  margin-bottom: 18px;
+}
+
+.bp-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a73e8;
+}
+
+.bp-old-price {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+/* QUANTITY BOX */
+.bp-qty-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.bp-qty-btn {
+  background: #eee;
+  border: none;
+  width: 34px;
+  height: 34px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bp-qty-input {
+  width: 55px;
+  padding: 6px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* BUTTON */
+.bp-add-cart {
+  width: 100%;
+  padding: 14px 0;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.bp-add-cart:hover {
+  background: #155ac3;
+}
+
+/* TAG (BUNDLE BADGE) */
+.bp-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #e63946;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.bp-bundle .bp-img {
+  width: 180px;
+}
