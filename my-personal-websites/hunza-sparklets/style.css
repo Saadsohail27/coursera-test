@@ -1148,3 +1148,490 @@
   white-space: nowrap;
   opacity: 0.8;
 }
+
+/* WRAPPER */
+.about-modern {
+  padding: 80px 8%;
+  background: var(--offwhite);
+}
+
+/* HIGH-SPECIFICITY TITLE FIX */
+.about-modern .section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--primary) !important;   /* overrides global */
+}
+
+/* NORMAL TEXT */
+.about-modern .section-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 850px;
+  color: var(--text-muted) !important; /* overrides global */
+}
+
+/* SPACER */
+.section-block {
+  margin-bottom: 70px;
+}
+
+/* FOUNDER CARD */
+.founder-card {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  background: var(--surface-card);
+  padding: 60px;
+  border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  margin-bottom: 90px;
+}
+
+/* FOUNDER IMAGE */
+.founder-image img {
+  width: 430px;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+}
+
+/* SIGNATURE */
+.founder-signature {
+  margin-top: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--primary) !important;  /* protect from override */
+}
+
+/* RESPONSIVE FOUNDER CARD */
+@media (max-width: 900px) {
+  .founder-card {
+    flex-direction: column-reverse;
+    padding: 40px;
+  }
+  .founder-image img {
+    width: 100%;
+  }
+}
+
+/* MISSION BLOCK */
+.mission-block {
+  margin-top: 40px;
+}
+
+/* GRID CARDS */
+.mission-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* INDIVIDUAL MISSION CARD */
+.mission-card {
+  background: var(--surface-card);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+/* CARD HOVER */
+.mission-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+/* CARD TITLE — protect from override */
+.mission-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--primary) !important;
+}
+
+/* CARD TEXT — softened */
+.mission-card p {
+  color: var(--text-muted) !important;
+  line-height: 1.6;
+}
+
+/* Container */
+.founder-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Premium water wave container */
+.logo-water-premium {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo stays on top, sharp */
+.logo-water-premium .hunza-logo {
+  position: relative;
+  z-index: 10;
+  width: 170px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+
+/* Water waves container behind logo */
+.water-waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Base wave style */
+.wave-svg {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 100%;
+  fill: rgba(0, 153, 255, 0.18);
+  animation: waveMove 6s ease-in-out infinite;
+}
+
+/* Second wave */
+.wave-delayed {
+  fill: rgba(0, 153, 255, 0.1);
+  animation: waveMove2 9s ease-in-out infinite;
+}
+
+/* Smooth wave motion */
+@keyframes waveMove {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-25%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes waveMove2 {
+  0%   { transform: translateX(-15%); }
+  50%  { transform: translateX(10%); }
+  100% { transform: translateX(-15%); }
+}
+
+/* -----------------------------------------
+   PRODUCT CARD THEME VARIABLES (FIXED)
+----------------------------------------- */
+:root {
+    --products-card-bg: var(--surface-card);
+    --products-border: rgba(0,0,0,0.06);
+    --products-text-main: var(--text-dark);
+
+    /* BUTTON COLORS (LIGHT MODE) */
+    --accent-hover: #69c67c;
+}
+
+.dark {
+    /* BUTTON COLORS (DARK MODE) */
+    --accent-hover: #7fe5a1;
+}
+
+/* -----------------------------------------
+   PRODUCTS PAGE SECTION
+----------------------------------------- */
+.products-intro-section {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* TITLES */
+.products-section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.products-section-desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* PRODUCT CARD */
+.products-card {
+    display: flex;
+    align-items: center;
+    background: var(--products-card-bg);
+    border: 1px solid var(--products-border);
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 35px;
+    gap: 25px;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.products-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0 0 0 / 0.12);
+}
+
+/* PRODUCT IMAGE */
+.products-img {
+    width: 150px;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* TEXT CONTENT */
+.products-details {
+    flex: 1;
+}
+
+.products-name {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.products-text {
+    margin: 0 0 18px;
+    line-height: 1.5;
+    color: var(--text-muted);
+    max-width: 500px;
+}
+
+/* -----------------------------------------
+   CTA BUTTON (FIXED)
+----------------------------------------- */
+.products-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .25s ease, transform .25s ease;
+}
+
+.products-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .products-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .products-img {
+        width: 180px;
+    }
+}
+
+/* Root Variables (Light + Dark Adaptation) */
+:root {
+  --hs-bg: var(--background);
+  --hs-card-bg: var(--card-bg);
+  --hs-text: var(--text);
+  --hs-muted: var(--muted);
+  --hs-primary: #4db8ff;
+  --hs-border: rgba(0,0,0,0.08);
+}
+
+/* Page Wrapper */
+.hs-contact-page {
+  padding: 70px 5%;
+  background: var(--hs-bg);
+  color: var(--hs-text);
+  position: relative;
+  overflow: hidden;
+}
+
+.hs-contact-page {
+  position: relative;
+  z-index: 0;
+}
+
+/* subtle SVG wave background (inline data URI) */
+.hs-contact-page::before {
+  content: "";
+  position: absolute;
+  top: -18%;
+  left: -8%;
+  width: 140%;
+  height: 140%;
+  pointer-events: none;        /* important: don't block clicks */
+  z-index: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><defs><linearGradient id='g' x1='0' x2='0' y1='0' y2='1'><stop offset='0' stop-color='%23CFF3FF' stop-opacity='0.95'/><stop offset='1' stop-color='%233BA9F4' stop-opacity='0.95'/></linearGradient></defs><path d='M0 220 C240 260 360 180 600 200 C840 220 960 260 1200 200 L1200 400 L0 400 Z' fill='url(%23g)' fill-opacity='0.12'/></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* slow drift */
+  animation: hs-water-drift 18s linear infinite;
+  opacity: 1; /* visual intensity — reduce to 0.6 or lower if too strong */
+}
+
+/* subtle horizontal drift so the waves feel alive */
+@keyframes hs-water-drift {
+  0%   { transform: translateX(0px) translateY(0px); }
+  50%  { transform: translateX(-40px) translateY(6px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+.dark .hs-contact-page::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 400'><path d='M0 220 C240 260 360 180 600 200 C840 220 960 260 1200 200 L1200 400 L0 400 Z' fill='%2300AEEF' fill-opacity='0.08'/></svg>");
+  opacity: 1;
+}
+
+
+
+@keyframes waterMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200px); }
+}
+
+/* Header */
+.hs-contact-header {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.hs-contact-header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+}
+
+/* Info + Map Layout */
+.hs-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.hs-contact-info {
+  background: var(--hs-card-bg);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.hs-ci-item {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+  color: var(--hs-muted);
+}
+
+.hs-ci-item i {
+  margin-top: 3px;
+  color: var(--hs-primary);
+}
+
+/* Logo */
+.hs-contact-logo {
+  width: 160px;
+  margin-top: 20px;
+  opacity: 0.9;
+}
+
+/* Map */
+.hs-contact-map iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* Form Section */
+.hs-form-wrapper {
+  margin-top: 80px;
+}
+
+.hs-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 700px;
+}
+
+.hs-contact-form input,
+.hs-contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  background: var(--hs-card-bg);
+  border: 1px solid var(--hs-border);
+  border-radius: 12px;
+  color: var(--hs-text);
+}
+
+.hs-btn {
+  padding: 14px 25px;
+  background: var(--hs-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.hs-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Team Contacts */
+.hs-team-contacts {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hs-team-contact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--hs-card-bg);
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.hs-avatar {
+  width: 55px;
+  height: 55px;
+  background: var(--hs-primary);
+  border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .hs-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hs-contact-map iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hs-contact-header h1 {
+    font-size: 2rem;
+  }
+}
