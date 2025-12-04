@@ -578,7 +578,7 @@
 
     .product{
       flex:1 1 220px;
-      background:linear-gradient(180deg,var(--offwhite),#fff);
+      background: var(--offwhite);
       border-radius:12px;
       padding:18px;
       border:1px solid rgba(18,50,38,0.04);

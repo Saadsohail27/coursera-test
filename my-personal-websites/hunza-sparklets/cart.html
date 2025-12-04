@@ -140,7 +140,7 @@
           <span style="margin-left:8px">Place Order</span>
         </button>
 
-        <div id="formNote" class="form-note">We’ll open WhatsApp with your order—no on WhatsApp.</div>
+        <div id="formNote" class="form-note">Note: You'll be redirected to WhatsApp with your order details to place the order.</div>
       </form>
     </aside>
 
@@ -601,7 +601,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     // build message
     let lines = [];
-    lines.push(`Order from Hunza Sparklets`);
+    lines.push(`Order from Hunza Sparklets Website:`);
     lines.push('');
     lines.push(`Customer: ${name}`);
     lines.push(`Phone: ${phone}`);
@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     lines.push('');
     lines.push(`Notes: ${document.getElementById('checkoutForm').querySelector('textarea') ? '' : ''}`);
     lines.push('');
-    lines.push(`Please confirm and provide a payment/collection option.`);
+    lines.push(`Please confirm all details and send this message to place your order.`);
 
     const message = encodeURIComponent(lines.join('\n'));
     const waNumber = '923225017998';
