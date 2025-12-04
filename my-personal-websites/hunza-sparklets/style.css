@@ -1509,7 +1509,7 @@
 ----------------------------------------- */
 .products-btn {
     display: inline-block;
-    background: var(--accent);
+    background: var(--primary);
     color: white !important;
     padding: 12px 24px;
     border-radius: 50px;
