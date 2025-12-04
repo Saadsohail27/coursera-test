@@ -1896,14 +1896,14 @@
   color: #555;
 }
 
-/* ALWAYS 2 COLUMNS BY DEFAULT (mobile + tablet + small screens) */
+/* MOBILE + TABLET — let browser auto-fit columns */
 .bp-grid {
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
 
-/* DESKTOP — ALLOW EXACTLY 3 COLUMNS */
+/* DESKTOP — force EXACTLY 3 columns */
 @media (min-width: 992px) {
   .bp-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1972,7 +1972,8 @@
 }
 
 .bp-img {
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
   margin: auto;
   display: block;
 }
@@ -2066,7 +2067,8 @@
 }
 
 .bp-bundle .bp-img {
-  width: 200px;
+  width: 100%;
+  max-width: 200px;
 }
 
 /* ====== CART PAGE STYLES ====== */
