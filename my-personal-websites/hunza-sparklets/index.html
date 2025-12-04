@@ -29,7 +29,26 @@
       </nav>
 
       <div style="display:flex;gap:12px;align-items:center">
-		  <a class="cta" href="buy.html">Buy Now</a>
+		  <!-- REPLACE the existing: <a class="cta" href="buy.html">Buy Now</a> -->
+<div class="header-cta-wrapper" aria-live="polite">
+  <!-- Buy button (keeps .cta class so your styling stays identical) -->
+  <a class="cta header-buy" href="buy.html" id="headerBuy">Buy Now</a>
+
+  <!-- Cart button turned into real link -->
+  <a id="headerCart" class="header-cart" href="cart.html" aria-label="View cart" title="View cart" style="display:none">
+    <!-- shopping cart icon (currentColor) -->
+    <svg class="cart-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 3h2l.6 2M7 13h10l3-8H6.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="10" cy="20" r="1.4" fill="currentColor"/>
+      <circle cx="18" cy="20" r="1.4" fill="currentColor"/>
+    </svg>
+
+    <!-- badge for unique items -->
+    <span id="cartBadge" class="cart-badge" aria-hidden="true">0</span>
+  </a>
+</div>
+
+
 
 		  <!-- Theme toggle should ALWAYS be visible -->
 		  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
@@ -687,7 +706,146 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 
+<script>
+/* Cart functionality: stores cart in localStorage under "hunza_cart".
+   - Unique items = number of distinct products (keys)
+   - Preserved across pages (localStorage)
+   - Works even if buy.html not loaded (safe guards)
+*/
 
+/* Utility: parse price string like "Rs 1,000" -> number 1000 */
+function parsePrice(text) {
+  if(!text) return 0;
+  const digits = text.replace(/[^\d.]/g, '');
+  return digits ? Number(digits) : 0;
+}
+
+/* Read/save cart object (productName => {name, price, qty}) */
+function readCart() {
+  try {
+    return JSON.parse(localStorage.getItem('hunza_cart') || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+function saveCart(cart) {
+  localStorage.setItem('hunza_cart', JSON.stringify(cart));
+}
+
+/* Count unique items */
+function uniqueCount(cart) {
+  return Object.keys(cart).filter(k => cart[k] && cart[k].qty > 0).length;
+}
+
+/* Update header UI: show cart if uniqueCount>0, otherwise show buy button.
+   Uses poof animation classes for a pleasant swap.
+*/
+function updateHeaderUI() {
+  const cartBtn = document.getElementById('headerCart');
+  const buyBtn = document.getElementById('headerBuy');
+  const badge = document.getElementById('cartBadge');
+  if (!cartBtn || !buyBtn || !badge) return;
+
+  const cart = readCart();
+  const count = uniqueCount(cart);
+
+  // update badge number or hide it
+  if (count > 0) {
+    badge.textContent = count;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
+
+  // If cart present: show cart button, hide buy. If not: reverse.
+  if (count > 0) {
+    // if currently hidden, animate swap
+    if (getComputedStyle(cartBtn).display === 'none') {
+      // poof out buy, then show cart poof in
+      buyBtn.classList.add('poof-out');
+      setTimeout(()=> {
+        buyBtn.style.display = 'none';
+        buyBtn.classList.remove('poof-out');
+        cartBtn.style.display = 'inline-flex';
+        cartBtn.classList.add('poof-in');
+        setTimeout(()=> cartBtn.classList.remove('poof-in'), 400);
+      }, 220);
+    } else {
+      // if already buy hidden but cart visible, ensure visible without animation
+      buyBtn.style.display = 'none';
+      cartBtn.style.display = 'inline-flex';
+    }
+  } else {
+    // no items: show buy, hide cart with reverse animation
+    if (getComputedStyle(buyBtn).display === 'none') {
+      cartBtn.classList.add('poof-out');
+      setTimeout(()=> {
+        cartBtn.style.display = 'none';
+        cartBtn.classList.remove('poof-out');
+        buyBtn.style.display = 'inline-flex';
+        buyBtn.classList.add('poof-in');
+        setTimeout(()=> buyBtn.classList.remove('poof-in'), 400);
+      }, 200);
+    } else {
+      cartBtn.style.display = 'none';
+      buyBtn.style.display = 'inline-flex';
+    }
+  }
+}
+
+/* Add item to cart (name, price, qty) */
+function addToCart(name, price, qty) {
+  if (!name) return;
+  const cart = readCart();
+  if (!cart[name]) {
+    cart[name] = { name, price: price || 0, qty: 0 };
+  }
+  cart[name].qty = (cart[name].qty || 0) + Math.max(1, Number(qty || 1));
+  saveCart(cart);
+  updateHeaderUI();
+}
+
+/* Attach listeners to Add to Cart buttons on the buy page (if present) */
+function wireAddToCartButtons() {
+  // NodeList might be empty on non-buy pages. That's OK.
+  const addButtons = document.querySelectorAll('.bp-add-cart');
+  addButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // find product card container
+      const card = btn.closest('.bp-card');
+      if (!card) return;
+
+      const nameEl = card.querySelector('.bp-name');
+      const priceEl = card.querySelector('.bp-price');
+      const qtyInput = card.querySelector('.bp-qty-input');
+
+      const name = nameEl ? nameEl.textContent.trim() : 'Product';
+      const price = priceEl ? parsePrice(priceEl.textContent) : 0;
+      const qty = qtyInput ? Math.max(1, Number(qtyInput.value || 1)) : 1;
+
+      // Add to cart
+      addToCart(name, price, qty);
+
+      // Quick visual feedback on the Add button (optional)
+      btn.classList.add('added');
+      setTimeout(()=> btn.classList.remove('added'), 600);
+
+      // After first add, header will swap automatically via updateHeaderUI()
+    });
+  });
+}
+
+
+/* On load: initialize UI and wire buttons */
+document.addEventListener('DOMContentLoaded', ()=> {
+  // ensure badge element exists and initial state matches localStorage
+  // If elements are not present yet (header not on this page), skip with guarding
+  updateHeaderUI();
+  wireAddToCartButtons();
+});
+
+/* Also re-run wireAddToCartButtons if DOM changes or content is loaded dynamically */
+</script>
 
 
 
