@@ -2221,6 +2221,7 @@
 }
 .dark .btn-place-order { box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
+/* Popup Base ------------------------------------------------- */
 .hs-popup {
   position: fixed;
   left: 50%;
@@ -2232,16 +2233,54 @@
   font-size: 16px;
   display: none;
   z-index: 99999;
+
+  /* Theme-adaptive background + border */
+  background: var(--surface-card, var(--offwhite));
+  border: 1px solid var(--primary);
+  color: var(--text-dark);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
 }
 
+.hs-popup {
+  opacity: 0;
+  transform: translate(-50%, -20px);
+  transition: all 0.25s ease;
+}
+
+.hs-popup.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Success state ---------------------------------------------- */
 .hs-popup.success {
-  background: #d4f8e3;
-  color: #0b7030;
-  border: 1px solid #0b7030;
+  border-color: var(--primary);
+  background: var(--offwhite);
+  color: var(--primary);
 }
 
+/* Error state ------------------------------------------------ */
 .hs-popup.error {
-  background: #ffe1e1;
-  color: #b30000;
-  border: 1px solid #b30000;
+  border-color: #c44545;
+  background: var(--offwhite);
+  color: #c44545;
+}
+
+/* DARK MODE OVERRIDES ---------------------------------------- */
+.dark .hs-popup {
+  background: var(--surface-card);
+  border-color: var(--hover);
+  color: var(--text-dark);
+}
+
+.dark .hs-popup.success {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--surface-1);
+}
+
+.dark .hs-popup.error {
+  color: #ff8f8f;
+  border-color: #ff8f8f;
+  background: var(--surface-1);
 }

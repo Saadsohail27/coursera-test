@@ -203,6 +203,9 @@
   </div>
 </footer>
 
+<div id="formPopup" class="hs-popup"></div>
+
+
 <a href="https://wa.me/923225017998" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
 </a>
@@ -415,10 +418,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
   // Anti-bot honeypot check
   if (document.getElementById("hp").value.trim() !== "") {
-    popup.textContent = "Bot submission blocked.";
-    popup.className = "hs-popup error";
-    popup.style.display = "block";
-    setTimeout(() => popup.style.display = "none", 4000);
+    showPopup("Bot submission blocked.", false);
     return;
   }
 
@@ -438,24 +438,36 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
     const data = await res.text();
 
     if (data === "OK") {
-      popup.textContent = "Message sent successfully — we'll reply soon!";
-      popup.className = "hs-popup success";
-      popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 4000);
+      showPopup("Message sent successfully — we'll reply soon!", true);
       document.getElementById("contactForm").reset();
     } else {
-      popup.textContent = "Message not sent — please try again (or network error).";
-      popup.className = "hs-popup error";
-      popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 4000);
+      showPopup("Message not sent — please try again (or network error).", false);
     }
   } catch {
-    popup.textContent = "Network error — please try again.";
-    popup.className = "hs-popup error";
-    popup.style.display = "block";
-    setTimeout(() => popup.style.display = "none", 4000);
+    showPopup("Network error — please try again.", false);
   }
 });
+
+/* Popup animation handler */
+function showPopup(message, isSuccess) {
+  const popup = document.getElementById("formPopup");
+  if (!popup) return;
+
+  popup.textContent = message;
+
+  popup.classList.remove("success", "error");
+  popup.classList.add(isSuccess ? "success" : "error");
+
+  // show + animate
+  popup.style.display = "block";
+  setTimeout(() => popup.classList.add("show"), 10);
+
+  // hide after 4 seconds
+  setTimeout(() => {
+    popup.classList.remove("show");
+    setTimeout(() => popup.style.display = "none", 250);
+  }, 4000);
+}
 </script>
 
 
