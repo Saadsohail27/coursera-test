@@ -125,30 +125,26 @@
 
   <!-- Contact Form Section -->
   <div class="hs-form-wrapper">
-    <h2>Send Us a Message</h2>
-    <h3>We'd love to hear from you</h3>
-    <form class="hs-contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <input type="text" placeholder="Subject" required>
-      <textarea placeholder="Your Message"></textarea>
+  <h2>Send Us a Message</h2>
+  <h3>We'd love to hear from you</h3>
 
-      <button type="submit" class="hs-btn">Submit</button>
-    </form>
+  <form id="contactForm" class="hs-contact-form">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <input type="text" id="subject" placeholder="Subject" required>
+    <textarea id="message" placeholder="Your Message"></textarea>
 
-    <!-- Team Contacts -->
-    <div class="hs-team-contacts">
-      <div class="hs-team-contact">
-        <div class="hs-avatar"></div>
-        <div>
-          <h4>Muntzir Mehdi</h4>
-          <p>Business Owner</p>
-          <span>+92 300 0000000</span>
-          <a href="mailto:muntazirmehdi@gmail.com">muntazirmehdi@gmail.com</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- HONEYPOT (bots fill this, humans don't) -->
+    <input type="text" id="hp" name="hp" style="display:none">
+
+    <button type="submit" class="hs-btn">Submit</button>
+  </form>
+
+  <!-- Message popup -->
+  <div id="formPopup" class="hs-popup"></div>
+</div>
+
+
 
 </section>
 
@@ -410,6 +406,59 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 /* Also re-run wireAddToCartButtons if DOM changes or content is loaded dynamically */
 </script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const popup = document.getElementById("formPopup");
+
+  // Anti-bot honeypot check
+  if (document.getElementById("hp").value.trim() !== "") {
+    popup.textContent = "Bot submission blocked.";
+    popup.className = "hs-popup error";
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 4000);
+    return;
+  }
+
+  // Collect form data
+  const formData = new FormData();
+  formData.append("name", document.getElementById("name").value);
+  formData.append("email", document.getElementById("email").value);
+  formData.append("subject", document.getElementById("subject").value);
+  formData.append("message", document.getElementById("message").value);
+
+  try {
+    const res = await fetch("sendmail.php", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.text();
+
+    if (data === "OK") {
+      popup.textContent = "Message sent successfully — we'll reply soon!";
+      popup.className = "hs-popup success";
+      popup.style.display = "block";
+      setTimeout(() => popup.style.display = "none", 4000);
+      document.getElementById("contactForm").reset();
+    } else {
+      popup.textContent = "Message not sent — please try again (or network error).";
+      popup.className = "hs-popup error";
+      popup.style.display = "block";
+      setTimeout(() => popup.style.display = "none", 4000);
+    }
+  } catch {
+    popup.textContent = "Network error — please try again.";
+    popup.className = "hs-popup error";
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 4000);
+  }
+});
+</script>
+
+
 
 </body>
 </html>
