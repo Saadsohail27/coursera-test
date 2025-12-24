@@ -3,19 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Hunza Sparklets</title>
-  <meta name="description" content="Hunza Sparklets — Natural sparkling water" />
+  
+  <title>Your Cart — Premium RO Bottled Water in Lahore | Hunza Sparklets</title>
+  <meta name="description" content="Review your bottled water order and proceed to checkout. Reliable RO-treated drinking water delivery for events, offices and homes across Lahore.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
   
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/logos/favicon.svg" />
+  <link rel="shortcut icon" href="images/logos/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png" />
+  <link rel="manifest" href="images/logos/site.webmanifest" />
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <img src="images/logos/hunza-sparklets-logo.webp" alt="Hunza Sparklets logo">
       </a>
 
@@ -23,16 +32,16 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
-        <a href="buy.html">Where to Buy</a>
+        <a href="buy-bottled-water.html">Where to Buy</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="contact.html">Contact</a>
       </nav>
 
       <div style="display:flex;gap:12px;align-items:center">
-		  <!-- REPLACE the existing: <a class="cta" href="buy.html">Buy Now</a> -->
+		  <!-- REPLACE the existing: <a class="cta" href="buy-bottled-water.html">Buy Now</a> -->
 <div class="header-cta-wrapper" aria-live="polite">
   <!-- Buy button (keeps .cta class so your styling stays identical) -->
-  <a class="cta header-buy" href="buy.html" id="headerBuy">Buy Now</a>
+  <a class="cta header-buy" href="buy-bottled-water.html" id="headerBuy">Buy Now</a>
 
   <!-- Cart button turned into real link -->
   <a id="headerCart" class="header-cart" href="cart.html" aria-label="View cart" title="View cart" style="display:none">
@@ -71,7 +80,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
-      <a href="buy.html">Where to Buy</a>
+      <a href="buy-bottled-water.html">Where to Buy</a>
       <a href="sustainability.html">Sustainability</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -84,7 +93,7 @@
     <div class="cart-items-col">
       <h1 class="cart-title">Your Cart</h1>
       <div id="cartEmpty" class="cart-empty" hidden>
-        <p>Your cart is empty. <a href="buy.html" class="link-cta">Shop now</a></p>
+        <p>Your cart is empty. <a href="buy-bottled-water.html" class="link-cta">Shop now</a></p>
       </div>
 
       <div id="cartItems" class="cart-items-list" aria-live="polite"></div>
@@ -270,7 +279,7 @@
 /* Cart functionality: stores cart in localStorage under "hunza_cart".
    - Unique items = number of distinct products (keys)
    - Preserved across pages (localStorage)
-   - Works even if buy.html not loaded (safe guards)
+   - Works even if buy-bottled-water.html not loaded (safe guards)
 */
 
 /* Utility: parse price string like "Rs 1,000" -> number 1000 */

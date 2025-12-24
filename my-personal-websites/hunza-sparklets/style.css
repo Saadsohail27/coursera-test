@@ -2284,3 +2284,29 @@
   border-color: #ff8f8f;
   background: var(--surface-1);
 }
+
+.business-water-supply {
+  margin-bottom: 20px;   /* tighten spacing */
+}
+
+.business-water-supply h1 {
+  margin-bottom: 10px;
+}
+
+.business-water-supply p {
+  max-width: 720px;
+  margin: 6px auto;
+  font-size: 15px;
+}
+
+@media (max-width: 430px) {
+  .business-water-supply h1 {
+    font-size: 1.2rem;
+  }
+
+  .business-water-supply p {
+    font-size: 0.6rem;
+  }
+}
+
+

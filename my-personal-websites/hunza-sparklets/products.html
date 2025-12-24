@@ -3,19 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Hunza Sparklets</title>
-  <meta name="description" content="Hunza Sparklets — Natural sparkling water" />
+
+  <!-- Correct SEO Title & Description -->
+  <title>Hunza Sparklets Bottled Water Products — Premium RO Drinking Water in Pakistan</title>
+  <meta name="description" content="Explore Hunza Sparklets bottled water products including 500ml and 1500ml premium and regular bottles. RO-treated, safe and high-quality drinking water for homes, offices and events.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/logos/favicon.svg" />
+  <link rel="shortcut icon" href="images/logos/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png" />
+  <link rel="manifest" href="images/logos/site.webmanifest" />
+
+
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <img src="images/logos/hunza-sparklets-logo.webp" alt="Hunza Sparklets logo">
       </a>
 
@@ -23,16 +35,16 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
-        <a href="buy.html">Where to Buy</a>
+        <a href="buy-bottled-water.html">Where to Buy</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="contact.html">Contact</a>
       </nav>
 
       <div style="display:flex;gap:12px;align-items:center">
-		  <!-- REPLACE the existing: <a class="cta" href="buy.html">Buy Now</a> -->
+		  <!-- REPLACE the existing: <a class="cta" href="buy-bottled-water.html">Buy Now</a> -->
 <div class="header-cta-wrapper" aria-live="polite">
   <!-- Buy button (keeps .cta class so your styling stays identical) -->
-  <a class="cta header-buy" href="buy.html" id="headerBuy">Buy Now</a>
+  <a class="cta header-buy" href="buy-bottled-water.html" id="headerBuy">Buy Now</a>
 
   <!-- Cart button turned into real link -->
   <a id="headerCart" class="header-cart" href="cart.html" aria-label="View cart" title="View cart" style="display:none">
@@ -71,7 +83,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
-      <a href="buy.html">Where to Buy</a>
+      <a href="buy-bottled-water.html">Where to Buy</a>
       <a href="sustainability.html">Sustainability</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -88,7 +100,7 @@
 
     <!-- PRODUCT 1 -->
     <div class="products-card">
-        <img src="images/products/500-ml-bottle-premium-no-bg.png" 
+        <img src="images/products/500-ml-bottle-premium-no-bg.webp" 
              alt="500ML Premium Bottle" 
              class="products-img">
 
@@ -100,15 +112,16 @@
                 hydration with a refined, modern feel.
             </p>
 
-            <a href="buy.html" class="products-btn">Buy Now</a>
+            <a href="buy-bottled-water.html" class="products-btn">Buy Now</a>
         </div>
     </div>
 
     <!-- PRODUCT 2 -->
     <div class="products-card">
-        <img src="images/products/1500-ml-bottle-premium-no-bg.png" 
+        <img src="images/products/1500-ml-bottle-premium-no-bg.webp" 
              alt="1500ML Premium Bottle" 
-             class="products-img">
+             class="products-img" loading="lazy"
+>
 
         <div class="products-details">
             <h3 class="products-name">1500 ML Bottle – Premium</h3>
@@ -118,15 +131,16 @@
                 giving a durable and refreshing experience.
             </p>
 
-            <a href="buy.html" class="products-btn">Buy Now</a>
+            <a href="buy-bottled-water.html" class="products-btn">Buy Now</a>
         </div>
     </div>
 
     <!-- PRODUCT 3 -->
     <div class="products-card">
-        <img src="images/products/500-ml-no-background.png" 
+        <img src="images/products/500-ml-no-background.webp" 
              alt="500ML Bottle" 
-             class="products-img">
+             class="products-img" loading="lazy"
+>
 
         <div class="products-details">
             <h3 class="products-name">500 ML Bottle - Regular</h3>
@@ -136,15 +150,16 @@
                 while maintaining the premium water purity standard.
             </p>
 
-            <a href="buy.html" class="products-btn">Buy Now</a>
+            <a href="buy-bottled-water.html" class="products-btn">Buy Now</a>
         </div>
     </div>
 
     <!-- PRODUCT 4 -->
     <div class="products-card">
-        <img src="images/products/1500-ml-bottle-regular-no-bg.png" 
+        <img src="images/products/1500-ml-bottle-regular-no-bg.webp" 
              alt="1500ML Bottle Regular" 
-             class="products-img">
+             class="products-img" loading="lazy"
+>
 
         <div class="products-details">
             <h3 class="products-name">1500 ML Bottle - Regular</h3>
@@ -154,7 +169,7 @@
                 while maintaining the trusted Hunza Sparklets purity.
             </p>
 
-            <a href="buy.html" class="products-btn">Buy Now</a>
+            <a href="buy-bottled-water.html" class="products-btn">Buy Now</a>
         </div>
     </div>
 
@@ -284,7 +299,7 @@
 /* Cart functionality: stores cart in localStorage under "hunza_cart".
    - Unique items = number of distinct products (keys)
    - Preserved across pages (localStorage)
-   - Works even if buy.html not loaded (safe guards)
+   - Works even if buy-bottled-water.html not loaded (safe guards)
 */
 
 /* Utility: parse price string like "Rs 1,000" -> number 1000 */

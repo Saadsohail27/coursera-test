@@ -3,19 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Hunza Sparklets</title>
-  <meta name="description" content="Hunza Sparklets — Natural sparkling water" />
+
+  <!-- Correct SEO Title & Description -->
+  <title>About Hunza Sparklets — Premium RO Bottled Drinking Water in Pakistan</title>
+  <meta name="description" content="Learn about Hunza Sparklets, a premium RO-treated bottled drinking water brand in Pakistan. We focus on safety, mineral balance, quality control and reliable purification practices.">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="images/logos/favicon.svg" />
+  <link rel="shortcut icon" href="images/logos/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png" />
+  <link rel="manifest" href="images/logos/site.webmanifest" />
+
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="style.css">
-  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Hunza Sparklets",
+  "url": "https://hunzasparklets.com.pk/about",
+  "description": "Learn about Hunza Sparklets, a premium RO-treated bottled water brand serving Lahore and across Pakistan. Discover our mission, purification process, sustainability practices, and commitment to delivering clean, refreshing drinking water.",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Hunza Sparklets",
+    "url": "https://hunzasparklets.com.pk",
+    "logo": "https://hunzasparklets.com.pk/images/logos/hunza-sparklets-logo.webp",
+    "description": "Hunza Sparklets delivers premium RO-treated bottled water using a multi-stage purification and mineral balancing system. Serving Lahore and across Pakistan, we focus on clean, fresh, and safe drinking water.",
+    "telephone": "+923225017998",
+    "email": "info@hunzasparklets.com.pk",
+
+    "founder": {
+      "@type": "Person",
+      "name": "Muntazir Mehdi"
+    },
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Muntazir Mehdi"
+      }
+    ],
+
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bhubtiyan Chowk, Raiwind Road",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "addressCountry": "Pakistan"
+    },
+
+    "sameAs": [
+      "https://www.instagram.com/hunzasparklets/",
+      "https://www.facebook.com/people/Hunza-Sparklets-pvt-ltd/61560314942159/",
+      "https://maps.app.goo.gl/CsfsDzBK7HMXpE9k9"
+    ],
+
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Lahore"
+      },
+      {
+        "@type": "Country",
+        "name": "Pakistan"
+      }
+    ],
+
+    "keywords": [
+      "Hunza Sparklets",
+      "bottled water Lahore",
+      "premium drinking water",
+      "RO treated water Pakistan",
+      "mineral balanced water",
+      "safe drinking water Lahore",
+      "500ml water bottle",
+      "1.5L water bottle"
+    ],
+
+    "foundingLocation": {
+      "@type": "City",
+      "name": "Lahore"
+    }
+  }
+}
+</script>
+
 </head>
+
 <body>
 
   <header class="site-header" role="banner">
     <div class="container">
-      <a class="brand" href="#">
+      <a class="brand" href="index.html">
         <img src="images/logos/hunza-sparklets-logo.webp" alt="Hunza Sparklets logo">
       </a>
 
@@ -23,16 +105,16 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="products.html">Products</a>
-        <a href="buy.html">Where to Buy</a>
+        <a href="buy-bottled-water.html">Where to Buy</a>
         <a href="sustainability.html">Sustainability</a>
         <a href="contact.html">Contact</a>
       </nav>
 
       <div style="display:flex;gap:12px;align-items:center">
-		  <!-- REPLACE the existing: <a class="cta" href="buy.html">Buy Now</a> -->
+		  <!-- REPLACE the existing: <a class="cta" href="buy-bottled-water.html">Buy Now</a> -->
 <div class="header-cta-wrapper" aria-live="polite">
   <!-- Buy button (keeps .cta class so your styling stays identical) -->
-  <a class="cta header-buy" href="buy.html" id="headerBuy">Buy Now</a>
+  <a class="cta header-buy" href="buy-bottled-water.html" id="headerBuy">Buy Now</a>
 
   <!-- Cart button turned into real link -->
   <a id="headerCart" class="header-cart" href="cart.html" aria-label="View cart" title="View cart" style="display:none">
@@ -71,7 +153,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="products.html">Products</a>
-      <a href="buy.html">Where to Buy</a>
+      <a href="buy-bottled-water.html">Where to Buy</a>
       <a href="sustainability.html">Sustainability</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -174,7 +256,7 @@
   <div style="grid-column:8 / -1">
   <div class="card">
     <div class="icon-wrap">
-      <img src="images/icons/recycle.png" alt="Recyclable Packaging Icon">
+      <img src="images/icons/recycle.webp" alt="Recyclable Packaging Icon">
     </div>
 
     <h4 style="margin:0 0 8px">Recyclable Packaging</h4>
@@ -310,7 +392,7 @@
 /* Cart functionality: stores cart in localStorage under "hunza_cart".
    - Unique items = number of distinct products (keys)
    - Preserved across pages (localStorage)
-   - Works even if buy.html not loaded (safe guards)
+   - Works even if buy-bottled-water.html not loaded (safe guards)
 */
 
 /* Utility: parse price string like "Rs 1,000" -> number 1000 */

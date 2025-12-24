@@ -21,17 +21,21 @@
 			</div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#mission">Our Mission</a>
+            <a href="#events">Events</a>
+            <a href="#sponsorships">Sponsorships</a>
             <a href="#team">Team</a>
             <a href="#car">Our Car</a>
+            <a href="#mission">Our Mission</a>
             <a href="#contact">Contact</a>
         </nav>
 
         <nav class="mobile-nav" id="mobileNav">
 	    <a href="#home">Home</a>
-	    <a href="#mission">Our Mission</a>
+        <a href="#events">Events</a>
+        <a href="#sponsorships">Sponsorships</a>
 	    <a href="#team">Team</a>
 	    <a href="#car">Our Car</a>
+	    <a href="#mission">Our Mission</a>
 	    <a href="#contact">Contact</a>
 	</nav>
     </header>
@@ -55,7 +59,7 @@
         <div class="who-text">
             <h2>Who We Are</h2>
             <p>
-                DriftX is a team of 5 enthusiastic
+                DriftX is a team of 6 enthusiastic
  students participating in Formula
  Pakistan competition for F1 in
  schools.  
@@ -104,6 +108,12 @@
             <img src="images/team-members/shanza-fatima.jpg" alt="">
             <h3>Syeda Shanza Fatima</h3>
             <p>Performance Analyst | Graphic Designer</p>
+        </div>
+
+        <div class="member-card">
+            <img src="images/team-members/.jpg" alt="">
+            <h3>Asad Askari</h3>
+            <p>Engineer</p>
         </div>
 
     </div>
@@ -229,17 +239,108 @@
             <p>Performance Analyst | Graphic Designer</p>
         </div>
 
+        <div class="member-card">
+            <img src="images/team-members/.jpg" alt="">
+            <h3>Asad Askari</h3>
+            <p>Engineer</p>
+        </div>
+
         <!-- Add more below -->
 
     </div>
 </section>
 
+    <!-- Footer separator -->
+<hr class="footer-sep">
 
-    <!-- FOOTER -->
-    <footer id="contact">
-        <p>© 2025 - 2026 Team DriftX – Racing | Formula Pakistan</p>
-        <p>Contact: driftxf1schools@gmail.com</p>
-    </footer>
+<!-- DriftX Footer -->
+<footer class="driftx-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- LEFT: Logo + Contact (contact column sits under logo) -->
+    <div class="footer-col footer-left">
+      <a class="footer-logo" href="index.html" aria-label="DriftX home">
+        <!-- Replace with your SVG or img if you have a logo file -->
+        <img src="images/logos/driftx-logo.jpg">
+      </a>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <address>
+          <div class="contact-row">Phone: <a href="tel:+923214559936">+92 321 4559936</a></div>
+          <div class="contact-row">Email: <a href="mailto:info@driftx.pk">info@driftx.pk</a></div>
+          <div class="contact-row">Karachi, Pakistan</div>
+        </address>
+      </div>
+    </div>
+
+    <!-- CENTER: Quick Links -->
+    <div class="footer-col footer-center">
+      <h4 id="footer-heading" class="visually-hidden">Footer</h4>
+      <div class="quick-links" aria-label="Quick links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#sponsorships">Sponsorships</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#car">Our Car</a></li>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: Socials -->
+    <div class="footer-col footer-right">
+      <h4>Follow us</h4>
+      <div class="socials" role="list">
+
+          <!-- Facebook -->
+          <a class="social" href="#" aria-label="Facebook" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- Instagram -->
+          <a class="social" href="#" aria-label="Instagram" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- X / Twitter -->
+          <a class="social" href="#" aria-label="Twitter (X)" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- TikTok -->
+          <a class="social" href="#" aria-label="TikTok" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- Discord -->
+          <a class="social" href="#" aria-label="Discord" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="social" href="#" aria-label="LinkedIn" rel="noopener">
+            <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+          <!-- YouTube -->
+          <a class="social" href="#" aria-label="YouTube" rel="noopener">
+           <img src="images/icons/facebook.svg" alt="Facebook">
+          </a>
+
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row -->
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> Team DriftX — Racing for Education • All rights reserved</small>
+  </div>
+</footer>
+
 
 <script>
 	document.addEventListener("scroll", () => {
@@ -404,6 +505,31 @@ document.querySelectorAll(".mobile-nav a").forEach(link => {
 });
 
 </script>
+
+<script>
+  // set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // IntersectionObserver to toggle "in-view" on the quick-links when footer enters viewport
+  (function () {
+    const quickLinks = document.querySelector('.quick-links');
+    if (!quickLinks) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          quickLinks.classList.add('in-view');
+        } else {
+          // you can remove the class if you want animation to replay on scroll up/down
+          // quickLinks.classList.remove('in-view');
+        }
+      });
+    }, { root: null, threshold: 0.12 });
+
+    observer.observe(quickLinks);
+  })();
+</script>
+
 
 </body>
 </html>
