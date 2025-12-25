@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team DriftX | Formula Racing Team Pakistan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logos/driftx-logo.jpg"></a></div>
+        <!-- MOBILE MENU BUTTON -->
+			<div class="mobile-menu-btn" id="mobileMenuBtn">
+			    <span></span>
+			    <span></span>
+			    <span></span>
+			</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="#sponsorships">Sponsorships</a>
+            <a href="#team">Team</a>
+            <a href="#car">Our Car</a>
+            <a href="#mission">Our Mission</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <nav class="mobile-nav" id="mobileNav">
+	    <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="#sponsorships">Sponsorships</a>
+	    <a href="#team">Team</a>
+	    <a href="#car">Our Car</a>
+	    <a href="#mission">Our Mission</a>
+	    <a href="#contact">Contact</a>
+	</nav>
+</header>
+
+<section class="events-page" style="margin-top: 130px;">
+<main class="events-wrap">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <div>
+      <h1 style="margin:0;color:var(--dx-turq);font-size:20px">DriftX Events</h1>
+      <div class="note">Padel Tournament & Go-Karting Tournaments! — Register below</div>
+    </div>
+  </div>
+
+  <!-- Event cards -->
+  <section class="cards" aria-label="Event cards">
+    <article class="event-card" id="padel-card" aria-labelledby="padel-title">
+      <div>
+        <h3 id="padel-title">Padel Tournament</h3>
+        <p>Skill based starting matches to ensure fairness. Team and singles brackets. A friendly padel tournament in a well equipped modern padel courts. Matches across the weekend. Beginner or Advanced, all skill levels can participate. Everyone aged (13 - 21) may sign up.</p>
+      </div>
+
+      <div>
+        <div class="row-buttons">
+          <button class="btn-register" data-target="padel-form">Register for Padel</button>
+          <button class="btn-outlined" onclick="document.getElementById('padel-card').scrollIntoView({behavior:'smooth'})">Learn more</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="event-card" id="kart-card" aria-labelledby="kart-title">
+      <div>
+        <h3 id="kart-title">Go-Karting Tournament</h3>
+        <p>Timed sessions and head-to-head races on an outdoor circuit. Safety briefing and helmets provided. Open to everyone aged (14 - 20)</p>
+      </div>
+
+      <div>
+        <div class="row-buttons">
+          <button class="btn-register" data-target="kart-form">Register for Go-Karting</button>
+          <button class="btn-outlined" onclick="document.getElementById('kart-card').scrollIntoView({behavior:'smooth'})">Details</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Forms (hidden initially) -->
+  <section class="forms">
+
+    <!-- Padel Form -->
+    <section id="padel-form" class="form-panel hidden" aria-hidden="true" aria-labelledby="padel-form-title">
+      <h3 id="padel-form-title" style="margin-top:0;color:var(--dx-turq)">Padel Tournament — Registration</h3>
+      <p class="note" style="margin-bottom:12px">Fill out to register. We'll reach out to confirm your bracket & time slot, along with the payment details.</p>
+
+      <form id="form-padel" class="form-content" autocomplete="on">
+        <div class="form-grid">
+          <div>
+            <label for="padel-name">Full name</label>
+            <input id="padel-name" class="input" name="name" required placeholder="Your full name" />
+          </div>
+          <div>
+              <label for="padel-cnic">CNIC Number</label>
+              <input
+                id="padel-cnic"
+                class="input"
+                name="cnic"
+                type="text"
+                required
+                placeholder="XXXXX-XXXXXXX-X"
+                pattern="\d{5}-\d{7}-\d{1}"
+                inputmode="numeric"
+              />
+            </div>
+          <div>
+            <label for="padel-age">Age</label>
+            <input id="padel-age" name="age" type="number" min="13" max="21" class="input" required placeholder="Your age" />
+          </div>
+          <div>
+            <label for="padel-phone">Phone (WhatsApp)</label>
+            <input id="padel-phone" class="input" name="phone" type="tel" required placeholder="03xx-xxxxxxx" />
+          </div>
+
+          <div>
+            <label for="padel-email">Email</label>
+            <input id="padel-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="padel-level">Skill level</label>
+            <select id="padel-level" name="level" class="input" required>
+              <option value="">Select level</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="padel-team">Registering as</label>
+            <select id="padel-team" name="register_as" class="input" required>
+              <option value="">Choose...</option>
+              <option value="single">Single (solo) (You'll be paired with a random teammate)</option>
+              <option value="pair">Team</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-submit">Submit Registration</button>
+          <button type="button" class="btn-close" data-target="padel-form">Close</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Karting Form -->
+    <section id="kart-form" class="form-panel hidden" aria-hidden="true" aria-labelledby="kart-form-title">
+      <h3 id="kart-form-title" style="margin-top:0;margin-bottom:20px;color:var(--dx-turq);">Go-Karting — Registration</h3>
+      <p class="note" style="margin-bottom:12px">Fill out to register. We'll reach out to confirm your slot, along with the payment details.</p>
+
+
+      <form id="form-kart" class="form-content" autocomplete="on">
+        <div class="form-grid">
+          <div>
+            <label for="kart-name">Full name</label>
+            <input id="kart-name" class="input" name="name" required placeholder="Your full name" />
+          </div>
+          <div>
+            <label for="kart-phone">Phone (WhatsApp)</label>
+            <input id="kart-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+          </div>
+
+          <div>
+            <label for="kart-email">Email</label>
+            <input id="kart-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div>
+              <label for="kart-cnic">CNIC Number</label>
+              <input
+                id="kart-cnic"
+                class="input"
+                name="cnic"
+                type="text"
+                required
+                placeholder="XXXXX-XXXXXXX-X"
+                pattern="\d{5}-\d{7}-\d{1}"
+                inputmode="numeric"
+              />
+            </div>
+
+          <div>
+            <label for="kart-age">Age</label>
+            <input id="kart-age" name="age" type="number" min="14" max="20" class="input" required placeholder="Your age" />
+          </div>
+
+          <div>
+            <label for="kart-license">Experience (karting / racing)</label>
+            <select id="kart-license" name="experience" class="input" required>
+              <option value="">Select</option>
+              <option>None</option>
+              <option>Some</option>
+              <option>Experienced</option>
+            </select>
+          </div>
+          <div>
+            <label for="kart-category">Category</label>
+            <select id="kart-category" name="category" class="input" required>
+              <option value="">Choose</option>
+              <option>Timed</option>
+              <option>Knockout</option>
+            </select>
+          </div>
+
+          <div class="form-grid full">
+            <div>
+              <label for="kart-notes">Additional notes (medical / restrictions)</label>
+              <textarea id="kart-notes" name="notes" rows="3" class="input" placeholder="Any important info"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-submit">Submit Registration</button>
+          <button type="button" class="btn-close" data-target="kart-form">Close</button>
+        </div>
+      </form>
+    </section>
+
+  </section>
+</main>
+</section>  
+
+    <!-- Footer separator -->
+<hr class="footer-sep">
+
+<!-- DriftX Footer -->
+<footer class="driftx-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- LEFT: Logo + Contact (contact column sits under logo) -->
+    <div class="footer-col footer-left">
+      <a class="footer-logo" href="index.html" aria-label="DriftX home">
+        <!-- Replace with your SVG or img if you have a logo file -->
+        <img src="images/logos/driftx-logo.jpg">
+      </a>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <address>
+          <div class="contact-row">Phone: <a href="tel:+923214559936">+92 321 4559936</a></div>
+          <div class="contact-row">Email: <a href="mailto:info@driftx.pk">info@driftx.pk</a></div>
+          <div class="contact-row">Karachi, Pakistan</div>
+        </address>
+      </div>
+    </div>
+
+    <!-- CENTER: Quick Links -->
+    <div class="footer-col footer-center">
+      <h4 id="footer-heading" class="visually-hidden">Footer</h4>
+      <div class="quick-links" aria-label="Quick links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="#sponsorships">Sponsorships</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#car">Our Car</a></li>
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: Socials -->
+    <div class="footer-col footer-right">
+      <h4>Follow us</h4>
+      <div class="socials" role="list">
+
+          <!-- Facebook -->
+          <a class="social" href="#" aria-label="Facebook" rel="noopener">
+            <img src="images/icons/facebook.png" alt="Facebook Icon">
+          </a>
+
+          <!-- Instagram -->
+          <a class="social" href="https://www.instagram.com/driftx_f1" aria-label="Instagram" rel="noopener">
+            <img src="images/icons/instagram.png" alt="Instagram Icon">
+          </a>
+
+          <!-- X / Twitter -->
+          <a class="social" href="https://x.com/driftxF1" aria-label="Twitter (X)" rel="noopener">
+            <img src="images/icons/x.png" alt="X Icon">
+          </a>
+
+          <!-- TikTok -->
+          <a class="social" href="https://www.tiktok.com/@driftx_f1?lang=en" aria-label="TikTok" rel="noopener">
+            <img src="images/icons/tik-tok.png" alt="TikTok">
+          </a>
+
+          <!-- Discord -->
+          <a class="social" href="#" aria-label="Discord" rel="noopener">
+            <img src="images/icons/discord.png" alt="Discord Icon">
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="social" href="#" aria-label="LinkedIn" rel="noopener">
+            <img src="images/icons/linkedin.png" alt="LinkedIn Icon">
+          </a>
+
+          <!-- YouTube -->
+          <a class="social" href="https://www.youtube.com/@DriftXF1" aria-label="YouTube" rel="noopener">
+           <img src="images/icons/youtube.png" alt="YouTube Icon">
+          </a>
+
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row -->
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> Team DriftX — Racing for Education • All rights reserved</small>
+  </div>
+</footer>
+
+
+<!-- JS -->
+<script>
+(function(){
+  // Utility selectors
+  const registerButtons = document.querySelectorAll('.btn-register');
+  const closeButtons = document.querySelectorAll('.btn-close');
+  const forms = { 'padel-form': document.getElementById('padel-form'), 'kart-form': document.getElementById('kart-form') };
+
+  // Hide all forms initially (in case)
+  Object.values(forms).forEach(f => { f.classList.add('hidden'); f.setAttribute('aria-hidden','true'); });
+
+  // Show relevant form when clicking register
+  registerButtons.forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      if(!targetId) return;
+      // hide all other forms
+      Object.values(forms).forEach(f => { f.classList.add('hidden'); f.classList.remove('active'); f.setAttribute('aria-hidden','true'); });
+      // reveal target
+      const target = document.getElementById(targetId);
+      target.classList.remove('hidden');
+      // force a small delay to allow display block before adding active animation
+      requestAnimationFrame(()=> requestAnimationFrame(()=> target.classList.add('active')));
+      target.setAttribute('aria-hidden','false');
+      // smooth scroll to the form
+      setTimeout(()=> { target.scrollIntoView({behavior:'smooth', block:'start'}); }, 80);
+    });
+  });
+
+  // Close handlers for close buttons
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', function(){
+      const t = btn.getAttribute('data-target');
+      if(!t) return;
+      const el = document.getElementById(t);
+      if(!el) return;
+      el.classList.remove('active');
+      // small delay to allow animation then hide
+      setTimeout(()=> { el.classList.add('hidden'); el.setAttribute('aria-hidden','true'); }, 260);
+      // scroll back to top of cards
+      document.querySelector('.cards').scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+
+  // Generic submit handler (prevent default and show confirmation popup)
+  function attachSubmit(formEl, successMessage){
+    formEl.addEventListener('submit', function(e){
+      e.preventDefault();
+      // simple client-side validation (HTML5 handles most)
+      // Collect form data (you can send via fetch to your backend here)
+      const data = new FormData(formEl);
+      // Simulate successful submission:
+      showPopup(successMessage || 'Registration received — we will contact you!', 'success');
+      formEl.reset();
+      // hide the form after success
+      formEl.classList.remove('active');
+      setTimeout(()=> { formEl.classList.add('hidden'); formEl.setAttribute('aria-hidden','true'); }, 420);
+      // Optionally: POST to server:
+      // fetch('/submit', { method:'POST', body: data }).then(...)
+    });
+  }
+
+  attachSubmit(document.getElementById('form-padel'), 'Padel registration submitted — check your WhatsApp/email soon.');
+  attachSubmit(document.getElementById('form-kart'), 'Go-Kart registration submitted — check your WhatsApp/email soon.');
+
+  // Popup utility
+  let popupTimer = null;
+  function showPopup(message, type){
+    clearTimeout(popupTimer);
+    const p = document.createElement('div');
+    p.className = 'popup';
+    p.innerText = message;
+    document.body.appendChild(p);
+    popupTimer = setTimeout(()=>{ p.remove(); }, 4800);
+  }
+
+  // Optional: close form if user clicks outside (simple UX)
+  document.addEventListener('click', function(e){
+    // if click is outside any .form-panel while any is active -> close active
+    const anyActive = document.querySelector('.form-panel.active');
+    if(anyActive && !anyActive.contains(e.target) && !e.target.matches('.btn-register')) {
+      anyActive.classList.remove('active');
+      setTimeout(()=> { anyActive.classList.add('hidden'); anyActive.setAttribute('aria-hidden','true'); }, 260);
+    }
+  });
+
+})();
+</script>
+
+<script>
+	document.addEventListener("scroll", () => {
+	    const header = document.querySelector("header");
+	    if (window.scrollY > 50) {
+	        header.classList.add("scrolled");
+	    } else {
+	        header.classList.remove("scrolled");
+	    }
+	});
+</script>
+
+<script>
+
+const track = document.querySelector('.slider-track');
+const cards = document.querySelectorAll('.slider-track .member-card');
+const nextBtn = document.querySelector('.right-btn');
+const prevBtn = document.querySelector('.left-btn');
+const sliderSection = document.querySelector('.who-slider');
+
+let currentIndex = 0;
+let autoSlideTimer = null;
+let autoSlideDelay = 3500;
+let autoStarted = false;
+
+function updateSlide() {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function startAutoSlide() {
+    if (autoStarted) return;
+    autoStarted = true;
+
+    autoSlideTimer = setInterval(() => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateSlide();
+    }, autoSlideDelay);
+}
+
+function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    autoStarted = false;
+    startAutoSlide();
+}
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateSlide();
+    resetAutoSlide();
+});
+
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateSlide();
+    resetAutoSlide();
+});
+
+// --- DRAG / SWIPE SUPPORT ---
+let startX = 0;
+let isDragging = false;
+
+track.addEventListener("mousedown", (e) => {
+    startX = e.clientX;
+    isDragging = true;
+});
+
+track.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    let diff = e.clientX - startX;
+
+    if (diff < -50) nextBtn.click();
+    if (diff > 50) prevBtn.click();
+
+    isDragging = false;
+});
+
+track.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+});
+
+// Touch (mobile)
+track.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", (e) => {
+    let diff = e.changedTouches[0].clientX - startX;
+
+    if (diff < -50) nextBtn.click();
+    if (diff > 50) prevBtn.click();
+});
+
+// --- START AUTO SLIDE ON SCROLL INTO VIEW ---
+window.addEventListener("scroll", () => {
+    const rect = sliderSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.7) {
+        startAutoSlide();
+    }
+});
+
+
+</script>
+
+<script>
+	
+const counters = document.querySelectorAll('.counter');
+let started = false;
+
+// Adaptive speed based on number size
+function startCount() {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const addPlus = counter.getAttribute('data-plus') || "";
+        let count = 0;
+
+        // Adaptive increment: larger numbers use bigger jumps
+        let increment = Math.ceil(target / 100); // finish in ~100 frames
+
+        const update = () => {
+            count += increment;
+
+            if (count < target) {
+                counter.innerText = count.toLocaleString(); 
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target.toLocaleString() + addPlus;
+            }
+        };
+
+        update();
+    });
+}
+
+const missionSection = document.querySelector('.mission');
+
+window.addEventListener('scroll', () => {
+    const rect = missionSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100 && !started) {
+        started = true;
+        startCount();
+    }
+});
+
+</script>
+
+<script>
+
+const mobileBtn = document.getElementById("mobileMenuBtn");
+const mobileNav = document.getElementById("mobileNav");
+
+mobileBtn.addEventListener("click", () => {
+    mobileBtn.classList.toggle("active");
+    mobileNav.classList.toggle("active");
+});
+
+// Close menu on link click
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+    });
+});
+
+</script>
+
+<script>
+  // set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // IntersectionObserver to toggle "in-view" on the quick-links when footer enters viewport
+  (function () {
+    const quickLinks = document.querySelector('.quick-links');
+    if (!quickLinks) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          quickLinks.classList.add('in-view');
+        } else {
+          // you can remove the class if you want animation to replay on scroll up/down
+          // quickLinks.classList.remove('in-view');
+        }
+      });
+    }, { root: null, threshold: 0.12 });
+
+    observer.observe(quickLinks);
+  })();
+</script>
+
+
+</body>
+</html>
