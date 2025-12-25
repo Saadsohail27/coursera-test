@@ -1151,6 +1151,13 @@ header nav a:hover::after {
   font-size: 1rem;
   transition: transform 160ms var(--ease), box-shadow 160ms var(--ease);
 }
+
+@media (max-width: 475px) {
+    .events-page .btn-register {
+        font-size: 0.8rem;
+    }
+}
+
 .events-page .btn-outlined {
   background: transparent;
   color: var(--dx-dark);
