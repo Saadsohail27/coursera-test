@@ -978,6 +978,7 @@ header nav a:hover::after {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
 }
