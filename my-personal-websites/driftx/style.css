@@ -1086,6 +1086,12 @@ header nav a:hover::after {
   gap: 36px;
 }
 
+@media (max-width: 475px) {
+    .events-page .events-wrap {
+        padding: 20px 15px;
+    }
+}
+
 /* Cards row */
 .events-page .cards {
   display: grid;
