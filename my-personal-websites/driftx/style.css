@@ -1156,6 +1156,10 @@ header nav a:hover::after {
     .events-page .btn-register {
         font-size: 0.8rem;
     }
+
+    .events-page .btn-go-karting {
+        font-size: 0.7rem;
+    }
 }
 
 .events-page .btn-outlined {

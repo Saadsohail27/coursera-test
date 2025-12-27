@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team DriftX | Formula Racing Team Pakistan</title>
+    <link rel="icon" type="image/png" href="images/logos/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/logos/favicon.svg" />
+    <link rel="shortcut icon" href="images/logos/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png" />
+    <link rel="manifest" href="images/logos/site.webmanifest" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><a href="index.html"><img src="images/logos/driftx-logo.jpg"></a></div>
+        <!-- MOBILE MENU BUTTON -->
+			<div class="mobile-menu-btn" id="mobileMenuBtn">
+			    <span></span>
+			    <span></span>
+			    <span></span>
+			</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="sponsorships.html">Sponsorships</a>
+            <a href="team.html">Team</a>
+            <a href="car.html">Our Car</a>
+            <a href="mission.html">Our Mission</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <nav class="mobile-nav" id="mobileNav">
+	    <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="sponsorships.html">Sponsorships</a>
+	    <a href="team.html">Team</a>
+	    <a href="car.html">Our Car</a>
+	    <a href="mission.html">Our Mission</a>
+	    <a href="contact.html">Contact</a>
+	</nav>
+</header>
+
+    <!-- Footer separator -->
+<hr class="footer-sep">
+
+<!-- DriftX Footer -->
+<footer class="driftx-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- LEFT: Logo + Contact (contact column sits under logo) -->
+    <div class="footer-col footer-left">
+      <a class="footer-logo" href="index.html" aria-label="DriftX home">
+        <!-- Replace with your SVG or img if you have a logo file -->
+        <img src="images/logos/driftx-logo.jpg">
+      </a>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <address>
+          <div class="contact-row">Phone: <a href="tel:+923214559936">+92 321 4559936</a></div>
+          <div class="contact-row">Email: <a href="mailto:info@driftx.pk">info@driftx.pk</a></div>
+          <div class="contact-row">Karachi, Pakistan</div>
+        </address>
+      </div>
+    </div>
+
+    <!-- CENTER: Quick Links -->
+    <div class="footer-col footer-center">
+      <h4 id="footer-heading" class="visually-hidden">Footer</h4>
+      <div class="quick-links" aria-label="Quick links">
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="sponsorships.html">Sponsorships</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="car.html">Our Car</a></li>
+          <li><a href="mission.html">Our Mission</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: Socials -->
+    <div class="footer-col footer-right">
+      <h4>Follow us</h4>
+      <div class="socials" role="list">
+
+          <!-- Facebook -->
+          <a class="social" href="#" aria-label="Facebook" rel="noopener" target="_blank">
+            <img src="images/icons/facebook.png" alt="Facebook Icon">
+          </a>
+
+          <!-- Instagram -->
+          <a class="social" href="https://www.instagram.com/driftx_f1" aria-label="Instagram" rel="noopener" target="_blank">
+            <img src="images/icons/instagram.png" alt="Instagram Icon">
+          </a>
+
+          <!-- X / Twitter -->
+          <a class="social" href="https://x.com/driftxF1" aria-label="Twitter (X)" rel="noopener" target="_blank">
+            <img src="images/icons/x.png" alt="X Icon">
+          </a>
+
+          <!-- TikTok -->
+          <a class="social" href="https://www.tiktok.com/@driftx_f1?lang=en" aria-label="TikTok" rel="noopener" target="_blank">
+            <img src="images/icons/tik-tok.png" alt="TikTok">
+          </a>
+
+          <!-- Discord -->
+          <a class="social" href="https://discord.gg/SqtYXs2W" aria-label="Discord" rel="noopener" target="_blank">
+            <img src="images/icons/discord.png" alt="Discord Icon">
+          </a>
+
+          <!-- LinkedIn -->
+          <a class="social" href="#" aria-label="LinkedIn" rel="noopener" target="_blank">
+            <img src="images/icons/linkedin.png" alt="LinkedIn Icon">
+          </a>
+
+          <!-- YouTube -->
+          <a class="social" href="https://www.youtube.com/@DriftXF1" aria-label="YouTube" rel="noopener" target="_blank">
+           <img src="images/icons/youtube.png" alt="YouTube Icon">
+          </a>
+
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row -->
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> Team DriftX — Racing for Education • All rights reserved</small>
+  </div>
+</footer>
+
+
+<!-- JS -->
+<script>
+  document.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+      } else {
+          header.classList.remove("scrolled");
+      }
+  });
+</script>
+
+<script>
+
+const mobileBtn = document.getElementById("mobileMenuBtn");
+const mobileNav = document.getElementById("mobileNav");
+
+mobileBtn.addEventListener("click", () => {
+    mobileBtn.classList.toggle("active");
+    mobileNav.classList.toggle("active");
+});
+
+// Close menu on link click
+document.querySelectorAll(".mobile-nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        mobileBtn.classList.remove("active");
+        mobileNav.classList.remove("active");
+    });
+});
+
+</script>
+
+<script>
+  // set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // IntersectionObserver to toggle "in-view" on the quick-links when footer enters viewport
+  (function () {
+    const quickLinks = document.querySelector('.quick-links');
+    if (!quickLinks) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          quickLinks.classList.add('in-view');
+        } else {
+          // you can remove the class if you want animation to replay on scroll up/down
+          // quickLinks.classList.remove('in-view');
+        }
+      });
+    }, { root: null, threshold: 0.12 });
+
+    observer.observe(quickLinks);
+  })();
+</script>
+
+
+</body>
+</html>
