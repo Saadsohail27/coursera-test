@@ -29,7 +29,7 @@ foreach ($_POST as $key => $value) {
 }
 
 $headers = "From: JunoonFest <no-reply@junoonfest.pk>\r\n";
-$headers .= "Reply-To: registrations@junoonfest.pk\r\n";
+$headers .= "Reply-To: info@junoonfest.pk\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8";
 
 // Try to send
