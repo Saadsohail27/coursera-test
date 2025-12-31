@@ -86,64 +86,52 @@
 
   <div class="contact-grid">
 
-    <!-- INFO -->
+    <!-- INFO (unchanged) -->
     <div class="contact-info">
       <h2>Contact Information</h2>
-
-      <div class="info-row">
-        <span>📍</span>
-        <div>
-          <strong>Location</strong>
-          <p>Karachi, Pakistan</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <span>📧</span>
-        <div>
-          <strong>Email</strong>
-          <p>info@junoonfest.pk</p>
-        </div>
-      </div>
-
-      <div class="info-row">
-        <span>📱</span>
-        <div>
-          <strong>WhatsApp</strong>
-          <p>+92 321 4559936</p>
-        </div>
-      </div>
-
-      <div class="socials">
-        <a href="#">Instagram</a>
-      </div>
+      <!-- ... your info rows ... -->
     </div>
 
     <!-- FORM -->
-    <form class="contact-form">
+    <form id="contact-form" class="contact-form" action="/contact-submit" method="POST" novalidate>
       <h2>Send Us a Message</h2>
 
       <div class="input-group">
-        <input type="text" required placeholder="Full Name">
+        <input name="fullName" type="text" required placeholder="Full Name">
       </div>
 
       <div class="input-group">
-        <input type="email" required placeholder="Email Address">
+        <input name="email" type="email" required placeholder="Email Address">
       </div>
 
       <div class="input-group">
-        <input type="tel" required placeholder="Phone / WhatsApp">
+        <input name="phone" type="tel" required placeholder="Phone / WhatsApp">
       </div>
 
       <div class="input-group">
-        <textarea rows="4" required placeholder="Your Message"></textarea>
+        <textarea name="message" rows="4" required placeholder="Your Message"></textarea>
       </div>
+
+      <!-- HONEYPOT - visible only to bots (kept out of sight from real users) -->
+      <div class="hp" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label>Leave this field empty</label>
+        <input name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <!-- Optional timestamp token (helps detect automated fast submissions) -->
+      <input type="hidden" name="ts" id="ts-field" value="">
 
       <button type="submit" class="btn primary">Send Message</button>
     </form>
 
   </div>
 </section>
+
+<!-- Your already-styled popup (we'll hook JS to it) -->
+<div id="form-status-popup" class="status-popup" aria-live="polite" style="display:none;">
+  <span id="status-message"></span>
+</div>
+
 
 
 
@@ -271,6 +259,75 @@
   });
 })();
 </script>
+
+<script>
+(function () {
+  const form = document.getElementById('contact-form');
+  const popup = document.getElementById('form-status-popup');
+  const statusMessage = document.getElementById('status-message');
+  const tsField = document.getElementById('ts-field');
+
+  // Fill timestamp when page loads (simple bot-check: very fast submits can be flagged server-side)
+  tsField.value = Date.now();
+
+  function showPopup(text, isSuccess = true) {
+    statusMessage.textContent = text;
+    popup.classList.toggle('success', isSuccess);
+    popup.classList.toggle('error', !isSuccess);
+    popup.style.display = 'block';
+    // hide after 6s
+    setTimeout(() => {
+      popup.style.display = 'none';
+    }, 6000);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    // Basic client-side honeypot check (do not rely on this alone)
+    if (data.get('website')) {
+      // bot detected
+      showPopup('Submission blocked.', false);
+      return;
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: data
+      });
+
+      if (!res.ok) {
+        // try to parse JSON error if available
+        let json;
+        try { json = await res.json(); } catch (_) { json = null; }
+        const msg = json && json.message ? json.message : `Server returned ${res.status}`;
+        showPopup(msg, false);
+        return;
+      }
+
+      const json = await res.json();
+      if (json.success) {
+        showPopup(json.message || 'Message sent — thank you!');
+        form.reset();
+        // refresh timestamp
+        tsField.value = Date.now();
+      } else {
+        showPopup(json.message || 'Submission failed — please try again.', false);
+      }
+    } catch (err) {
+      console.error(err);
+      showPopup('Network error. Please try again later.', false);
+    }
+  });
+})();
+</script>
+
 
   <script>
   const logo = document.querySelector('.logo-wrap');
