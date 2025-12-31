@@ -120,7 +120,7 @@
     </div>
 
     <!-- FORM -->
-    <form id="contact-form" class="contact-form" action="/contact-submit" method="POST" novalidate>
+    <form id="contact-form" class="contact-form" action="contact-submit.php" method="POST" novalidate>
       <h2>Send Us a Message</h2>
 
       <div class="input-group">
@@ -287,75 +287,6 @@
 })();
 </script>
 
-<script>
-(function () {
-  const form = document.getElementById('contact-form');
-  const popup = document.getElementById('form-status-popup');
-  const statusMessage = document.getElementById('status-message');
-  const tsField = document.getElementById('ts-field');
-
-  // Fill timestamp when page loads (simple bot-check: very fast submits can be flagged server-side)
-  tsField.value = Date.now();
-
-  function showPopup(text, isSuccess = true) {
-    statusMessage.textContent = text;
-    popup.classList.toggle('success', isSuccess);
-    popup.classList.toggle('error', !isSuccess);
-    popup.style.display = 'block';
-    // hide after 6s
-    setTimeout(() => {
-      popup.style.display = 'none';
-    }, 6000);
-  }
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const data = new FormData(form);
-
-    // Basic client-side honeypot check (do not rely on this alone)
-    if (data.get('website')) {
-      // bot detected
-      showPopup('Submission blocked.', false);
-      return;
-    }
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: data
-      });
-
-      if (!res.ok) {
-        // try to parse JSON error if available
-        let json;
-        try { json = await res.json(); } catch (_) { json = null; }
-        const msg = json && json.message ? json.message : `Server returned ${res.status}`;
-        showPopup(msg, false);
-        return;
-      }
-
-      const json = await res.json();
-      if (json.success) {
-        showPopup(json.message || 'Message sent — thank you!');
-        form.reset();
-        // refresh timestamp
-        tsField.value = Date.now();
-      } else {
-        showPopup(json.message || 'Submission failed — please try again.', false);
-      }
-    } catch (err) {
-      console.error(err);
-      showPopup('Network error. Please try again later.', false);
-    }
-  });
-})();
-</script>
-
-
   <script>
   const logo = document.querySelector('.logo-wrap');
 
@@ -407,6 +338,106 @@
 
     observer.observe(quickLinks);
   })();
+</script>
+
+<script>
+(function () {
+  const form = document.getElementById('contact-form');
+  const popup = document.getElementById('form-status-popup');
+  const statusMessage = document.getElementById('status-message');
+  const tsField = document.getElementById('ts-field');
+
+  if (!form) {
+    console.error('[Contact] contact-form not found in DOM');
+    return;
+  }
+  if (!popup || !statusMessage || !tsField) {
+    console.error('[Contact] required popup or fields missing', { popup, statusMessage, tsField });
+    return;
+  }
+
+  // seed timestamp for simple anti-bot
+  tsField.value = Date.now();
+
+  function showPopup(text, isSuccess = true) {
+    statusMessage.textContent = text;
+    popup.classList.remove('success', 'error');
+    popup.classList.add(isSuccess ? 'success' : 'error');
+    // Use the CSS-visible class so transition and pointer-events work
+    popup.style.display = 'flex';
+    // force reflow then add show for transition (helps when reused quickly)
+    // eslint-disable-next-line no-unused-expressions
+    popup.offsetHeight;
+    popup.classList.add('show');
+
+    // hide after 6s
+    setTimeout(() => {
+      popup.classList.remove('show');
+      // allow transition to finish (400ms)
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 450);
+    }, 6000);
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    console.log('[Contact] submit handler fired');
+
+    const data = new FormData(form);
+
+    // client-side honeypot - just a quick rejection
+    if (data.get('website')) {
+      console.warn('[Contact] honeypot filled, blocking submission');
+      showPopup('Submission blocked.', false);
+      return;
+    }
+
+    // compute action (fallback to contact-submit.php)
+    const actionUrl = form.action && form.action.trim() ? form.action : 'contact-submit.php';
+    console.log('[Contact] sending POST to', actionUrl);
+
+    try {
+      const res = await fetch(actionUrl, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: data
+      });
+
+      console.log('[Contact] fetch complete', res.status, res.statusText);
+
+      const text = await res.text();
+      let json = null;
+      try {
+        json = text ? JSON.parse(text) : null;
+      } catch (err) {
+        console.warn('[Contact] response is not valid JSON:', text);
+      }
+
+      if (!res.ok) {
+        const msg = (json && json.message) ? json.message : `Server returned ${res.status}`;
+        console.error('[Contact] server error', msg);
+        showPopup(msg, false);
+        return;
+      }
+
+      // success path
+      if (json && json.success) {
+        showPopup(json.message || 'Message sent — thank you!');
+        form.reset();
+        tsField.value = Date.now();
+      } else {
+        // server returned 200 but success:false or non-JSON body
+        const msg = (json && json.message) ? json.message : 'Submission failed — please try again.';
+        console.warn('[Contact] submission not successful', json);
+        showPopup(msg, false);
+      }
+    } catch (err) {
+      console.error('[Contact] network/fetch error', err);
+      showPopup('Network error. Please try again later.', false);
+    }
+  });
+})();
 </script>
 
 
