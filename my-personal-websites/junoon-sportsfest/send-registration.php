@@ -14,7 +14,7 @@ if (!empty($_POST['website'])) {
 }
 
 // Basic expected fields - you can expand or sanitize further
-$to = "registrations@junoonfest.pk";
+$to = "info@junoonfest.pk";
 $subject = "New JunoonFest Registration";
 
 $body = "New registration received:\n\n";

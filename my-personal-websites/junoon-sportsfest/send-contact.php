@@ -24,7 +24,7 @@ if (!$name || !$email || !$message) {
   exit;
 }
 
-$to = "registrations@junoonfest.pk";
+$to = "info@junoonfest.pk";
 $subject = "JunoonFest — Contact / Sponsorship Query";
 
 $body = "New contact query received:\n\n";

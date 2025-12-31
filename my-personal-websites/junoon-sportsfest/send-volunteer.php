@@ -15,7 +15,7 @@ if (!empty($_POST['website'])) {
   exit;
 }
 
-$to = "volunteers@junoonfest.pk";
+$to = "info@junoonfest.pk";
 $subject = "New Volunteer Application — JunoonFest";
 
 $body = "New volunteer application received:\n\n";
