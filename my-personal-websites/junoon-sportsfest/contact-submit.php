@@ -3,7 +3,7 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // Replace with your destination email
-$destination = 'info@junoonfest.pk';
+$destination = 'driftxf1schools@gmail.com';
 
 // Utility: return JSON and exit
 function jsonResponse($success, $message, $httpCode = 200) {
