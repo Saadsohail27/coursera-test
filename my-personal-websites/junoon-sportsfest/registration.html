@@ -803,6 +803,11 @@
   </div>
 </footer>
 
+<div id="form-status-popup" class="status-popup" aria-live="polite">
+  <span id="status-message"></span>
+</div>
+
+
 <script>
 (function(){
   const btn = document.querySelector('.hamburger');
@@ -916,6 +921,34 @@ if (window.innerWidth <= 483) {
 </script>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Insert honeypot into every registration form
+  const forms = document.querySelectorAll('.registrations-page form');
+  forms.forEach(form => {
+    // only add if not already present
+    if (!form.querySelector('input[name="website"]')) {
+      const hp = document.createElement('input');
+      hp.type = 'text';
+      hp.name = 'website';            // honeypot field name (matches server check)
+      hp.tabIndex = -1;
+      hp.autocomplete = 'off';
+      // visually hidden (inline style — no CSS changes needed)
+      hp.style.position = 'absolute';
+      hp.style.left = '-9999px';
+      hp.style.height = '0';
+      hp.style.width = '0';
+      hp.style.opacity = '0';
+      hp.setAttribute('aria-hidden', 'true');
+
+      // prepend so it's the first field (bots typically fill first)
+      form.prepend(hp);
+    }
+  });
+});
+</script>
+
+
+<script>
 (function(){
   const container = document.querySelector('.registrations-page');
   if(!container) return;
@@ -1027,6 +1060,47 @@ document.querySelectorAll('.flip-btn').forEach(btn=>{
     btn.closest('.flip-card').classList.toggle('flipped');
   });
 });
+</script>
+
+<script>
+  const popup = document.getElementById('form-status-popup');
+  const popupMessage = document.getElementById('status-message');
+
+  function showPopup(message, success = true) {
+    popupMessage.textContent = message;
+    popup.classList.remove('success', 'error');
+    popup.classList.add('show', success ? 'success' : 'error');
+
+    setTimeout(() => {
+      popup.classList.remove('show');
+    }, 5000);
+  }
+
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('send-registration.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showPopup('Your details were sent successfully :)', true);
+          form.reset();
+        } else {
+          showPopup('Message could not be sent. Please check your network and try again.', false);
+        }
+      } catch (error) {
+        showPopup('Message could not be sent. Please check your network and try again.', false);
+      }
+    });
+  });
 </script>
 
 

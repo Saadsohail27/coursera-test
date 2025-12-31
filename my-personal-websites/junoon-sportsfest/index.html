@@ -244,6 +244,19 @@
 </section>
 
 
+<section class="junoon-cta">
+  <h2 class="junoon-heading">
+    <span id="typewriter"></span>
+  </h2>
+
+  <p class="junoon-sub">
+    Join the team behind the action. Help us organize, lead, and create unforgettable moments.
+  </p>
+
+  <a href="volunteers.html" class="junoon-btn">
+    Become a Volunteer
+  </a>
+</section>
 
 
   <!-- Schedule -->
@@ -255,19 +268,30 @@
 
   <!-- Sponsors -->
   <section id="sponsors" class="section alt">
-    <h2>Our Sponsors</h2>
+    <h2>Our Sponsors - To be announced soon</h2>
     <p>Powered by brands that support sports and youth culture.</p>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="section">
-    <h2>Get In Touch</h2>
+    <h2 style="font-size: 1.2rem;">Queries regarding registrations or want to discuss sponsorship oppurtunities ?</h2>
     <form class="form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+  <!-- Honeypot (do not remove) -->
+  <input
+    type="text"
+    name="website"
+    tabindex="-1"
+    autocomplete="off"
+    style="position:absolute;left:-9999px;height:0;width:0;opacity:0;"
+  />
+
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Email Address" required />
+  <textarea name="message" placeholder="Message"></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
   </section>
 
   <!-- Footer separator -->
@@ -441,6 +465,73 @@ if (window.innerWidth <= 483) {
   }
 }
 </script>
+
+<script>
+  const text = 'Become a part of <span class="junoon-highlight">Junoon</span> today';
+  const target = document.getElementById('typewriter');
+
+  let index = 0;
+  let isTag = false;
+  let output = '';
+
+  function typeWriter() {
+    if (index < text.length) {
+      const char = text[index];
+
+      if (char === '<') isTag = true;
+      if (char === '>') isTag = false;
+
+      output += char;
+      target.innerHTML = output;
+
+      index++;
+      setTimeout(typeWriter, isTag ? 0 : 70);
+    }
+  }
+
+  typeWriter();
+</script>
+
+<script>
+  const contactForm = document.querySelector('#contact .form');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch('send-contact.php', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          showVolunteerPopup(
+            'Your message was sent successfully :) We will get back to you soon.',
+            true
+          );
+          contactForm.reset();
+        } else {
+          showVolunteerPopup(
+            'Message could not be sent. Please try again.',
+            false
+          );
+        }
+      } catch (error) {
+        showVolunteerPopup(
+          'Message could not be sent. Please check your network and try again.',
+          false
+        );
+      }
+    });
+  }
+</script>
+
+
 
 <script>
 (function(){
