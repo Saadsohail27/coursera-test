@@ -629,6 +629,95 @@ body {
   .neon-cards { gap: 14px; }
 }
 
+/* Flip card: 3D container */
+.sport-card {
+  perspective: 1200px; /* allows nice 3D */
+}
+
+/* inner flipping element */
+.sport-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .72s cubic-bezier(.2,.9,.25,1);
+  transform-style: preserve-3d;
+}
+
+/* flipping state */
+.sport-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* front & back faces */
+.sport-card .card-front,
+.sport-card .card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* keep your existing front look by inheriting base card styles */
+.sport-card .card-front {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  color: var(--text-light);
+  z-index: 2;
+}
+
+/* back styling */
+.sport-card .card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(180deg, rgba(22,20,28,0.96), rgba(16,14,18,0.98));
+  color: #dbe9df;
+  border: 1px solid rgba(161,188,169,0.06);
+  text-align: left;
+  padding: 22px;
+  gap: 10px;
+}
+
+/* make sure text doesn't overflow card */
+.sport-card .card-back h3 { margin-top: 6px; margin-bottom: 8px; color: var(--accent); }
+.sport-card .card-back p { color: #cfd8d2; font-size: 14px; line-height: 1.45; }
+
+/* close button on the back */
+.sport-card .close-card {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 6;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background .18s ease, transform .12s ease;
+}
+.sport-card .close-card:hover { background: rgba(255,255,255,0.02); transform: translateY(-2px); }
+
+/* make sure actions inside back are centered horizontally */
+.sport-card .card-back .actions { justify-content: flex-start; margin-top: 12px; }
+
+/* subtle shadow shift when flipped */
+.sport-card.flipped { box-shadow: 0 22px 60px rgba(0,0,0,0.55); }
+
+/* ensure consistent height for flipping */
+.sport-card { min-height: 320px; }
+
+/* mobile tweak: smaller transform/ faster */
+@media (max-width: 800px) {
+  .sport-card .card-inner { transition: transform .6s cubic-bezier(.2,.9,.25,1); }
+}
+
 
 /* Form */
 .form {
