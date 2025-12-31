@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JunoonFest 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+
+<header class="header" role="banner">
+  <!-- original left nav (kept for desktop) -->
+  <nav class="nav-left" aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="registration.html">Registration</a>
+  </nav>
+
+  <!-- centered logo (kept unchanged for desktop) -->
+  <a href="index.html" class="logo-link">
+    <div class="logo-wrap">
+      <img src="images/logos/junoonfest-logo-no-bg.png" alt="JunoonFest Logo">
+    </div>
+  </a>
+
+  <!-- original right nav (kept for desktop) -->
+  <nav class="nav-right" aria-label="Secondary navigation">
+    <a href="schedule.html">Schedule</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Inline mobile nav (shown between 902px and 640px) -->
+  <nav class="mobile-inline-nav" aria-label="Main navigation (mobile inline)">
+    <a href="index.html">Home</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="registration.html">Registration</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Mobile controls (logo left + hamburger right on smallest screens) -->
+  <div class="mobile-controls">
+    <a href="index.html" class="logo-link mobile-logo">
+      <div class="logo-wrap logo-small">
+        <img src="images/logos/junoonfest-logo-no-bg.png" alt="JunoonFest Logo">
+      </div>
+    </a>
+
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Slide-in Mobile Nav Panel -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner" role="menu">
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="index.html#categories" role="menuitem">Categories</a>
+      <a href="registration.html" role="menuitem">Registration</a>
+      <a href="schedule.html" role="menuitem">Schedule</a>
+      <a href="sponsors.html" role="menuitem">Sponsors</a>
+      <a href="contact.html" role="menuitem">Contact</a>
+    </div>
+  </div>
+
+  <!-- Backdrop for when mobile panel is open -->
+  <div class="mobile-backdrop" tabindex="-1" aria-hidden="true"></div>
+</header>
+
+
+  <section class="registrations-page" id="registrations" style="margin-top:120px;">
+  <main class="registrations-wrap">
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div>
+        <h1 style="margin:0;color:var(--accent);font-size:20px">JunoonFest — Registrations</h1>
+        <div class="note">Choose your sport & category. Click Register to open that category's form.</div>
+      </div>
+    </header>
+
+    <!-- Cards grid -->
+    <section class="cards" aria-label="Registration cards">
+
+      <!-- For each sport we create two cards: Boys and Girls -->
+      <!-- Padel Boys -->
+      <article class="event-card" id="padel-boys-card" aria-labelledby="padel-boys-title">
+        <div>
+          <h3 id="padel-boys-title">Padel — Boys</h3>
+          <p>Open doubles tournament for boys.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="padel-boys-form">Register (Boys)</button>
+            <button class="btn-outlined" onclick="document.getElementById('padel-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Padel Girls -->
+      <article class="event-card" id="padel-girls-card" aria-labelledby="padel-girls-title">
+        <div>
+          <h3 id="padel-girls-title">Padel — Girls</h3>
+          <p>Open doubles tournament for girls.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="padel-girls-form">Register (Girls)</button>
+            <button class="btn-outlined" onclick="document.getElementById('padel-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Futsal Boys -->
+      <article class="event-card" id="futsal-boys-card" aria-labelledby="futsal-boys-title">
+        <div>
+          <h3 id="futsal-boys-title">Futsal — Boys</h3>
+          <p>Skilled based match making for starting matches. Follows a 5-a-side style futsal match on hard court.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="futsal-boys-form">Register (Boys)</button>
+            <button class="btn-outlined" onclick="document.getElementById('futsal-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Futsal Girls -->
+      <article class="event-card" id="futsal-girls-card" aria-labelledby="futsal-girls-title">
+        <div>
+          <h3 id="futsal-girls-title">Futsal — Girls</h3>
+          <p>Skilled based match making for starting matches. Follows a 5-a-side style futsal match on hard court.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="futsal-girls-form">Register (Girls)</button>
+            <button class="btn-outlined" onclick="document.getElementById('futsal-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cricket Boys -->
+      <article class="event-card" id="cricket-boys-card" aria-labelledby="cricket-boys-title">
+        <div>
+          <h3 id="cricket-boys-title">Cricket — Boys</h3>
+          <p>Quick-format cricket matches of 8 overs.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="cricket-boys-form">Register (Boys)</button>
+            <button class="btn-outlined" onclick="document.getElementById('cricket-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cricket Girls -->
+      <article class="event-card" id="cricket-girls-card" aria-labelledby="cricket-girls-title">
+        <div>
+          <h3 id="cricket-girls-title">Cricket — Girls</h3>
+          <p>Quick-format cricket matches of 8 overs.</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="cricket-girls-form">Register (Girls)</button>
+            <button class="btn-outlined" onclick="document.getElementById('cricket-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Basketball Boys -->
+      <article class="event-card" id="basketball-boys-card" aria-labelledby="basketball-boys-title">
+        <div>
+          <h3 id="basketball-boys-title">Basketball — Boys</h3>
+          <p>5-on-5 full-court basketball</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="basketball-boys-form">Register (Boys)</button>
+            <button class="btn-outlined" onclick="document.getElementById('basketball-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Basketball Girls -->
+      <article class="event-card" id="basketball-girls-card" aria-labelledby="basketball-girls-title">
+        <div>
+          <h3 id="basketball-girls-title">Basketball — Girls</h3>
+          <p>5-on-5 full-court basketball</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="basketball-girls-form">Register (Girls)</button>
+            <button class="btn-outlined" onclick="document.getElementById('basketball-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Badminton Boys -->
+      <article class="event-card" id="badminton-boys-card" aria-labelledby="badminton-boys-title">
+        <div>
+          <h3 id="badminton-boys-title">Badminton — Boys</h3>
+          <p>Singles & doubles slots</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="badminton-boys-form">Register (Boys)</button>
+            <button class="btn-outlined" onclick="document.getElementById('badminton-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Badminton Girls -->
+      <article class="event-card" id="badminton-girls-card" aria-labelledby="badminton-girls-title">
+        <div>
+          <h3 id="badminton-girls-title">Badminton — Girls</h3>
+          <p>Singles & doubles slots</p>
+        </div>
+        <div>
+          <div class="row-buttons">
+            <button class="btn-register" data-target="badminton-girls-form">Register (Girls)</button>
+            <button class="btn-outlined" onclick="document.getElementById('badminton-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Hidden Forms section -->
+    <section class="forms" aria-live="polite">
+
+      <!-- Template for a form panel. We'll create one per card. -->
+      <!-- Padel Boys Form -->
+      <section id="padel-boys-form" class="form-panel hidden" data-sport="Padel" data-gender="Boys" aria-hidden="true" aria-labelledby="padel-boys-form-title">
+        <h3 id="padel-boys-form-title" style="margin-top:0;color:var(--accent)">Padel — Boys Registration</h3>
+        <p class="note" style="margin-bottom:12px">Fill the form to register for the Padel (Boys) bracket. We'll contact you with schedule & payment info.</p>
+
+        <form id="form-padel-boys" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="padel-boys-name">Full name</label>
+              <input id="padel-boys-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="padel-boys-cnic">CNIC / B-Form Number</label>
+              <input id="padel-boys-cnic" class="input" name="cnic" type="text" required placeholder="XXXXX-XXXXXXX-X" pattern="\d{5}-\d{7}-\d{1}" inputmode="numeric" />
+            </div>
+
+            <div>
+              <label for="padel-boys-age">Age</label>
+              <input id="padel-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+            <div>
+              <label for="padel-boys-phone">Phone (WhatsApp)</label>
+              <input id="padel-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+
+            <div>
+              <label for="padel-boys-email">Email</label>
+              <input id="padel-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="padel-boys-level">Skill level</label>
+              <select id="padel-boys-level" name="level" class="input" required>
+                <option value="">Select level</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="padel-boys-register-as">Registering as</label>
+              <select id="padel-boys-register-as" name="register_as" class="input" required>
+                <option value="">Choose...</option>
+                <option value="single">Single (I'll be paired)</option>
+                <option value="team">Team (I have a partner)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="padel-boys-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Padel Girls Form -->
+<section id="padel-girls-form"
+         class="form-panel hidden"
+         data-sport="Padel"
+         data-gender="Girls"
+         aria-hidden="true"
+         aria-labelledby="padel-girls-form-title">
+
+  <h3 id="padel-girls-form-title" style="margin-top:0;color:var(--accent)">
+    Padel — Girls Registration
+  </h3>
+
+  <p class="note" style="margin-bottom:12px">
+    Fill the form to register for the Padel (Girls) bracket. We'll contact you with schedule & payment info.
+  </p>
+
+  <form id="form-padel-girls" class="form-content" autocomplete="on">
+    <div class="form-grid">
+
+      <div>
+        <label for="padel-girls-name">Full name</label>
+        <input id="padel-girls-name"
+               class="input"
+               name="name"
+               required
+               placeholder="Your full name" />
+      </div>
+
+      <div>
+        <label for="padel-girls-cnic">CNIC / B-Form Number</label>
+        <input id="padel-girls-cnic"
+               class="input"
+               name="cnic"
+               type="text"
+               required
+               placeholder="XXXXX-XXXXXXX-X"
+               pattern="\d{5}-\d{7}-\d{1}"
+               inputmode="numeric" />
+      </div>
+
+      <div>
+        <label for="padel-girls-age">Age</label>
+        <input id="padel-girls-age"
+               name="age"
+               type="number"
+               min="13"
+               max="40"
+               class="input"
+               required
+               placeholder="Your age" />
+      </div>
+
+      <div>
+        <label for="padel-girls-phone">Phone (WhatsApp)</label>
+        <input id="padel-girls-phone"
+               class="input"
+               name="phone"
+               type="tel"
+               required
+               placeholder="03XX-XXXXXXX" />
+      </div>
+
+      <div>
+        <label for="padel-girls-email">Email</label>
+        <input id="padel-girls-email"
+               class="input"
+               name="email"
+               type="email"
+               required
+               placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label for="padel-girls-level">Skill level</label>
+        <select id="padel-girls-level"
+                name="level"
+                class="input"
+                required>
+          <option value="">Select level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="padel-girls-register-as">Registering as</label>
+        <select id="padel-girls-register-as"
+                name="register_as"
+                class="input"
+                required>
+          <option value="">Choose...</option>
+          <option value="single">Single (I'll be paired)</option>
+          <option value="team">Team (I have a partner)</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-footer">
+      <button type="submit" class="btn-submit">Submit Registration</button>
+      <button type="button"
+              class="btn-close"
+              data-target="padel-girls-form">
+        Close
+      </button>
+    </div>
+  </form>
+</section>
+
+
+      <!-- Repeat similar forms for the other 9 categories (Futsal, Cricket, Basketball, Badminton - Boys & Girls) -->
+      <!-- Futsal Boys Form -->
+      <section id="futsal-boys-form" class="form-panel hidden" data-sport="Futsal" data-gender="Boys" aria-hidden="true" aria-labelledby="futsal-boys-form-title">
+        <h3 id="futsal-boys-form-title" style="margin-top:0;color:var(--accent)">Futsal — Boys Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for the Futsal (Boys) bracket.</p>
+
+        <form id="form-futsal-boys" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="futsal-boys-name">Full name</label>
+              <input id="futsal-boys-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="futsal-boys-phone">Phone (WhatsApp)</label>
+              <input id="futsal-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="futsal-boys-email">Email</label>
+              <input id="futsal-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="futsal-boys-age">Age</label>
+              <input id="futsal-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+            <div>
+              <label for="futsal-boys-position">Preferred position</label>
+              <select id="futsal-boys-position" name="position" class="input" required>
+                <option value="">Choose...</option>
+                <option>Forward</option>
+                <option>Midfield</option>
+                <option>Defense</option>
+                <option>Goalkeeper</option>
+              </select>
+            </div>
+            <div>
+              <label for="futsal-boys-team">Registering as</label>
+              <select id="futsal-boys-team" name="register_as" class="input" required>
+                <option value="">Choose...</option>
+                <option value="player">Player</option>
+                <option value="team">Team (Team captain)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="futsal-boys-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Futsal Girls Form -->
+<section id="futsal-girls-form" class="form-panel hidden" data-sport="Futsal" data-gender="Girls" aria-hidden="true" aria-labelledby="futsal-girls-form-title">
+  <h3 id="futsal-girls-form-title" style="margin-top:0;color:var(--accent)">Futsal — Girls Registration</h3>
+  <p class="note" style="margin-bottom:12px">Register for the Futsal (Girls) bracket.</p>
+
+  <form id="form-futsal-girls" class="form-content" autocomplete="on">
+    <div class="form-grid">
+      <div>
+        <label for="futsal-girls-name">Full name</label>
+        <input id="futsal-girls-name" class="input" name="name" required placeholder="Your full name" />
+      </div>
+
+      <div>
+        <label for="futsal-girls-phone">Phone (WhatsApp)</label>
+        <input id="futsal-girls-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+      </div>
+
+      <div>
+        <label for="futsal-girls-email">Email</label>
+        <input id="futsal-girls-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label for="futsal-girls-age">Age</label>
+        <input id="futsal-girls-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+      </div>
+
+      <!-- Added to match Boys form -->
+      <div>
+        <label for="futsal-girls-position">Preferred position</label>
+        <select id="futsal-girls-position" name="position" class="input" required>
+          <option value="">Choose...</option>
+          <option>Forward</option>
+          <option>Midfield</option>
+          <option>Defense</option>
+          <option>Goalkeeper</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="futsal-girls-team">Registering as</label>
+        <select id="futsal-girls-team" name="register_as" class="input" required>
+          <option value="">Choose...</option>
+          <option value="player">Player</option>
+          <option value="team">Team (Team captain)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <button type="submit" class="btn-submit">Submit Registration</button>
+      <button type="button" class="btn-close" data-target="futsal-girls-form">Close</button>
+    </div>
+  </form>
+</section>
+
+
+      <!-- Cricket Boys Form -->
+      <section id="cricket-boys-form" class="form-panel hidden" data-sport="Cricket" data-gender="Boys" aria-hidden="true" aria-labelledby="cricket-boys-form-title">
+        <h3 id="cricket-boys-form-title" style="margin-top:0;color:var(--accent)">Cricket — Boys Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for Cricket (Boys).</p>
+
+        <form id="form-cricket-boys" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="cricket-boys-name">Full name</label>
+              <input id="cricket-boys-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="cricket-boys-phone">Phone (WhatsApp)</label>
+              <input id="cricket-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="cricket-boys-email">Email</label>
+              <input id="cricket-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="cricket-boys-age">Age</label>
+              <input id="cricket-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+            <div>
+              <label for="cricket-boys-role">Preferred role</label>
+              <select id="cricket-boys-role" name="role" class="input" required>
+                <option value="">Choose...</option>
+                <option>Batting</option>
+                <option>Bowling</option>
+                <option>All-rounder</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="cricket-boys-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Cricket Girls Form -->
+      <!-- Cricket Girls Form (updated to match Boys fields) -->
+<section id="cricket-girls-form" class="form-panel hidden" data-sport="Cricket" data-gender="Girls" aria-hidden="true" aria-labelledby="cricket-girls-form-title">
+  <h3 id="cricket-girls-form-title" style="margin-top:0;color:var(--accent)">Cricket — Girls Registration</h3>
+  <p class="note" style="margin-bottom:12px">Register for Cricket (Girls).</p>
+
+  <form id="form-cricket-girls" class="form-content" autocomplete="on">
+    <div class="form-grid">
+      <div>
+        <label for="cricket-girls-name">Full name</label>
+        <input id="cricket-girls-name" class="input" name="name" required placeholder="Your full name" />
+      </div>
+
+      <div>
+        <label for="cricket-girls-phone">Phone (WhatsApp)</label>
+        <input id="cricket-girls-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+      </div>
+
+      <div>
+        <label for="cricket-girls-email">Email</label>
+        <input id="cricket-girls-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label for="cricket-girls-age">Age</label>
+        <input id="cricket-girls-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+      </div>
+
+      <!-- Added to match Boys form -->
+      <div>
+        <label for="cricket-girls-role">Preferred role</label>
+        <select id="cricket-girls-role" name="role" class="input" required>
+          <option value="">Choose...</option>
+          <option>Batting</option>
+          <option>Bowling</option>
+          <option>All-rounder</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-footer">
+      <button type="submit" class="btn-submit">Submit Registration</button>
+      <button type="button" class="btn-close" data-target="cricket-girls-form">Close</button>
+    </div>
+  </form>
+</section>
+
+
+      <!-- Basketball Boys Form -->
+      <section id="basketball-boys-form" class="form-panel hidden" data-sport="Basketball" data-gender="Boys" aria-hidden="true" aria-labelledby="basketball-boys-form-title">
+        <h3 id="basketball-boys-form-title" style="margin-top:0;color:var(--accent)">Basketball — Boys Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for Basketball (Boys).</p>
+
+        <form id="form-basketball-boys" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="basketball-boys-name">Full name</label>
+              <input id="basketball-boys-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="basketball-boys-phone">Phone (WhatsApp)</label>
+              <input id="basketball-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="basketball-boys-email">Email</label>
+              <input id="basketball-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="basketball-boys-age">Age</label>
+              <input id="basketball-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="basketball-boys-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Basketball Girls Form -->
+      <section id="basketball-girls-form" class="form-panel hidden" data-sport="Basketball" data-gender="Girls" aria-hidden="true" aria-labelledby="basketball-girls-form-title">
+        <h3 id="basketball-girls-form-title" style="margin-top:0;color:var(--accent)">Basketball — Girls Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for Basketball (Girls).</p>
+
+        <form id="form-basketball-girls" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="basketball-girls-name">Full name</label>
+              <input id="basketball-girls-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="basketball-girls-phone">Phone (WhatsApp)</label>
+              <input id="basketball-girls-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="basketball-girls-email">Email</label>
+              <input id="basketball-girls-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="basketball-girls-age">Age</label>
+              <input id="basketball-girls-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="basketball-girls-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Badminton Boys Form -->
+      <section id="badminton-boys-form" class="form-panel hidden" data-sport="Badminton" data-gender="Boys" aria-hidden="true" aria-labelledby="badminton-boys-form-title">
+        <h3 id="badminton-boys-form-title" style="margin-top:0;color:var(--accent)">Badminton — Boys Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for Badminton (Boys).</p>
+
+        <form id="form-badminton-boys" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="badminton-boys-name">Full name</label>
+              <input id="badminton-boys-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="badminton-boys-phone">Phone (WhatsApp)</label>
+              <input id="badminton-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="badminton-boys-email">Email</label>
+              <input id="badminton-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="badminton-boys-age">Age</label>
+              <input id="badminton-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="badminton-boys-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Badminton Girls Form -->
+      <section id="badminton-girls-form" class="form-panel hidden" data-sport="Badminton" data-gender="Girls" aria-hidden="true" aria-labelledby="badminton-girls-form-title">
+        <h3 id="badminton-girls-form-title" style="margin-top:0;color:var(--accent)">Badminton — Girls Registration</h3>
+        <p class="note" style="margin-bottom:12px">Register for Badminton (Girls).</p>
+
+        <form id="form-badminton-girls" class="form-content" autocomplete="on">
+          <div class="form-grid">
+            <div>
+              <label for="badminton-girls-name">Full name</label>
+              <input id="badminton-girls-name" class="input" name="name" required placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="badminton-girls-phone">Phone (WhatsApp)</label>
+              <input id="badminton-girls-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
+            </div>
+            <div>
+              <label for="badminton-girls-email">Email</label>
+              <input id="badminton-girls-email" class="input" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="badminton-girls-age">Age</label>
+              <input id="badminton-girls-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn-submit">Submit Registration</button>
+            <button type="button" class="btn-close" data-target="badminton-girls-form">Close</button>
+          </div>
+        </form>
+      </section>
+
+    </section> <!-- .forms -->
+
+  </main>
+</section>
+
+
+  <!-- Footer separator -->
+<hr class="footer-sep">
+
+<!-- JunoonFest Footer -->
+<footer class="junoonfest-footer" aria-labelledby="footer-heading">
+  <div class="footer-inner">
+
+    <!-- LEFT: Logo + Contact (contact column sits under logo) -->
+    <div class="footer-col footer-left">
+      <a class="footer-logo" href="index.html" aria-label="JunoonFest home">
+
+        <img src="images/logos/junoonfest-logo-no-bg.png">
+      </a>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <address>
+          <div class="contact-row">Phone: <a href="tel:+923214559936">+92 321 4559936</a></div>
+          <div class="contact-row">Email: <a href="mailto:info@junoonfest.pk">info@junoonfest.pk</a></div>
+          <div class="contact-row">Karachi, Pakistan</div>
+        </address>
+      </div>
+    </div>
+
+    <!-- CENTER: Quick Links -->
+    <div class="footer-col footer-center">
+      <h4 id="footer-heading" class="visually-hidden">Footer</h4>
+      <div class="quick-links" aria-label="Quick links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="registration.html">Registration</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="sponsors.html">Sponsors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT: Socials -->
+    <div class="footer-col footer-right">
+      <h4>Follow us</h4>
+      <div class="socials" role="list">
+
+          <!-- Instagram -->
+          <a class="social" href="https://www.instagram.com/" aria-label="Instagram" rel="noopener" target="_blank">
+            <img src="images/icons/instagram.png" alt="Instagram Icon">
+          </a>
+
+        </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row -->
+  <div class="footer-bottom">
+    <small>© <span id="year"></span> 2026 Junoon SportsFest. All rights reserved.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const btn = document.querySelector('.hamburger');
+  const panel = document.getElementById('mobile-nav');
+  const backdrop = document.querySelector('.mobile-backdrop');
+
+  if(!btn || !panel || !backdrop) return;
+
+  function openMenu(){
+    btn.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+    panel.classList.add('open');
+    panel.setAttribute('aria-hidden','false');
+    backdrop.classList.add('visible');
+    backdrop.setAttribute('aria-hidden','false');
+    // trap focus if desired (light)
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu(){
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    panel.classList.remove('open');
+    panel.setAttribute('aria-hidden','true');
+    backdrop.classList.remove('visible');
+    backdrop.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', function(e){
+    const expanded = this.classList.contains('is-open');
+    if(expanded) closeMenu(); else openMenu();
+  });
+
+  // click backdrop closes the menu
+  backdrop.addEventListener('click', closeMenu);
+
+  // close when a mobile nav link is clicked
+  panel.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') closeMenu();
+  });
+
+  // close menu when pressing Escape
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') {
+      if(panel.classList.contains('open')) closeMenu();
+    }
+  });
+
+  // close menu if clicking outside the panel (on the document) - extra safety
+  document.addEventListener('click', function(e){
+    if(!panel.classList.contains('open')) return;
+    const isInside = panel.contains(e.target) || btn.contains(e.target);
+    if(!isInside) closeMenu();
+  });
+
+  // Optional: keep focus inside panel when open (basic)
+  panel.addEventListener('keydown', function(e){
+    if(e.key === 'Tab' && panel.classList.contains('open')) {
+      // very small focus trap can be added here if you want stronger accessibility
+    }
+  });
+})();
+</script>
+
+<script>
+if (window.innerWidth <= 483) {
+  const heroActions = document.querySelector('.hero-actions');
+  if (heroActions) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heroActions.classList.add('show');
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(heroActions);
+  }
+}
+</script>
+
+
+  <script>
+  const logo = document.querySelector('.logo-wrap');
+
+  logo.addEventListener('mousemove', (e) => {
+    const rect = logo.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotateX = (-y / rect.height) * 10;
+    const rotateY = (x / rect.width) * 10;
+
+    logo.style.transform = `
+      perspective(600px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-2px)
+    `;
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    logo.style.transform = `
+      perspective(600px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0)
+    `;
+  });
+</script>
+
+<script>
+(function(){
+  const container = document.querySelector('.registrations-page');
+  if(!container) return;
+
+  const registerButtons = container.querySelectorAll('.btn-register');
+  const closeButtons = container.querySelectorAll('.btn-close');
+  const forms = Array.from(container.querySelectorAll('.form-panel')).reduce((acc, el) => {
+    acc[el.id] = el;
+    return acc;
+  }, {});
+
+  // ensure hidden on load
+  Object.values(forms).forEach(f => { f.classList.add('hidden'); f.setAttribute('aria-hidden','true'); });
+
+  // Open form on register click
+  registerButtons.forEach(btn => {
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      const targetId = btn.getAttribute('data-target');
+      if(!targetId) return;
+      // hide all
+      Object.values(forms).forEach(f => { f.classList.add('hidden'); f.classList.remove('active'); f.setAttribute('aria-hidden','true'); });
+      const target = forms[targetId];
+      if(!target) return;
+      // reveal
+      target.classList.remove('hidden');
+      // allow layout then add active for animation
+      requestAnimationFrame(()=> requestAnimationFrame(()=> target.classList.add('active')));
+      target.setAttribute('aria-hidden','false');
+      // scroll into view
+      setTimeout(()=> { target.scrollIntoView({behavior:'smooth', block:'start'}); }, 90);
+    });
+  });
+
+  // Close handlers
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', function(){
+      const t = btn.getAttribute('data-target');
+      if(!t) return;
+      const el = forms[t];
+      if(!el) return;
+      el.classList.remove('active');
+      setTimeout(()=> { el.classList.add('hidden'); el.setAttribute('aria-hidden','true'); }, 260);
+      // scroll back to cards
+      const cards = container.querySelector('.cards');
+      if(cards) cards.scrollIntoView({behavior:'smooth', block:'center'});
+    });
+  });
+
+  // Attach submit handler to all forms inside the registration section
+  const formEls = container.querySelectorAll('.form-panel .form-content');
+  formEls.forEach(formEl => {
+    formEl.addEventListener('submit', function(e){
+      e.preventDefault();
+      // basic client-side validation is handled by HTML5 attributes
+      const panel = formEl.closest('.form-panel');
+      const sport = panel ? panel.dataset.sport : 'Event';
+      const gender = panel ? panel.dataset.gender : '';
+      // Collect data to send or preview
+      const data = new FormData(formEl);
+      // TODO: Replace the following with fetch() to your server endpoint
+      showPopup(`${sport} (${gender}) registration received — we will contact you soon!`);
+      formEl.reset();
+      // hide the form after submission
+      panel.classList.remove('active');
+      setTimeout(()=> { panel.classList.add('hidden'); panel.setAttribute('aria-hidden','true'); }, 420);
+    });
+  });
+
+  // Popup utility
+  let popupTimer = null;
+  function showPopup(message){
+    clearTimeout(popupTimer);
+    const p = document.createElement('div');
+    p.className = 'popup';
+    p.innerText = message;
+    document.body.appendChild(p);
+    popupTimer = setTimeout(()=>{ p.remove(); }, 4800);
+  }
+
+  // Close form when clicking outside active form (UX)
+  document.addEventListener('click', function(e){
+    const active = container.querySelector('.form-panel.active');
+    if(!active) return;
+    // if click is outside active and not a register button
+    if(!active.contains(e.target) && !e.target.closest('.btn-register')) {
+      active.classList.remove('active');
+      setTimeout(()=> { active.classList.add('hidden'); active.setAttribute('aria-hidden','true'); }, 260);
+    }
+  });
+
+  // Accessibility: close on Escape
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') {
+      const active = container.querySelector('.form-panel.active');
+      if(active) {
+        active.classList.remove('active');
+        setTimeout(()=> { active.classList.add('hidden'); active.setAttribute('aria-hidden','true'); }, 260);
+      }
+    }
+  });
+
+})();
+</script>
+
+
+<script>
+  // set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // IntersectionObserver to toggle "in-view" on the quick-links when footer enters viewport
+  (function () {
+    const quickLinks = document.querySelector('.quick-links');
+    if (!quickLinks) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          quickLinks.classList.add('in-view');
+        } else {
+          // you can remove the class if you want animation to replay on scroll up/down
+          // quickLinks.classList.remove('in-view');
+        }
+      });
+    }, { root: null, threshold: 0.12 });
+
+    observer.observe(quickLinks);
+  })();
+</script>
+
+
+</body>
+</html>
