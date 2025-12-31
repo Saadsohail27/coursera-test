@@ -1003,26 +1003,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Attach submit handler to all forms inside the registration section
-  const formEls = container.querySelectorAll('.form-panel .form-content');
-  formEls.forEach(formEl => {
-    formEl.addEventListener('submit', function(e){
-      e.preventDefault();
-      // basic client-side validation is handled by HTML5 attributes
-      const panel = formEl.closest('.form-panel');
-      const sport = panel ? panel.dataset.sport : 'Event';
-      const gender = panel ? panel.dataset.gender : '';
-      // Collect data to send or preview
-      const data = new FormData(formEl);
-      // TODO: Replace the following with fetch() to your server endpoint
-      showPopup(`${sport} (${gender}) registration received — we will contact you soon!`);
-      formEl.reset();
-      // hide the form after submission
-      panel.classList.remove('active');
-      setTimeout(()=> { panel.classList.add('hidden'); panel.setAttribute('aria-hidden','true'); }, 420);
-    });
-  });
-
   // Popup utility
   let popupTimer = null;
   function showPopup(message){
@@ -1081,9 +1061,13 @@ document.querySelectorAll('.flip-btn').forEach(btn=>{
     }, 5000);
   }
 
-  document.querySelectorAll('form').forEach(form => {
+  document.querySelectorAll('.form-panel form').forEach(form => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const panel = form.closest('.form-panel');
+      const sport = panel?.dataset.sport || 'Event';
+      const gender = panel?.dataset.gender || '';
 
       const formData = new FormData(form);
 
@@ -1096,17 +1080,24 @@ document.querySelectorAll('.flip-btn').forEach(btn=>{
         const result = await response.json();
 
         if (result.success) {
-          showPopup('Your details were sent successfully :)', true);
+          showPopup(`${sport} (${gender}) registration received successfully!`, true);
           form.reset();
+
+          panel.classList.remove('active');
+          setTimeout(() => {
+            panel.classList.add('hidden');
+            panel.setAttribute('aria-hidden', 'true');
+          }, 420);
         } else {
-          showPopup('Message could not be sent. Please check your network and try again.', false);
+          showPopup('Submission failed. Please try again.', false);
         }
-      } catch (error) {
-        showPopup('Message could not be sent. Please check your network and try again.', false);
+      } catch (err) {
+        showPopup('Network error. Please try again.', false);
       }
     });
   });
 </script>
+
 
 
 
