@@ -85,144 +85,295 @@
     <!-- Cards grid -->
     <section class="cards" aria-label="Registration cards">
 
-      <!-- For each sport we create two cards: Boys and Girls -->
-      <!-- Padel Boys -->
-      <article class="event-card" id="padel-boys-card" aria-labelledby="padel-boys-title">
-        <div>
-          <h3 id="padel-boys-title">Padel — Boys</h3>
-          <p>Open doubles tournament for boys.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="padel-boys-form">Register (Boys)</button>
-            <button class="btn-outlined" onclick="document.getElementById('padel-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Padel Mixed (flip) -->
+      <article class="event-card flip-card" id="padel-card" aria-labelledby="padel-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="padel-title">Padel</h3>
+              <p>Open doubles tournament.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="padel-form">Register</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Padel — Rules & Info</h3>
+              <ul>
+                <li>Mixed teams allowed — doubles format</li>
+                <li>Matches: best of 3 sets</li>
+                <li>Ages 13–21 (age brackets may apply in the first few rounds)</li>
+                <li>You may bring your own racket</li>
+              </ul>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="padel-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Padel Girls -->
-      <article class="event-card" id="padel-girls-card" aria-labelledby="padel-girls-title">
-        <div>
-          <h3 id="padel-girls-title">Padel — Girls</h3>
-          <p>Open doubles tournament for girls.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="padel-girls-form">Register (Girls)</button>
-            <button class="btn-outlined" onclick="document.getElementById('padel-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Futsal — Boys (flip) -->
+      <article class="event-card flip-card" id="futsal-boys-card" aria-labelledby="futsal-boys-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="futsal-boys-title">Futsal — Boys</h3>
+              <p>Skilled-based matchmaking. 5-a-side futsal on hard court.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="futsal-boys-form">Register (Boys)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Futsal — Format Details</h3>
+              <p>25-minute matches, rolling substitutions. Teams may register as players or as team captains.</p>
+              <p><strong>Positions:</strong> Forward, Midfield, Defense, Goalkeeper</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="futsal-boys-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Futsal Boys -->
-      <article class="event-card" id="futsal-boys-card" aria-labelledby="futsal-boys-title">
-        <div>
-          <h3 id="futsal-boys-title">Futsal — Boys</h3>
-          <p>Skilled based match making for starting matches. Follows a 5-a-side style futsal match on hard court.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="futsal-boys-form">Register (Boys)</button>
-            <button class="btn-outlined" onclick="document.getElementById('futsal-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Futsal — Girls (flip) -->
+      <article class="event-card flip-card" id="futsal-girls-card" aria-labelledby="futsal-girls-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="futsal-girls-title">Futsal — Girls</h3>
+              <p>Skilled-based matchmaking. 5-a-side futsal on hard court.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="futsal-girls-form">Register (Girls)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Futsal — Format Details</h3>
+              <p>25-minute matches, rolling substitutions. Teams may register as players or as team captains.</p>
+              <p><strong>Positions:</strong> Forward, Midfield, Defense, Goalkeeper</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="futsal-girls-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Futsal Girls -->
-      <article class="event-card" id="futsal-girls-card" aria-labelledby="futsal-girls-title">
-        <div>
-          <h3 id="futsal-girls-title">Futsal — Girls</h3>
-          <p>Skilled based match making for starting matches. Follows a 5-a-side style futsal match on hard court.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="futsal-girls-form">Register (Girls)</button>
-            <button class="btn-outlined" onclick="document.getElementById('futsal-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Cricket — Boys (flip) -->
+      <article class="event-card flip-card" id="cricket-boys-card" aria-labelledby="cricket-boys-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="cricket-boys-title">Cricket — Boys</h3>
+              <p>Quick-format cricket matches of 8 overs.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="cricket-boys-form">Register (Boys)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Cricket — Format Details</h3>
+              <p>Short-format (6–8 overs). Teams of 7–9 players. Roles: Batting, Bowling, All-rounder.</p>
+              <p><strong>Pitch:</strong> Hard pitch, weekend rounds.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="cricket-boys-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Cricket Boys -->
-      <article class="event-card" id="cricket-boys-card" aria-labelledby="cricket-boys-title">
-        <div>
-          <h3 id="cricket-boys-title">Cricket — Boys</h3>
-          <p>Quick-format cricket matches of 8 overs.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="cricket-boys-form">Register (Boys)</button>
-            <button class="btn-outlined" onclick="document.getElementById('cricket-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Cricket — Girls (flip) -->
+      <article class="event-card flip-card" id="cricket-girls-card" aria-labelledby="cricket-girls-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="cricket-girls-title">Cricket — Girls</h3>
+              <p>Quick-format cricket matches of 8 overs.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="cricket-girls-form">Register (Girls)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Cricket — Format Details</h3>
+              <p>Short-format (6–8 overs). Teams of 7–9 players. Roles: Batting, Bowling, All-rounder.</p>
+              <p><strong>Pitch:</strong> Hard pitch, weekend rounds.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="cricket-girls-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Cricket Girls -->
-      <article class="event-card" id="cricket-girls-card" aria-labelledby="cricket-girls-title">
-        <div>
-          <h3 id="cricket-girls-title">Cricket — Girls</h3>
-          <p>Quick-format cricket matches of 8 overs.</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="cricket-girls-form">Register (Girls)</button>
-            <button class="btn-outlined" onclick="document.getElementById('cricket-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Basketball — Boys (flip) -->
+      <article class="event-card flip-card" id="basketball-boys-card" aria-labelledby="basketball-boys-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="basketball-boys-title">Basketball — Boys</h3>
+              <p>5-on-5 full-court basketball.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="basketball-boys-form">Register (Boys)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Basketball — Format Details</h3>
+              <p>Full-court 5-on-5 with standard fouls and timeouts. Teams must provide a captain for check-in.</p>
+              <p><strong>Duration:</strong> 2 × 12-minute halves (subject to schedule).</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="basketball-boys-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Basketball Boys -->
-      <article class="event-card" id="basketball-boys-card" aria-labelledby="basketball-boys-title">
-        <div>
-          <h3 id="basketball-boys-title">Basketball — Boys</h3>
-          <p>5-on-5 full-court basketball</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="basketball-boys-form">Register (Boys)</button>
-            <button class="btn-outlined" onclick="document.getElementById('basketball-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+      <!-- Basketball — Girls (flip) -->
+      <article class="event-card flip-card" id="basketball-girls-card" aria-labelledby="basketball-girls-title">
+        <div class="flip-inner">
+
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="basketball-girls-title">Basketball — Girls</h3>
+              <p>5-on-5 full-court basketball.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="basketball-girls-form">Register (Girls)</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
+
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Basketball — Format Details</h3>
+              <p>Full-court 5-on-5 with standard fouls and timeouts. Teams must provide a captain for check-in.</p>
+              <p><strong>Duration:</strong> 2 × 12-minute halves (subject to schedule).</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="basketball-girls-form">Register</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </article>
 
-      <!-- Basketball Girls -->
-      <article class="event-card" id="basketball-girls-card" aria-labelledby="basketball-girls-title">
-        <div>
-          <h3 id="basketball-girls-title">Basketball — Girls</h3>
-          <p>5-on-5 full-court basketball</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="basketball-girls-form">Register (Girls)</button>
-            <button class="btn-outlined" onclick="document.getElementById('basketball-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
-          </div>
-        </div>
-      </article>
+      <!-- Badminton Mixed (flip) -->
+      <article class="event-card flip-card" id="badminton-card" aria-labelledby="badminton-title">
+        <div class="flip-inner">
 
-      <!-- Badminton Boys -->
-      <article class="event-card" id="badminton-boys-card" aria-labelledby="badminton-boys-title">
-        <div>
-          <h3 id="badminton-boys-title">Badminton — Boys</h3>
-          <p>Singles & doubles slots</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="badminton-boys-form">Register (Boys)</button>
-            <button class="btn-outlined" onclick="document.getElementById('badminton-boys-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          <!-- FRONT -->
+          <div class="flip-front" aria-hidden="false">
+            <div>
+              <h3 id="badminton-title">Badminton</h3>
+              <p>Singles & doubles slots.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-register" data-target="badminton-form">Register</button>
+                <button class="btn-outlined flip-btn" type="button">Details</button>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Badminton Girls -->
-      <article class="event-card" id="badminton-girls-card" aria-labelledby="badminton-girls-title">
-        <div>
-          <h3 id="badminton-girls-title">Badminton — Girls</h3>
-          <p>Singles & doubles slots</p>
-        </div>
-        <div>
-          <div class="row-buttons">
-            <button class="btn-register" data-target="badminton-girls-form">Register (Girls)</button>
-            <button class="btn-outlined" onclick="document.getElementById('badminton-girls-card').scrollIntoView({behavior:'smooth'})">Details</button>
+          <!-- BACK -->
+          <div class="flip-back" aria-hidden="true">
+            <div>
+              <h3>Badminton — Format Details</h3>
+              <p>Singles & doubles brackets. Matches best of 3 games to 21 points (rally scoring).</p>
+              <p><strong>Courts:</strong> Indoor wooden courts. Arrive 20 minutes before your match.</p>
+            </div>
+            <div>
+              <div class="row-buttons">
+                <button class="btn-outlined flip-btn" type="button">Back</button>
+                <button class="btn-register" data-target="badminton-form">Register</button>
+              </div>
+            </div>
           </div>
+
         </div>
       </article>
 
@@ -231,175 +382,67 @@
     <!-- Hidden Forms section -->
     <section class="forms" aria-live="polite">
 
-      <!-- Template for a form panel. We'll create one per card. -->
-      <!-- Padel Boys Form -->
-      <section id="padel-boys-form" class="form-panel hidden" data-sport="Padel" data-gender="Boys" aria-hidden="true" aria-labelledby="padel-boys-form-title">
-        <h3 id="padel-boys-form-title" style="margin-top:0;color:var(--accent)">Padel — Boys Registration</h3>
-        <p class="note" style="margin-bottom:12px">Fill the form to register for the Padel (Boys) bracket. We'll contact you with schedule & payment info.</p>
+      <section id="padel-form" class="form-panel hidden" data-sport="Padel" data-gender="Mixed" aria-hidden="true" aria-labelledby="padel-form-title">
+<h3 id="padel-form-title" style="margin-top:0;color:var(--accent)">Padel — Mixed Registration</h3>
+<p class="note">Fill the form to register for the Padel mixed bracket.</p>
 
-        <form id="form-padel-boys" class="form-content" autocomplete="on">
-          <div class="form-grid">
-            <div>
-              <label for="padel-boys-name">Full name</label>
-              <input id="padel-boys-name" class="input" name="name" required placeholder="Your full name" />
-            </div>
-            <div>
-              <label for="padel-boys-cnic">CNIC / B-Form Number</label>
-              <input id="padel-boys-cnic" class="input" name="cnic" type="text" required placeholder="XXXXX-XXXXXXX-X" pattern="\d{5}-\d{7}-\d{1}" inputmode="numeric" />
-            </div>
+<form id="form-padel" class="form-content">
+<div class="form-grid">
 
-            <div>
-              <label for="padel-boys-age">Age</label>
-              <input id="padel-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
-            </div>
-            <div>
-              <label for="padel-boys-phone">Phone (WhatsApp)</label>
-              <input id="padel-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
-            </div>
+<div>
+<label>Full name</label>
+<input class="input" name="name" required placeholder="Your full name">
+</div>
 
-            <div>
-              <label for="padel-boys-email">Email</label>
-              <input id="padel-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
-            </div>
-            <div>
-              <label for="padel-boys-level">Skill level</label>
-              <select id="padel-boys-level" name="level" class="input" required>
-                <option value="">Select level</option>
-                <option>Beginner</option>
-                <option>Intermediate</option>
-                <option>Advanced</option>
-              </select>
-            </div>
+<div>
+<label>CNIC / B-Form</label>
+<input class="input" name="cnic" required placeholder="XXXXX-XXXXXXX-X">
+</div>
 
-            <div>
-              <label for="padel-boys-register-as">Registering as</label>
-              <select id="padel-boys-register-as" name="register_as" class="input" required>
-                <option value="">Choose...</option>
-                <option value="single">Single (I'll be paired)</option>
-                <option value="team">Team (I have a partner)</option>
-              </select>
-            </div>
-          </div>
+<div>
+<label>Age</label>
+<input class="input" type="number" min="13" max="40" name="age" required>
+</div>
 
-          <div class="form-footer">
-            <button type="submit" class="btn-submit">Submit Registration</button>
-            <button type="button" class="btn-close" data-target="padel-boys-form">Close</button>
-          </div>
-        </form>
-      </section>
+<div>
+<label>Phone (WhatsApp)</label>
+<input class="input" name="phone" required placeholder="03XX-XXXXXXX">
+</div>
 
-      <!-- Padel Girls Form -->
-<section id="padel-girls-form"
-         class="form-panel hidden"
-         data-sport="Padel"
-         data-gender="Girls"
-         aria-hidden="true"
-         aria-labelledby="padel-girls-form-title">
+<div>
+<label>Email</label>
+<input class="input" name="email" type="email" required>
+</div>
 
-  <h3 id="padel-girls-form-title" style="margin-top:0;color:var(--accent)">
-    Padel — Girls Registration
-  </h3>
+<div>
+<label>Skill level</label>
+<select class="input" name="level" required>
+<option value="">Select level</option>
+<option>Beginner</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+</select>
+</div>
 
-  <p class="note" style="margin-bottom:12px">
-    Fill the form to register for the Padel (Girls) bracket. We'll contact you with schedule & payment info.
-  </p>
+<div>
+<label>Registering as</label>
+<select class="input" name="register_as" required>
+<option value="">Choose...</option>
+<option value="single">Single (I'll be paired)</option>
+<option value="team">Team (I have a partner)</option>
+</select>
+</div>
 
-  <form id="form-padel-girls" class="form-content" autocomplete="on">
-    <div class="form-grid">
+</div>
 
-      <div>
-        <label for="padel-girls-name">Full name</label>
-        <input id="padel-girls-name"
-               class="input"
-               name="name"
-               required
-               placeholder="Your full name" />
-      </div>
-
-      <div>
-        <label for="padel-girls-cnic">CNIC / B-Form Number</label>
-        <input id="padel-girls-cnic"
-               class="input"
-               name="cnic"
-               type="text"
-               required
-               placeholder="XXXXX-XXXXXXX-X"
-               pattern="\d{5}-\d{7}-\d{1}"
-               inputmode="numeric" />
-      </div>
-
-      <div>
-        <label for="padel-girls-age">Age</label>
-        <input id="padel-girls-age"
-               name="age"
-               type="number"
-               min="13"
-               max="40"
-               class="input"
-               required
-               placeholder="Your age" />
-      </div>
-
-      <div>
-        <label for="padel-girls-phone">Phone (WhatsApp)</label>
-        <input id="padel-girls-phone"
-               class="input"
-               name="phone"
-               type="tel"
-               required
-               placeholder="03XX-XXXXXXX" />
-      </div>
-
-      <div>
-        <label for="padel-girls-email">Email</label>
-        <input id="padel-girls-email"
-               class="input"
-               name="email"
-               type="email"
-               required
-               placeholder="you@example.com" />
-      </div>
-
-      <div>
-        <label for="padel-girls-level">Skill level</label>
-        <select id="padel-girls-level"
-                name="level"
-                class="input"
-                required>
-          <option value="">Select level</option>
-          <option>Beginner</option>
-          <option>Intermediate</option>
-          <option>Advanced</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="padel-girls-register-as">Registering as</label>
-        <select id="padel-girls-register-as"
-                name="register_as"
-                class="input"
-                required>
-          <option value="">Choose...</option>
-          <option value="single">Single (I'll be paired)</option>
-          <option value="team">Team (I have a partner)</option>
-        </select>
-      </div>
-
-    </div>
-
-    <div class="form-footer">
-      <button type="submit" class="btn-submit">Submit Registration</button>
-      <button type="button"
-              class="btn-close"
-              data-target="padel-girls-form">
-        Close
-      </button>
-    </div>
-  </form>
+<div class="form-footer">
+<button type="submit" class="btn-submit">Submit Registration</button>
+<button type="button" class="btn-close" data-target="padel-form">Close</button>
+</div>
+</form>
 </section>
 
 
-      <!-- Repeat similar forms for the other 9 categories (Futsal, Cricket, Basketball, Badminton - Boys & Girls) -->
       <!-- Futsal Boys Form -->
       <section id="futsal-boys-form" class="form-panel hidden" data-sport="Futsal" data-gender="Boys" aria-hidden="true" aria-labelledby="futsal-boys-form-title">
         <h3 id="futsal-boys-form-title" style="margin-top:0;color:var(--accent)">Futsal — Boys Registration</h3>
@@ -506,7 +549,6 @@
   </form>
 </section>
 
-
       <!-- Cricket Boys Form -->
       <section id="cricket-boys-form" class="form-panel hidden" data-sport="Cricket" data-gender="Boys" aria-hidden="true" aria-labelledby="cricket-boys-form-title">
         <h3 id="cricket-boys-form-title" style="margin-top:0;color:var(--accent)">Cricket — Boys Registration</h3>
@@ -549,7 +591,6 @@
       </section>
 
       <!-- Cricket Girls Form -->
-      <!-- Cricket Girls Form (updated to match Boys fields) -->
 <section id="cricket-girls-form" class="form-panel hidden" data-sport="Cricket" data-gender="Girls" aria-hidden="true" aria-labelledby="cricket-girls-form-title">
   <h3 id="cricket-girls-form-title" style="margin-top:0;color:var(--accent)">Cricket — Girls Registration</h3>
   <p class="note" style="margin-bottom:12px">Register for Cricket (Girls).</p>
@@ -594,7 +635,6 @@
     </div>
   </form>
 </section>
-
 
       <!-- Basketball Boys Form -->
       <section id="basketball-boys-form" class="form-panel hidden" data-sport="Basketball" data-gender="Boys" aria-hidden="true" aria-labelledby="basketball-boys-form-title">
@@ -660,74 +700,47 @@
         </form>
       </section>
 
-      <!-- Badminton Boys Form -->
-      <section id="badminton-boys-form" class="form-panel hidden" data-sport="Badminton" data-gender="Boys" aria-hidden="true" aria-labelledby="badminton-boys-form-title">
-        <h3 id="badminton-boys-form-title" style="margin-top:0;color:var(--accent)">Badminton — Boys Registration</h3>
-        <p class="note" style="margin-bottom:12px">Register for Badminton (Boys).</p>
+      <section id="badminton-form" class="form-panel hidden" data-sport="Badminton" data-gender="Mixed" aria-hidden="true" aria-labelledby="badminton-form-title">
+<h3 id="badminton-form-title" style="margin-top:0;color:var(--accent)">Badminton — Mixed Registration</h3>
+<p class="note">Register for Badminton mixed bracket.</p>
 
-        <form id="form-badminton-boys" class="form-content" autocomplete="on">
-          <div class="form-grid">
-            <div>
-              <label for="badminton-boys-name">Full name</label>
-              <input id="badminton-boys-name" class="input" name="name" required placeholder="Your full name" />
-            </div>
-            <div>
-              <label for="badminton-boys-phone">Phone (WhatsApp)</label>
-              <input id="badminton-boys-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
-            </div>
-            <div>
-              <label for="badminton-boys-email">Email</label>
-              <input id="badminton-boys-email" class="input" name="email" type="email" required placeholder="you@example.com" />
-            </div>
-            <div>
-              <label for="badminton-boys-age">Age</label>
-              <input id="badminton-boys-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
-            </div>
-          </div>
+<form id="form-badminton" class="form-content">
+<div class="form-grid">
 
-          <div class="form-footer">
-            <button type="submit" class="btn-submit">Submit Registration</button>
-            <button type="button" class="btn-close" data-target="badminton-boys-form">Close</button>
-          </div>
-        </form>
-      </section>
+<div>
+<label>Full name</label>
+<input class="input" name="name" required>
+</div>
 
-      <!-- Badminton Girls Form -->
-      <section id="badminton-girls-form" class="form-panel hidden" data-sport="Badminton" data-gender="Girls" aria-hidden="true" aria-labelledby="badminton-girls-form-title">
-        <h3 id="badminton-girls-form-title" style="margin-top:0;color:var(--accent)">Badminton — Girls Registration</h3>
-        <p class="note" style="margin-bottom:12px">Register for Badminton (Girls).</p>
+<div>
+<label>Phone (WhatsApp)</label>
+<input class="input" name="phone" required placeholder="03XX-XXXXXXX">
+</div>
 
-        <form id="form-badminton-girls" class="form-content" autocomplete="on">
-          <div class="form-grid">
-            <div>
-              <label for="badminton-girls-name">Full name</label>
-              <input id="badminton-girls-name" class="input" name="name" required placeholder="Your full name" />
-            </div>
-            <div>
-              <label for="badminton-girls-phone">Phone (WhatsApp)</label>
-              <input id="badminton-girls-phone" class="input" name="phone" type="tel" required placeholder="03XX-XXXXXXX" />
-            </div>
-            <div>
-              <label for="badminton-girls-email">Email</label>
-              <input id="badminton-girls-email" class="input" name="email" type="email" required placeholder="you@example.com" />
-            </div>
-            <div>
-              <label for="badminton-girls-age">Age</label>
-              <input id="badminton-girls-age" name="age" type="number" min="13" max="40" class="input" required placeholder="Your age" />
-            </div>
-          </div>
+<div>
+<label>Email</label>
+<input class="input" name="email" type="email" required>
+</div>
 
-          <div class="form-footer">
-            <button type="submit" class="btn-submit">Submit Registration</button>
-            <button type="button" class="btn-close" data-target="badminton-girls-form">Close</button>
-          </div>
-        </form>
-      </section>
+<div>
+<label>Age</label>
+<input class="input" name="age" type="number" min="13" max="40" required>
+</div>
+
+</div>
+
+<div class="form-footer">
+<button type="submit" class="btn-submit">Submit Registration</button>
+<button type="button" class="btn-close" data-target="badminton-form">Close</button>
+</div>
+</form>
+</section>
 
     </section> <!-- .forms -->
 
   </main>
 </section>
+
 
 
   <!-- Footer separator -->
@@ -1007,6 +1020,15 @@ if (window.innerWidth <= 483) {
 
 })();
 </script>
+
+<script>
+document.querySelectorAll('.flip-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    btn.closest('.flip-card').classList.toggle('flipped');
+  });
+});
+</script>
+
 
 
 <script>
