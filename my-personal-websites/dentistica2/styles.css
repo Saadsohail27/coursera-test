@@ -40,11 +40,8 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
 
 
 /* Logo */
-.logo {
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: #5A3D38;
-  text-decoration: none;
+.logo img{
+  width: 150px;
 }
 
 @font-face {
@@ -112,20 +109,246 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* ===============================
+   Desktop Nav Animated Underline
+   =============================== */
+
+.main-nav a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* The underline */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px; /* distance from text */
+  width: 100%;
+  height: 2px;
+  background-color: #6B443C; /* your brand brown */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+/* Hover animation */
+.main-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Mobile nav / hamburger styles ---------- */
+:root {
+  --mobile-bg: #F6EFE6; /* beige mobile background (adjust as needed) */
+  --header-z: 999;
+  --accent-dark: #6B443C; /* using your existing variable */
+  --text-dark: #5A3D38;
+}
+
+/* Hide hamburger by default on desktop */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 38px;
+  padding: 6px;
+  cursor: pointer;
+  position: relative;
+  z-index: calc(var(--header-z) + 2);
+}
+
+/* 3 spans hamburger style */
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--accent-dark);
+  margin: 6px 0;
+  border-radius: 3px;
+  transform-origin: center;
+  transition: transform 320ms cubic-bezier(.2,.9,.25,1), opacity 220ms;
+}
+
+/* active hamburger -> X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* MOBILE NAV container */
+.mobile-nav {
+  position: fixed;
+  left: 0;
+  top: var(--header-height, 72px); /* JS will set --header-height */
+  right: 0;
+  height: calc(100vh - var(--header-height, 72px));
+  transform: translateX(-100%); /* hide off-canvas left */
+  transition: transform 380ms cubic-bezier(.2,.9,.25,1);
+  background: var(--mobile-bg);
+  z-index: calc(var(--header-z));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 4px 0 30px rgba(0,0,0,0.08);
+}
+
+/* When open */
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+/* Inner padding/layout */
+.mobile-nav-inner {
+  padding: 1.25rem 1.25rem 2.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Mobile header inside menu (logo + close) */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+.mobile-logo {
+  font-weight: 700;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* List styles and subtle item animation */
+.mobile-links {
+  list-style: none;
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.mobile-links li a {
+  text-decoration: none;
+  font-family: 'Averta', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  display: inline-block;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 360ms cubic-bezier(.2,.9,.25,1), opacity 360ms;
+}
+
+/* Staggered animation when menu opens */
+.mobile-nav.open .mobile-links li:nth-child(1) a { transition-delay: 80ms; transform: translateY(0); opacity: 1;}
+.mobile-nav.open .mobile-links li:nth-child(2) a { transition-delay: 140ms; transform: translateY(0); opacity: 1;}
+.mobile-nav.open .mobile-links li:nth-child(3) a { transition-delay: 200ms; transform: translateY(0); opacity: 1;}
+.mobile-nav.open .mobile-links li:nth-child(4) a { transition-delay: 260ms; transform: translateY(0); opacity: 1;}
+.mobile-nav.open .mobile-links li:nth-child(5) a { transition-delay: 320ms; transform: translateY(0); opacity: 1;}
+
+/* Mobile CTA block */
+.mobile-cta {
+  margin-top: auto; /* push to bottom area but above socials */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+.mobile-cta .btn {
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 280px;
+  box-shadow: 0 6px 18px rgba(107,68,60,0.08);
+}
+.mobile-cta .btn-outline {
+  text-align: center;
+  background: transparent;
+}
+
+/* Socials row */
+.mobile-socials {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-top: 1.25rem;
+}
+.mobile-socials .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-dark);
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 200ms, box-shadow 200ms;
+}
+.mobile-socials .social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+/* small adjustments for header buttons inside mobile menu top */
+.close-hamburger { display: inline-block; }
+
+/* ----------------------------------------------------------
+   RESPONSIVE BREAKPOINTS:
+   - hide CTAs <= 1247px
+   - hide main-nav and show hamburger <= 925px
+   ---------------------------------------------------------- */
+
+/* Hide CTA group at 1247px and below */
+@media (max-width: 1267px) {
+  .cta-group { display: none; }
+}
+
+/* Switch to hamburger / mobile nav at <=925px */
+@media (max-width: 925px) {
+  .main-nav { display: none; }           /* hide desktop links */
+  .hamburger { display: inline-block; }  /* show hamburger */
+  .nav-cta-wrapper { gap: 0.6rem; align-items: center; }
+
+  /* make logo centered at this breakpoint (as per your preference in earlier notes) */
+  .container { justify-content: space-between; }
+}
+
+/* small screens: mobile nav inner spacing tweaks */
+@media (max-width: 420px) {
+  .mobile-nav-inner { padding-left: 1rem; padding-right: 1rem; }
+  .mobile-cta .btn { width: 100%; max-width: none; }
+}
+
+/* Keep desktop nav as before for larger widths */
+
 /* Base styles from earlier assumed */
 
 .hero-section {
   background: #FDF8F3;
   padding: 4rem 2rem;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-  gap: 2rem;
+
+@media (max-width: 595px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .intro {
+    margin-top: 50px;
+  }
 }
+
+
 
 /* Text Column */
 .hero-text {
@@ -212,11 +435,30 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
 .headline  { font-size:4rem; font-family: RecoletaBold, sans-serif; line-height:1.2; margin:1rem 0; }
 .subtext   { font-size:1.45rem; font-family: 'RecoletaRegular', serif; font-weight: 400; margin:1.8rem 0 0; color:#6d524a; }
 
+@media (max-width: 595px) {
+  .headline {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 695px) {
+  .hero-left {
+    padding-right: 0;
+  }
+}
+
 .cta-row   { 
   display:flex; 
   gap:1rem; 
   margin-top: 5rem; 
 }
+
+@media (max-width: 595px) {
+  .cta-row {
+    justify-content: center;
+  }
+}
+
 .btn { display:inline-block; padding:.75rem 2rem; font-weight:600;
        border-radius:3.125rem; text-decoration:none; transition:.2s ease; font-size: 1.1rem; font-family: RecoletaRegular, sans-serif;}
 .btn-primary { background:var(--accent-dark); color:#fff; }
@@ -285,6 +527,21 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   margin-bottom: 2rem;
 }
 
+@media (max-width: 595px) {
+
+  .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .cta-heading {
+    font-size: 1.6rem;
+  }
+
+  .cta-subtext {
+    font-size: 1.1rem;
+  }
+}
+
 .btn-light {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -326,6 +583,17 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
 .intro-subtext {
   font-size: 1.1rem;
   color: #8C6C5F;
+}
+
+@media (max-width: 575px) {
+  .intro-heading {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .intro-subtext {
+    font-size: 1rem;
+  }
 }
 
 .experience-stack {
@@ -485,6 +753,111 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   width: 38px;
   height: auto;
   object-fit: contain;
+}
+
+/* ===============================
+   Responsive Amenities Section
+   =============================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .amenities-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .amenities-left h2 {
+    font-size: 2.3rem;
+  }
+
+  .amenities-left p {
+    font-size: 1rem;
+  }
+
+  .amenities-right {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 1.5rem 1.5rem;
+  }
+
+  .amenity img {
+    width: 34px;
+  }
+}
+
+/* Small Tablets */
+@media (max-width: 768px) {
+
+  .amenities-section .container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .amenities-left {
+    text-align: left;
+  }
+
+  .amenities-left h2 {
+    font-size: 2rem;
+  }
+
+  .amenities-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 1.2rem;
+  }
+
+  .amenity {
+    gap: 0.8rem;
+  }
+
+  .amenity img {
+    width: 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+
+  .amenities-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .amenities-left h2 {
+    font-size: 1.7rem;
+  }
+
+  .amenities-left p {
+    font-size: 0.95rem;
+  }
+
+  .amenities-right {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 1rem;
+  }
+
+  .amenity span {
+    font-size: 0.9rem;
+  }
+
+  .amenity img {
+    width: 26px;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 380px) {
+
+  .amenities-right {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity {
+    gap: 0.7rem;
+  }
+
+  .amenity img {
+    width: 24px;
+  }
+
 }
 
 .testimonial-section {
@@ -744,6 +1117,65 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   text-decoration: underline;
 }
 
+/* ===============================
+   Responsive Footer Bottom
+   =============================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+  .footer-bottom {
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .footer-bottom p {
+    flex: 1 1 100%;
+  }
+
+  .social-icons {
+    margin-top: 5px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .footer-bottom {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  .footer-bottom a {
+    display: inline-block;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 14px;
+    margin-top: 5px;
+  }
+}
+
+
+/* Small Phones */
+@media (max-width: 380px) {
+
+  .footer-bottom {
+    font-size: 14px;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+
+}
+
 .social-icons {
   display: flex;
   gap: 15px;
@@ -763,15 +1195,120 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
     transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-.footer-right .footer-social-icon:hover {
-    transform: scale(1.1);
+.footer-bottom .footer-social-icon:hover {
+  transform: translateY(-3px) scale(1.08);
 }
 
-.footer-social-icon path {
-    fill: white;
+.footer-bottom .footer-social-icon path {
+  fill: #fff8f1;
+  transition: fill 0.25s ease;
 }
 
-.footer-social-icon:hover path {
-    fill: #ff4785;
-    transform: scale(1.1); /* This won't apply unless you animate the whole SVG */
+.footer-bottom .footer-social-icon:hover path {
+  fill: #ff4785;
+}
+
+.footer-bottom .footer-social-icon {
+  transform: none; /* Remove slide offset */
+  width: 22px;
+  height: 22px;
+  transition: transform 0.25s ease, fill 0.25s ease;
+}
+
+.lasotronix-section {
+  background-color: #fef8f2; /* Light cream background */
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.lasotronix-title {
+  font-family: 'RecoletaBold', serif;
+  font-size: 2.8rem;
+  color: #5c3b30;
+  margin-bottom: 1rem;
+}
+
+.lasotronix-subtitle {
+  font-family: 'Recoleta-Regular', serif;
+  font-size: 1.2rem;
+  color: #5c3b30;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 595px) {
+  .lasotronix-title {
+    font-size: 2rem;
+  }
+
+  .lasotronix-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.image-gallery {
+  background-color: #fef8f2;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.gallery-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery-track {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Fixed height for all images */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 ensures proper scaling and cropping */
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.gallery-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.gallery-controls {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.gallery-btn {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.gallery-btn:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .gallery-btn {
+    width: 35px;
+    height: 35px;
+  }
 }
