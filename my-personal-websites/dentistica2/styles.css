@@ -25,7 +25,7 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; background:var(--floral
   padding: 1rem 2rem;
   border-bottom: 1px solid #E0DDD9;
 }
-.container {
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -670,6 +670,7 @@ body {
   opacity: 0;
   transform: translateY(18px) scale(0.996);
 }
+
 .service-card.in-view {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -1637,7 +1638,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 ensures proper scaling and cropping */
+  object-fit: cover; /* ensures proper scaling and cropping */
   border-radius: 12px;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -1676,3 +1677,361 @@ body {
     height: 35px;
   }
 }
+
+/* =========================
+   Lasotronix / Laser Page
+   ========================= */
+
+.lasotronix-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, #fffaf6 0%, #fdf8f3 100%);
+  color: var(--text-dark);
+  font-family: 'RecoletaRegular', serif;
+}
+
+.laso-header .eyebrow {
+  color: #8e6a63;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.laso-header h2 {
+  font-size: 2.6rem;
+  margin-bottom: 0.7rem;
+}
+.laso-header .lead {
+  color: #6d524a;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.laso-cta-row { display:flex; justify-content: center; gap:0.8rem; margin-top:0.6rem; margin-bottom:1.6rem; }
+
+/* grid */
+.laso-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* card */
+.laso-card {
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* excerpt */
+.card-excerpt {
+  color:#7a5e58;
+  font-size: 1.08rem;
+  line-height:1.7;
+}
+
+
+
+.card-toggle {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+/* reassurance aside */
+.laso-reassure {
+  margin-top: 1.4rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  padding: 1.05rem;
+  font-family: 'Averta', serif;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  margin: 23px auto;
+  box-shadow: 0 10px 30px rgba(101,72,66,0.04);
+  max-width: 980px;
+}
+
+@media (max-width: 575px) {
+  .laso-reassure {
+    text-align: left;
+    font-size: 1rem;
+  }
+}
+
+.laso-reassure h4 { margin: 0 0 0.6rem 0; color:var(--accent-dark); }
+.laso-reassure ul { margin:0; padding-left:1.1rem; color:#6d524a; }
+
+/* responsive grid */
+.laso-header h2 { font-size:2rem; }
+@media (max-width: 520px)  {
+  .lasotronix-section { padding: 2.2rem 1rem; }
+
+  .laso-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* card body inner list style */
+.card-body ul { margin:0; padding-left:1.1rem; color:#6d524a; line-height:1.7; font-size:1.1rem; }
+
+/* TYPOGRAPHY + Read-more adjustments for Lasotronix section */
+.lasotronix-section {
+  font-family: 'RecoletaRegular', serif; /* fallback serif family if your Recoleta is loaded */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* slightly larger, more readable text */
+.laso-header .lead {
+  font-size: 1.21rem;
+  font-family: 'Recoleta', serif;
+  max-width: 920px;
+}
+
+.card-excerpt {
+  font-size: 1.01rem;
+}
+
+/* ensure focus and readability on small screens */
+@media (max-width: 520px) {
+  .laso-header .lead { font-size: 1.2rem; }
+}
+
+/* ====== NEW LASOTRONIX CARDS - simple read-more design ====== */
+
+.laso-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* card base */
+.laso-card {
+  font-family: 'Recoleta', serif;
+  background: #F8F4EE;               /* soft clinic stone */
+  border-radius: 14px;
+  padding: 1.35rem;
+  border: 1px solid rgba(107,68,60,0.06);
+  color: var(--text-dark);
+}
+
+/* slight lift on focus (keyboard) */
+.laso-card:focus-within, .laso-card:focus {
+  outline: none;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(101,72,66,0.06);
+}
+
+/* title + excerpt */
+.card-title {
+  font-family: 'RecoletaRegular', serif;
+  font-size: 1.25rem;
+  color: var(--accent-dark);
+  margin: 0 0 0.45rem 0;
+}
+.card-excerpt {
+  margin: 0 0 0.65rem 0;
+  color: #6d524a;
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+/* BODY: the list where extras are hidden by default */
+.card-body { margin-top: 0.6rem; }
+
+/* visible block of up to 5 items - we'll rely on JS to set the collapsed max-height */
+.compact-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #6d524a;
+  line-height: 1.6;
+  font-size: 1rem;
+  overflow: hidden;
+  transition: max-height 420ms ease;
+}
+
+/* extra items are hidden by default (not displayed) - JS will reveal them smoothly */
+.compact-list li.extra { display: none; }
+
+/* when JS toggles expanded, show extra items (display -> list-item) */
+.compact-list.expanded li.extra { display: list-item; }
+
+/* style for read-more button (always visible) */
+.read-more {
+  margin-top: 0.8rem;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid rgba(107,68,60,0.12);
+  color: var(--accent-dark);
+  padding: 0.48rem 0.85rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.read-more:hover { transform: translateY(-3px); background: rgba(107,68,60,0.04); }
+.read-more[aria-expanded="true"] { background: rgba(107,68,60,0.95); color: #fff; border-color: rgba(107,68,60,0.95); }
+
+/* simple in-view fade (optional) */
+.laso-card { opacity: 0; transform-origin: center; transform: translateY(12px); transition: transform 520ms cubic-bezier(.2,.9,.25,1), opacity 420ms ease; }
+.laso-card.in-view { opacity:1; transform: translateY(0); }
+
+/* responsive */
+@media (max-width: 1200px) { .laso-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 920px)  { .laso-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px)  {
+  .laso-grid { grid-template-columns: 1fr; gap: 0.95rem; }
+  .compact-list { font-size: 0.98rem; line-height: 1.6; }
+  .read-more { width: 100%; text-align:center; }
+}
+
+/* Services page tiles — modern, subtle, responsive */
+
+.services-page-section {
+  padding: 3rem 4rem;
+}
+
+.services-container h1 {
+  font-family: 'Averta', serif;
+}
+
+.services-container .lead {
+  font-size: 1.2rem;
+  font-family: 'Recoleta', serif;
+  line-height: 1.56;
+}
+
+/* grid container */
+.services-page-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1.6rem;
+}
+
+/* tile */
+.service-tile {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 28px rgba(35,22,18,0.06);
+  transition: transform 320ms cubic-bezier(.2,.9,.25,1), box-shadow 320ms ease;
+  min-height: 220px;
+}
+
+/* image */
+.service-tile img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  transition: transform 420ms ease;
+}
+
+/* info block */
+.tile-info {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.tile-info h3 {
+  margin: 0;
+  font-family: 'Recoleta', serif;
+  color: var(--accent-dark);
+  font-size: 1.12rem;
+  line-height: 1.2;
+}
+.tile-info .muted {
+  margin: 0;
+  color: #7a5e58;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+/* overlay (hidden by default) */
+.tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(180deg, rgba(107,68,60,0.06), rgba(255,255,255,0.02));
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 260ms ease, transform 260ms ease, backdrop-filter 260ms ease;
+}
+
+/* overlay CTA visual */
+.overlay-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(107,68,60,0.95);
+  color: white;
+  padding: 0.6rem 0.95rem;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(107,68,60,0.12);
+  transform: translateY(0);
+}
+
+/* subtle arrow (optional) */
+.overlay-arrow { width: 20px; height: 20px; color: #fff; opacity: .95; }
+
+/* show overlay on hover (desktop) and when tile is focused */
+@media (hover: hover) and (min-width: 926px) {
+  .service-tile:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(35,22,18,0.10);
+  }
+  .service-tile:hover img { transform: scale(1.04) translateY(-2px); }
+  .service-tile:hover .tile-overlay { opacity: 1; transform: translateY(0); pointer-events: auto; }
+}
+
+/* keyboard focus support (shows overlay when focused via keyboard) */
+.service-tile:focus-within .tile-overlay,
+.service-tile:focus .tile-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  outline: none;
+}
+
+/* ensure anchor contents are reachable by keyboard */
+.service-tile:focus {
+  outline: 4px solid rgba(107,68,60,0.12);
+  outline-offset: 6px;
+}
+
+/* don't allow hover effect to change layout height */
+.service-tile, .service-tile * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* responsive breakpoints */
+@media (max-width: 1200px) { .services-page-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 920px)  { .services-page-grid { grid-template-columns: repeat(2, 1fr); } .service-tile img { height: 150px; } }
+@media (max-width: 520px)  {
+  .services-page-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .service-tile img { height: 160px; border-radius: 12px; }
+  .tile-info { padding: 0.9rem; }
+  .overlay-cta { padding: 0.6rem 0.85rem; }
+}
+
+/* small visual polish for the page header */
+.services-page-section .services-header .page-title { font-size: 2.4rem; color: var(--accent-dark); margin-top: 0.3rem; }
+.services-page-section .services-header .lead { color: #6d524a; max-width: 920px; margin: 0.6rem 0 0; }
