@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dentistica -  The best dentist in Lahore</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="logo"><img src="images/logos/dentistica-logo.png"></a>
+
+    <!-- Wrap nav and CTA together -->
+    <div class="nav-cta-wrapper">
+      <!-- Main Navigation -->
+      <nav class="main-nav">
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="appointments.html">Appointments</a></li>
+          <li><a href="lasotronix.html">Lasotronix</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call-to-Action Buttons -->
+      <div class="cta-group">
+        <a href="#book" class="btn btn-primary">Book Now</a>
+        <a href="tel:+923213055370" class="btn btn-outline">Call Now</a>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile navigation (hidden by default) -->
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="mobile-nav-inner">
+
+    <ul class="mobile-links">
+      <li><a href="services.html">Services</a></li>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="lasotronix.html">Lasotronix</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="mobile-cta">
+      <a href="#book" class="btn btn-primary">Book Now</a>
+      <a href="tel:+923213055370" class="btn btn-outline">Call Now</a>
+    </div>
+
+    <div class="mobile-socials" aria-hidden="false">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/dentistica.pk/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+        <!-- simple instagram SVG -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="3.1" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+        </svg>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/dentisticapk" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M15 8.5h1.8V5.6H15c-2.4 0-3.9 1.6-3.9 3.9V12H9v2.5h2.1V21h2.6v-6.5H17l.5-2.5h-2.4V9.4c0-.7.2-1.2 1-1.2z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="appointments-section" id="appointments">
+  <div class="appointments-container">
+    <header class="appointments-head">
+      <p class="eyebrow">Book an Appointment</p>
+      <h2>Book an Appointment at your preferred time</h2>
+      <p class="lead">
+        Choose a service and preferred time, leave your contact details and we’ll confirm your appointment via WhatsApp.
+        Prefer a quick request? Use one of the Quick Book buttons below for urgent or hygiene requests.
+      </p>
+    </header>
+
+    <div class="appointments-grid">
+
+      <!-- Booking card -->
+      <form id="waBookingForm" class="booking-card" novalidate>
+        <div class="form-row">
+          <label for="patientName">Your name</label>
+          <input id="patientName" name="patientName" type="text" placeholder="Patient Name" required />
+        </div>
+
+        <div class="form-row">
+          <label for="patientPhone">Phone (WhatsApp)</label>
+          <input id="patientPhone" name="patientPhone" type="tel" placeholder="+92 3xx xxx xxxx" required />
+        </div>
+
+        <div class="form-row">
+          <label for="serviceSelect">Service</label>
+          <select id="serviceSelect" name="serviceSelect" required>
+            <option value="Dental Laser">Dental Laser</option>
+            <option value="Removable Dentures">Removable Dentures</option>
+            <option value="Root Canal Treatment">Root Canal Treatment</option>
+            <option value="Teeth Whitening">Teeth Whitening</option>
+            <option value="Veneer">Veneer</option>
+            <option value="Scaling and Polishing">Scaling &amp; Polishing</option>
+            <option value="Surgical Extraction">Surgical Extraction</option>
+            <option value="Crown & Bridges">Crown &amp; Bridges</option>
+            <option value="Invisible Braces">Invisible Braces</option>
+            <option value="Dental Implant">Dental Implant</option>
+            <option value="Fixed Braces">Fixed Braces</option>
+            <option value="Cosmetic Filling">Cosmetic Filling</option>
+            <option value="Botox & Lip Filler">Botox &amp; Lip Filler</option>
+            <option value="Dental Jewelry">Dental Jewelry</option>
+            <option value="Hair PRP Treatment">Hair PRP Treatment</option>
+            <option value="Skin PRP Treatment">Skin PRP Treatment</option>
+          </select>
+        </div>
+
+        <div class="form-row split">
+          <div>
+            <label for="prefDate">Preferred date</label>
+            <input id="prefDate" name="prefDate" type="date" />
+          </div>
+          <div>
+            <!-- replaced time input with select so only allowed slots are available -->
+            <label for="prefTime">Preferred time</label>
+            <select id="prefTime" name="prefTime" aria-label="Preferred time">
+              <!-- JS will populate allowed slots (13:00–21:30) -->
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any illnesses? Or Any previous doctor you've been seeing ?"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button id="btnSendWhatsApp" type="button" class="appointment-btn appointment-btn-whatsapp">
+            <!-- small WhatsApp SVG icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:middle;margin-right:8px;fill:currentColor">
+              <path d="M20.52 3.48a11 11 0 10-15.56 15.56L3 21l2.01-.53A11 11 0 0020.52 3.48zM12 20.2a8.2 8.2 0 01-4.47-1.32l-.32-.2-2.66.7.71-2.6-.21-.33A8.2 8.2 0 1112 20.2z"/>
+              <path d="M17.1 14.1c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.33.22-.62.08s-1.3-.49-2.48-1.52c-.92-.82-1.54-1.83-1.72-2.12-.18-.3-.02-.46.13-.61.13-.13.3-.33.45-.5.15-.17.2-.28.3-.47.1-.2 0-.38-.02-.53-.02-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51-.17 0-.38-.01-.59-.01-.2 0-.53.08-.81.38-.27.3-1.03 1.01-1.03 2.47s1.05 2.87 1.2 3.07c.15.2 2.07 3.2 5.02 4.49 3.44 1.5 3.44 1 4.05.94.61-.06 1.98-.81 2.26-1.6.28-.78.28-1.45.2-1.6-.08-.15-.27-.24-.57-.39z"/>
+            </svg>
+            Book Your Appointment
+          </button>
+
+          <button id="btnClear" type="button" class="appointment-btn appointment-btn-outline">Clear</button>
+        </div>
+
+        <div class="quick-books">
+          <small>Quick book</small>
+          <div>
+            <button type="button" class="quick-btn" data-quick="Emergency: severe pain / swelling">Emergency</button>
+            <button type="button" class="quick-btn" data-quick="Hygiene appointment (scaling)">Hygiene</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Info column -->
+      <aside class="info-cards">
+        <div class="info-card">
+          <h2>Clinic & Hours</h2>
+          <p><strong>Dentistica</strong><br>Airport Rd, next to Eden Avenue, Lahore, Pakistan</p>
+          <p><strong>Hours</strong><br>Mon–Sat: 1:00 PM — 10:00 PM<br>Sun: <strong>Appointments Only</strong></p>
+        </div>
+
+        <div class="info-card">
+          <h4>Contact</h4>
+          <p><a target="_blank" href="https://wa.me/+923213055370">+92 321 3055370</a> (WhatsApp)</p>
+          <p><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/5BTmQKA5Bafdd3sL8">Open map</a></p>
+        </div>
+
+        <div class="info-card">
+          <h4>What info to provide at the reception</h4>
+          <ul>
+            <li>List any current illnesses <strong>(if any)</strong> and medications</li>
+            <li>Previous x-rays or reports <strong>(if any)</strong></li>
+          </ul>
+        </div>
+      </aside>
+
+    </div> <!-- .appointments-grid -->
+
+    <div class="bottom-note">
+      <p>Prefer a phone call? <a href="tel:+923213055370">Call +92 321 3055370</a></p>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="footer-logo">
+    <h2 class="brand-logo">Dentistica</h2>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-location">
+      <h2>Dentistica</h2>
+      <hr>
+      <p><a href="mailto:info@dentistica.com.pk">info@dentistica.com.pk</a></p>
+      <p><a href="tel:+923213055370" style="color: #D6D6D6;">+92 321 3055370</a></p>
+      <p><a href="https://maps.app.goo.gl/eT7FeNqQ4quAYQia8" class="footer-link">Get Directions</a></p>
+      <address>
+        <strong>Airport Road, Next to Eden Avenue</strong><br>
+        Lahore, Pakistan
+      </address>
+      <p class="hours">
+        <strong>Hours</strong><br>
+        Mon – Sat: 1pm – 10pm<br>
+        Sun: Appointments Only
+      </p>
+      <button class="consult-button">Book a consultation</button>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Best Dentist in Lahore • © Dentistica • All Rights Reserved</p>
+    <p>Website by: <a href="https://webdevbysaad.com" class="footer-link" target="_blank">WebDev by Saad</a></p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/dentisticapk" target="_blank">
+  <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+    <path d="M279.14 288l14.22-92.66h-88.91V127.36c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S293.35 0 262.36 0c-73.06 0-121.17 44.38-121.17 124.72v70.62H89.09V288h52.1v224h100.17V288z"/>
+  </svg>
+</a>
+
+      <a href="https://www.instagram.com/dentistica.pk/" target="_blank">
+            <svg class="footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!-- SVG Path here -->
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg>
+        </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  // safe initial classes
+  header.classList.add('revealed');
+
+  // compute and set header height (CSS var + body padding)
+  function setHeaderHeight() {
+    const h = Math.ceil(header.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--site-header-height', `${h}px`);
+    document.body.style.paddingTop = `${h}px`;
+    // some code uses --header-height already (mobile nav), keep that synced:
+    document.documentElement.style.setProperty('--header-height', `${h}px`);
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+
+  // hide on scroll down, show on scroll up (throttled with rAF)
+  let lastY = window.scrollY || 0;
+  let ticking = false;
+  const DELTA = 10; // minimum px change to react
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }
+
+  function update() {
+    const currentY = window.scrollY || 0;
+    const headerH = header.getBoundingClientRect().height;
+
+    // ignore tiny scrolls
+    if (Math.abs(currentY - lastY) < DELTA) {
+      ticking = false;
+      return;
+    }
+
+    if (currentY > lastY && currentY > headerH) {
+      // scrolling down and past header height -> hide
+      header.classList.add('hidden');
+      header.classList.remove('revealed');
+    } else {
+      // scrolling up -> show
+      header.classList.remove('hidden');
+      header.classList.add('revealed');
+    }
+
+    lastY = currentY <= 0 ? 0 : currentY; // reset at top
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Optional: if you programmatically open mobile nav, ensure header stays visible
+  // (if you want the header always visible when nav open)
+  document.addEventListener('click', (e) => {
+    const navOpen = document.querySelector('.mobile-nav.open');
+    if (navOpen) {
+      header.classList.remove('hidden');
+      header.classList.add('revealed');
+    }
+  });
+})();
+</script>
+
+<script>
+(() => {
+  const hamburger = document.querySelectorAll('.hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const header = document.querySelector('.site-header');
+
+  if (!mobileNav || !header || !hamburger.length) return;
+
+  // get all hamburger buttons (open + close inside mobile header)
+  const hamButtons = Array.from(hamburger);
+
+  // set CSS var for header-height so mobile nav sits directly below header
+  function setHeaderHeightVar() {
+    const h = header.getBoundingClientRect().height;
+    // set a CSS custom property that .mobile-nav uses
+    document.documentElement.style.setProperty('--header-height', `${Math.round(h)}px`);
+  }
+
+  setHeaderHeightVar();
+  window.addEventListener('resize', setHeaderHeightVar);
+
+  // toggle function
+  function toggleMenu(open) {
+    const isOpen = mobileNav.classList.contains('open');
+    const shouldOpen = typeof open === 'boolean' ? open : !isOpen;
+
+    mobileNav.classList.toggle('open', shouldOpen);
+    // toggle active state on all hamburger buttons so they animate to X
+    hamButtons.forEach(btn => btn.classList.toggle('active', shouldOpen));
+    // update aria attributes
+    hamButtons.forEach(btn => btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false'));
+    mobileNav.setAttribute('aria-hidden', !shouldOpen);
+    if (shouldOpen) {
+      // prevent body scroll under menu
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = '';
+    }
+  }
+
+  // attach click handlers
+  hamButtons.forEach(btn => btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  }));
+
+  // close if clicking outside the menu when open
+  document.addEventListener('click', (e) => {
+    const isOpen = mobileNav.classList.contains('open');
+    if (!isOpen) return;
+    // if click is inside the mobileNav or on a hamburger, ignore
+    if (mobileNav.contains(e.target)) return;
+    // otherwise close
+    toggleMenu(false);
+  });
+
+  // close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') toggleMenu(false);
+  });
+
+  // Close menu when clicking a mobile link (nice UX)
+  mobileNav.querySelectorAll('.mobile-links a').forEach(a => {
+    a.addEventListener('click', () => toggleMenu(false));
+  });
+
+})();
+</script>
+
+<script>
+(function () {
+  // ====== CONFIG ======
+  // Clinic WhatsApp number in international format (no spaces required)
+  const DATA_PHONE = '+923213055370'; // <-- replace if needed
+
+  // Clinic schedule slots: Mon–Sat 13:00 - 22:00 (last slot 21:30)
+  const SLOT_INTERVAL_MIN = 30; // minutes
+  const WORK_START = { h: 13, m: 0 };
+  const WORK_END = { h: 22, m: 0 }; // exclusive end (we'll generate last slot at 21:30)
+
+  // ====== DOM ======
+  const form = document.getElementById('waBookingForm');
+  const btnSend = document.getElementById('btnSendWhatsApp');
+  const btnClear = document.getElementById('btnClear');
+  const quickBtns = document.querySelectorAll('.quick-btn');
+
+  const dateInput = document.getElementById('prefDate');
+  const timeSelect = document.getElementById('prefTime');
+
+  // Utility: format time like "13:00" and readable like "1:00 PM"
+  function fmtTime(h, m) {
+    const hh = String(h).padStart(2,'0');
+    const mm = String(m).padStart(2,'0');
+    return `${hh}:${mm}`;
+  }
+  function fmtHuman(h, m) {
+    const period = h >= 12 ? 'PM' : 'AM';
+    let hour = h % 12;
+    if (hour === 0) hour = 12;
+    return `${hour}:${String(m).padStart(2,'0')} ${period}`;
+  }
+
+  // Build the list of allowed slots (strings like "13:00")
+  function generateSlots() {
+    const slots = [];
+    let h = WORK_START.h;
+    let m = WORK_START.m;
+    while (true) {
+      // stop if slot >= WORK_END
+      if (h > WORK_END.h || (h === WORK_END.h && m >= WORK_END.m)) break;
+      // push slot if within exclusive end (we want last slot starting at 21:30)
+      // compute numeric minutes for comparison
+      const slotMinutes = h * 60 + m;
+      const endMinutes = WORK_END.h * 60 + WORK_END.m;
+      if (slotMinutes < endMinutes) {
+        slots.push({ value: fmtTime(h,m), label: fmtHuman(h,m) });
+      } else break;
+
+      m += SLOT_INTERVAL_MIN;
+      if (m >= 60) { m = m - 60; h += 1; }
+    }
+    return slots;
+  }
+
+  const STANDARD_SLOTS = generateSlots(); // cached
+
+  // Populate timeSelect based on chosen date
+  function populateTimeSelectForDate(dateStr) {
+    // clear
+    timeSelect.innerHTML = '';
+
+    if (!dateStr) {
+      // no date chosen — show default helper option + full standard slots
+      const ph = document.createElement('option');
+      ph.value = '';
+      ph.textContent = 'Choose a time (clinic hours: 1:00 PM — 10:00 PM)';
+      ph.disabled = true;
+      ph.selected = true;
+      timeSelect.appendChild(ph);
+
+      STANDARD_SLOTS.forEach(s => {
+        const o = document.createElement('option');
+        o.value = s.value;
+        o.textContent = s.label;
+        timeSelect.appendChild(o);
+      });
+      return;
+    }
+
+    // check day of week
+    const chosen = new Date(dateStr + 'T00:00:00'); // local midnight
+    const weekday = chosen.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+    if (weekday === 0) {
+      // Sunday: appointments only — show single explanatory option
+      const o = document.createElement('option');
+      o.value = '';
+      o.textContent = 'Sunday — Appointments only. We will confirm a slot.';
+      o.selected = true;
+      timeSelect.appendChild(o);
+      return;
+    }
+
+    // Mon-Sat: show standard slots
+    STANDARD_SLOTS.forEach(s => {
+      const o = document.createElement('option');
+      o.value = s.value;
+      o.textContent = s.label;
+      timeSelect.appendChild(o);
+    });
+  }
+
+  // initial populate (no date)
+  populateTimeSelectForDate('');
+
+  // when date changes, repopulate according to weekday rules
+  dateInput.addEventListener('change', (e) => {
+    populateTimeSelectForDate(e.target.value);
+  });
+
+  // Build clean message (no manual %0A; use \n and encodeURIComponent later)
+  function buildMessage({ quickText } = {}) {
+    const name = (document.getElementById('patientName') || {}).value.trim();
+    const phone = (document.getElementById('patientPhone') || {}).value.trim();
+    const service = (document.getElementById('serviceSelect') || {}).value;
+    const date = (document.getElementById('prefDate') || {}).value;
+    const time = (document.getElementById('prefTime') || {}).value;
+    const notes = (document.getElementById('notes') || {}).value.trim();
+
+    if (quickText) {
+      // short quick message
+      return `${quickText}\nPlease assist.\nName: ${name || '[not provided]'}\nPhone: ${phone || '[not provided]'}`;
+    }
+
+    // readable, structured message
+    let msg = `Hello Dentistica,\nI'd like to book an appointment for *${service}*`;
+    if (date) {
+      // more user friendly date formatting
+      const d = new Date(date + 'T00:00:00');
+      const dateStr = d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+      msg += ` on ${dateStr}`;
+    }
+    if (time) msg += ` at ${time}`;
+    msg += `.\n\n`;
+    if (name) msg += `Name: ${name}\n`;
+    if (phone) msg += `Contact: ${phone}\n`;
+    if (notes) msg += `Notes: ${notes}\n`;
+    msg += `\nPlease confirm available slots and any pre-appointment instructions. Thanks!`;
+
+    return msg;
+  }
+
+  // Open WhatsApp with encoded message
+  function openWhatsApp(message) {
+    const encoded = encodeURIComponent(message);
+    const number = DATA_PHONE.replace(/\D/g,'');
+    const url = `https://wa.me/${number}?text=${encoded}`;
+    window.open(url, '_blank');
+  }
+
+  // Send handler
+  btnSend && btnSend.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById('patientName') || {}).value.trim();
+    const phone = (document.getElementById('patientPhone') || {}).value.trim();
+
+    if (!name || !phone) {
+      alert('Please enter your name and your WhatsApp phone number so we can confirm the booking.');
+      return;
+    }
+
+    // If date selected and it's Sunday, we still allow (appointments only) — user can leave time blank
+    const selectedDate = dateInput.value;
+    const selectedTime = timeSelect.value;
+
+    // Build, open
+    const message = buildMessage();
+    openWhatsApp(message);
+  });
+
+  // Clear
+  btnClear && btnClear.addEventListener('click', () => {
+    form.reset();
+    populateTimeSelectForDate(''); // restore default slots
+  });
+
+  // Quick book buttons
+  quickBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const quickText = e.currentTarget.dataset.quick;
+      const message = buildMessage({ quickText });
+      openWhatsApp(message);
+    });
+  });
+
+  // convenience: Enter on phone input triggers submit
+  const phoneInput = document.getElementById('patientPhone');
+  phoneInput && phoneInput.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+      btnSend && btnSend.click();
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>

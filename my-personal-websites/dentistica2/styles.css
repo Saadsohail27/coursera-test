@@ -2035,3 +2035,169 @@ body {
 /* small visual polish for the page header */
 .services-page-section .services-header .page-title { font-size: 2.4rem; color: var(--accent-dark); margin-top: 0.3rem; }
 .services-page-section .services-header .lead { color: #6d524a; max-width: 920px; margin: 0.6rem 0 0; }
+
+/* Appointments section - Dentistica aesthetic */
+:root {
+  --accent-dark: #6B443C;
+  --muted: #7a5e58;
+  --card-bg: #fffaf6;
+  --glass: rgba(255,255,255,0.6);
+}
+
+/* Section layout */
+.appointments-section {
+  padding: 3.5rem 1.2rem;
+  background: linear-gradient(180deg,#fffaf6 0%, #fdf8f3 100%);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--accent-dark);
+}
+
+.appointments-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.appointments-head .eyebrow {
+  color: #8e6a63;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.appointments-head h2 {
+  font-family: 'RecoletaRegular', serif;
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem 0;
+}
+.appointments-head .lead {
+  color: #6d524a;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 920px;
+}
+
+/* Grid */
+.appointments-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+/* Booking card */
+.booking-card {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(101,72,66,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.form-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-row label { font-weight: 600; color: var(--accent-dark); font-size: 0.95rem; }
+.form-row input[type="text"],
+.form-row input[type="tel"],
+.form-row input[type="date"],
+.form-row input[type="time"],
+.form-row select,
+.form-row textarea {
+  border: 1px solid rgba(107,68,60,0.12);
+  padding: 0.62rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  color: #40312e;
+  background: #fff;
+  outline: none;
+  transition: box-shadow .15s ease, transform .08s ease;
+}
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  box-shadow: 0 8px 20px rgba(107,68,60,0.06);
+  transform: translateY(-2px);
+}
+
+/* split row */
+.form-row.split { display: flex; gap: 0.75rem; }
+.form-row.split > div { flex: 1; }
+
+/* actions */
+.form-actions { display:flex; gap:0.6rem; align-items:center; margin-top:5px; }
+.appointment-btn { padding: 0.7rem 1rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; }
+.appointment-btn-primary { background: var(--accent-dark); color: #fff; }
+.appointment-btn-outline { background: transparent; color: var(--accent-dark); border: 2px solid rgba(107,68,60,0.12); }
+
+/* quick book */
+.quick-books { margin-top: 0.6rem; display:flex; flex-direction:column; gap:0.5rem; }
+.quick-books small { color: var(--muted); font-weight:700; }
+.quick-books .quick-btn {
+  display: inline-block;
+  background: rgba(107,68,60,0.06);
+  border: 1px dashed rgba(107,68,60,0.08);
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--accent-dark);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.quick-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(101,72,66,0.06); }
+
+/* info column */
+.info-cards { display:flex; flex-direction:column; gap:0.85rem; }
+.info-card {
+  background: linear-gradient(180deg, #fff, var(--card-bg));
+  padding: 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(107,68,60,0.06);
+  box-shadow: 0 8px 20px rgba(101,72,66,0.04);
+}
+.info-card h4 { margin:0 0 0.35rem 0; color: var(--accent-dark); font-size:1rem; }
+.info-card p, .info-card ul { margin:0; color:#5a3d38; line-height:1.45; font-size:0.95rem; }
+.info-card.small { font-size: 0.95rem; }
+
+/* bottom note */
+.bottom-note { margin-top: 1rem; color: var(--muted); font-size: 0.95rem; }
+
+/* responsive */
+@media (max-width: 980px) {
+  .appointments-grid { grid-template-columns: 1fr; }
+  .appointments-head h2 { font-size: 2rem; }
+}
+
+.appointment-btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+    border: none;
+    padding: 0.68rem 1rem;
+    border-radius: 10px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 20px rgba(37,211,102,0.12);
+    cursor: pointer;
+  }
+  .appointment-btn-whatsapp:hover { transform: translateY(-3px); }
+  .appointment-btn-outline {
+    background: transparent;
+    color: var(--accent-dark);
+    border: 2px solid rgba(107,68,60,0.12);
+    padding: 0.62rem 0.9rem;
+    border-radius: 10px;
+    font-weight:700;
+  }
+
+  /* make prefTime select visually same as inputs */
+  #prefTime {
+    border: 1px solid rgba(107,68,60,0.12);
+    padding: 0.62rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.98rem;
+    color: #40312e;
+    background: #fff;
+    width: 100%;
+  }
+
+  /* quick buttons small style */
+  .quick-btn { padding: 0.45rem .7rem; border-radius: 8px; border: 1px dashed rgba(107,68,60,0.08); background: rgba(107,68,60,0.04); cursor:pointer; font-weight:700; margin-right:6px; }
