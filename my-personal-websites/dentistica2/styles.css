@@ -1896,6 +1896,12 @@ body {
   padding: 3rem 4rem;
 }
 
+@media (max-width: 595px) {
+  .services-page-section {
+    padding: 3rem 1rem;
+  }
+}
+
 .services-container h1 {
   font-family: 'Averta', serif;
 }
@@ -2201,3 +2207,375 @@ body {
 
   /* quick buttons small style */
   .quick-btn { padding: 0.45rem .7rem; border-radius: 8px; border: 1px dashed rgba(107,68,60,0.08); background: rgba(107,68,60,0.04); cursor:pointer; font-weight:700; margin-right:6px; }
+
+  .about-page-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #fff, #faf8f6);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+}
+
+.about-content .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-size: 0.75rem;
+  color: #9c7b73;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+.about-title {
+  font-size: 2.6rem;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+  color: #2f2422;
+}
+
+.about-intro {
+  font-size: 1.05rem;
+  color: #6c5a57;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.about-philosophy {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+}
+
+.about-philosophy h3 {
+  margin-bottom: 1rem;
+  color: #4d3b37;
+}
+
+.about-philosophy p {
+  color: #6b5854;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+}
+
+/* ABOUT — Doctors (unique abt-docs-* classes) */
+.abt-docs-section {
+  background: linear-gradient(180deg,#fffaf6 0%, #fdf8f3 100%);
+  padding: 56px 16px;
+  font-family: 'RecoletaRegular', serif;
+  color: #5A3D38;
+}
+
+.abt-docs-wrap { max-width: 1180px; margin: 0 auto; }
+
+.abt-docs-head { text-align: center; max-width: 920px; font-family: 'Recoleta', sans-serif;margin: 0 auto 28px; }
+.abt-docs-eyebrow { color: #8e6a63; font-weight:700; letter-spacing: .6px; margin-bottom:8px; }
+.abt-docs-title { font-size: 30px; margin: 0 0 10px; color: #5A3D38; }
+.abt-docs-lead { color:#6d524a; font-size: 1.05rem; line-height:1.6; margin: 0 auto; }
+
+/* Eyebrow staggered entrance animation (unique abt-docs-* classes) */
+.abt-docs-eyebrow { 
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  font-weight: 600;
+  color: #8e6a63;
+  line-height: 1.25;
+  max-width: 920px;
+  margin: 0 auto 12px;
+  text-align: center;
+}
+
+/* each phrase starts hidden/softly shifted */
+.abt-phrase {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px) scale(0.995);
+  transition: 
+    opacity 480ms cubic-bezier(.2,.9,.25,1),
+    transform 480ms cubic-bezier(.2,.9,.25,1);
+  will-change: opacity, transform;
+  /* CSS var used by JS to set stagger; default 0 */
+  transition-delay: var(--phrase-delay, 0ms);
+}
+
+/* visible state (we add class 'eyebrow-animate' to container to mark start,
+   and then JS adds class 'in' on each phrase or you could rely on the transition-delay) */
+.abt-docs-section.eyebrow-animate .abt-phrase.in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* a bit more emphasis on the dramatic word and the final line */
+.abt-phrase--dramatic.in {
+  transform: translateY(-2px) scale(1.03);
+  letter-spacing: 0.02em;
+}
+.abt-phrase--final.in {
+  transform: translateY(-2px) scale(1.02);
+  color: #5A3D38;
+  font-weight: 700;
+}
+
+/* subtle micro delay for smaller screens so it still reads well */
+@media (max-width: 520px) {
+  .abt-docs-eyebrow { gap: 0.45rem; font-size: 0.97rem; }
+  .abt-phrase { transition-duration: 420ms; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .abt-phrase { 
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Grid */
+.abt-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 22px;
+  margin-top: 22px;
+}
+
+/* Card */
+.abt-doc-card {
+  position: relative;
+  min-height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 16px 40px rgba(101,72,66,0.06);
+  transition: transform 260ms cubic-bezier(.2,.9,.25,1), box-shadow 260ms;
+  cursor: default;
+  outline: none;
+}
+.abt-doc-card:focus, .abt-doc-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(101,72,66,0.10); }
+
+/* background image (fills card) */
+.abt-doc-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(.95) contrast(.98);
+  transform-origin:center;
+  transition: transform 520ms ease;
+  z-index: 0;
+}
+.abt-doc-card:focus .abt-doc-bg,
+.abt-doc-card:hover .abt-doc-bg { transform: scale(1.03); }
+
+/* frosted info panel */
+.abt-doc-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(3px);
+  border-radius: 8px;
+  margin: 28px;
+  padding: 20px;
+  max-width: calc(100% - 56px);
+  box-shadow: 0 6px 20px rgba(35,22,18,0.06);
+}
+
+.abt-doc-name { margin: 0 0 6px; font-size: 28px; color:#3f2a26; }
+.abt-doc-qual { font-weight:700; color:#6b443c; margin-bottom:10px; }
+
+/* meta list */
+.abt-doc-meta { list-style: none; padding:0; margin: 6px 0 10px; color:#5b4540; }
+.abt-doc-meta li { margin:6px 0; font-size: 0.95rem; }
+.abt-doc-meta a { color: #6b443c; text-decoration: none; font-weight:700; }
+
+/* note */
+.abt-doc-note { margin: 10px 0 0; color:#6d524a; line-height:1.55; font-size:0.98rem; }
+
+/* small screens */
+@media (max-width: 980px) {
+  .abt-docs-grid { grid-template-columns: 1fr; }
+  .abt-doc-panel { margin: 18px; padding: 16px; }
+  .abt-doc-name { font-size: 22px; }
+}
+
+/* Accessibility focus ring (for keyboard users) */
+.abt-doc-card:focus .abt-doc-panel { box-shadow: 0 12px 28px rgba(101,72,66,0.12), 0 0 0 4px rgba(107,68,60,0.08); }
+
+:root {
+  --ctc-bg: #fdfaf6;
+  --ctc-cream: #fffdf9;
+  --ctc-accent: #6B443C;        /* Dentistica brown */
+  --ctc-text: #5A3D38;
+  --ctc-muted: #7a5e58;
+  --ctc-green: #25D366;         /* WhatsApp green */
+  --ctc-card-shadow: 0 14px 40px rgba(101,72,66,0.06);
+  --ctc-radius: 14px;
+  --ctc-gap: 1.25rem;
+}
+
+/* section layout */
+.ctc-section {
+  background: linear-gradient(180deg, var(--ctc-bg) 0%, #fffaf6 100%);
+  padding: 4rem 1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--ctc-text);
+}
+
+.ctc-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* card base */
+.ctc-card {
+  background: var(--ctc-cream);
+  border-radius: var(--ctc-radius);
+  padding: 1.6rem;
+  box-shadow: var(--ctc-card-shadow);
+  transition: transform 320ms cubic-bezier(.2,.9,.25,1), box-shadow 320ms;
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+}
+
+/* when in view */
+.ctc-card.in-view { opacity: 1; transform: translateY(0); }
+
+/* info card specifics */
+.ctc-card--info { padding: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.ctc-heading { font-family: 'RecoletaRegular', serif; font-size: 1.35rem; color: var(--ctc-accent); margin: 0 0 6px; }
+.ctc-lead { color: var(--ctc-muted); margin: 0 0 0.25rem; line-height: 1.55; }
+
+/* info grid */
+.ctc-info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 0.6rem; }
+.ctc-info-block h4 { margin: 0 0 6px; color: var(--ctc-accent); font-size: 0.98rem; }
+.ctc-info-block p { margin: 0; color: var(--ctc-text); font-size: 0.95rem; }
+.ctc-link { color: var(--ctc-accent); text-decoration: none; border-bottom: 1px dotted rgba(107,68,60,0.15); padding-bottom: 2px; }
+
+/* socials */
+.ctc-socials { margin-top: auto; display:flex; flex-direction: column; gap: 0.5rem; }
+.ctc-social-icons { display:flex; gap:0.5rem; align-items:center; }
+.ctc-social { display:inline-flex; width:38px; height:38px; border-radius:9px; align-items:center; justify-content:center; background: rgba(107,68,60,0.06); color: var(--ctc-accent); text-decoration: none; font-weight:700; }
+
+/* form card */
+.ctc-card--form { padding: 2rem; }
+.ctc-form { display:flex; flex-direction:column; gap: 1rem; }
+.ctc-row { display:flex; gap: 1rem; margin-top: 30px}
+.ctc-field { position: relative; flex:1; display:block; }
+.ctc-field input,
+.ctc-field textarea,
+.ctc-field select {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(90,61,56,0.08);
+  background: #fff;
+  padding: 0.9rem 0.9rem 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ctc-text);
+  outline: none;
+  transition: box-shadow 180ms ease, transform 180ms ease, border-color 180ms ease;
+  box-shadow: none;
+  min-height: 44px;
+}
+
+/* floating label */
+.ctc-label {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  font-size: 0.86rem;
+  color: var(--ctc-muted);
+  pointer-events: none;
+  transition: transform 180ms ease, font-size 180ms ease, top 180ms ease;
+}
+
+/* when input has focus or content, float label up */
+.ctc-field input:focus + .ctc-label,
+.ctc-field input:not(:placeholder-shown) + .ctc-label,
+.ctc-field textarea:focus + .ctc-label,
+.ctc-field textarea:not(:placeholder-shown) + .ctc-label,
+.ctc-field select:focus + .ctc-label,
+.ctc-field select:not([value=""]) + .ctc-label {
+  transform: translateY(-10px) scale(0.95);
+  top: -6px;
+  font-size: 0.75rem;
+  color: var(--ctc-accent);
+}
+
+/* focus effect */
+.ctc-field input:focus,
+.ctc-field select:focus,
+.ctc-field textarea:focus {
+  box-shadow: 0 8px 30px rgba(107,68,60,0.06);
+  border-color: rgba(107,68,60,0.18);
+}
+
+/* full width field for textarea */
+.ctc-field--full { width:100%; }
+
+/* actions */
+.ctc-actions { display:flex; gap: 0.8rem; align-items:center; margin-top: 0.2rem; }
+.ctc-btn { padding: 0.68rem 1rem; border-radius: 999px; border: none; cursor: pointer; font-weight:700; display:inline-flex; gap:0.6rem; align-items:center; justify-content:center; transition: transform 160ms ease, box-shadow 160ms ease; }
+.ctc-btn:active { transform: translateY(1px); }
+
+.ctc-btn--primary {
+  background: var(--ctc-accent);
+  color: #fff;
+  box-shadow: 0 8px 26px rgba(107,68,60,0.10);
+}
+.ctc-btn--primary:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(101,72,66,0.08); }
+
+/* whatsapp button */
+.ctc-btn--whatsapp {
+  background: linear-gradient(180deg, var(--ctc-green), #18b359);
+  color: #fff;
+  padding-left: 0.9rem;
+  padding-right: 0.9rem;
+  box-shadow: 0 8px 26px rgba(37,211,102,0.12);
+}
+.ctc-wa-icon { width:20px; height:20px; display:inline-block; margin-right:6px; }
+
+/* feedback */
+.ctc-feedback { min-height: 24px; color: var(--ctc-accent); font-weight:600; margin-top:0.2rem; }
+
+/* small screens */
+@media (max-width: 920px) {
+  .ctc-inner { grid-template-columns: 1fr; }
+  .ctc-row { flex-direction: column; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ctc-card, .ctc-field input, .ctc-field textarea { transition: none !important; }
+}
