@@ -2579,3 +2579,63 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .ctc-card, .ctc-field input, .ctc-field textarea { transition: none !important; }
 }
+
+/* ===== Removable Dentures section CSS (unique classes svcrd-*) ===== */
+.svcrd-section { max-width:1100px; margin:24px auto; padding:22px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#2f1f1a; }
+.svcrd-hero { display:grid; grid-template-columns:1fr 420px; gap:22px; align-items:start; }
+@media(max-width:980px){ .svcrd-hero { grid-template-columns:1fr; } }
+
+.svcrd-hero-left { background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78)); padding:18px; border-radius:12px; box-shadow:0 16px 40px rgba(35,22,18,0.04); }
+.svcrd-eyebrow { margin:0 0 8px 0; color:#8e6a63; font-weight:600; }
+.svcrd-title { margin:0 0 8px 0; font-family:'Averta', serif; color:#5d3b33; font-size:1.6rem; }
+.svcrd-lead { margin:0 0 12px 0; color:#6d524a; line-height:1.55; }
+
+.svcrd-media { border-radius:12px; overflow:hidden; height:320px; box-shadow:0 18px 40px rgba(35,22,18,0.06); }
+.svcrd-media-img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* cards & grid */
+.card { background:#fff; border-radius:10px; padding:12px; margin-top:12px; }
+.svcrd-maingrid { display:grid; grid-template-columns:1fr 360px; gap:18px; margin-top:18px; }
+@media(max-width:980px){ .svcrd-maingrid { grid-template-columns:1fr; } }
+
+/* kicker / small */
+.svcrd-kicker { display:block; color:#5d3b33; font-weight:700; margin-bottom:8px; }
+.svcrd-muted { color:#6d524a; font-size:0.95rem; }
+
+/* features & stats */
+.svcrd-features { margin:8px 0 0 1.1rem; color:#6d524a; }
+.svcrd-stats { display:flex; gap:10px; margin-top:12px; }
+.svcrd-stat { background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75)); padding:10px; border-radius:8px; text-align:center; flex:1; box-shadow:0 8px 18px rgba(35,22,18,0.04); }
+.svcrd-num { font-weight:800; color:#5d3b33; }
+.svcrd-sub { color:#6d524a; font-size:0.86rem; }
+
+/* steps */
+.svcrd-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px; }
+@media(max-width:980px){ .svcrd-steps { grid-template-columns:1fr; } }
+.svcrd-step { background:#fff; padding:10px; border-radius:8px; box-shadow:0 8px 20px rgba(35,22,18,0.04); }
+.svcrd-step h4 { margin:0 0 6px 0; color:#5d3b33; }
+
+/* form */
+.svcrd-form { display:flex; flex-direction:column; gap:8px; margin-top:8px; }
+.svcrd-form label { font-size:0.9rem; color:#6d524a; }
+.svcrd-form input, .svcrd-form textarea { border:1px solid rgba(35,22,18,0.06); border-radius:8px; padding:9px 10px; font-size:0.95rem; }
+.svcrd-row { display:flex; gap:8px; }
+.svcrd-row > div { flex:1; }
+
+/* actions */
+.svcrd-actions { display:flex; gap:8px; margin-top:8px; align-items:center; }
+.svcrd-btn-whatsapp { background: linear-gradient(0deg,#25D366,#13B65B); color:#052012; padding:10px 14px; border-radius:10px; font-weight:800; display:inline-flex; align-items:center; gap:8px; border:none; cursor:pointer; box-shadow:0 8px 28px rgba(37,211,102,0.12); }
+.svcrd-btn-whatsapp svg { display:block; }
+.svcrd-btn-call { background:transparent; border:1px solid rgba(35,22,18,0.06); padding:10px 12px; border-radius:10px; color:#5d3b33; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; }
+
+/* faq */
+.svcrd-faq details { margin-top:8px; background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85)); padding:8px; border-radius:8px; }
+.svcrd-faq summary { cursor:pointer; font-weight:700; color:#5d3b33; }
+
+/* reveal animation helpers */
+[data-svcrd-reveal] { opacity:0; transform:translateY(14px) scale(.997); transition: transform 520ms cubic-bezier(.2,.9,.25,1), opacity 520ms ease; will-change: transform, opacity; }
+[data-svcrd-reveal].in-view { opacity:1; transform:translateY(0) scale(1); }
+
+/* util */
+.svcrd-small { font-size:0.9rem; color:#6d524a; }
+.svcrd-sep { border:0; border-top:1px solid rgba(35,22,18,0.06); margin:12px 0; }
