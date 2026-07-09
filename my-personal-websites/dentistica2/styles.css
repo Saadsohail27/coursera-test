@@ -2485,6 +2485,12 @@ body {
 
 /* info grid */
 .ctc-info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 0.6rem; }
+
+@media (max-width: 475px) {
+  .ctc-info-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .ctc-info-block h4 { margin: 0 0 6px; color: var(--ctc-accent); font-size: 0.98rem; }
 .ctc-info-block p { margin: 0; color: var(--ctc-text); font-size: 0.95rem; }
 .ctc-link { color: var(--ctc-accent); text-decoration: none; border-bottom: 1px dotted rgba(107,68,60,0.15); padding-bottom: 2px; }
