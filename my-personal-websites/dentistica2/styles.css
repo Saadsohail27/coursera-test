@@ -2469,6 +2469,12 @@ body {
   will-change: opacity, transform;
 }
 
+@media (max-width: 475px) {
+  .ctc-card {
+    width: 100%;
+  }
+}
+
 /* when in view */
 .ctc-card.in-view { opacity: 1; transform: translateY(0); }
 

@@ -59,7 +59,7 @@
 
             
 
-            <span class="headline">My name is Saad, I'm 17 years old and I live in Lahore, Pakistan &#x1F1F5;&#x1F1F0;</span> <br><br><br>
+            <span class="headline">My name is Saad, I'm 19 years old and I live in Lahore, Pakistan &#x1F1F5;&#x1F1F0;</span> <br><br><br>
             <p><h3 class="subheadings">Academics</h3><br><br><br> O Levels (Complete)<br>
             A Levels (Currently doing)</p>
 
@@ -86,7 +86,81 @@
             Web Development <span class="learned-from">(&nbsp;Learned&nbsp;from&nbsp;John&nbsp;Hopkins&nbsp;University&nbsp;on&nbsp;Coursera&nbsp;)</span><br><br>
             Web Design <span class="google">(&nbsp;Learned&nbsp;from&nbsp;Google&nbsp;on&nbsp;Coursera&nbsp;)</span><br><br>
             Video&nbsp;Editing</p><br><br>
-            <br><br><br><br><br><br>
+            <br><br>
+            <h3 class="subheadings">Certifications</h3>
+            <br>
+            <br>
+            <br>
+            <div class="certificate-card">
+
+                <h4>HTML, CSS and Javascript for Web Developers (Johns Hopkins University)</h4>
+
+                <img
+                src="images/johns-hopkins-certificate.png"
+                class="certificate-thumbnail"
+                data-pdf="certificates/johns-hopkins-university-web-developer.pdf">
+            </div>
+
+
+            <div class="pdf-popup">
+
+                <span>&times;</span>
+
+                <iframe
+                    id="pdfFrame"
+                    src="certificates/johns-hopkins-university-web-developer.pdf"
+                    class="popup-pdf">
+                </iframe>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <h4>Foundations Of User Experience (Google)</h4>
+
+                <img
+                src="images/google-certificate.png"
+                class="certificate-thumbnail"
+                data-pdf="certificates/google-foundations-of-user-experience.pdf">
+            </div>
+
+
+            <div class="pdf-popup">
+
+                <span>&times;</span>
+
+                <iframe
+                    id="pdfFrame"
+                    src="certificates/johns-hopkins-university-web-developer.pdf"
+                    class="popup-pdf">
+                </iframe>
+
+            </div>
+
+            <div class="certificate-card">
+
+                <h4>Introduction to Backend Development (Meta)</h4>
+
+                <img
+                src="images/meta-certificate.png"
+                class="certificate-thumbnail"
+                data-pdf="certificates/meta-introduction-to-backend-development.pdf">
+            </div>
+
+
+            <div class="pdf-popup">
+
+                <span>&times;</span>
+
+                <iframe
+                    id="pdfFrame"
+                    src="certificates/johns-hopkins-university-web-developer.pdf"
+                    class="popup-pdf">
+                </iframe>
+
+            </div>
+
+            <br><br><br><br>
             <p>
                 <h3 class="subheadings">Hobbies/Intrests</h3>
                 <br>
@@ -232,6 +306,31 @@ document.addEventListener("click", (e) => {
         }
     }
      </script>
+
+     <script>
+         const pdfPopup = document.querySelector(".pdf-popup");
+const pdfFrame = document.getElementById("pdfFrame");
+
+document.querySelectorAll(".certificate-thumbnail").forEach(thumbnail => {
+    thumbnail.addEventListener("click", () => {
+        pdfFrame.src = thumbnail.dataset.pdf;
+        pdfPopup.style.display = "flex";
+    });
+});
+
+document.querySelector(".pdf-popup span").addEventListener("click", () => {
+    pdfPopup.style.display = "none";
+    pdfFrame.src = "";
+});
+
+pdfPopup.addEventListener("click", (e) => {
+    if (e.target === pdfPopup) {
+        pdfPopup.style.display = "none";
+        pdfFrame.src = "";
+    }
+});
+     </script>
+
 </body>
 
 </html>
