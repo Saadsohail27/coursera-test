@@ -492,6 +492,259 @@ transform:translateY(0);
 
 }
 
+/* ==========================================
+   Action Pill
+========================================== */
+
+.shop-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    position:relative;
+
+}
+
+/* ========================= */
+
+.pill-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:22px;
+
+    height:22px;
+
+    opacity:0;
+
+    transform:scale(.6);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+/* ========================= */
+
+.cart-svg{
+
+    width:22px;
+
+    height:22px;
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+}
+
+/* ========================= */
+
+.pill-text{
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+/* ========================= */
+
+.pill-badge{
+
+    position:absolute;
+
+    top:-6px;
+
+    right:-6px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-size:.72rem;
+
+    font-weight:700;
+
+    transform:scale(0);
+
+    opacity:0;
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+
+}
+
+/* ==========================================
+   Cart State
+========================================== */
+
+.shop-btn.has-cart .pill-icon{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.shop-btn.has-cart .pill-badge{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.pill-stitches{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.stitch{
+
+    position:absolute;
+
+    width:18px;
+
+    height:8px;
+
+    left:50%;
+
+    top:50%;
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    opacity:0;
+
+}
+
+.shop-btn.transforming .s1{
+
+    animation:stitchLeft .45s ease forwards;
+
+}
+
+.shop-btn.transforming .s2{
+
+    animation:stitchTop .45s ease forwards;
+
+}
+
+.shop-btn.transforming .s3{
+
+    animation:stitchRight .45s ease forwards;
+
+}
+
+@keyframes stitchLeft{
+
+    from{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) rotate(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translate(-80%,-90%)
+            rotate(-35deg)
+            scale(1.4);
+
+    }
+
+}
+
+@keyframes stitchTop{
+
+    from{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,-120%)
+            rotate(20deg)
+            scale(1.3);
+
+    }
+
+}
+
+@keyframes stitchRight{
+
+    from{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translate(-20%,-80%)
+            rotate(35deg)
+            scale(1.4);
+
+    }
+
+}
+
 /* ========================= */
 
 .hamburger{

@@ -1,0 +1,139 @@
+/* =====================================================
+   SCROLL REVEAL ANIMATIONS
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+
+    opacity .9s cubic-bezier(.19,1,.22,1),
+
+    transform .9s cubic-bezier(.19,1,.22,1);
+
+    will-change:opacity, transform;
+
+}
+
+.reveal.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ------------------------------------ */
+
+.reveal-left{
+
+    opacity:0;
+
+    transform:translateX(-70px);
+
+    transition:
+
+    opacity .9s cubic-bezier(.19,1,.22,1),
+
+    transform .9s cubic-bezier(.19,1,.22,1);
+
+}
+
+.reveal-left.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ------------------------------------ */
+
+.reveal-right{
+
+    opacity:0;
+
+    transform:translateX(70px);
+
+    transition:
+
+    opacity .9s cubic-bezier(.19,1,.22,1),
+
+    transform .9s cubic-bezier(.19,1,.22,1);
+
+}
+
+.reveal-right.show{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/* ------------------------------------ */
+
+.reveal-scale{
+
+    opacity:0;
+
+    transform:scale(.92);
+
+    transition:
+
+    opacity .9s cubic-bezier(.19,1,.22,1),
+
+    transform .9s cubic-bezier(.19,1,.22,1);
+
+}
+
+.reveal-scale.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* =====================================
+   STAGGER DELAYS
+===================================== */
+
+.delay-1{transition-delay:.08s;}
+.delay-2{transition-delay:.16s;}
+.delay-3{transition-delay:.24s;}
+.delay-4{transition-delay:.32s;}
+.delay-5{transition-delay:.40s;}
+.delay-6{transition-delay:.48s;}
+
+/* =====================================
+   Accessibility
+===================================== */
+
+@media (prefers-reduced-motion: reduce){
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale{
+
+        opacity:1 !important;
+
+        transform:none !important;
+
+        transition:none !important;
+
+    }
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        animation:none !important;
+
+    }
+
+}
