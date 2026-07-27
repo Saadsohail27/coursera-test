@@ -378,15 +378,9 @@ faqItems.forEach(item => {
    Scroll Reveal
 ========================================== */
 
-const revealElements = document.querySelectorAll(
+const observer = new IntersectionObserver((entries) => {
 
-    ".reveal, .reveal-left, .reveal-right, .reveal-scale"
-
-);
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
+    entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
@@ -403,8 +397,30 @@ const observer = new IntersectionObserver((entries)=>{
     rootMargin:"0px 0px -80px 0px"
 });
 
-revealElements.forEach(element=>{
+/* ==========================================
+   Observe Reveal Elements
+========================================== */
 
-    observer.observe(element);
+function observeRevealElements(scope = document){
 
-});
+    const revealElements = scope.querySelectorAll(
+
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+
+    );
+
+    revealElements.forEach(element => {
+
+        if(!element.classList.contains("show")){
+
+            observer.observe(element);
+
+        }
+
+    });
+
+}
+
+/* Initial Page */
+
+observeRevealElements();

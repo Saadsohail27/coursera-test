@@ -305,6 +305,8 @@ renderProducts(products){
 
         .join("");
 
+        observeRevealElements(this.elements.grid);
+
 },
 
 /* ==========================================
@@ -379,7 +381,7 @@ refresh(){
 
     this.toggleEmptyState(filtered);
 
-    this.updateCartCount();
+    // this.updateCartCount();
 
     this.updateActionPill();
 
