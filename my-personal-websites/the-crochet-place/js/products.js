@@ -9,7 +9,7 @@ const PRODUCTS = [
 
     name: "Spiderman Tee",
 
-    price: 3200,
+    price: 5500,
 
     image: "images/products/spiderman-tee.jpeg",
 
@@ -40,7 +40,7 @@ const PRODUCTS = [
 
         name: "Strawberry Bucket Hat",
 
-        price: 850,
+        price: 1500,
 
         image: "images/products/strawberry-bucket-hat.jpeg",
 
@@ -63,7 +63,7 @@ const PRODUCTS = [
 
         badge:"Popular",
 
-        price:600,
+        price:500,
 
         image:"images/products/sunflower-keychain.jpeg",
 
@@ -83,7 +83,7 @@ const PRODUCTS = [
 
         badge:"Popular",
 
-        price:2900,
+        price:4000,
 
         image:"images/products/ruffle-bag.jpeg",
 
@@ -103,7 +103,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:2700,
+        price:3000,
 
         image:"images/products/ocean-bag.jpeg",
 
@@ -123,7 +123,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:400,
+        price:1500,
 
         image:"images/products/phone-holder.jpeg",
 
@@ -137,13 +137,13 @@ const PRODUCTS = [
     {
         id:7,
 
-        name:"Curtain Holders",
+        name:"Curtain Holders (Single)",
 
         category:"decor",
 
         badge: null,
 
-        price:300,
+        price:2500,
 
         image:"images/products/curtain-holders.jpeg",
 
@@ -163,7 +163,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/lilly-of-the-valley-charm.jpeg",
 
@@ -183,7 +183,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/octopus-keychain.jpeg",
 
@@ -203,7 +203,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:900,
+        price:1500,
 
         image:"images/products/strawberry-plushie.jpeg",
 
@@ -223,7 +223,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:1100,
+        price:1500,
 
         image:"images/products/heart-plushie.jpeg",
 
@@ -243,7 +243,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:1700,
+        price:3000,
 
         image:"images/products/blue-purse.jpeg",
 
@@ -263,7 +263,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1500,
 
         image:"images/products/bandana.jpeg",
 
@@ -283,7 +283,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/glasses-holder.jpeg",
 
@@ -303,7 +303,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/mittens.jpeg",
 
@@ -323,7 +323,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:3000,
 
         image:"images/products/bouquet-and-table-mat.jpeg",
 
@@ -343,7 +343,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:2500,
 
         image:"images/products/book-bag.jpeg",
 
@@ -363,7 +363,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1500,
 
         image:"images/products/baby-boots.jpeg",
 
@@ -383,7 +383,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/heart-trinket.jpeg",
 
@@ -423,7 +423,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/cherry-charm.jpeg",
 
@@ -443,7 +443,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1500,
 
         image:"images/products/parandah.jpeg",
 
@@ -483,7 +483,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:5000,
 
         image:"images/products/baby-romper.jpeg",
 
@@ -497,13 +497,13 @@ const PRODUCTS = [
     {
         id:25,
 
-        name:"Coasters",
+        name:"Coasters (Each)",
 
         category:"decor",
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/coasters.jpeg",
 
@@ -523,7 +523,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/baby-beanie.jpeg",
 
@@ -543,7 +543,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/baby-slippers.jpeg",
 
@@ -583,7 +583,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:15000,
 
         image:"images/products/baby-blanket.jpeg",
 
@@ -597,13 +597,13 @@ const PRODUCTS = [
     {
         id:30,
 
-        name:"Ghost Charm",
+        name:"Ghost Charm (Each)",
 
         category:"accessories",
 
         badge: null,
 
-        price:700,
+        price:500,
 
         image:"images/products/ghost-charm.jpeg",
 
@@ -623,7 +623,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/lipgloss-holder.jpeg",
 
@@ -643,7 +643,7 @@ const PRODUCTS = [
 
         badge: null,
 
-        price:700,
+        price:1000,
 
         image:"images/products/froggie.jpeg",
 
