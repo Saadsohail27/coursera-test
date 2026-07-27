@@ -27,7 +27,19 @@ const Shop = {
 
         showAllButton: document.getElementById("showAllProducts"),
 
-        actionPill: document.getElementById("actionPill")
+        actionPill: document.getElementById("actionPill"),
+
+        cartOverlay: document.getElementById("cartOverlay"),
+
+        cartDrawer: document.getElementById("cartDrawer"),
+
+        cartItems: document.getElementById("cartItems"),
+
+        cartEmpty: document.getElementById("cartEmpty"),
+
+        cartSubtotal: document.getElementById("cartSubtotal"),
+
+        closeCart: document.getElementById("closeCart")
 
     },
 
@@ -393,7 +405,7 @@ refresh(){
 
 openModal(productId){
 
-    const product = PRODUCTS.find(
+    const product = this.products.find(
 
         product => product.id == productId
 
@@ -675,14 +687,6 @@ addToCart(){
 
             id: product.id,
 
-            name: product.name,
-
-            image: product.image,
-
-            price: product.price,
-
-            badge: product.badge,
-
             quantity: this.state.quantity,
 
             size: this.state.selectedSize,
@@ -693,9 +697,13 @@ addToCart(){
 
     }
 
-    console.table(this.state.cart);
+    this.refresh();
+
+    this.refreshCart();
 
     this.closeModal();
+
+    this.openCart();
 
 },
 
@@ -714,6 +722,170 @@ findCartItem(product){
         item.color === this.state.selectedColor
 
     );
+
+},
+
+/* ==========================================
+   Open Cart
+========================================== */
+
+openCart(){
+
+    this.elements.cartOverlay.classList.add("active");
+
+    this.elements.cartOverlay.setAttribute(
+
+        "aria-hidden",
+
+        "false"
+
+    );
+
+    document.body.style.overflow = "hidden";
+
+},
+
+/* ==========================================
+   Close Cart
+========================================== */
+
+closeCart(){
+
+    this.elements.cartOverlay.classList.remove("active");
+
+    this.elements.cartOverlay.setAttribute(
+
+        "aria-hidden",
+
+        "true"
+
+    );
+
+    document.body.style.overflow = "";
+
+},
+
+/* ==========================================
+   Refresh Cart
+========================================== */
+
+refreshCart(){
+
+    this.renderCart();
+
+    this.updateSubtotal();
+
+    this.updateActionPill();
+
+},
+
+/* ==========================================
+   Render Cart
+========================================== */
+
+renderCart(){
+
+    if(this.state.cart.length === 0){
+
+        this.elements.cartItems.innerHTML = "";
+
+        this.elements.cartEmpty.classList.add("show");
+
+        return;
+
+    }
+
+    this.elements.cartEmpty.classList.remove("show");
+
+    this.elements.cartItems.innerHTML =
+
+        this.state.cart
+
+            .map(item => this.createCartItem(item))
+
+            .join("");
+
+},
+
+/* ==========================================
+   Update Subtotal
+========================================== */
+
+updateSubtotal(){
+
+},
+
+/* ==========================================
+   Cart Item Component
+========================================== */
+
+createCartItem(item){
+
+    const product = this.products.find(
+
+        product => product.id === item.id
+
+    );
+
+    if(!product) return "";
+
+    return `
+
+        <article
+
+            class="cart-item"
+
+            data-id="${item.id}"
+
+            data-size="${item.size ?? ""}"
+
+            data-color="${item.color ?? ""}">
+
+            <img
+
+                src="${product.image}"
+
+                alt="${product.name}"
+
+                class="cart-item-image">
+
+            <div class="cart-item-content">
+
+                <h3>
+
+                    ${product.name}
+
+                </h3>
+
+                <p class="cart-item-options">
+
+                    ${item.size ? `Size: ${item.size}` : ""}
+
+                    ${item.color ? ` • ${item.color}` : ""}
+
+                </p>
+
+                <span class="cart-item-price">
+
+                    Rs. ${product.price.toLocaleString()}
+
+                </span>
+
+            </div>
+
+            <button
+
+                class="cart-remove"
+
+                data-id="${item.id}">
+
+                ✕
+
+            </button>
+
+        </article>
+
+    `;
 
 },
 
@@ -750,6 +922,271 @@ updateActionPill(){
     text.textContent = "Cart";
 
     badge.textContent = uniqueItems;
+
+},
+
+/* ==========================================
+   Render Cart
+========================================== */
+
+renderCart(){
+
+    const container = this.elements.cartItems;
+
+    container.innerHTML = "";
+
+    if(this.state.cart.length === 0){
+
+        container.innerHTML = `
+
+            <div class="cart-empty">
+
+                <div class="cart-empty-icon">🧶</div>
+
+                <h3>Your basket is empty</h3>
+
+                <p>
+                    Time to adopt your first crochet friend.
+                </p>
+
+            </div>
+
+        `;
+
+        this.updateSubtotal();
+
+        return;
+
+    }
+
+    this.state.cart.forEach(item => {
+
+        container.insertAdjacentHTML(
+
+            "beforeend",
+
+            this.createCartItem(item)
+
+        );
+
+    });
+
+    this.updateSubtotal();
+
+},
+
+/* ==========================================
+   Cart Item
+========================================== */
+
+createCartItem(item){
+
+    const product = this.products.find(
+
+        product => product.id === item.id
+
+    );
+
+    if(!product) return "";
+
+    return `
+
+        <article
+
+            class="cart-item"
+
+            data-id="${item.id}"
+
+            data-size="${item.size || ""}"
+
+            data-color="${item.color || ""}">
+
+            <img
+
+                src="${product.image}"
+
+                alt="${product.name}"
+
+                class="cart-item-image">
+
+            <div class="cart-item-details">
+
+                <h3>
+
+                    ${product.name}
+
+                </h3>
+
+                ${item.size ? `
+
+                    <p>
+
+                        Size: ${item.size}
+
+                    </p>
+
+                ` : ""}
+
+                ${item.color ? `
+
+                    <p>
+
+                        Color: ${item.color}
+
+                    </p>
+
+                ` : ""}
+
+                <div class="cart-item-footer">
+
+                    <div
+
+                        class="cart-quantity"
+
+                        data-id="${item.id}"
+
+                        data-size="${item.size || ""}"
+
+                        data-color="${item.color || ""}">
+
+                        <button class="qty-minus">
+
+                            −
+
+                        </button>
+
+                        <span>
+
+                            ${item.quantity}
+
+                        </span>
+
+                        <button class="qty-plus">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                    <span class="cart-price">
+
+                        Rs. ${(product.price * item.quantity).toLocaleString()}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+
+                class="remove-cart-item"
+
+                data-id="${item.id}"
+
+                data-size="${item.size || ""}"
+
+                data-color="${item.color || ""}">
+
+                ✕
+
+            </button>
+
+        </article>
+
+    `;
+
+},
+/* ==========================================
+   Increase Cart Quantity
+========================================== */
+
+increaseCartQuantity(item){
+
+    item.quantity++;
+
+    this.refreshCart();
+
+},
+
+/* ==========================================
+   Decrease Cart Quantity
+========================================== */
+
+decreaseCartQuantity(item){
+
+    item.quantity--;
+
+    if(item.quantity <= 0){
+
+        this.removeCartItem(item);
+
+        return;
+
+    }
+
+    this.refreshCart();
+
+},
+
+/* ==========================================
+   Remove Cart Item
+========================================== */
+
+removeCartItem(item){
+
+    this.state.cart = this.state.cart.filter(cartItem =>
+
+        !(
+
+            cartItem.id === item.id &&
+
+            cartItem.size === item.size &&
+
+            cartItem.color === item.color
+
+        )
+
+    );
+
+    this.refreshCart();
+
+},
+
+/* ==========================================
+   Animate Add To Cart
+========================================== */
+
+animateAddToCart(){
+
+    // We'll build this next
+
+},
+
+/* ==========================================
+   Update Subtotal
+========================================== */
+
+updateSubtotal(){
+
+    const subtotal = this.state.cart.reduce((total, item) => {
+
+        const product = this.products.find(
+
+            product => product.id === item.id
+
+        );
+
+        if(!product) return total;
+
+        return total + product.price * item.quantity;
+
+    }, 0);
+
+    this.elements.cartSubtotal.textContent =
+
+        `Rs. ${subtotal.toLocaleString()}`;
 
 },
 
@@ -880,18 +1317,100 @@ this.modal.addToCart.addEventListener("click", () => {
 });
 
 /* ==========================================
-   Wishlist Buttons
+   Product Grid Clicks
 ========================================== */
 
 this.elements.grid.addEventListener("click", (event) => {
 
-    const button = event.target.closest(".wishlist-btn");
+    const wishlistButton = event.target.closest(".wishlist-btn");
 
-    if(!button) return;
+    if(wishlistButton){
 
-    event.stopPropagation();
+        event.stopPropagation();
 
-    this.toggleWishlist(button.dataset.id);
+        this.toggleWishlist(wishlistButton.dataset.id);
+
+        return;
+
+    }
+
+    const productButton = event.target.closest(".product-btn");
+
+    if(productButton){
+
+        this.openModal(productButton.dataset.id);
+
+    }
+
+});
+
+/* ==========================================
+   Cart
+========================================== */
+
+this.elements.actionPill.addEventListener("click", () => {
+
+    this.openCart();
+
+});
+
+this.elements.closeCart.addEventListener("click", () => {
+
+    this.closeCart();
+
+});
+
+this.elements.cartOverlay
+    .querySelector(".cart-backdrop")
+    .addEventListener("click", () => {
+
+        this.closeCart();
+
+    });
+
+/* ==========================================
+   Cart Buttons
+========================================== */
+
+this.elements.cartItems.addEventListener("click", (event) => {
+
+    const cartItemElement = event.target.closest(".cart-item");
+
+    if(!cartItemElement) return;
+
+    const item = this.state.cart.find(cartItem =>
+
+        cartItem.id == cartItemElement.dataset.id &&
+
+        (cartItem.size || "") === cartItemElement.dataset.size &&
+
+        (cartItem.color || "") === cartItemElement.dataset.color
+
+    );
+
+    if(!item) return;
+
+    if(event.target.closest(".qty-plus")){
+
+        this.increaseCartQuantity(item);
+
+        return;
+
+    }
+
+    if(event.target.closest(".qty-minus")){
+
+        this.decreaseCartQuantity(item);
+
+        return;
+
+    }
+
+    if(event.target.closest(".remove-cart-item")){
+
+        this.removeCartItem(item);
+
+    }
 
 });
 
