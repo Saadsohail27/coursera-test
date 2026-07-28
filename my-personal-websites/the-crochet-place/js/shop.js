@@ -701,6 +701,8 @@ addToCart(){
 
     this.refreshCart();
 
+    this.animateAddToCart();
+
     this.closeModal();
 
     this.openCart();
@@ -1160,7 +1162,87 @@ removeCartItem(item){
 
 animateAddToCart(){
 
-    // We'll build this next
+    const image = this.modal.image;
+
+    const pill = this.elements.actionPill;
+
+    if(!image || !pill) return;
+
+    const flyingImage = image.cloneNode(true);
+
+    document.body.appendChild(flyingImage);
+
+    const start = image.getBoundingClientRect();
+
+    const end = pill.getBoundingClientRect();
+
+    const endX =
+        end.left +
+        end.width / 2 -
+        start.width / 2;
+
+    const endY =
+        end.top +
+        end.height / 2 -
+        start.height / 2;
+
+    Object.assign(flyingImage.style, {
+
+    position:"fixed",
+
+    left:`${start.left}px`,
+
+    top:`${start.top}px`,
+
+    width:`${start.width}px`,
+
+    height:`${start.height}px`,
+
+    borderRadius:"18px",
+
+    pointerEvents:"none",
+
+    zIndex:9999,
+
+    transform:"scale(1)",
+
+    opacity:"1",
+
+    boxShadow:"0 20px 50px rgba(0,0,0,.18)",
+
+    transition:"none"
+
+});
+
+    flyingImage.offsetWidth;
+
+    flyingImage.style.transition = `
+
+    left .65s cubic-bezier(.22,1,.36,1),
+
+    top .65s cubic-bezier(.22,1,.36,1),
+
+    transform .65s cubic-bezier(.22,1,.36,1),
+
+    opacity .65s ease;
+
+    `;
+
+    flyingImage.style.left = `${endX}px`;
+
+    flyingImage.style.top = `${endY}px`;
+
+    flyingImage.style.transform = "scale(.18) rotate(12deg)";
+
+    flyingImage.style.opacity = ".25";
+
+    flyingImage.addEventListener("transitionend", () => {
+
+        flyingImage.remove();
+
+    });
+
+
 
 },
 

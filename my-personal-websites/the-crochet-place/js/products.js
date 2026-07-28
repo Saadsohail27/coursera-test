@@ -57,6 +57,26 @@ const PRODUCTS = [
     {
         id:3,
 
+        name:"Spiderman Charm",
+
+        category:"accessories",
+
+        badge:"New",
+
+        price:1500,
+
+        image:"images/products/spiderman-charm.jpeg",
+
+        description:
+        "An adorable pocket-sized sunflower keychain.",
+
+        hasOptions: false
+
+    },
+
+    {
+        id:4,
+
         name:"Sunflower Keychain",
 
         category:"keychain",
@@ -75,7 +95,7 @@ const PRODUCTS = [
     },
 
     {
-        id:4,
+        id:5,
 
         name:"Ruffle Bag",
 
@@ -95,7 +115,7 @@ const PRODUCTS = [
     },
 
     {
-        id:5,
+        id:6,
 
         name:"Ocean Bag",
 
@@ -115,7 +135,7 @@ const PRODUCTS = [
     },
 
     {
-        id:6,
+        id:7,
 
         name:"Phone Holder",
 
@@ -135,7 +155,7 @@ const PRODUCTS = [
     },
 
     {
-        id:7,
+        id:8,
 
         name:"Curtain Holders (Single)",
 
@@ -155,7 +175,7 @@ const PRODUCTS = [
     },
 
     {
-        id:8,
+        id:9,
 
         name:"Lilly of the Valley Charm",
 
@@ -175,7 +195,7 @@ const PRODUCTS = [
     },
 
     {
-        id:9,
+        id:10,
 
         name:"Octopus Keychain",
 
@@ -195,7 +215,7 @@ const PRODUCTS = [
     },
 
     {
-        id:10,
+        id:11,
 
         name:"Strawberry Plushie",
 
@@ -215,7 +235,7 @@ const PRODUCTS = [
     },
 
     {
-        id:11,
+        id:12,
 
         name:"Heart Plushie",
 
@@ -235,7 +255,7 @@ const PRODUCTS = [
     },
 
     {
-        id:12,
+        id:13,
 
         name:"Blue Purse",
 
@@ -255,7 +275,7 @@ const PRODUCTS = [
     },
 
     {
-        id:13,
+        id:14,
 
         name:"Bandana",
 
@@ -275,7 +295,7 @@ const PRODUCTS = [
     },
 
     {
-        id:14,
+        id:15,
 
         name:"👓 Glasses Holder",
 
@@ -295,7 +315,7 @@ const PRODUCTS = [
     },
 
     {
-        id:15,
+        id:16,
 
         name:"Mittens",
 
@@ -315,7 +335,7 @@ const PRODUCTS = [
     },
 
     {
-        id:16,
+        id:17,
 
         name:"Bouquet & Table Mat",
 
@@ -335,7 +355,7 @@ const PRODUCTS = [
     },
 
     {
-        id:17,
+        id:18,
 
         name:"Book Bag",
 
@@ -355,7 +375,7 @@ const PRODUCTS = [
     },
 
     {
-        id:18,
+        id:19,
 
         name:"Baby Boots",
 
@@ -375,7 +395,7 @@ const PRODUCTS = [
     },
 
     {
-        id:19,
+        id:20,
 
         name:"Heart Trinket",
 
@@ -395,7 +415,7 @@ const PRODUCTS = [
     },
 
     {
-        id:20,
+        id:21,
 
         name:"Flower Pouch",
 
@@ -415,7 +435,7 @@ const PRODUCTS = [
     },
 
     {
-        id:21,
+        id:22,
 
         name:"Cherry Charm",
 
@@ -435,7 +455,7 @@ const PRODUCTS = [
     },
 
     {
-        id:22,
+        id:23,
 
         name:"Parandah",
 
@@ -455,7 +475,7 @@ const PRODUCTS = [
     },
 
     {
-        id:23,
+        id:24,
 
         name:"Carrot Plushie",
 
@@ -475,7 +495,7 @@ const PRODUCTS = [
     },
 
     {
-        id:24,
+        id:25,
 
         name:"Baby Romper",
 
@@ -495,7 +515,7 @@ const PRODUCTS = [
     },
 
     {
-        id:25,
+        id:26,
 
         name:"Coasters (Each)",
 
@@ -515,7 +535,7 @@ const PRODUCTS = [
     },
 
     {
-        id:26,
+        id:27,
 
         name:"Baby Beanie",
 
@@ -535,7 +555,7 @@ const PRODUCTS = [
     },
 
     {
-        id:27,
+        id:28,
 
         name:"Baby Slippers",
 
@@ -555,7 +575,7 @@ const PRODUCTS = [
     },
 
     {
-        id:28,
+        id:29,
 
         name:"Bookmark",
 
@@ -575,7 +595,7 @@ const PRODUCTS = [
     },
 
     {
-        id:29,
+        id:30,
 
         name:"Baby Blanket",
 
@@ -595,7 +615,7 @@ const PRODUCTS = [
     },
 
     {
-        id:30,
+        id:31,
 
         name:"Ghost Charm (Each)",
 
@@ -615,7 +635,7 @@ const PRODUCTS = [
     },
 
     {
-        id:31,
+        id:32,
 
         name:"Lipgloss Holder",
 
@@ -635,7 +655,7 @@ const PRODUCTS = [
     },
 
     {
-        id:32,
+        id:33,
 
         name:"Froggie",
 
@@ -655,7 +675,7 @@ const PRODUCTS = [
     },
 
     {
-        id:33,
+        id:34,
 
         name:"Ribbon Keychain",
 
