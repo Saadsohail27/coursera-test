@@ -378,9 +378,9 @@ faqItems.forEach(item => {
    Scroll Reveal
 ========================================== */
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry => {
+    entries.forEach(entry=>{
 
         if(entry.isIntersecting){
 
@@ -409,7 +409,7 @@ function observeRevealElements(scope = document){
 
     );
 
-    revealElements.forEach(element => {
+    revealElements.forEach(element=>{
 
         if(!element.classList.contains("show")){
 
@@ -421,6 +421,8 @@ function observeRevealElements(scope = document){
 
 }
 
-/* Initial Page */
+/* ==========================================
+   Initial Page
+========================================== */
 
 observeRevealElements();

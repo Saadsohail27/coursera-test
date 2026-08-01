@@ -39,7 +39,9 @@ const Shop = {
 
         cartSubtotal: document.getElementById("cartSubtotal"),
 
-        closeCart: document.getElementById("closeCart")
+        closeCart: document.getElementById("closeCart"),
+
+        continueShopping: document.getElementById("continueShopping")
 
     },
 
@@ -173,17 +175,61 @@ toggleWishlist(productId){
 
     const index = this.state.wishlist.indexOf(productId);
 
+    const button = this.elements.grid.querySelector(
+        `.wishlist-btn[data-id="${productId}"]`
+    );
+
     if(index > -1){
 
-        this.state.wishlist.splice(index, 1);
+        this.state.wishlist.splice(index,1);
+
+        button.classList.remove("active");
+
+        button.textContent = "♡";
 
     }else{
 
         this.state.wishlist.push(productId);
 
+        button.classList.add("active");
+
+        button.textContent = "♥";
+
+        button.classList.add("heart-pop");
+
+        setTimeout(()=>{
+
+            button.classList.remove("heart-pop");
+
+        },350);
+
     }
 
-    this.refresh();
+    this.saveWishlist();
+
+},
+
+saveWishlist(){
+
+    localStorage.setItem(
+
+        "crochetWishlist",
+
+        JSON.stringify(this.state.wishlist)
+
+    );
+
+},
+
+loadWishlist(){
+
+    this.state.wishlist =
+
+        JSON.parse(
+
+            localStorage.getItem("crochetWishlist")
+
+        ) || [];
 
 },
 
@@ -701,7 +747,7 @@ addToCart(){
 
     this.refreshCart();
 
-    this.animateAddToCart();
+    this.saveCart();
 
     this.closeModal();
 
@@ -775,6 +821,8 @@ refreshCart(){
 
     this.renderCart();
 
+    this.updateEmptyCart();
+
     this.updateSubtotal();
 
     this.updateActionPill();
@@ -814,6 +862,18 @@ renderCart(){
 ========================================== */
 
 updateSubtotal(){
+
+},
+
+updateEmptyCart(){
+
+    this.elements.cartEmpty.classList.toggle(
+
+        "show",
+
+        this.state.cart.length === 0
+
+    );
 
 },
 
@@ -924,6 +984,48 @@ updateActionPill(){
     text.textContent = "Cart";
 
     badge.textContent = uniqueItems;
+
+},
+
+/* ==========================================
+   Save Cart
+========================================== */
+
+saveCart(){
+
+    if(this.state.cart.length === 0){
+
+        localStorage.removeItem("crochetCart");
+
+        return;
+
+    }
+
+    localStorage.setItem(
+
+        "crochetCart",
+
+        JSON.stringify(this.state.cart)
+
+    );
+
+},
+
+/* ==========================================
+   Load Cart
+========================================== */
+
+loadCart(){
+
+    const savedCart = localStorage.getItem(
+
+        "crochetCart"
+
+    );
+
+    if(!savedCart) return;
+
+    this.state.cart = JSON.parse(savedCart);
 
 },
 
@@ -1100,6 +1202,7 @@ createCartItem(item){
     `;
 
 },
+
 /* ==========================================
    Increase Cart Quantity
 ========================================== */
@@ -1107,6 +1210,8 @@ createCartItem(item){
 increaseCartQuantity(item){
 
     item.quantity++;
+
+    this.saveCart();
 
     this.refreshCart();
 
@@ -1127,6 +1232,8 @@ decreaseCartQuantity(item){
         return;
 
     }
+
+    this.saveCart();
 
     this.refreshCart();
 
@@ -1154,6 +1261,8 @@ removeCartItem(item){
 
     this.refreshCart();
 
+    this.saveCart();
+
 },
 
 /* ==========================================
@@ -1168,13 +1277,18 @@ animateAddToCart(){
 
     if(!image || !pill) return;
 
-    const flyingImage = image.cloneNode(true);
+    const flyingImage = document.createElement("img");
 
+    flyingImage.src = image.src;
+    flyingImage.alt = "";
+    flyingImage.className = "flying-cart-image";
     document.body.appendChild(flyingImage);
 
     const start = image.getBoundingClientRect();
 
     const end = pill.getBoundingClientRect();
+
+    console.log("Animation started");
 
     const endX =
         end.left +
@@ -1202,7 +1316,7 @@ animateAddToCart(){
 
     pointerEvents:"none",
 
-    zIndex:9999,
+    zIndex:999999,
 
     transform:"scale(1)",
 
@@ -1218,25 +1332,30 @@ animateAddToCart(){
 
     flyingImage.style.transition = `
 
-    left .65s cubic-bezier(.22,1,.36,1),
+    transform .75s cubic-bezier(.22,1,.36,1),
 
-    top .65s cubic-bezier(.22,1,.36,1),
-
-    transform .65s cubic-bezier(.22,1,.36,1),
-
-    opacity .65s ease;
+    opacity .75s ease;
 
     `;
 
-    flyingImage.style.left = `${endX}px`;
+    const dx = endX - start.left;
 
-    flyingImage.style.top = `${endY}px`;
+    const dy = endY - start.top;
 
-    flyingImage.style.transform = "scale(.18) rotate(12deg)";
+    this.closeModal();
+
+    requestAnimationFrame(() => {
+
+    flyingImage.style.transform =
+    `translate(${dx}px, ${dy}px) scale(.18) rotate(12deg)`;
 
     flyingImage.style.opacity = ".25";
 
+});
+
     flyingImage.addEventListener("transitionend", () => {
+
+        console.log("Animation finished");
 
         flyingImage.remove();
 
@@ -1430,7 +1549,15 @@ this.elements.grid.addEventListener("click", (event) => {
    Cart
 ========================================== */
 
-this.elements.actionPill.addEventListener("click", () => {
+this.elements.actionPill.addEventListener("click", (event) => {
+
+    if(this.state.cart.length === 0){
+
+        return;
+
+    }
+
+    event.preventDefault();
 
     this.openCart();
 
@@ -1496,6 +1623,22 @@ this.elements.cartItems.addEventListener("click", (event) => {
 
 });
 
+this.elements.continueShopping.addEventListener("click",()=>{
+
+    this.closeCart();
+
+    document
+
+        .getElementById("products")
+
+        ?.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+});
+
 },
 
 /* ==========================================
@@ -1506,9 +1649,15 @@ init(){
 
     console.log("Shop Initialized");
 
+    this.loadWishlist();
+
+    this.loadCart();
+
     this.bindEvents();
 
     this.refresh();
+
+    this.refreshCart();
 
 }
 

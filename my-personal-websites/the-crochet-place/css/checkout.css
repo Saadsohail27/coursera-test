@@ -1,0 +1,408 @@
+/* ==========================================
+   CHECKOUT
+========================================== */
+
+.checkout-page{
+
+    padding:140px 0 100px;
+
+}
+
+.checkout-layout{
+
+    display:grid;
+
+    grid-template-columns:1.4fr .8fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+@media(max-width:1000px){
+
+    .checkout-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+.checkout-form,
+.checkout-summary{
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:40px;
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.06);
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:25px;
+
+}
+
+.form-group label{
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.form-group input,
+.form-group textarea{
+
+    padding:16px 18px;
+
+    border:2px solid #f0f0f0;
+
+    border-radius:16px;
+
+    font:inherit;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================================
+   ORDER ITEMS
+========================================== */
+
+.checkout-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:24px;
+
+    padding-bottom:24px;
+
+    border-bottom:1px solid #f3f3f3;
+
+}
+
+.checkout-item img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+}
+
+.checkout-item-info{
+
+    flex:1;
+
+}
+
+.checkout-item-info h4{
+
+    margin-bottom:8px;
+
+    font-family:var(--heading-font);
+
+}
+
+.checkout-item-info p{
+
+    color:#777;
+
+    font-size:.92rem;
+
+    margin:2px 0;
+
+}
+
+/* ==========================================
+   FORM ERRORS
+========================================== */
+
+.form-error{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:10px;
+
+    color:var(--primary);
+
+    font-size:.9rem;
+
+    font-weight:500;
+
+    opacity:0;
+
+    transform:translateY(-6px);
+
+    pointer-events:none;
+
+}
+
+.form-group.error{
+
+    animation:optionShake .35s ease;
+
+}
+
+.form-group.error .form-error{
+
+    animation:stitchIn .28s ease .12s forwards;
+
+}
+
+.error-thread{
+
+    width:28px;
+
+    height:8px;
+
+    overflow:visible;
+
+    flex-shrink:0;
+
+}
+
+.error-thread path{
+
+    fill:none;
+
+    stroke:var(--primary);
+
+    stroke-width:2;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    stroke-dasharray:40;
+
+    stroke-dashoffset:40;
+
+}
+
+.form-group.error .error-thread path{
+
+    animation:drawErrorThread .28s ease forwards;
+
+}
+
+/* ==========================================
+   PLACE ORDER LOADING
+========================================== */
+
+.place-order-btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.button-loading{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.35s;
+
+}
+
+.button-text{
+
+    transition:.35s;
+
+}
+
+.place-order-btn.loading .button-text{
+
+    opacity:0;
+
+}
+
+.place-order-btn.loading .button-loading{
+
+    opacity:1;
+
+}
+
+.loading-yarn{
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    border:3px solid rgba(255,255,255,.35);
+
+    border-top-color:white;
+
+    animation:yarnSpin .8s linear infinite;
+
+}
+
+@keyframes yarnSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ==========================================
+   ORDER SUCCESS
+========================================== */
+
+.order-success{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,250,252,.95);
+
+    backdrop-filter:blur(10px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.45s;
+
+    z-index:99999;
+
+}
+
+.order-success.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.success-card{
+
+    width:min(460px,90vw);
+
+    background:white;
+
+    border-radius:32px;
+
+    padding:50px;
+
+    text-align:center;
+
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.12);
+
+    transform:translateY(30px);
+
+    transition:.45s;
+
+}
+
+.order-success.show .success-card{
+
+    transform:translateY(0);
+
+}
+
+.success-icon{
+
+    font-size:4rem;
+
+    margin-bottom:24px;
+
+    animation:successBounce 1.2s ease infinite alternate;
+
+}
+
+.success-card h2{
+
+    margin-bottom:16px;
+
+    font-family:var(--heading-font);
+
+}
+
+.success-card p{
+
+    color:#777;
+
+    line-height:1.8;
+
+    margin-bottom:32px;
+
+}
+
+@keyframes successBounce{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-8px);
+
+    }
+
+}

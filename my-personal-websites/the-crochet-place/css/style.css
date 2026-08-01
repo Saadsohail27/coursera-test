@@ -949,7 +949,7 @@ transform:translateY(0);
 
     inset:0;
 
-    background-image: url("../images/Untitled-design.png");
+    background-image: url("../images/repeating-pattern.png");
 
     background-size:240px;
 
@@ -1673,7 +1673,7 @@ transform:translateY(0);
 
     inset:0;
 
-    background:url("../patterns/hearts.svg");
+    background:url("../imsges/repeating-pattern.svg");
 
     background-size:240px;
 
@@ -3267,7 +3267,7 @@ overflow:hidden;
 
     inset:0;
 
-    background:url("../patterns/hearts.svg");
+    background:url("../images/repeating-pattern.png");
 
     background-size:220px;
 
@@ -3487,4 +3487,27 @@ overflow:hidden;
 
 }
 
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    padding: 15px; /* Increased padding for a bigger icon */
+    color: white;
+    font-size: 2.5rem; /* Slightly larger icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }

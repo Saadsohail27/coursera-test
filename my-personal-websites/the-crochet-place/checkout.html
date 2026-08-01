@@ -32,7 +32,7 @@ rel="stylesheet">
 href="css/style.css">
 
 <link rel="stylesheet"
-href="css/shop.css">
+href="css/checkout.css">
 
 <link rel="stylesheet"
 href="css/animations.css">
@@ -41,7 +41,7 @@ href="css/animations.css">
 
 <body>
 
-	<!-- ===========================
+    <!-- ===========================
         HEADER
 =========================== -->
 
@@ -293,238 +293,267 @@ href="css/animations.css">
 </header>
 
 <!-- ==========================================
-                SHOP HERO
-=========================================== -->
+                CHECKOUT
+========================================== -->
 
-<section class="shop-hero">
+<section class="checkout-page">
 
-    <div class="container">
+    <div class="container checkout-layout">
 
-        <div class="shop-hero-content reveal">
+        <!-- Customer Details -->
+
+        <div class="checkout-form">
 
             <span class="section-tag">
 
-                Handmade With Love
+                Almost Yours ✨
 
             </span>
 
             <h1>
 
-                Shop Our Crochet Collection
+                Checkout
 
             </h1>
 
             <p>
 
-                Discover handmade crochet plushies, bouquets,
-                gifts and custom creations carefully stitched
-                with love for every special occasion.
+                Tell us where your handmade creations should be delivered.
 
             </p>
 
-            <a href="#products"
-               class="btn btn-primary">
+            <form id="checkoutForm">
 
-                Browse Collection
+                <div class="form-group" id="nameGroup">
 
-            </a>
+                    <label>
 
-        </div>
+                        Full Name
 
-        <!-- Decorative Elements -->
+                    </label>
 
-        <div class="shop-decoration heart-1"></div>
-        <div class="shop-decoration heart-2"></div>
-        <div class="shop-decoration yarn-1"></div>
-        <div class="shop-decoration yarn-2"></div>
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Your Name">
 
-    </div>
+                    <p class="form-error">
 
-</section>
+                        <svg
+                            class="error-thread"
+                            viewBox="0 0 40 10">
 
+                            <path
+                                d="M2 5
+                                C8 2,
+                                14 8,
+                                20 5
+                                S32 2,
+                                38 5"/>
 
-<!-- ==========================================
-            SHOP FILTERS
-=========================================== -->
+                        </svg>
 
-<section class="shop-filters" id="products">
+                        Please enter your name ♥
 
-    <div class="container">
+                    </p>
 
-        <div class="shop-filter-heading reveal">
+                </div>
 
-            <h2>
+                <div class="form-group" id="phoneGroup">
 
-                Find Your Perfect Crochet Friend
+                    <label>
 
-            </h2>
+                        WhatsApp Number
 
-            <p>
+                    </label>
 
-                Browse every handmade creation or search for something special.
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="eg. +92xxxxxxxxxx">
 
-            </p>
+                        <p class="form-error">
 
-        </div>
+            <svg
+                class="error-thread"
+                viewBox="0 0 40 10">
 
-        <!-- Search -->
-
-        <div class="search-wrapper reveal delay-1">
-
-            <svg class="search-icon"
-                 viewBox="0 0 24 24">
-
-                <circle
-                    cx="11"
-                    cy="11"
-                    r="7"/>
-
-                <line
-                    x1="16"
-                    y1="16"
-                    x2="22"
-                    y2="22"/>
+                <path
+                    d="M2 5
+                    C8 2,
+                    14 8,
+                    20 5
+                    S32 2,
+                    38 5"/>
 
             </svg>
 
-            <input
-
-                type="text"
-
-                id="productSearch"
-
-                placeholder="Search teddy, bouquet, bee, flowers..."
-
-            >
-
-        </div>
-
-        <!-- Categories -->
-
-        <div class="category-filters reveal delay-2">
-
-            <button class="filter-btn active"
-
-                data-filter="all">
-
-                🌸 All
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="plushies">
-
-                🧸 Plushies
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="bouquets">
-
-                🌷 Bouquets
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="flowers">
-
-                🌼 Flowers
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="keychains">
-
-                🔑 Keychains
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="gifts">
-
-                🎁 Gifts
-
-            </button>
-
-            <button class="filter-btn"
-
-                data-filter="custom">
-
-                ✨ Custom
-
-            </button>
-
-        </div>
-
-        <p class="product-count reveal delay-3">
-
-            <span id="productCount">
-
-                
-
-            </span>
-
-            Handmade Creations
+            Please enter your WhatsApp number ♥
 
         </p>
 
-    </div>
+                </div>
 
-</section>
+                <div class="form-group">
 
-<!-- ==========================================
-                PRODUCT GRID
-=========================================== -->
+                    <label>
 
-<section class="shop-products">
+                        Email
 
-    <div class="container">
+                    </label>
 
-        <div class="products-grid" id="productsGrid">
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="you@example.com">
 
-            <!-- Product -->
+                </div>
 
+                <div class="form-group" id="addressGroup">
+
+                    <label>
+
+                        Delivery Address
+
+                    </label>
+
+                    <input
+
+                        id="customerAddress"
+
+                        placeholder="House, Street, Area, City">
+
+                    </input>
+
+                    <p class="form-error">
+
+                    <svg
+                        class="error-thread"
+                        viewBox="0 0 40 10">
+
+                        <path
+                            d="M2 5
+                            C8 2,
+                            14 8,
+                            20 5
+                            S32 2,
+                            38 5"/>
+
+                    </svg>
+
+                    Please enter your delivery address ♥
+
+                </p>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+
+                        Notes (optional)
+
+                    </label>
+
+                    <textarea
+
+                        id="customerNotes"
+
+                        rows="3"
+
+                        placeholder="Anything you'd like us to know?">
+
+                    </textarea>
+
+                </div>
+
+            </form>
 
         </div>
 
-        <!-- Empty State -->
+        <!-- Order Summary -->
 
-        <div
-            class="empty-products"
-            id="emptyProducts">
+        <aside class="checkout-summary">
 
-            <div class="empty-icon">
+            <h2>
 
-                🧸
+                Your Order
+
+            </h2>
+
+            <div id="checkoutItems">
 
             </div>
 
-            <h3>
+            <div class="summary-line">
 
-                No Crochet Friend Found
+                <span>
 
-            </h3>
+                    Subtotal
 
-            <p>
+                </span>
 
-                Try another search or browse every handmade creation.
+                <span id="checkoutSubtotal">
 
-            </p>
+                    Rs. 0
+
+                </span>
+
+            </div>
+
+            <div class="summary-line">
+
+                <span>
+
+                    Delivery
+
+                </span>
+
+                <span id="checkoutDelivery">
+
+                    Calculated Later
+
+                </span>
+
+            </div>
+
+            <div class="summary-total">
+
+                <span>
+
+                    Total
+
+                </span>
+
+                <span id="checkoutTotal">
+
+                    Rs. 0
+
+                </span>
+
+            </div>
 
             <button
-                class="btn btn-primary"
-                id="showAllProducts">
+                id="placeOrder"
+                class="btn btn-primary place-order-btn">
 
-                Show Everything
+                <span class="button-text">
+
+                    Place Order on WhatsApp
+
+                </span>
+
+                <span class="button-loading">
+
+                    <span class="loading-yarn"></span>
+
+                    Preparing your handmade order...
+
+                </span>
 
             </button>
 
-        </div>
+        </aside>
 
     </div>
 
@@ -621,310 +650,56 @@ href="css/animations.css">
 </footer>
 
 <!-- ==========================================
-     PRODUCT MODAL
+     ORDER SUCCESS
 ========================================== -->
 
-<div
+<section
+    class="order-success"
+    id="orderSuccess">
 
-    class="product-modal"
+    <div class="success-card">
 
-    id="productModal"
+        <div class="success-icon">
 
-    aria-hidden="true">
+            🧶
 
-    <div class="modal-backdrop"></div>
+        </div>
 
-    <div
+        <h2>
 
-        class="modal-container"
+            Thank You!
 
-        role="dialog"
+        </h2>
 
-        aria-modal="true">
+        <p>
 
-        <!-- Close -->
+            Your handmade order is ready!
+
+            We've opened WhatsApp so you can send it to us.
+
+        </p>
 
         <button
 
-            class="modal-close"
+            class="btn btn-primary"
 
-            id="closeProductModal"
+            id="continueShopping">
 
-            aria-label="Close">
-
-            ✕
+            ♡ Continue Shopping
 
         </button>
 
-        <!-- Image -->
-
-        <div class="modal-image">
-
-            <img
-
-                id="modalProductImage"
-
-                src=""
-
-                alt="">
-
-        </div>
-
-        <!-- Content -->
-
-        <div class="modal-content">
-
-            <span
-
-                class="modal-badge"
-
-                id="modalBadge">
-
-            </span>
-
-            <h2 id="modalTitle"></h2>
-
-            <p
-
-                class="modal-price"
-
-                id="modalPrice">
-
-            </p>
-
-            <p
-
-                class="modal-description"
-
-                id="modalDescription">
-
-            </p>
-
-            <!-- Size -->
-
-            <div
-                class="modal-option-group"
-                id="modalSizeGroup">
-
-                <h4>Choose Size</h4>
-
-                <div
-                    class="size-options"
-                    id="modalSizes">
-
-                </div>
-
-                <p class="option-error">
-
-                    Please choose a size ♥
-
-                </p>
-
-            </div>
-
-            <!-- Colour -->
-
-            <div
-                class="modal-option-group"
-                id="modalColorGroup">
-
-                <h4>Choose Colour</h4>
-
-                <div
-                    class="size-options"
-                    id="modalColors">
-
-                </div>
-
-                <p class="option-error">
-
-                    Please choose a colour ♥
-
-                </p>
-
-            </div>
-
-            <!-- Quantity -->
-
-            <div class="modal-quantity">
-
-                <h4>Quantity</h4>
-
-                <div class="quantity-box">
-
-                    <button
-
-                        id="decreaseQty">
-
-                        −
-
-                    </button>
-
-                    <span id="quantityValue">
-
-                        1
-
-                    </span>
-
-                    <button
-
-                        id="increaseQty">
-
-                        +
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- Actions -->
-
-            <div class="modal-actions">
-
-                <button
-
-                    class="btn btn-secondary wishlist-modal">
-
-                    ♡ Wishlist
-
-                </button>
-
-                <button
-
-                    class="btn btn-primary add-cart-modal">
-
-                    🛒 Add to Cart
-
-                </button>
-
-            </div>
-
-        </div>
-
     </div>
 
-</div>
-
-<!-- ==========================================
-                CART DRAWER
-========================================== -->
-
-<div
-    class="cart-overlay"
-    id="cartOverlay"
-    aria-hidden="true">
-
-    <div class="cart-backdrop"></div>
-
-    <aside
-        class="cart-drawer"
-        id="cartDrawer">
-
-        <!-- Header -->
-
-        <header class="cart-header">
-
-            <h2>
-
-                🧶 Your Cart
-
-            </h2>
-
-            <button
-                id="closeCart"
-                class="cart-close">
-
-                ✕
-
-            </button>
-
-        </header>
-
-        <!-- Cart Items -->
-
-        <div
-            class="cart-items"
-            id="cartItems">
-
-            <!-- JS renders items here -->
-
-        </div>
-
-        <!-- Empty Cart -->
-
-        <div class="cart-items" id="cartItems"></div>
-
-            <div class="cart-empty" id="cartEmpty">
-
-                <div class="cart-empty-illustration">
-
-                    🧺🧶
-
-                </div>
-
-                <h3>
-
-                    Your basket is waiting
-
-                </h3>
-
-                <p>
-
-                    Fill it with handmade crochet treasures.
-
-                </p>
-
-                <button
-                    class="btn btn-primary"
-                    id="continueShopping">
-
-                    Continue Shopping
-
-                </button>
-
-            </div>
-        <!-- Footer -->
-
-        <footer class="cart-footer">
-
-            <div class="cart-subtotal">
-
-                <span>
-
-                    Subtotal
-
-                </span>
-
-                <strong id="cartSubtotal">
-
-                    Rs. 0
-
-                </strong>
-
-            </div>
-
-            <a
-                href="checkout.html"
-                class="btn btn-primary cart-checkout">
-
-                Proceed to Checkout
-
-            </a>
-
-        </footer>
-
-    </aside>
-
-</div>
+</section>
 
 <a href="https://api.whatsapp.com/send?phone=923300764924" target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
     </a>
 
 <script src="js/products.js"></script>
+<script src="js/checkout.js"></script>
 <script src="js/script.js"></script>
-<script src="js/shop.js"></script>
 
 </body>
 
