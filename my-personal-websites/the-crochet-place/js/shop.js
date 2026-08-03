@@ -17,6 +17,8 @@ const Shop = {
 
         grid: document.getElementById("productsGrid"),
 
+        featuredGrid: document.getElementById("featuredProducts"),
+
         searchInput: document.getElementById("productSearch"),
 
         filterButtons: document.querySelectorAll(".filter-btn"),
@@ -355,6 +357,8 @@ createProductCard(product, index){
 
 renderProducts(products){
 
+    console.log("renderProducts()", products);
+
     console.log("Rendering", products.length);
 
     this.elements.grid.innerHTML = products
@@ -364,6 +368,34 @@ renderProducts(products){
         .join("");
 
         observeRevealElements(this.elements.grid);
+
+},
+
+/* ==========================================
+   Render Featured Products
+========================================== */
+
+renderFeaturedProducts(){
+
+    if(!this.elements.featuredGrid) return;
+
+    const featured = this.products.filter(
+
+        product => product.featured
+
+    );
+
+    this.elements.featuredGrid.innerHTML = featured
+
+        .map((product, index)=>
+
+            this.createProductCard(product, index)
+
+        )
+
+        .join("");
+
+    observeRevealElements(this.elements.featuredGrid);
 
 },
 
@@ -743,9 +775,7 @@ addToCart(){
 
     }
 
-    this.refresh();
-
-    this.refreshCart();
+    this.refreshCurrentPage();
 
     this.saveCart();
 
@@ -1366,6 +1396,28 @@ animateAddToCart(){
 },
 
 /* ==========================================
+   Refresh Current Page
+========================================== */
+
+refreshCurrentPage(){
+
+    if(this.elements.grid){
+
+        this.refresh();
+
+    }
+
+    if(this.elements.featuredGrid){
+
+        this.renderFeaturedProducts();
+
+    }
+
+    this.refreshCart();
+
+},
+
+/* ==========================================
    Update Subtotal
 ========================================== */
 
@@ -1392,24 +1444,70 @@ updateSubtotal(){
 },
 
 /* ==========================================
+   Product Grid Clicks
+========================================== */
+
+handleProductGridClick(event){
+
+    /* ---------- Wishlist ---------- */
+
+    const wishlistButton = event.target.closest(".wishlist-btn");
+
+    if(wishlistButton){
+
+        event.stopPropagation();
+
+        this.toggleWishlist(wishlistButton.dataset.id);
+
+        return;
+    }
+
+    /* ---------- Open Modal ---------- */
+
+    const productButton = event.target.closest(".product-btn");
+
+    if(productButton){
+
+        this.openModal(productButton.dataset.id);
+
+        return;
+    }
+
+    /* ---------- Click Card ---------- */
+
+    const card = event.target.closest(".product-card");
+
+    if(card){
+
+        this.openModal(card.dataset.id);
+
+    }
+
+},
+
+/* ==========================================
    Event Listeners
 ========================================== */
 
 bindEvents(){
 
-    this.elements.searchInput.addEventListener("input", () => {
+        if(this.elements.searchInput){
 
-        this.state.currentSearch =
+        this.elements.searchInput.addEventListener("input", () => {
 
-            this.elements.searchInput.value
+            this.state.currentSearch =
 
-                .trim()
+                this.elements.searchInput.value
 
-                .toLowerCase();
+                    .trim()
 
-        this.refresh();
+                    .toLowerCase();
 
-    });
+            this.refresh();
+
+        });
+
+    }
 
     this.elements.filterButtons.forEach(button => {
 
@@ -1431,7 +1529,9 @@ bindEvents(){
 
     });
 
-        this.elements.showAllButton.addEventListener("click", () => {
+        if(this.elements.showAllButton){
+
+    this.elements.showAllButton.addEventListener("click", () => {
 
         this.state.currentSearch = "";
 
@@ -1447,14 +1547,39 @@ bindEvents(){
 
         const allButton = [...this.elements.filterButtons].find(
 
-    button => button.dataset.filter === "all"
+            button => button.dataset.filter === "all"
 
-);
+        );
 
-allButton?.classList.add("active");
+        allButton?.classList.add("active");
 
     });
 
+}
+
+/* ==========================================
+   Product Grid
+========================================== */
+
+if(this.elements.grid){
+
+    this.elements.grid.addEventListener("click",(event)=>{
+
+        this.handleProductGridClick(event);
+
+    });
+
+}
+
+if(this.elements.featuredGrid){
+
+    this.elements.featuredGrid.addEventListener("click",(event)=>{
+
+        this.handleProductGridClick(event);
+
+    });
+
+}
 
 
     this.modal.closeButton.addEventListener("click", () => {
@@ -1518,40 +1643,20 @@ this.modal.addToCart.addEventListener("click", () => {
 });
 
 /* ==========================================
-   Product Grid Clicks
+   Cart
 ========================================== */
 
-this.elements.grid.addEventListener("click", (event) => {
+this.elements.actionPill.addEventListener("click",(event)=>{
 
-    const wishlistButton = event.target.closest(".wishlist-btn");
-
-    if(wishlistButton){
-
-        event.stopPropagation();
-
-        this.toggleWishlist(wishlistButton.dataset.id);
+    // Homepage
+    if(!this.elements.grid){
 
         return;
 
     }
 
-    const productButton = event.target.closest(".product-btn");
-
-    if(productButton){
-
-        this.openModal(productButton.dataset.id);
-
-    }
-
-});
-
-/* ==========================================
-   Cart
-========================================== */
-
-this.elements.actionPill.addEventListener("click", (event) => {
-
-    if(this.state.cart.length === 0){
+    // Shop page + empty cart
+    if(this.state.cart.length===0){
 
         return;
 
@@ -1655,9 +1760,19 @@ init(){
 
     this.bindEvents();
 
-    this.refresh();
-
     this.refreshCart();
+
+    if(this.elements.featuredGrid){
+
+        this.renderFeaturedProducts();
+
+    }
+
+    if(this.elements.grid){
+
+        this.refresh();
+
+    }
 
 }
 

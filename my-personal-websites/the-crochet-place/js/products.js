@@ -13,7 +13,7 @@ const PRODUCTS = [
 
     image: "images/products/spiderman-tee.jpeg",
 
-    category: "shirts",
+    category: "wearable",
 
     badge: "Trending",
 
@@ -44,7 +44,9 @@ const PRODUCTS = [
 
         image: "images/products/strawberry-bucket-hat.jpeg",
 
-        category: "Hats",
+        category: "wearable",
+
+        featured: true,
 
         badge: "New",
 
@@ -60,6 +62,8 @@ const PRODUCTS = [
         name:"Spiderman Charm",
 
         category:"accessories",
+
+        featured: true,
 
         badge:"New",
 
@@ -99,7 +103,7 @@ const PRODUCTS = [
 
         name:"Ruffle Bag",
 
-        category:"bags",
+        category:"wearable",
 
         badge:"Popular",
 
@@ -119,7 +123,7 @@ const PRODUCTS = [
 
         name:"Ocean Bag",
 
-        category:"bags",
+        category:"wearable",
 
         badge: null,
 
@@ -160,6 +164,8 @@ const PRODUCTS = [
         name:"Curtain Holders (Single)",
 
         category:"decor",
+
+        featured: true,
 
         badge: null,
 
@@ -241,6 +247,8 @@ const PRODUCTS = [
 
         category:"plushie",
 
+        featured: true,
+
         badge: null,
 
         price:1500,
@@ -259,7 +267,7 @@ const PRODUCTS = [
 
         name:"Blue Purse",
 
-        category:"bags",
+        category:"wearable",
 
         badge: null,
 
@@ -279,7 +287,7 @@ const PRODUCTS = [
 
         name:"Bandana",
 
-        category:"baby",
+        category:"wearbles",
 
         badge: null,
 
@@ -299,7 +307,7 @@ const PRODUCTS = [
 
         name:"👓 Glasses Holder",
 
-        category:"decor",
+        category:"accessories",
 
         badge: null,
 
@@ -359,7 +367,7 @@ const PRODUCTS = [
 
         name:"Book Bag",
 
-        category:"bags",
+        category:"wearable",
 
         badge: null,
 
@@ -439,7 +447,7 @@ const PRODUCTS = [
 
         name:"Cherry Charm",
 
-        category:"decor",
+        category:"accessories",
 
         badge: null,
 
@@ -559,7 +567,7 @@ const PRODUCTS = [
 
         name:"Baby Slippers",
 
-        category:"decor",
+        category:"baby",
 
         badge: null,
 
@@ -679,7 +687,7 @@ const PRODUCTS = [
 
         name:"Ribbon Keychain",
 
-        category:"toy",
+        category:"keychain",
 
         badge: null,
 

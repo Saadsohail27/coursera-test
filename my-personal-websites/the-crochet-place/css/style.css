@@ -3489,6 +3489,48 @@ overflow:hidden;
 
 }
 
+.featured-products-button{
+
+    margin-top:60px;
+
+    text-align:center;
+
+}
+
+.view-all-products-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.75rem;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+
+}
+
+.view-all-products-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
