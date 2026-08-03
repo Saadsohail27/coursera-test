@@ -72,7 +72,7 @@ const PRODUCTS = [
         image:"images/products/spiderman-charm.jpeg",
 
         description:
-        "An adorable pocket-sized sunflower keychain.",
+        "Small charm, maximum Spidey energy.",
 
         hasOptions: false
 
@@ -132,7 +132,7 @@ const PRODUCTS = [
         image:"images/products/ocean-bag.jpeg",
 
         description:
-        "Idk the description for this",
+        "Carry a little piece from the ocean wherever you go",
 
         hasOptions: false
 
@@ -152,7 +152,7 @@ const PRODUCTS = [
         image:"images/products/phone-holder.jpeg",
 
         description:
-        "Idk the description for this",
+        "Minimal, practical and handmade ",
 
         hasOptions: false
 
@@ -174,7 +174,7 @@ const PRODUCTS = [
         image:"images/products/curtain-holders.jpeg",
 
         description:
-        "Idk the description for this",
+        "Give your curtains the cozy touch they deserve ",
 
         hasOptions: false
 
@@ -194,7 +194,7 @@ const PRODUCTS = [
         image:"images/products/lilly-of-the-valley-charm.jpeg",
 
         description:
-        "Idk the description for this",
+        "Tiny blooms, handmade with love",
 
         hasOptions: false
 
@@ -214,7 +214,7 @@ const PRODUCTS = [
         image:"images/products/octopus-keychain.jpeg",
 
         description:
-        "Idk the description for this",
+        "The cutest sea creature you'll ever carry",
 
         hasOptions: false
 
@@ -234,7 +234,7 @@ const PRODUCTS = [
         image:"images/products/strawberry-plushie.jpeg",
 
         description:
-        "Idk the description for this",
+        "Soft, squishy, and berry adorable",
 
         hasOptions: false
 
@@ -256,7 +256,7 @@ const PRODUCTS = [
         image:"images/products/heart-plushie.jpeg",
 
         description:
-        "Idk the description for this",
+        "Soft, squishy, and full of love",
 
         hasOptions: false
 
@@ -276,7 +276,7 @@ const PRODUCTS = [
         image:"images/products/blue-purse.jpeg",
 
         description:
-        "Idk the description for this",
+        "The perfect everyday purse, stitched with love",
 
         hasOptions: false
 
@@ -296,7 +296,7 @@ const PRODUCTS = [
         image:"images/products/bandana.jpeg",
 
         description:
-        "Idk the description for this",
+        "Style it your way, wear the bandana, tie the belt, repeat",
 
         hasOptions: false
 
@@ -316,7 +316,7 @@ const PRODUCTS = [
         image:"images/products/glasses-holder.jpeg",
 
         description:
-        "Idk the description for this",
+        "Keep your glasses safe in the cutest way possible",
 
         hasOptions: false
 
@@ -336,7 +336,7 @@ const PRODUCTS = [
         image:"images/products/mittens.jpeg",
 
         description:
-        "Idk the description for this",
+        "Tiny mittens for tiny hands",
 
         hasOptions: false
 
@@ -356,7 +356,7 @@ const PRODUCTS = [
         image:"images/products/bouquet-and-table-mat.jpeg",
 
         description:
-        "Idk the description for this",
+        "A bouquet for the heart, a mat for the home",
 
         hasOptions: false
 
@@ -376,7 +376,7 @@ const PRODUCTS = [
         image:"images/products/book-bag.jpeg",
 
         description:
-        "Idk the description for this",
+        "A bag every book lover deserves",
 
         hasOptions: false
 
@@ -396,7 +396,7 @@ const PRODUCTS = [
         image:"images/products/baby-boots.jpeg",
 
         description:
-        "Idk the description for this",
+        "Handmade with love for the tiniest feet",
 
         hasOptions: false
 
@@ -416,7 +416,7 @@ const PRODUCTS = [
         image:"images/products/heart-trinket.jpeg",
 
         description:
-        "Idk the description for this",
+        "Keep your tint treasures close",
 
         hasOptions: false
 
@@ -436,7 +436,7 @@ const PRODUCTS = [
         image:"images/products/flower-pouch.jpeg",
 
         description:
-        "Idk the description for this",
+        "Floral, functional, forever",
 
         hasOptions: false
 
@@ -456,7 +456,7 @@ const PRODUCTS = [
         image:"images/products/cherry-charm.jpeg",
 
         description:
-        "Idk the description for this",
+        "The sweetest accessory you'll own",
 
         hasOptions: false
 
@@ -476,7 +476,7 @@ const PRODUCTS = [
         image:"images/products/parandah.jpeg",
 
         description:
-        "Idk the description for this",
+        "Tradition never goes out of style",
 
         hasOptions: false
 
@@ -496,7 +496,7 @@ const PRODUCTS = [
         image:"images/products/carrot-plushie.jpeg",
 
         description:
-        "Idk the description for this",
+        "Straight from the crochet garden",
 
         hasOptions: false
 
@@ -516,7 +516,7 @@ const PRODUCTS = [
         image:"images/products/baby-romper.jpeg",
 
         description:
-        "Idk the description for this",
+        "Tiny outfit, endless cuteness",
 
         hasOptions: false
 
@@ -536,7 +536,7 @@ const PRODUCTS = [
         image:"images/products/coasters.jpeg",
 
         description:
-        "Idk the description for this",
+        "Every cup deserves a cozy place to rest",
 
         hasOptions: false
 
@@ -556,7 +556,7 @@ const PRODUCTS = [
         image:"images/products/baby-beanie.jpeg",
 
         description:
-        "Idk the description for this",
+        "Handmade for little ones",
 
         hasOptions: false
 
@@ -576,7 +576,7 @@ const PRODUCTS = [
         image:"images/products/baby-slippers.jpeg",
 
         description:
-        "Idk the description for this",
+        "Tiny slippers for tiny feets",
 
         hasOptions: false
 
@@ -596,7 +596,7 @@ const PRODUCTS = [
         image:"images/products/bookmark.jpeg",
 
         description:
-        "Idk the description for this",
+        "A little companion for every chapter",
 
         hasOptions: false
 
@@ -616,7 +616,7 @@ const PRODUCTS = [
         image:"images/products/baby-blanket.jpeg",
 
         description:
-        "Idk the description for this",
+        "Gentle, cozy, and perfect for precious moments",
 
         hasOptions: false
 
@@ -636,7 +636,7 @@ const PRODUCTS = [
         image:"images/products/ghost-charm.jpeg",
 
         description:
-        "Idk the description for this",
+        "Too cute to haunt",
 
         hasOptions: false
 
@@ -656,7 +656,7 @@ const PRODUCTS = [
         image:"images/products/lipgloss-holder.jpeg",
 
         description:
-        "Idk the description for this",
+        "Keep your favourite lipgloss within reach",
 
         hasOptions: false
 
@@ -676,7 +676,7 @@ const PRODUCTS = [
         image:"images/products/froggie.jpeg",
 
         description:
-        "Idk the description for this",
+        "Just a froggie looking for a new home",
 
         hasOptions: false
 
@@ -696,7 +696,7 @@ const PRODUCTS = [
         image:"images/products/ribbon-keychain.jpeg",
 
         description:
-        "Idk the description for this",
+        "Small detail, big charm",
 
         hasOptions: false
 
