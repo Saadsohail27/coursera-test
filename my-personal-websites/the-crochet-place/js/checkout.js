@@ -385,7 +385,7 @@ init(){
 
     this.elements.continueShopping.addEventListener("click",()=>{
 
-    window.location.href = "shop.html";
+    window.location.href = "shop.html#productSearch";
 
 });
 

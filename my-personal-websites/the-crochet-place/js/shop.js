@@ -41,6 +41,16 @@ const Shop = {
 
         cartSubtotal: document.getElementById("cartSubtotal"),
 
+        termsOverlay: document.getElementById("termsOverlay"),
+
+        agreeTerms: document.getElementById("agreeTerms"),
+
+        continueCheckout: document.getElementById("continueCheckout"),
+
+        cancelTerms: document.getElementById("cancelTerms"),
+
+        checkoutButton: document.querySelector(".cart-checkout"),
+
         closeCart: document.getElementById("closeCart"),
 
         continueShopping: document.getElementById("continueShopping")
@@ -1486,6 +1496,40 @@ handleProductGridClick(event){
 },
 
 /* ==========================================
+   Terms & Conditions
+========================================== */
+
+openTerms(){
+
+    this.elements.termsOverlay.classList.add("active");
+
+    this.elements.agreeTerms.checked = false;
+
+    this.elements.continueCheckout.disabled = true;
+
+},
+
+closeTerms(){
+
+    this.elements.termsOverlay.classList.remove("active");
+
+},
+
+acceptTerms(){
+
+    sessionStorage.setItem(
+
+        "termsAccepted",
+
+        "true"
+
+    );
+
+    window.location.href = "checkout.html";
+
+},
+
+/* ==========================================
    Event Listeners
 ========================================== */
 
@@ -1553,6 +1597,8 @@ bindEvents(){
 
         allButton?.classList.add("active");
 
+        this.refresh();
+
     });
 
 }
@@ -1591,6 +1637,58 @@ if(this.elements.featuredGrid){
 this.modal.backdrop.addEventListener("click", () => {
 
     this.closeModal();
+
+});
+
+if(this.elements.agreeTerms){
+
+    this.elements.agreeTerms.addEventListener("change",()=>{
+
+        this.elements.continueCheckout.disabled =
+
+            !this.elements.agreeTerms.checked;
+
+    });
+
+}
+
+if(this.elements.agreeTerms){
+
+    this.elements.agreeTerms.addEventListener("change",()=>{
+
+        this.elements.continueCheckout.disabled =
+
+            !this.elements.agreeTerms.checked;
+
+    });
+
+}
+
+if(this.elements.cancelTerms){
+
+    this.elements.cancelTerms.addEventListener("click",()=>{
+
+        this.closeTerms();
+
+    });
+
+}
+
+if(this.elements.continueCheckout){
+
+    this.elements.continueCheckout.addEventListener("click",()=>{
+
+        this.acceptTerms();
+
+    });
+
+}
+
+this.elements.continueCheckout.addEventListener("click", ()=>{
+
+    sessionStorage.setItem("termsAccepted","true");
+
+    window.location.href = "checkout.html";
 
 });
 
@@ -1646,28 +1744,33 @@ this.modal.addToCart.addEventListener("click", () => {
    Cart
 ========================================== */
 
-this.elements.actionPill.addEventListener("click",(event)=>{
+this.elements.actionPill.addEventListener("click", (event) => {
 
-    // Homepage
-    if(!this.elements.grid){
-
-        return;
-
-    }
-
-    // Shop page + empty cart
-    if(this.state.cart.length===0){
+    if(this.state.cart.length === 0){
 
         return;
 
     }
 
+    // Already on the shop page
+    if(window.location.pathname.includes("shop.html")){
+
+        event.preventDefault();
+
+        this.openCart();
+
+        return;
+
+    }
+
+    // Coming from another page
     event.preventDefault();
 
-    this.openCart();
+    sessionStorage.setItem("openCartOnLoad","true");
+
+    window.location.href = "shop.html#productSearch";
 
 });
-
 this.elements.closeCart.addEventListener("click", () => {
 
     this.closeCart();
@@ -1761,6 +1864,14 @@ init(){
     this.bindEvents();
 
     this.refreshCart();
+
+    if(sessionStorage.getItem("openCartOnLoad") === "true"){
+
+    sessionStorage.removeItem("openCartOnLoad");
+
+    this.openCart();
+
+}
 
     if(this.elements.featuredGrid){
 

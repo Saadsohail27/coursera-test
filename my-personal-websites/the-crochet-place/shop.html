@@ -79,7 +79,7 @@ href="css/animations.css">
 
     <li>
 
-        <a href="index.html" class="nav-link">
+        <a href="index.html" class="nav-link active">
 
             <span class="nav-text">Home</span>
 
@@ -179,6 +179,7 @@ href="css/animations.css">
 
 </ul>
 
+           
                 <!-- ==========================================
                  Action Pill
             ========================================== -->
@@ -273,7 +274,7 @@ href="css/animations.css">
                 </svg>
 
             </a>
-
+            
             <!-- Mobile -->
 
             <button
@@ -393,7 +394,7 @@ href="css/animations.css">
 
                 id="productSearch"
 
-                placeholder="Search teddy, bouquet, bee, flowers..."
+                placeholder="Search baby, bouquet, spiderman, flowers..."
 
             >
 
@@ -837,8 +838,6 @@ href="css/animations.css">
 
         <!-- Empty Cart -->
 
-        <div class="cart-items" id="cartItems"></div>
-
             <div class="cart-empty" id="cartEmpty">
 
                 <div class="cart-empty-illustration">
@@ -899,6 +898,74 @@ href="css/animations.css">
         </footer>
 
     </aside>
+
+</div>
+
+<!-- ==========================================
+        TERMS MODAL
+========================================== -->
+
+<div class="terms-overlay" id="termsOverlay">
+
+    <div class="terms-modal">
+
+        <h2>🧶 Before You Checkout</h2>
+
+        <p>
+            Every crochet piece is handmade with love.
+            Please read these quick notes before continuing.
+        </p>
+
+        <ul class="terms-list">
+
+            <li>
+                Handmade products may have slight variations, making every piece unique.
+            </li>
+
+            <li>
+                Custom-made items cannot be cancelled once production has begun.
+            </li>
+
+            <li>
+                Please ensure your delivery information is correct before placing your order.
+            </li>
+
+        </ul>
+
+        <label class="terms-checkbox">
+
+            <input
+                type="checkbox"
+                id="agreeTerms">
+
+            <span>
+                I have read and agree to these terms.
+            </span>
+
+        </label>
+
+        <div class="terms-actions">
+
+            <button
+                class="btn btn-secondary"
+                id="cancelTerms">
+
+                Cancel
+
+            </button>
+
+            <button
+                class="btn btn-primary"
+                id="continueCheckout"
+                disabled>
+
+                I Agree & Continue 💖
+
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 

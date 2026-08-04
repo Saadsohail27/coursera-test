@@ -1337,7 +1337,7 @@
 
     inset:0;
 
-    z-index:2000;
+    z-index:999999999999;
 
     visibility:hidden;
 
