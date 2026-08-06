@@ -2761,6 +2761,8 @@ transform:translateY(0);
 
     position:relative;
 
+    border-radius: 2em;
+
     width:min(420px,100%);
 
     z-index:2;
