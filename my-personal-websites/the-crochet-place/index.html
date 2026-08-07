@@ -221,7 +221,7 @@ href="css/animations.css">
 
                 <span class="pill-text">
 
-                    Shop Now
+                    Shop&nbsp;Now
 
                 </span>
 
@@ -1969,68 +1969,91 @@ href="css/animations.css">
 </div>
 
 <!-- ==========================================
-        TERMS MODAL
+        TERMS & CONDITIONS
 ========================================== -->
 
-<div class="terms-overlay" id="termsOverlay">
+<div
+    class="terms-overlay"
+    id="termsOverlay"
+    aria-hidden="true">
+
+    <div class="terms-backdrop"></div>
 
     <div class="terms-modal">
 
-        <h2>🧶 Before You Checkout</h2>
+        <button
+            class="terms-close"
+            id="cancelTerms"
+            aria-label="Close">
 
-        <p>
-            Every crochet piece is handmade with love.
-            Please read these quick notes before continuing.
+            ✕
+
+        </button>
+
+        <div class="terms-icon">
+
+            🧶
+
+        </div>
+
+        <span class="section-tag">
+
+            Before We Start Stitching...
+
+        </span>
+
+        <h2>
+
+            A Few Little Things 💖
+
+        </h2>
+
+        <p class="terms-intro">
+
+            Before you continue with your order, please keep
+            these handmade-little-things in mind:
+
         </p>
 
         <ul class="terms-list">
 
             <li>
-                Handmade products may have slight variations, making every piece unique.
+                💵 100% of the payment (including the delivery chaarges) are to be paid in advance to place your order
             </li>
 
             <li>
-                Custom-made items cannot be cancelled once production has begun.
+                📍 We deliver all over the world and delivery charges depend on your location, hence the delivery charges will be told to you by us on WhatsApp after recieving your address details.
             </li>
 
             <li>
-                Please ensure your delivery information is correct before placing your order.
+                🌸 Custom orders take a little extra love and
+                may require additional crafting time.
             </li>
 
         </ul>
 
-        <label class="terms-checkbox">
+        <label class="terms-agreement">
 
             <input
                 type="checkbox"
                 id="agreeTerms">
 
             <span>
-                I have read and agree to these terms.
+
+                I understand and agree to these terms.
+
             </span>
 
         </label>
 
-        <div class="terms-actions">
+        <button
+            class="btn btn-primary terms-continue"
+            id="continueCheckout"
+            disabled>
 
-            <button
-                class="btn btn-secondary"
-                id="cancelTerms">
+            🧶 I Understand & Continue
 
-                Cancel
-
-            </button>
-
-            <button
-                class="btn btn-primary"
-                id="continueCheckout"
-                disabled>
-
-                I Agree & Continue 💖
-
-            </button>
-
-        </div>
+        </button>
 
     </div>
 

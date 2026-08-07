@@ -510,6 +510,58 @@ transform:translateY(0);
 
 }
 
+/* ==========================================
+   Shop Now State
+========================================== */
+
+.shop-btn:not(.has-cart){
+
+    gap:0;
+
+}
+
+.shop-btn:not(.has-cart) .pill-icon{
+
+    width:0;
+
+    opacity:0;
+
+    transform:scale(.6);
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   Cart State
+========================================== */
+
+.shop-btn.has-cart{
+
+    gap:10px;
+
+}
+
+.shop-btn:not(.has-cart) .pill-badge{
+
+    opacity:0;
+
+    transform:scale(0);
+
+}
+
+
+
+.shop-btn.has-cart .pill-icon{
+
+    width:22px;
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
 /* ========================= */
 
 .pill-icon{
@@ -913,6 +965,36 @@ transform:translateY(0);
     100%{
 
         transform:translateY(0);
+
+    }
+
+}
+
+@media (max-width:450px){
+
+    .pill-text{
+
+        font-size: 3vw;
+
+    }
+
+}
+
+@media (max-width:380px){
+
+    .pill-text{
+
+        font-size: 2.5vw;
+
+    }
+
+}
+
+@media (max-width:365px){
+
+    .pill-text{
+
+        font-size: 2.2vw;
 
     }
 
@@ -1706,7 +1788,7 @@ transform:translateY(0);
 
     inset:0;
 
-    background:url("../imsges/repeating-pattern.svg");
+    background:url("../images/repeating-pattern.svg");
 
     background-size:240px;
 
@@ -3619,50 +3701,149 @@ overflow:hidden;
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* ==========================================
+   TERMS & CONDITIONS
+========================================== */
+
 .terms-overlay{
 
     position:fixed;
+
     inset:0;
 
-    background:rgba(0,0,0,.45);
+    z-index:20000;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
+    padding:20px;
+
     opacity:0;
+
     visibility:hidden;
 
-    transition:.35s;
+    pointer-events:none;
 
-    z-index:99999;
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+
+    box-sizing:border-box;
 
 }
 
 .terms-overlay.active{
 
     opacity:1;
+
     visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+.terms-backdrop{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(40,20,30,.45);
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
 
 }
 
 .terms-modal{
 
-    width:min(500px,90vw);
+    position:relative;
 
-    background:#fff;
+    z-index:1;
 
-    border-radius:28px;
+    width: min(90%, 520px);
+
+    max-height: calc(100vh - 40px);
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
 
     padding:35px;
 
-    box-shadow:0 30px 60px rgba(0,0,0,.15);
+    background:#fff;
+
+    border-radius:24px;
+
+    box-shadow:0 25px 80px rgba(0,0,0,.2);
+
+    text-align:center;
+
+    transform:translateY(20px) scale(.96);
+
+    transition:transform .3s ease;
+
+}
+
+.terms-overlay.active .terms-modal{
+
+    transform:translateY(0) scale(1);
+
+}
+
+.terms-close{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:36px;
+
+    height:36px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.terms-icon{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.terms-modal h2{
+
+    margin:8px 0 10px;
+
+}
+
+.terms-intro{
+
+    margin-bottom:20px;
 
 }
 
 .terms-list{
 
-    margin:25px 0;
+    text-align:left;
+
+    margin:0 0 22px;
 
     padding-left:20px;
 
@@ -3674,24 +3855,40 @@ overflow:hidden;
 
 }
 
-.terms-checkbox{
+.terms-agreement{
 
     display:flex;
-
-    gap:10px;
 
     align-items:flex-start;
 
-    margin-bottom:25px;
+    gap:10px;
+
+    text-align:left;
+
+    margin-bottom:20px;
+
+    cursor:pointer;
 
 }
 
-.terms-actions{
+.terms-agreement input{
 
-    display:flex;
+    margin-top:5px;
 
-    justify-content:flex-end;
+    accent-color:var(--primary);
 
-    gap:15px;
+}
+
+.terms-continue{
+
+    width:100%;
+
+}
+
+.terms-continue:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
 
 }
