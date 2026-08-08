@@ -1,0 +1,1123 @@
+/* =====================================================
+   GALLERY PAGE
+   Dedicated styles
+   All classes are prefixed with gallery-page-
+===================================================== */
+
+
+/* =====================================================
+   PAGE HERO
+===================================================== */
+
+.gallery-page-hero{
+
+    position:relative;
+
+    min-height:620px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:150px 0 100px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff7fa 0%,
+            #ffeef4 50%,
+            #ffe1eb 100%
+        );
+
+}
+
+
+.gallery-page-hero-pattern{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        url("../images/repeating-pattern.png");
+
+    background-size:220px;
+
+    opacity:.045;
+
+    pointer-events:none;
+
+}
+
+
+.gallery-page-hero-container{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+
+    gap:70px;
+
+}
+
+
+.gallery-page-hero-content{
+
+    max-width:650px;
+
+}
+
+
+.gallery-page-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 20px;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:var(--primary);
+
+    border:2px solid rgba(230,72,123,.1);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.05);
+
+}
+
+
+.gallery-page-hero h1{
+
+    font-family:var(--heading-font);
+
+    font-size:clamp(3rem,6vw,5.5rem);
+
+    line-height:1.05;
+
+    letter-spacing:-2px;
+
+    margin-bottom:28px;
+
+    color:var(--text);
+
+}
+
+
+.gallery-page-hero h1 span{
+
+    display:block;
+
+    color:var(--primary);
+
+}
+
+
+.gallery-page-hero-content > p{
+
+    max-width:570px;
+
+    font-size:1.08rem;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+}
+
+
+.gallery-page-hero-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:16px 28px;
+
+    border-radius:999px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:
+
+        0 15px 35px rgba(230,72,123,.2);
+
+    transition:.35s;
+
+}
+
+
+.gallery-page-hero-button span{
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
+}
+
+
+.gallery-page-hero-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 22px 45px rgba(230,72,123,.25);
+
+}
+
+
+.gallery-page-hero-button:hover span{
+
+    transform:translateX(5px);
+
+}
+
+
+/* =====================================================
+   HERO DECORATION
+===================================================== */
+
+.gallery-page-hero-decoration{
+
+    position:relative;
+
+    height:430px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.gallery-page-yarn-circle{
+
+    width:350px;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffe7ef 0%,
+            #ffd0df 60%,
+            #ffc4d7 100%
+        );
+
+    box-shadow:
+
+        0 35px 70px rgba(230,72,123,.12);
+
+    animation:
+
+        galleryPageFloat 5s ease-in-out infinite;
+
+}
+
+
+.gallery-page-yarn-circle span{
+
+    font-size:8rem;
+
+    filter:
+
+        drop-shadow(
+            0 20px 20px rgba(0,0,0,.12)
+        );
+
+}
+
+
+.gallery-page-floating-heart,
+.gallery-page-floating-star{
+
+    position:absolute;
+
+    color:var(--primary);
+
+    pointer-events:none;
+
+}
+
+
+.gallery-page-floating-heart{
+
+    font-size:2rem;
+
+    animation:
+
+        galleryPageFloat 4s ease-in-out infinite;
+
+}
+
+
+.heart-a{
+
+    top:40px;
+
+    right:40px;
+
+}
+
+
+.heart-b{
+
+    bottom:50px;
+
+    left:30px;
+
+    animation-delay:1.5s;
+
+}
+
+
+.gallery-page-floating-star{
+
+    font-size:2rem;
+
+    color:#ffb7ca;
+
+    animation:
+
+        galleryPageTwinkle 2.5s ease-in-out infinite;
+
+}
+
+
+.star-a{
+
+    top:90px;
+
+    left:30px;
+
+}
+
+
+.star-b{
+
+    right:15px;
+
+    bottom:100px;
+
+    animation-delay:1s;
+
+}
+
+
+@keyframes galleryPageFloat{
+
+    0%,100%{
+
+        transform:translateY(0) rotate(-2deg);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px) rotate(2deg);
+
+    }
+
+}
+
+
+@keyframes galleryPageTwinkle{
+
+    0%,100%{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.gallery-page-intro{
+
+    padding:110px 0 60px;
+
+    background:#fff;
+
+}
+
+
+.gallery-page-heading{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.gallery-page-section-tag{
+
+    display:inline-flex;
+
+    padding:9px 20px;
+
+    border-radius:999px;
+
+    background:#fff5f8;
+
+    color:var(--primary);
+
+    border:2px solid rgba(230,72,123,.1);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+.gallery-page-heading h2{
+
+    font-family:var(--heading-font);
+
+    font-size:clamp(2.3rem,5vw,3.6rem);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+
+.gallery-page-heading p{
+
+    color:#777;
+
+    line-height:1.9;
+
+    max-width:600px;
+
+    margin:auto;
+
+}
+
+
+/* =====================================================
+   MASONRY / PINTEREST GALLERY
+===================================================== */
+
+.gallery-page-showcase{
+
+    padding:40px 0 130px;
+
+    background:#fff;
+
+}
+
+
+.gallery-page-masonry{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(4, minmax(0,1fr));
+
+    grid-auto-rows:220px;
+
+    gap:24px;
+
+    align-items:stretch;
+
+}
+
+
+/* =====================================================
+   GALLERY CARDS
+===================================================== */
+
+.gallery-page-card{
+
+    position:relative;
+
+    min-width:0;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.07);
+
+    transition:
+
+        transform .4s ease,
+
+        box-shadow .4s ease;
+
+}
+
+
+.gallery-page-card-tall{
+
+    grid-row:span 2;
+
+}
+
+
+.gallery-page-card-medium{
+
+    grid-row:span 1;
+
+}
+
+
+.gallery-page-card-wide{
+
+    grid-column:span 2;
+
+}
+
+
+.gallery-page-card:hover{
+
+    transform:
+
+        translateY(-8px)
+
+        rotate(-.6deg);
+
+    box-shadow:
+
+        0 30px 65px rgba(0,0,0,.12);
+
+}
+
+
+.gallery-page-image-wrap{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+}
+
+
+.gallery-page-image-wrap img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+
+        transform .7s cubic-bezier(.19,1,.22,1);
+
+}
+
+
+.gallery-page-card:hover
+.gallery-page-image-wrap img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.gallery-page-image-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:flex-start;
+
+    padding:28px;
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(50,20,35,.78) 100%
+        );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+.gallery-page-card:hover
+.gallery-page-image-overlay{
+
+    opacity:1;
+
+}
+
+
+.gallery-page-image-overlay span{
+
+    font-size:1.5rem;
+
+    margin-bottom:6px;
+
+}
+
+
+.gallery-page-image-overlay h3{
+
+    font-family:var(--heading-font);
+
+    font-size:1.5rem;
+
+    margin-bottom:3px;
+
+}
+
+
+.gallery-page-image-overlay p{
+
+    color:rgba(255,255,255,.85);
+
+    font-size:.9rem;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.gallery-page-cta{
+
+    position:relative;
+
+    padding:120px 0;
+
+    overflow:hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1f6,
+            #ffe0ea
+        );
+
+}
+
+
+.gallery-page-cta-pattern{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        url("../images/repeating-pattern.png");
+
+    background-size:220px;
+
+    opacity:.04;
+
+}
+
+
+.gallery-page-cta-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.gallery-page-cta-yarn{
+
+    display:block;
+
+    font-size:3.5rem;
+
+    margin-bottom:15px;
+
+}
+
+
+.gallery-page-cta h2{
+
+    font-family:var(--heading-font);
+
+    font-size:clamp(2.3rem,5vw,3.7rem);
+
+    margin-bottom:20px;
+
+}
+
+
+.gallery-page-cta p{
+
+    max-width:600px;
+
+    margin:0 auto 32px;
+
+    color:#666;
+
+    line-height:1.9;
+
+}
+
+
+.gallery-page-cta-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:16px 30px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:
+
+        0 15px 35px rgba(230,72,123,.2);
+
+    transition:.35s;
+
+}
+
+
+.gallery-page-cta-button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 22px 45px rgba(230,72,123,.25);
+
+}
+
+
+.gallery-page-cta-button span{
+
+    transition:.35s;
+
+}
+
+
+.gallery-page-cta-button:hover span{
+
+    transform:scale(1.25);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px){
+
+    .gallery-page-hero-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:40px;
+
+    }
+
+
+    .gallery-page-hero-content{
+
+        max-width:750px;
+
+        margin:auto;
+
+    }
+
+
+    .gallery-page-hero-content > p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .gallery-page-hero-button{
+
+        justify-content:center;
+
+    }
+
+
+    .gallery-page-hero-decoration{
+
+        height:330px;
+
+    }
+
+
+    .gallery-page-yarn-circle{
+
+        width:280px;
+
+    }
+
+
+    .gallery-page-yarn-circle span{
+
+        font-size:6rem;
+
+    }
+
+
+    .gallery-page-masonry{
+
+        grid-template-columns:
+
+            repeat(2, minmax(0,1fr));
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px){
+
+    .gallery-page-hero{
+
+        min-height:auto;
+
+        padding:
+
+            130px 0 80px;
+
+    }
+
+
+    .gallery-page-hero h1{
+
+        font-size:
+
+            clamp(2.7rem,11vw,4rem);
+
+        letter-spacing:-1px;
+
+    }
+
+
+    .gallery-page-hero-content > p{
+
+        font-size:.98rem;
+
+    }
+
+
+    .gallery-page-hero-decoration{
+
+        height:250px;
+
+    }
+
+
+    .gallery-page-yarn-circle{
+
+        width:210px;
+
+    }
+
+
+    .gallery-page-yarn-circle span{
+
+        font-size:4.5rem;
+
+    }
+
+
+    .gallery-page-floating-heart{
+
+        font-size:1.5rem;
+
+    }
+
+
+    .gallery-page-floating-star{
+
+        font-size:1.4rem;
+
+    }
+
+
+    .gallery-page-intro{
+
+        padding:
+
+            80px 0 35px;
+
+    }
+
+
+    .gallery-page-showcase{
+
+        padding:
+
+            30px 0 90px;
+
+    }
+
+
+    /*
+       IMPORTANT:
+       On mobile we intentionally remove
+       the desktop spanning behavior.
+    */
+
+    .gallery-page-masonry{
+
+        grid-template-columns:1fr;
+
+        grid-auto-rows:300px;
+
+        gap:18px;
+
+    }
+
+
+    .gallery-page-card-tall,
+    .gallery-page-card-medium{
+
+        grid-row:span 1;
+
+    }
+
+
+    .gallery-page-card-wide{
+
+        grid-column:span 1;
+
+    }
+
+
+    .gallery-page-card-tall{
+
+        height:380px;
+
+    }
+
+
+    .gallery-page-card-wide{
+
+        height:300px;
+
+    }
+
+
+    .gallery-page-card{
+
+        border-radius:24px;
+
+    }
+
+
+    /*
+       Always show a subtle caption on mobile.
+       There is no hover on most phones.
+    */
+
+    .gallery-page-image-overlay{
+
+        opacity:1;
+
+        padding:22px;
+
+        background:
+
+            linear-gradient(
+                180deg,
+                transparent 35%,
+                rgba(50,20,35,.72) 100%
+            );
+
+    }
+
+
+    .gallery-page-image-overlay h3{
+
+        font-size:1.3rem;
+
+    }
+
+
+    .gallery-page-image-overlay p{
+
+        font-size:.82rem;
+
+    }
+
+
+    .gallery-page-card:hover{
+
+        transform:translateY(-4px);
+
+    }
+
+
+    .gallery-page-cta{
+
+        padding:90px 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media(max-width:380px){
+
+    .gallery-page-hero{
+
+        padding-top:120px;
+
+    }
+
+
+    .gallery-page-tag{
+
+        font-size:.85rem;
+
+        padding:8px 15px;
+
+    }
+
+
+    .gallery-page-hero h1{
+
+        font-size:2.55rem;
+
+    }
+
+
+    .gallery-page-yarn-circle{
+
+        width:185px;
+
+    }
+
+
+    .gallery-page-masonry{
+
+        grid-auto-rows:270px;
+
+    }
+
+
+    .gallery-page-card-tall{
+
+        height:340px;
+
+    }
+
+}

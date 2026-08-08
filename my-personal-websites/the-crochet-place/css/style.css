@@ -40,6 +40,14 @@ box-sizing:border-box;
 
 }
 
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+}
+
 html{
 
 scroll-behavior:smooth;
@@ -54,8 +62,6 @@ background:var(--bg);
 
 color:var(--text);
 
-overflow-x:hidden;
-
 line-height:1.7;
 
 }
@@ -66,6 +72,20 @@ line-height:1.7;
     width:min(92%, var(--container));
     margin-inline:auto;
 }
+
+@media (max-width: 425px) {
+        .container{
+        width:92%;
+        max-width:var(--container);
+        margin-inline:auto;
+    }
+
+        *,
+    *::before,
+    *::after{
+        box-sizing:border-box;
+    }
+} 
 
 .section-title{
     text-align:center;
@@ -288,6 +308,12 @@ transform:translateY(0);
 
     gap:50px;
 
+}
+
+@media (max-width: 415px) {
+    .navbar {
+        gap: 20px;
+    }
 }
 
 /* ========================= */
@@ -974,7 +1000,7 @@ transform:translateY(0);
 
     .pill-text{
 
-        font-size: 3vw;
+        font-size: 3.5vw;
 
     }
 
@@ -984,7 +1010,7 @@ transform:translateY(0);
 
     .pill-text{
 
-        font-size: 2.5vw;
+        font-size: 3vw;
 
     }
 
@@ -2302,177 +2328,282 @@ transform:translateY(0);
    GALLERY
 ===================================================== */
 
-.gallery{
+.gallery {
 
-    padding:130px 0;
+    padding: 130px 0;
 
-    background:#fff4f8;
-
-}
-
-.gallery-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    grid-auto-rows:260px;
-
-    gap:22px;
+    background: #fff4f8;
 
 }
 
-.gallery-item{
+.gallery-grid {
 
-    position:relative;
+    display: grid;
 
-    overflow:hidden;
+    grid-template-columns: repeat(3, 1fr);
 
-    border-radius:28px;
+    grid-auto-rows: 260px;
 
-    cursor:pointer;
+    gap: 22px;
+
+}
+
+
+/* =====================================
+   Gallery Item
+===================================== */
+
+.gallery-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    cursor: pointer;
 
     box-shadow:
-
         0 18px 45px rgba(0,0,0,.08);
 
-}
-
-.gallery-item.large{
-
-    grid-row:span 2;
-
-}
-
-.gallery-item.wide{
-
-    grid-column:span 2;
-
-}
-
-.gallery-item img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
     transition:
-
-        transform .7s ease,
-
-        filter .7s ease;
-
-}
-
-.gallery-overlay{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    align-items:flex-start;
-
-    flex-direction:column;
-
-    padding:28px;
-
-    background:
-
-        linear-gradient(
-
-            transparent,
-
-            rgba(0,0,0,.55)
-
-        );
-
-    color:white;
-
-    opacity:0;
-
-    transition:.4s;
-
-}
-
-.gallery-item:hover img{
-
-    transform:scale(1.08);
-
-}
-
-.gallery-item:hover .gallery-overlay{
-
-    opacity:1;
-
-}
-
-@media(max-width:900px){
-
-.gallery-grid{
-
-    grid-template-columns:1fr 1fr;
-
-}
-
-.large{
-
-    grid-row:span 1;
-
-}
-
-.wide{
-
-    grid-column:span 2;
-
-}
-
-}
-
-@media(max-width:650px){
-
-.gallery-grid{
-
-    grid-template-columns:1fr;
-
-    grid-auto-rows:280px;
-
-}
-
-.wide{
-
-    grid-column:span 1;
-
-}
-
-}
-
-.gallery-item{
-
-    transition:
-
         transform .35s ease,
-
         box-shadow .35s ease;
 
 }
 
-.gallery-item:hover{
+
+/* =====================================
+   Large Tile
+===================================== */
+
+.gallery-item.large {
+
+    grid-row: span 2;
+
+}
+
+
+/* =====================================
+   Wide Tile
+===================================== */
+
+.gallery-item.wide {
+
+    grid-column: span 2;
+
+}
+
+
+/* =====================================
+   Images
+===================================== */
+
+.gallery-item img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+
+}
+
+
+/* =====================================
+   Overlay
+===================================== */
+
+.gallery-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.55)
+        );
+
+    color: white;
+
+    opacity: 0;
+
+    transition: .4s;
+
+}
+
+
+/* =====================================
+   Hover
+===================================== */
+
+.gallery-item:hover img {
+
+    transform: scale(1.08);
+
+}
+
+.gallery-item:hover .gallery-overlay {
+
+    opacity: 1;
+
+}
+
+.gallery-item:hover {
 
     transform:
-
         rotate(-1deg)
-
         translateY(-8px);
 
     box-shadow:
-
         0 30px 60px rgba(0,0,0,.12);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .gallery-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-auto-rows: 240px;
+
+        gap: 18px;
+
+    }
+
+    .gallery-item.large {
+
+        grid-row: span 2;
+
+    }
+
+    .gallery-item.wide {
+
+        grid-column: span 2;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .gallery {
+
+        padding: 90px 0;
+
+    }
+
+    .gallery-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-auto-rows: 180px;
+
+        gap: 12px;
+
+    }
+
+
+    /* -------------------------------------
+       Large Spiderman Tile
+    ------------------------------------- */
+
+    .gallery-item.large {
+
+        grid-row: span 2;
+
+    }
+
+
+    /* -------------------------------------
+       Wide Heart Trinket
+    ------------------------------------- */
+
+    .gallery-item.wide {
+
+        grid-column: span 2;
+
+        grid-row: span 1;
+
+    }
+
+
+    /* -------------------------------------
+       Tile Styling
+    ------------------------------------- */
+
+    .gallery-item {
+
+        border-radius: 20px;
+
+    }
+
+
+    /* -------------------------------------
+       Overlay
+    ------------------------------------- */
+
+    .gallery-overlay {
+
+        padding: 16px;
+
+        opacity: 0;
+
+    }
+
+    .gallery-overlay h3 {
+
+        font-size: 1rem;
+
+    }
+
+
+    /* -------------------------------------
+       Disable dramatic hover movement
+       on touch devices
+    ------------------------------------- */
+
+    .gallery-item:hover {
+
+        transform: none;
+
+        box-shadow:
+            0 18px 40px rgba(0,0,0,.08);
+
+    }
+
+    .gallery-item:hover img {
+
+        transform: scale(1.04);
+
+    }
 
 }
 
@@ -3186,201 +3317,278 @@ overflow:hidden;
    CONTACT
 ===================================================== */
 
-.contact{
+.contact {
 
-    padding:130px 0;
+    padding: 130px 0;
 
-    background:#fff8fb;
-
-}
-
-.contact-grid{
-
-    display:grid;
-
-    grid-template-columns:1.3fr .9fr;
-
-    gap:35px;
-
-    margin-top:60px;
+    background: #fff8fb;
 
 }
 
-/* ===================================== */
 
-.contact-form-card{
+/* =====================================
+   Contact Grid
+===================================== */
 
-    background:white;
+.contact-grid {
 
-    border-radius:34px;
+    display: grid;
 
-    padding:42px;
+    grid-template-columns: 1.3fr .9fr;
 
-    border:2px solid rgba(230,72,123,.08);
+    gap: 35px;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.05);
+    margin-top: 60px;
 
-}
-
-@media (max-width: 500px) {
-    .contact-form-card {
-        padding: 12px;
-    }
-}
-
-.contact-form-card h3{
-
-    margin-bottom:28px;
-
-    font-family:var(--heading-font);
-
-    font-size:2rem;
+    align-items: stretch;
 
 }
 
-.contact-form-card form{
 
-    display:flex;
+/* =====================================
+   Contact Form
+===================================== */
 
-    flex-direction:column;
+.contact-form-card {
 
-    gap:18px;
+    background: white;
+
+    border-radius: 34px;
+
+    padding: 42px;
+
+    border: 2px solid rgba(230,72,123,.08);
+
+    box-shadow: 0 20px 45px rgba(0,0,0,.05);
 
 }
+
+
+.contact-form-card h3 {
+
+    margin-bottom: 28px;
+
+    font-family: var(--heading-font);
+
+    font-size: 2rem;
+
+}
+
+
+.contact-form-card form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
 
 .contact-form-card input,
-.contact-form-card textarea{
+.contact-form-card textarea {
 
-    width:100%;
+    width: 100%;
 
-    border:none;
+    border: none;
 
-    outline:none;
+    outline: none;
 
-    background:#fff8fb;
+    background: #fff8fb;
 
-    border:2px solid transparent;
+    border: 2px solid transparent;
 
-    padding:18px 22px;
+    padding: 18px 22px;
 
-    border-radius:18px;
+    border-radius: 18px;
 
-    font-family:inherit;
+    font-family: inherit;
 
-    font-size:1rem;
+    font-size: 1rem;
 
-    transition:.35s;
+    transition: .35s;
+
+    box-sizing: border-box;
+
+}
+
+
+.contact-form-card textarea {
+
+    resize: vertical;
+
+    min-height: 170px;
 
 }
 
-.contact-form-card textarea{
-
-    resize:vertical;
-
-    min-height:170px;
-
-}
 
 .contact-form-card input:focus,
-.contact-form-card textarea:focus{
+.contact-form-card textarea:focus {
 
-    border-color:var(--primary);
+    border-color: var(--primary);
 
-    background:white;
-
-}
-
-/* ===================================== */
-
-.contact-side{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:24px;
+    background: white;
 
 }
 
-.contact-card{
 
-    flex:1;
+/* =====================================
+   Contact Side
+===================================== */
 
-    display:flex;
+.contact-side {
 
-    justify-content:space-between;
+    display: flex;
 
-    align-items:center;
+    flex-direction: column;
 
-    text-decoration:none;
-
-    color:inherit;
-
-    background:white;
-
-    padding:36px;
-
-    border-radius:30px;
-
-    border:2px solid rgba(230,72,123,.08);
-
-    transition:.35s;
-
-    box-shadow:0 18px 40px rgba(0,0,0,.05);
+    gap: 24px;
 
 }
 
-.contact-card:hover{
 
-    transform:translateY(-8px);
+.contact-card {
 
-    border-color:rgba(230,72,123,.22);
+    flex: 1;
 
-    box-shadow:0 30px 60px rgba(0,0,0,.08);
+    display: flex;
 
-}
+    justify-content: space-between;
 
-.contact-card h3{
+    align-items: center;
 
-    font-family:var(--heading-font);
+    text-decoration: none;
 
-    margin-bottom:10px;
+    color: inherit;
 
-}
+    background: white;
 
-.contact-card p{
+    padding: 36px;
 
-    color:#777;
+    border-radius: 30px;
 
-    line-height:1.7;
+    border: 2px solid rgba(230,72,123,.08);
 
-}
+    transition: .35s;
 
-.contact-card span{
-
-    color:var(--primary);
-
-    font-weight:600;
-
-    transition:.35s;
+    box-shadow: 0 18px 40px rgba(0,0,0,.05);
 
 }
 
-.contact-card:hover span{
 
-    transform:translateX(6px);
+.contact-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: rgba(230,72,123,.22);
+
+    box-shadow: 0 30px 60px rgba(0,0,0,.08);
+
+}
+
+
+.contact-card h3 {
+
+    font-family: var(--heading-font);
+
+    margin-bottom: 10px;
 
 }
 
-/* ===================================== */
 
-@media(max-width:900px){
+.contact-card p {
 
-.contact-grid{
+    color: #777;
 
-    grid-template-columns:1fr;
+    line-height: 1.7;
 
 }
+
+
+.contact-card span {
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    transition: .35s;
+
+}
+
+
+.contact-card:hover span {
+
+    transform: translateX(6px);
+
+}
+
+
+/* =====================================
+   Tablet
+===================================== */
+
+@media (max-width: 900px) {
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* =====================================
+   Mobile
+===================================== */
+
+@media (max-width: 600px) {
+
+    .contact {
+
+        padding: 90px 0;
+
+    }
+
+    .contact-grid {
+
+        margin-top: 40px;
+
+        gap: 24px;
+
+    }
+
+    .contact-form-card {
+
+        padding: 24px 18px;
+
+        border-radius: 26px;
+
+    }
+
+    .contact-form-card h3 {
+
+        font-size: 1.7rem;
+
+    }
+
+    .contact-form-card input,
+    .contact-form-card textarea {
+
+        padding: 16px 17px;
+
+        font-size: .95rem;
+
+    }
+
+    .contact-card {
+
+        padding: 24px 20px;
+
+        border-radius: 24px;
+
+    }
 
 }
 
@@ -3892,3 +4100,4 @@ overflow:hidden;
     cursor:not-allowed;
 
 }
+
