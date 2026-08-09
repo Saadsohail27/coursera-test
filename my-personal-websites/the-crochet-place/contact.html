@@ -81,7 +81,7 @@ href="css/animations.css">
 
     <li>
 
-        <a href="index.html" class="nav-link active">
+        <a href="index.html" class="nav-link">
 
             <span class="nav-text">Home</span>
 
@@ -156,7 +156,7 @@ href="css/animations.css">
 
     <li>
 
-        <a href="contact.html" class="nav-link">
+        <a href="contact.html" class="nav-link active">
 
             <span class="nav-text">Contact</span>
 
@@ -696,6 +696,20 @@ href="css/animations.css">
 
         </ul>
 
+        <div class="footer-credit reveal delay-4">
+
+            <span>Website by:</span>
+
+            <a href="https://webdevbysaad.com"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                webdevbysaad
+
+            </a>
+
+        </div>
+
         <div class="footer-divider reveal delay-4"></div>
 
         <div class="footer-bottom reveal delay-5">
@@ -709,7 +723,7 @@ href="css/animations.css">
 
             <div>
 
-                📞 +92 330 0764924
+                📞 <a href="tel:+923300764924">+92 330 0764924</a>
 
             </div>
 
@@ -755,17 +769,45 @@ href="css/animations.css">
 
         </button>
 
-        <!-- Image -->
-
         <div class="modal-image">
 
-            <img
+            <!-- Main Product Image -->
 
-                id="modalProductImage"
+            <div class="modal-main-image">
 
-                src=""
+                <button
+                    class="gallery-arrow gallery-arrow-left"
+                    id="modalGalleryPrev"
+                    aria-label="Previous image">
 
-                alt="">
+                    ‹
+
+                </button>
+
+                <img
+                    id="modalProductImage"
+                    src=""
+                    alt="">
+
+                <button
+                    class="gallery-arrow gallery-arrow-right"
+                    id="modalGalleryNext"
+                    aria-label="Next image">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+            <!-- Thumbnail Gallery -->
+
+            <div
+                class="modal-thumbnails"
+                id="modalThumbnails">
+
+            </div>
 
         </div>
 

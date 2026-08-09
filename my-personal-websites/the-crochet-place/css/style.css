@@ -3790,6 +3790,156 @@ overflow:hidden;
 
 }
 
+/* =====================================
+   RETRO DEVELOPER CREDIT
+===================================== */
+
+.footer-credit{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:-20px;
+
+    margin-bottom:35px;
+
+    font-family:"Courier New", monospace;
+
+    font-size:.78rem;
+
+    letter-spacing:1px;
+
+    color:#9a7180;
+
+}
+
+.footer-credit a{
+
+    position:relative;
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    transition:.3s;
+
+    animation:
+
+        retroGlow 2s ease-in-out infinite;
+
+}
+
+/* Little retro underline */
+
+.footer-credit a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-4px;
+
+    width:100%;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transform:scaleX(.35);
+
+    transform-origin:center;
+
+    animation:
+
+        retroUnderline 2s ease-in-out infinite;
+
+}
+
+/* Hover */
+
+.footer-credit a:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* =====================================
+   RETRO ANIMATION
+===================================== */
+
+@keyframes retroGlow{
+
+    0%,100%{
+
+        opacity:.75;
+
+        text-shadow:
+
+            0 0 0 transparent;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        text-shadow:
+
+            0 0 8px rgba(230,72,123,.35);
+
+    }
+
+}
+
+@keyframes retroUnderline{
+
+    0%,100%{
+
+        transform:scaleX(.35);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:scaleX(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:768px){
+
+    .footer-credit{
+
+        margin-top:-15px;
+
+        margin-bottom:30px;
+
+        font-size:.72rem;
+
+    }
+
+}
+
 /* ===================================== */
 
 .footer-divider{

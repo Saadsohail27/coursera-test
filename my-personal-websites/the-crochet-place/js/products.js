@@ -31,7 +31,7 @@ const PRODUCTS = [
     colors: [
         "Red",
         "Black",
-        "Brown"
+        "White"
     ]
 },
 
@@ -59,6 +59,30 @@ const PRODUCTS = [
     {
         id:3,
 
+        name:"Bucket Hat",
+
+        category:"wearable",
+
+        badge:"New",
+
+        price:1500,
+
+        image:"images/products/bucket-hat.jpeg",
+
+        images: [
+            "images/products/bucket-hat-2.jpeg"
+        ],
+
+        description:
+        "The perfect hat to keep your head and ears warm.",
+
+        hasOptions: false
+
+    },
+
+    {
+        id:4,
+
         name:"Spiderman Charm",
 
         category:"accessories",
@@ -79,7 +103,7 @@ const PRODUCTS = [
     },
 
     {
-        id:4,
+        id:5,
 
         name:"Sunflower Keychain",
 
@@ -99,7 +123,7 @@ const PRODUCTS = [
     },
 
     {
-        id:5,
+        id:6,
 
         name:"Ruffle Bag",
 
@@ -119,7 +143,7 @@ const PRODUCTS = [
     },
 
     {
-        id:6,
+        id:7,
 
         name:"Ocean Bag",
 
@@ -139,7 +163,7 @@ const PRODUCTS = [
     },
 
     {
-        id:7,
+        id:8,
 
         name:"Phone Holder",
 
@@ -159,7 +183,7 @@ const PRODUCTS = [
     },
 
     {
-        id:8,
+        id:9,
 
         name:"Curtain Holders (Single)",
 
@@ -173,6 +197,11 @@ const PRODUCTS = [
 
         image:"images/products/curtain-holders.jpeg",
 
+        images: [
+            "images/products/curtain-holders-2.jpeg",
+            "images/products/curtain-holders-3.jpeg"
+        ],
+
         description:
         "Give your curtains the cozy touch they deserve ",
 
@@ -181,7 +210,7 @@ const PRODUCTS = [
     },
 
     {
-        id:9,
+        id:10,
 
         name:"Lilly of the Valley Charm",
 
@@ -201,7 +230,7 @@ const PRODUCTS = [
     },
 
     {
-        id:10,
+        id:11,
 
         name:"Octopus Keychain",
 
@@ -221,7 +250,7 @@ const PRODUCTS = [
     },
 
     {
-        id:11,
+        id:12,
 
         name:"Strawberry Plushie",
 
@@ -241,7 +270,7 @@ const PRODUCTS = [
     },
 
     {
-        id:12,
+        id:13,
 
         name:"Heart Plushie",
 
@@ -263,7 +292,7 @@ const PRODUCTS = [
     },
 
     {
-        id:13,
+        id:14,
 
         name:"Blue Purse",
 
@@ -283,7 +312,7 @@ const PRODUCTS = [
     },
 
     {
-        id:14,
+        id:15,
 
         name:"Bandana",
 
@@ -303,7 +332,7 @@ const PRODUCTS = [
     },
 
     {
-        id:15,
+        id:16,
 
         name:"👓 Glasses Holder",
 
@@ -323,7 +352,7 @@ const PRODUCTS = [
     },
 
     {
-        id:16,
+        id:17,
 
         name:"Mittens",
 
@@ -343,7 +372,7 @@ const PRODUCTS = [
     },
 
     {
-        id:17,
+        id:18,
 
         name:"Bouquet & Table Mat",
 
@@ -363,7 +392,7 @@ const PRODUCTS = [
     },
 
     {
-        id:18,
+        id:19,
 
         name:"Book Bag",
 
@@ -383,7 +412,7 @@ const PRODUCTS = [
     },
 
     {
-        id:19,
+        id:20,
 
         name:"Baby Boots",
 
@@ -403,7 +432,7 @@ const PRODUCTS = [
     },
 
     {
-        id:20,
+        id:21,
 
         name:"Heart Trinket",
 
@@ -423,7 +452,7 @@ const PRODUCTS = [
     },
 
     {
-        id:21,
+        id:22,
 
         name:"Flower Pouch",
 
@@ -443,7 +472,7 @@ const PRODUCTS = [
     },
 
     {
-        id:22,
+        id:23,
 
         name:"Cherry Charm",
 
@@ -463,7 +492,7 @@ const PRODUCTS = [
     },
 
     {
-        id:23,
+        id:24,
 
         name:"Parandah",
 
@@ -483,7 +512,7 @@ const PRODUCTS = [
     },
 
     {
-        id:24,
+        id:25,
 
         name:"Carrot Plushie",
 
@@ -503,7 +532,7 @@ const PRODUCTS = [
     },
 
     {
-        id:25,
+        id:26,
 
         name:"Baby Romper",
 
@@ -523,7 +552,7 @@ const PRODUCTS = [
     },
 
     {
-        id:26,
+        id:27,
 
         name:"Coasters (Each)",
 
@@ -543,7 +572,7 @@ const PRODUCTS = [
     },
 
     {
-        id:27,
+        id:28,
 
         name:"Baby Beanie",
 
@@ -563,7 +592,7 @@ const PRODUCTS = [
     },
 
     {
-        id:28,
+        id:29,
 
         name:"Baby Slippers",
 
@@ -583,7 +612,7 @@ const PRODUCTS = [
     },
 
     {
-        id:29,
+        id:30,
 
         name:"Bookmark",
 
@@ -603,7 +632,7 @@ const PRODUCTS = [
     },
 
     {
-        id:30,
+        id:31,
 
         name:"Baby Blanket",
 
@@ -623,7 +652,7 @@ const PRODUCTS = [
     },
 
     {
-        id:31,
+        id:32,
 
         name:"Ghost Charm (Each)",
 
@@ -643,7 +672,7 @@ const PRODUCTS = [
     },
 
     {
-        id:32,
+        id:33,
 
         name:"Lipgloss Holder",
 
@@ -663,7 +692,7 @@ const PRODUCTS = [
     },
 
     {
-        id:33,
+        id:34,
 
         name:"Froggie",
 
@@ -683,7 +712,7 @@ const PRODUCTS = [
     },
 
     {
-        id:34,
+        id:35,
 
         name:"Ribbon Keychain",
 

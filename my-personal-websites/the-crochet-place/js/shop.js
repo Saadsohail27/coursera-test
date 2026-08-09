@@ -71,6 +71,12 @@ modal: {
 
     image: document.getElementById("modalProductImage"),
 
+    galleryPrev: document.getElementById("modalGalleryPrev"),
+
+    galleryNext: document.getElementById("modalGalleryNext"),
+
+    thumbnails: document.getElementById("modalThumbnails"),
+
     badge: document.getElementById("modalBadge"),
 
     title: document.getElementById("modalTitle"),
@@ -118,6 +124,10 @@ modal: {
         quantity: 1,
 
         wishlist: [],
+
+        galleryImages: [],
+
+        currentGalleryIndex: 0,
 
         cart: []
 
@@ -487,6 +497,33 @@ refresh(){
 
 },
 
+initGallery(){
+
+    this.modal.galleryPrev.addEventListener(
+        "click",
+        () => {
+
+            this.showModalGalleryImage(
+                this.state.currentGalleryIndex - 1
+            );
+
+        }
+    );
+
+
+    this.modal.galleryNext.addEventListener(
+        "click",
+        () => {
+
+            this.showModalGalleryImage(
+                this.state.currentGalleryIndex + 1
+            );
+
+        }
+    );
+
+},
+
 /* ==========================================
    Open Product Modal
 ========================================== */
@@ -545,11 +582,32 @@ closeModal(){
 
 populateModal(product){
 
-    this.modal.image.src = product.image;
+    this.state.currentProduct = product;
 
-    this.modal.image.alt = product.name;
+    /* ==========================================
+       Product Gallery
+    ========================================== */
+
+    this.renderModalGallery(product);
+
+
+    /* ==========================================
+       Product Information
+    ========================================== */
 
     this.modal.title.textContent = product.name;
+
+    this.modal.price.textContent =
+
+        `Rs. ${product.price.toLocaleString()}`;
+
+    this.modal.description.textContent =
+
+        product.description;
+
+    this.modal.badge.textContent =
+
+        product.badge || "";
 
     this.modal.price.textContent =
 
@@ -702,6 +760,180 @@ decreaseQuantity(){
     this.modal.quantity.textContent =
 
         this.state.quantity;
+
+},
+
+showModalGalleryImage(index){
+
+    const images = this.state.galleryImages;
+
+    if(!images.length){
+
+        return;
+
+    }
+
+
+    /* ==========================================
+       Loop Around
+    ========================================== */
+
+    if(index < 0){
+
+        index = images.length - 1;
+
+    }
+
+    if(index >= images.length){
+
+        index = 0;
+
+    }
+
+
+    this.state.currentGalleryIndex = index;
+
+
+    /* ==========================================
+       Main Image
+    ========================================== */
+
+    this.modal.image.style.opacity = "0";
+
+
+    setTimeout(() => {
+
+        this.modal.image.src = images[index];
+
+        this.modal.image.style.opacity = "1";
+
+    }, 120);
+
+
+    /* ==========================================
+       Active Thumbnail
+    ========================================== */
+
+    const thumbnails =
+        this.modal.thumbnails
+            .querySelectorAll(".modal-thumbnail");
+
+
+    thumbnails.forEach((thumbnail, thumbnailIndex) => {
+
+        thumbnail.classList.toggle(
+            "active",
+            thumbnailIndex === index
+        );
+
+    });
+
+
+    /* ==========================================
+       Keep Active Thumbnail Visible
+    ========================================== */
+
+    const activeThumbnail = thumbnails[index];
+
+    if(activeThumbnail){
+
+        activeThumbnail.scrollIntoView({
+
+            behavior: "smooth",
+
+            block: "nearest",
+
+            inline: "center"
+
+        });
+
+    }
+
+},
+
+renderModalGallery(product){
+
+    const images = [
+        product.image,
+        ...(product.images || [])
+    ];
+
+    this.state.galleryImages = images;
+
+    this.state.currentGalleryIndex = 0;
+
+
+    /* ==========================================
+       Set Main Image
+    ========================================== */
+
+    this.modal.image.src = images[0];
+
+    this.modal.image.alt = product.name;
+
+
+    /* ==========================================
+       Single Image
+    ========================================== */
+
+    if(images.length <= 1){
+
+        this.modal.thumbnails.innerHTML = "";
+
+        this.modal.overlay
+            .querySelector(".modal-image")
+            .classList.remove("has-gallery");
+
+        return;
+
+    }
+
+
+    /* ==========================================
+       Multiple Images
+    ========================================== */
+
+    this.modal.overlay
+        .querySelector(".modal-image")
+        .classList.add("has-gallery");
+
+
+    this.modal.thumbnails.innerHTML = images.map(
+        (image, index) => `
+
+        <button
+            class="modal-thumbnail ${index === 0 ? "active" : ""}"
+            type="button"
+            data-gallery-index="${index}"
+            aria-label="View image ${index + 1}">
+
+            <img
+                src="${image}"
+                alt="${product.name} image ${index + 1}">
+
+        </button>
+
+    `).join("");
+
+
+    /* ==========================================
+       Thumbnail Click
+    ========================================== */
+
+    this.modal.thumbnails
+        .querySelectorAll(".modal-thumbnail")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const index =
+                    Number(button.dataset.galleryIndex);
+
+                this.showModalGalleryImage(index);
+
+            });
+
+        });
 
 },
 
@@ -1845,6 +2077,27 @@ if(this.elements.cartOverlay){
 
 }
 
+document
+    .getElementById("modalGalleryPrev")
+    .addEventListener("click", () => {
+
+        this.showModalGalleryImage(
+            this.state.currentGalleryIndex - 1
+        );
+
+    });
+
+
+document
+    .getElementById("modalGalleryNext")
+    .addEventListener("click", () => {
+
+        this.showModalGalleryImage(
+            this.state.currentGalleryIndex + 1
+        );
+
+    });
+
 /* ==========================================
    Cart Buttons
 ========================================== */
@@ -1929,6 +2182,8 @@ init(){
     this.loadCart();
 
     this.bindEvents();
+
+    this.initGallery();
 
     this.refreshCart();
 

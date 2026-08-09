@@ -406,3 +406,69 @@
     }
 
 }
+
+/* ==========================================
+   MOBILE RESPONSIVENESS FIX
+========================================== */
+
+.checkout-form,
+.checkout-summary,
+.checkout-form *,
+.checkout-summary * {
+    box-sizing: border-box;
+}
+
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    .checkout-page {
+        padding: 120px 0 70px;
+    }
+
+    .checkout-layout {
+        width: 92%;
+        margin-inline: auto;
+        gap: 25px;
+    }
+
+    .checkout-form,
+    .checkout-summary {
+        width: 100%;
+        min-width: 0;
+        padding: 24px;
+    }
+
+    .checkout-form h1 {
+        font-size: 2.5rem;
+    }
+
+    .checkout-item {
+        min-width: 0;
+        gap: 12px;
+    }
+
+    .checkout-item img {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+    }
+
+    .checkout-item-info {
+        min-width: 0;
+    }
+
+    .checkout-item-info h4,
+    .checkout-item-info p {
+        overflow-wrap: anywhere;
+    }
+
+    .place-order-btn {
+        width: 100%;
+    }
+
+}
