@@ -107,7 +107,7 @@
 
     <div class="svcrd-hero-right" data-svcrd-reveal>
       <div class="svcrd-media">
-        <img src="/images/services/zirconium-bridge.jpg" alt="Zirconium bridge example" class="svcrd-media-img">
+        <img src="images/services/zirconium-bridge.jpg" alt="Zirconium bridge example" class="svcrd-media-img">
       </div>
     </div>
   </div>
@@ -368,11 +368,11 @@
 })();
 </script>
 
-<!-- ===== Simple Extraction CTA script (drop-in) ===== -->
+<!-- ===== Zirconium Bridge CTA script (drop-in) ===== -->
 <script>
-/* CTA-only booking script for Simple Extraction (unique ids) */
+/* CTA-only booking script for Zirconium Bridge (unique ids) */
 (function () {
-  const sec = document.getElementById('svc-simple-extraction');
+  const sec = document.getElementById('svc-zirconium-bridge');
   if (!sec) return;
 
   // Reveal with IntersectionObserver + safe fallback
@@ -399,8 +399,8 @@
   // CTA logic
   const phoneAttrRaw = sec.getAttribute('data-whatsapp') || '+923213055370';
   const numericPhone = phoneAttrRaw.replace(/\D/g, '');
-  const waBtn = sec.querySelector('#svcrd-simple-whatsapp-btn');
-  const callBtn = sec.querySelector('#svcrd-simple-call-btn');
+  const waBtn = sec.querySelector('#svcrd-zirconium-whatsapp-btn');
+  const callBtn = sec.querySelector('#svcrd-zirconium-call-btn');
 
   const serviceName = (sec.querySelector('.svcrd-title') || {}).textContent || 'this service';
 
