@@ -421,6 +421,171 @@ function observeRevealElements(scope = document){
 
 }
 
+/* =====================================================
+   CONTACT FORM
+===================================================== */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const contactSubmit =
+    document.getElementById("contactSubmit");
+
+const contactStatus =
+    document.getElementById("contactStatus");
+
+const contactStatusIcon =
+    document.getElementById("contactStatusIcon");
+
+const contactStatusTitle =
+    document.getElementById("contactStatusTitle");
+
+const contactStatusMessage =
+    document.getElementById("contactStatusMessage");
+
+
+if(contactForm){
+
+    contactForm.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+
+
+        /* ==========================================
+           Loading
+        ========================================== */
+
+        contactSubmit.classList.add("loading");
+
+
+        /* ==========================================
+           Hide previous status
+        ========================================== */
+
+        contactStatus.classList.remove(
+            "show",
+            "error"
+        );
+
+
+        /* ==========================================
+           Form Data
+        ========================================== */
+
+        const formData =
+            new FormData(contactForm);
+
+
+        try{
+
+            const response = await fetch(
+                "send_contact.php",
+                {
+                    method:"POST",
+                    body:formData
+                }
+            );
+
+
+            const data =
+                await response.json();
+
+
+            /* ==========================================
+               SUCCESS
+            ========================================== */
+
+            if(response.ok && data.success){
+
+                contactStatusIcon.textContent = "✓";
+
+                contactStatusTitle.textContent =
+                    "Message Sent!";
+
+                contactStatusMessage.textContent =
+                    "Thank you! We'll get back to you soon.";
+
+                contactStatus.classList.add("show");
+
+
+                /* Clear form */
+
+                contactForm.reset();
+
+
+                /* Hide after 5 seconds */
+
+                setTimeout(() => {
+
+                    contactStatus.classList.remove(
+                        "show"
+                    );
+
+                }, 5000);
+
+            }
+
+
+            /* ==========================================
+               SERVER ERROR
+            ========================================== */
+
+            else{
+
+                contactStatusIcon.textContent = "✕";
+
+                contactStatusTitle.textContent =
+                    "Message Not Sent";
+
+                contactStatusMessage.textContent =
+                    data.message ||
+                    "Please try again later.";
+
+                contactStatus.classList.add(
+                    "show",
+                    "error"
+                );
+
+            }
+
+
+        }catch(error){
+
+            /* ==========================================
+               INTERNET / NETWORK ERROR
+            ========================================== */
+
+            contactStatusIcon.textContent = "✕";
+
+            contactStatusTitle.textContent =
+                "Message Not Sent";
+
+            contactStatusMessage.textContent =
+                "Please check your internet connection and try again.";
+
+            contactStatus.classList.add(
+                "show",
+                "error"
+            );
+
+            console.error(
+                "Contact form error:",
+                error
+            );
+
+        }
+
+
+        /* ==========================================
+           Stop Loading
+        ========================================== */
+
+        contactSubmit.classList.remove("loading");
+
+    });
+
+}
+
 /* ==========================================
    Initial Page
 ========================================== */

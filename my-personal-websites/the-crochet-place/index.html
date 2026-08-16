@@ -7,12 +7,58 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Crochet Place</title>
+<title>The Crochet Place | Handmade Crochet Gifts in Pakistan</title>
+
+<meta
+    name="description"
+    content="Shop handmade crochet gifts, flowers, plushies, keychains and cute crochet creations from The Crochet Place. Find unique gifts made with love and care in Pakistan.">
+
+    <meta
+    name="robots"
+    content="index, follow">
+
+<link
+    rel="canonical"
+    href="https://thecrochetplace.com.pk">
+
+    <meta
+    property="og:type"
+    content="website">
+
+<meta
+    property="og:title"
+    content="The Crochet Place | Handmade Crochet Gifts in Pakistan">
+
+<meta
+    property="og:description"
+    content="Cute handmade crochet gifts, flowers, plushies, keychains and more — lovingly crafted by The Crochet Place.">
+
+<meta
+    property="og:url"
+    content="https://thecrochetplace.com.pk">
+
+<meta
+    property="og:image"
+    content="https://thecrochetplace.com.pk/images/logo-red.jpg">
+
+<meta
+    name="twitter:card"
+    content="summary_large_image">
 
 <link rel="preconnect"
 href="https://fonts.googleapis.com">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V1MN6BHP9F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V1MN6BHP9F');
+</script>
 
 <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
@@ -975,7 +1021,23 @@ href="css/animations.css">
 
             <img
                 src="images/founder/the-crochet-place-founder-laiba.jpeg"
-                alt="The Crochet Place Founder Laiba">
+                alt="Laiba Tariq, founder of The Crochet Place">
+
+            <div class="about-founder-caption">
+
+                <span>
+
+                    ✿ Founder
+
+                </span>
+
+                <strong>
+
+                    Laiba Tariq
+
+                </strong>
+
+            </div>
 
         </div>
 
@@ -1465,27 +1527,72 @@ href="css/animations.css">
                 Send Us A Message
             </h3>
 
-            <form>
+            <form id="contactForm">
 
                 <input
                     type="text"
+                    name="name"
+                    id="contactName"
                     placeholder="Your Name"
+                    autocomplete="name"
                     required>
 
                 <input
                     type="email"
+                    name="email"
+                    id="contactEmail"
                     placeholder="Email Address"
+                    autocomplete="email"
                     required>
 
                 <textarea
+                    name="message"
+                    id="contactMessage"
                     placeholder="Tell us about your idea..."
-                    rows="6"></textarea>
+                    rows="6"
+                    required></textarea>
+
+
+                <!-- ==========================================
+                     HONEYPOT
+                =========================================== -->
+
+                <div
+                    class="contact-honeypot"
+                    aria-hidden="true">
+
+                    <label for="contactWebsite">
+
+                        Website
+
+                    </label>
+
+                    <input
+                        type="text"
+                        name="website"
+                        id="contactWebsite"
+                        tabindex="-1"
+                        autocomplete="off">
+
+                </div>
+
 
                 <button
                     class="btn btn-primary"
-                    type="submit">
+                    type="submit"
+                    id="contactSubmit">
 
-                    Send Message
+                    <span class="contact-submit-text">
+
+                        Send Message
+
+                    </span>
+
+                    <span class="contact-submit-loading">
+
+                        Sending... 🧶
+
+                    </span>
 
                 </button>
 
@@ -2076,6 +2183,33 @@ href="css/animations.css">
 <a href="https://api.whatsapp.com/send?phone=923300764924" target="_blank" class="whatsapp-icon" aria-label="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
     </a>
+
+<div
+    class="contact-status"
+    id="contactStatus"
+    aria-live="polite">
+
+    <span
+        class="contact-status-icon"
+        id="contactStatusIcon">
+
+        ✓
+
+    </span>
+
+    <div>
+
+        <strong id="contactStatusTitle">
+            Message Sent
+        </strong>
+
+        <p id="contactStatusMessage">
+            Thank you! We'll get back to you soon.
+        </p>
+
+    </div>
+
+</div>
 
 <script src="js/products.js"></script>
 <script src="js/script.js"></script>

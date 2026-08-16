@@ -44,6 +44,10 @@ const PRODUCTS = [
 
         image: "images/products/strawberry-bucket-hat.jpeg",
 
+        images: [
+            "images/products/crocheted-bucket-hat.jpeg"
+        ],
+
         category: "wearable",
 
         featured: true,
@@ -222,6 +226,11 @@ const PRODUCTS = [
 
         image:"images/products/lilly-of-the-valley-charm.jpeg",
 
+        images: [
+            "images/products/lilly-of-the-valley-charm-2.jpeg",
+            "images/products/lilly-of-the-valley-charm-3.jpeg"
+        ],
+
         description:
         "Tiny blooms, handmade with love",
 
@@ -241,6 +250,10 @@ const PRODUCTS = [
         price:500,
 
         image:"images/products/octopus-keychain.jpeg",
+
+        images: [
+            "images/products/octopus-keychain-2.jpeg"
+        ],
 
         description:
         "The cutest sea creature you'll ever carry",
@@ -324,6 +337,10 @@ const PRODUCTS = [
 
         image:"images/products/bandana.jpeg",
 
+        images: [
+            "images/products/bandana-2.jpeg"
+        ],
+
         description:
         "Style it your way, wear the bandana, tie the belt, repeat",
 
@@ -364,6 +381,10 @@ const PRODUCTS = [
 
         image:"images/products/mittens.jpeg",
 
+        images: [
+            "images/products/mittens-2.jpeg"
+        ],
+
         description:
         "Tiny mittens for tiny hands",
 
@@ -383,6 +404,11 @@ const PRODUCTS = [
         price:3000,
 
         image:"images/products/bouquet-and-table-mat.jpeg",
+
+        images: [
+            "images/products/bouquet-and-table-mat-2.jpeg",
+            "images/products/bouquet-and-table-mat-3.jpeg"
+        ],
 
         description:
         "A bouquet for the heart, a mat for the home",
@@ -444,6 +470,12 @@ const PRODUCTS = [
 
         image:"images/products/heart-trinket.jpeg",
 
+        images: [
+            "images/products/heart-trinket-2.jpeg",
+            "images/products/heart-trinket-3.jpeg",
+            "images/products/heart-trinket-4.jpeg"
+        ],
+
         description:
         "Keep your tint treasures close",
 
@@ -464,6 +496,11 @@ const PRODUCTS = [
 
         image:"images/products/flower-pouch.jpeg",
 
+        images: [
+            "images/products/flower-pouch-2.jpeg",
+            "images/products/flower-pouch-3.jpeg"
+        ],
+
         description:
         "Floral, functional, forever",
 
@@ -483,6 +520,11 @@ const PRODUCTS = [
         price:500,
 
         image:"images/products/cherry-charm.jpeg",
+
+        images: [
+            "images/products/cherry-charm-2.jpeg",
+            "images/products/cherry-charm-3.jpeg"
+        ],
 
         description:
         "The sweetest accessory you'll own",
