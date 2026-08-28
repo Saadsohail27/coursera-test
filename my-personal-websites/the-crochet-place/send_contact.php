@@ -175,9 +175,9 @@ try {
 
     $mail->SMTPAuth = true;
 
-    $mail->Username = "YOUR_DOMAIN_EMAIL";
+    $mail->Username = "info@thecrochetplace.com.pk";
 
-    $mail->Password = "YOUR_EMAIL_PASSWORD";
+    $mail->Password = "Thecrochetplace11?";
 
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
