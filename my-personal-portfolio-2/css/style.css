@@ -31,7 +31,7 @@ nav .btn{padding:10px 22px}
 .m{display:block;overflow:hidden;padding-bottom:.08em}
 .m>span{display:inline-block;transform:translateY(110%);animation:up 1s var(--e) forwards;animation-delay:calc(.7s + var(--i,0)*.14s)}
 @keyframes up{to{transform:none}}
-.name{font-size:clamp(4.2rem,19vw,16rem);font-weight:800;line-height:.88}
+.name{font-weight:800;line-height:.88}
 .tag{font:700 clamp(1.3rem,3.6vw,2.6rem)/1.15 Syne,sans-serif;margin:26px 0 18px;color:var(--mut)}.tag .m:last-child{color:var(--tx)}
 .sub{color:var(--mut);max-width:44ch;margin-bottom:32px;opacity:0;animation:fi 1s 1.5s forwards}
 .cta{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:fi 1s 1.6s forwards}
