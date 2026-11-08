@@ -1156,7 +1156,7 @@ h3{
  
 .closing-statement{
  
-    font:700 clamp(1.4rem,3vw,2.3rem)/1.2 Syne,sans-serif;
+    font:700 clamp(1.4rem,3vw,1.2rem)/1.2 Syne,sans-serif;
  
     max-width:30ch;
     margin-top:56px;
