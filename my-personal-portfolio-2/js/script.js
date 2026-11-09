@@ -27,6 +27,8 @@ const Portfolio = {
     elements: {
  
         yearLabels: selectAll("#current-year"),
+
+        headings: selectAll("h2"),
  
         marqueeTracks: selectAll(".tech-strip-track"),
  
@@ -135,7 +137,63 @@ const Portfolio = {
         }, { threshold: 0.3 });
  
         this.elements.chartPanels.forEach(panel => observer.observe(panel));
+
+        this.initHeadingReveal();
  
+    },
+
+        /* ==========================================
+       Section Headings
+       Every h2 gets a thin underline. When the
+       heading scrolls into view the underline
+       draws first, then the text rises out of it.
+       Runs once per heading.
+    ========================================== */
+
+    initHeadingReveal(){
+
+        const { headings } = this.elements;
+
+        if(!headings.length) return;
+
+        headings.forEach(heading => this.wrapHeading(heading));
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if(!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+
+                observer.unobserve(entry.target);
+
+            });
+
+        }, { threshold: 0.6, rootMargin: "0px 0px -8% 0px" });
+
+        headings.forEach(heading => observer.observe(heading));
+
+    },
+
+    wrapHeading(heading){
+
+        const mask = document.createElement("span");
+
+        const text = document.createElement("span");
+
+        mask.className = "reveal-heading-mask";
+
+        text.className = "reveal-heading-text";
+
+        text.append(...heading.childNodes);
+
+        mask.append(text);
+
+        heading.append(mask);
+
+        heading.classList.add("reveal-heading");
+
     },
  
  

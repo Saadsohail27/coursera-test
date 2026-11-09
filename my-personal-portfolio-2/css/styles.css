@@ -14,6 +14,7 @@
     --color-violet:#8B5CF6;    /* violet brand colour */
     --color-lime:#C8FF3D;    /* call-to-action colour */
     --color-violet-light:#B9A0FF;    /* lighter violet (middle hero stripe) */
+    --color-gold:#F2C14E;    /* gold emphasis on key phrases */
  
     /* Motion */
  
@@ -92,12 +93,69 @@ section{
 }
  
 h2{
- 
-    font-size:clamp(2rem,5.2vw,4rem);
-    font-weight:800;
- 
-    max-width:15ch;
- 
+
+    font-size:clamp(1.9rem,4.4vw,3.4rem);
+    font-weight:700;
+    line-height:1.08;
+
+    max-width:13em;
+
+    text-wrap:balance;
+
+}
+
+/* Section headings: a thin underline draws first, then the text rises out of it (JS adds these classes) */
+.reveal-heading{
+
+    position:relative;
+    width:fit-content;
+
+}
+
+.reveal-heading::after{
+
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:2px;
+
+    background:linear-gradient(90deg,var(--color-violet),transparent);
+
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .8s var(--ease-smooth);
+
+}
+
+/* Mask: its bottom edge is the underline, so the text appears to rise out of the line */
+.reveal-heading-mask{
+
+    display:block;
+    overflow:hidden;
+
+    padding:.12em 0 14px;
+    margin-top:-.12em;
+
+}
+
+.reveal-heading-text{
+
+    display:block;
+
+    transform:translateY(150%);
+    transition:transform .9s var(--ease-smooth) .3s;
+
+}
+
+.reveal-heading.is-visible::after,
+.reveal-heading.is-visible .reveal-heading-text{
+
+    transform:none;
+
 }
  
 h3{
@@ -1146,7 +1204,30 @@ h3{
     transform:none;
  
 }
- 
+
+/* The word "Sales" written on the highlighted bars. It fades in after the bar has grown, so it never looks squashed. */
+.demand-chart-column-highlight .demand-chart-bar::after{
+
+    content:"Sales";
+
+    display:block;
+    padding-top:12px;
+
+    color:#0B0714;
+    font:700 .95rem Syne,sans-serif;
+    text-align:center;
+
+    opacity:0;
+    transition:opacity .5s var(--ease-smooth) 1.3s;
+
+}
+
+.is-visible .demand-chart-column-highlight .demand-chart-bar::after{
+
+    opacity:1;
+
+}
+
 .demand-chart-label{
  
     color:var(--color-text-muted);
@@ -1154,13 +1235,74 @@ h3{
  
 }
  
+/* Closing call-out: big headline on one side, explanation on the other (stacks on small screens) */
 .closing-statement{
- 
-    font:700 clamp(1.4rem,3vw,1.2rem)/1.2 Syne,sans-serif;
- 
-    max-width:30ch;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
+    gap:clamp(24px,5vw,72px);
+    align-items:start;
+
     margin-top:56px;
- 
+    padding:clamp(28px,5vw,64px);
+
+    border:1px solid rgba(242,193,78,.25);
+    border-radius:32px 6px 32px 6px;
+    background:
+        radial-gradient(120% 140% at 0% 0%,rgba(242,193,78,.10),transparent 55%),
+        rgba(255,255,255,.02);
+
+}
+
+.closing-headline{
+
+    font:700 clamp(1.9rem,4.2vw,3.2rem)/1.08 Syne,sans-serif;
+    letter-spacing:-.02em;
+
+    text-wrap:balance;
+
+}
+
+/* Gold emphasis for the key phrases */
+.gold-highlight{
+
+    color:var(--color-gold);
+
+}
+
+.closing-text{
+
+    max-width:52ch;
+
+    color:var(--color-text-muted);
+    font-size:clamp(1.05rem,1.4vw,1.2rem);
+    line-height:1.7;
+
+}
+
+.closing-text .gold-highlight{
+
+    font-weight:600;
+
+}
+
+.closing-answer{
+
+    margin-top:28px;
+    padding-top:24px;
+
+    border-top:1px solid var(--color-border);
+
+    color:var(--color-text-muted);
+    font-size:1.1rem;
+
+}
+
+.closing-answer strong{
+
+    color:var(--color-text);
+    font:700 1.15rem Syne,sans-serif;
+
 }
  
 /* ==========================================
