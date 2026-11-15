@@ -429,6 +429,11 @@ h3{
     width:min(100%,540px,calc(100svh - 190px));
     aspect-ratio:1 / 1;
 
+    /* Where the person sits, relative to the size of this box */
+    --person-width:106%;    /* bigger = taller person, arms break out more */
+    --person-left:3.5%;     /* nudge left or right */
+    --person-top:-14%;      /* move up or down, higher pushes the head further out of the arch */
+
 }
 
 .hero-stripes{
@@ -495,20 +500,18 @@ h3{
 
 }
 
-/* Arch-shaped frame for the suit photo */
+/* Arch-shaped frame behind the photo (just the shape, the person is a separate layer on top) */
 .hero-portrait{
 
     position:absolute;
-    left:26.8%;
-    top:8%;
+    left:28%;
+    top:10%;
 
-    width:60.7%;
-    height:82%;
-
-    overflow:hidden;
+    width:56%;
+    height:90%;
 
     border:1px solid var(--color-border);
-    border-radius:999px 999px 28px 28px;
+    border-radius:999px 999px 0 0;
     background:linear-gradient(160deg,#2a1a52,var(--color-background-alt));
 
     opacity:0;
@@ -517,25 +520,41 @@ h3{
 
 }
 
-.hero-portrait-image{
+/* The person: bigger than the arch, so the head and arms break out of it. Overflow is allowed on the top and sides, the bottom edge cuts the body cleanly. */
+.hero-person{
+
+    position:absolute;
+    inset:0;
+
+    clip-path:inset(-40% -40% 0 -40%);
+
+    opacity:0;
+    transform:translateY(24px);
+    animation:portrait-rise 1s var(--ease-smooth) .4s forwards;
+
+}
+
+.hero-person-image{
+
+    position:absolute;
+    left:var(--person-left);
+    top:var(--person-top);
 
     display:block;
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    object-position:center top;
+    width:var(--person-width);
+    height:auto;
+    max-width:none;
 
 }
 
 /* Placeholder initials, shown only while the photo file is missing */
-.hero-portrait.is-empty .hero-portrait-image{
+.hero-visual.is-empty .hero-person{
 
     display:none;
 
 }
 
-.hero-portrait.is-empty::after{
+.hero-visual.is-empty .hero-portrait::after{
 
     content:"SS";
 
@@ -565,8 +584,8 @@ h3{
 .hero-name-card{
 
     position:absolute;
-    left:0;
-    bottom:12%;
+    left:-7%;
+    bottom:2%;
     z-index:2;
 
     display:grid;
@@ -1668,6 +1687,12 @@ footer a:hover{
     .hero-title{
 
         font-size:clamp(2rem,8vw,3.6rem);
+
+    }
+
+    .hero-name-card{
+
+        left:0;
 
     }
 
