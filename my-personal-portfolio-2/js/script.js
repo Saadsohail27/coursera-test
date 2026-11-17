@@ -35,6 +35,12 @@ const Portfolio = {
         chartPanels: selectAll(".example-panel"),
  
         buildSection: select(".build-section"),
+
+        freshnessDemo: select(".freshness-demo"),
+
+        freshnessButtons: selectAll(".freshness-toggle-button"),
+
+        freshnessCaption: select(".freshness-caption"),
  
         mockSite: select("#mock-site"),
  
@@ -85,6 +91,8 @@ const Portfolio = {
         this.showCurrentYear();
  
         this.initChartReveal();
+
+        this.initFreshnessDemo();
  
         this.initMarquee();
  
@@ -196,7 +204,41 @@ const Portfolio = {
 
     },
  
- 
+        /* ==========================================
+       Fresh vs Stale Demo
+       Two buttons switch the mini website between
+       "never updated" and "kept updated". CSS does
+       the visual change, this just sets the state.
+    ========================================== */
+
+    initFreshnessDemo(){
+
+        const { freshnessDemo, freshnessButtons, freshnessCaption } = this.elements;
+
+        if(!freshnessDemo) return;
+
+        freshnessButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                freshnessDemo.dataset.state = button.dataset.state;
+
+                freshnessDemo.classList.add("has-been-used");
+
+                freshnessButtons.forEach(other => {
+
+                    other.setAttribute("aria-pressed", other === button);
+
+                });
+
+                if(freshnessCaption) freshnessCaption.textContent = button.dataset.caption;
+
+            });
+
+        });
+
+    },
+
     /* ==========================================
        Tech Strip (duplicate content for a
        seamless loop)
