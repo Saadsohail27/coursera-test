@@ -239,6 +239,42 @@ const Portfolio = {
 
     },
 
+        /* ==========================================
+       Testimonial Cards
+       Cards fade up one after another when they
+       scroll into view. Runs once per card.
+    ========================================== */
+
+    initTestimonialReveal(){
+
+        const { testimonialCards } = this.elements;
+
+        if(!testimonialCards.length) return;
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if(!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+
+                observer.unobserve(entry.target);
+
+            });
+
+        }, { threshold: 0.25 });
+
+        testimonialCards.forEach(card => {
+
+            card.classList.add("is-waiting");
+
+            observer.observe(card);
+
+        });
+
+    },
+
     /* ==========================================
        Tech Strip (duplicate content for a
        seamless loop)

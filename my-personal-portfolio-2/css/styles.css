@@ -1790,6 +1790,215 @@ h3{
     font:700 1.15rem Syne,sans-serif;
 
 }
+
+/* ==========================================
+   Testimonials
+========================================== */
+
+#testimonials{
+
+    border-top:1px solid var(--color-border);
+
+}
+
+.testimonial-grid{
+
+    display:grid;
+    gap:20px;
+
+    margin-top:56px;
+
+}
+
+/* One testimonial: service, the result first, then the client's own words, then who said it */
+.testimonial-card{
+
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+
+    padding:clamp(24px,3vw,36px);
+
+    border:1px solid var(--color-border);
+    border-radius:24px;
+    background:rgba(255,255,255,.03);
+
+    transition:
+        opacity .8s var(--ease-smooth) calc(var(--card-order,0) * .12s),
+        transform .8s var(--ease-smooth) calc(var(--card-order,0) * .12s);
+
+}
+
+/* The first card is the featured one: gold-tinted like the closing statement, with a big quote mark */
+.testimonial-card:first-child{
+
+    border-color:rgba(242,193,78,.25);
+    border-radius:32px 6px 32px 6px;
+    background:
+        radial-gradient(120% 140% at 0% 0%,rgba(242,193,78,.10),transparent 55%),
+        rgba(255,255,255,.02);
+
+}
+
+.testimonial-card:first-child::after{
+
+    content:"\201C";
+
+    position:absolute;
+    top:8px;
+    right:28px;
+
+    color:rgba(242,193,78,.14);
+    font:800 7rem/1 Syne,sans-serif;
+
+    pointer-events:none;
+
+}
+
+.testimonial-service{
+
+    padding:5px 12px;
+
+    border:1px solid var(--color-border);
+    border-radius:8px;
+
+    color:var(--color-text-muted);
+    font-size:.8rem;
+
+}
+
+.testimonial-result{
+
+    font:700 clamp(1.3rem,2.2vw,1.6rem)/1.15 Syne,sans-serif;
+    letter-spacing:-.02em;
+
+    text-wrap:balance;
+
+}
+
+.testimonial-card:first-child .testimonial-result{
+
+    font-size:clamp(1.9rem,3.6vw,3rem);
+
+}
+
+.testimonial-quote{
+
+    margin:0;
+    padding:0;
+
+    border:0;
+
+    color:#d6cdf2;
+    font-size:1rem;
+    line-height:1.65;
+
+}
+
+.testimonial-card:first-child .testimonial-quote{
+
+    max-width:62ch;
+
+    font-size:clamp(1.02rem,1.3vw,1.15rem);
+
+}
+
+/* Key phrases in gold, with a soft marker highlight that sweeps in once the card has appeared */
+.testimonial-quote .gold-highlight{
+
+    background:linear-gradient(transparent 58%,rgba(242,193,78,.22) 58%) 0 0 / 0% 100% no-repeat;
+
+    font-weight:600;
+
+    transition:background-size .8s var(--ease-smooth) .7s;
+
+}
+
+.testimonial-card.is-visible .gold-highlight{
+
+    background-size:100% 100%;
+
+}
+
+.testimonial-person{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-top:auto;
+    padding-top:6px;
+
+}
+
+/* Initials show until (or unless) the photo loads on top of them */
+.testimonial-avatar{
+
+    position:relative;
+    flex:none;
+
+    display:grid;
+    place-items:center;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--color-violet),#2a1a52);
+    overflow:hidden;
+
+    font:700 .95rem Syne,sans-serif;
+
+}
+
+.testimonial-avatar::before{
+
+    content:attr(data-initials);
+
+}
+
+.testimonial-avatar img{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.testimonial-person-text{
+
+    display:grid;
+
+}
+
+.testimonial-name{
+
+    font:700 1rem Syne,sans-serif;
+
+}
+
+.testimonial-role{
+
+    color:var(--color-text-muted);
+    font-size:.85rem;
+
+}
+
+.testimonials-footer{
+
+    display:flex;
+    justify-content:center;
+
+    margin-top:40px;
+
+}
  
 /* ==========================================
    Work
@@ -2092,6 +2301,72 @@ textarea{
     text-underline-offset:4px;
  
 }
+
+/* Form on the left, a friendly photo on the right (stacks on small screens) */
+.contact-layout{
+
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,420px);
+    gap:clamp(32px,6vw,72px);
+
+    margin-top:48px;
+
+}
+
+.contact-layout form{
+
+    max-width:none;
+    margin-top:0;
+
+}
+
+/* The photo stretches to the height of the form. --contact-photo-focus decides which part of the photo stays in view. */
+.contact-photo{
+
+    --contact-photo-focus:50% 15%;
+
+    position:relative;
+
+    min-height:420px;
+
+    overflow:hidden;
+
+}
+
+.contact-photo-image{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:var(--contact-photo-focus);
+
+}
+
+/* Placeholder initials, shown only while the photo file is missing */
+.contact-photo.is-empty .contact-photo-image{
+
+    display:none;
+
+}
+
+.contact-photo.is-empty::before{
+
+    content:"SS";
+
+    position:absolute;
+    inset:0;
+
+    display:grid;
+    place-items:center;
+
+    font:800 4rem Syne,sans-serif;
+    color:var(--color-border);
+
+}
  
 /* ==========================================
    Footer
@@ -2130,6 +2405,101 @@ footer a:hover{
    Responsive
 ========================================== */
 
+/* ----- Testimonials ----- */
+
+/* Desktop: three columns, the featured card is double width */
+@media (min-width: 901px){
+
+    .testimonial-grid{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+    .testimonial-card:first-child{
+
+        grid-column:span 2;
+
+    }
+
+    /* Fill the last row neatly when there are 3, 4 or 6 testimonials */
+    .testimonial-card:nth-child(3):last-child{
+
+        grid-column:1 / -1;
+
+    }
+
+    .testimonial-card:nth-child(4):last-child{
+
+        grid-column:span 2;
+
+    }
+
+    .testimonial-card:nth-child(6):last-child{
+
+        grid-column:1 / -1;
+
+    }
+
+}
+
+/* Tablet: two columns */
+@media (min-width: 701px) and (max-width: 900px){
+
+    .testimonial-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .testimonial-card:first-child,
+    .testimonial-card:last-child:nth-child(even){
+
+        grid-column:1 / -1;
+
+    }
+
+}
+
+/* Cards fade up as they scroll into view (JS adds is-waiting, then is-visible) */
+@media (min-width: 701px){
+
+    .testimonial-card.is-waiting:not(.is-visible){
+
+        opacity:0;
+        transform:translateY(36px);
+
+    }
+
+}
+
+/* Phones: a swipeable row, the next card peeks in from the right */
+@media (max-width: 700px){
+
+    .testimonial-grid{
+
+        display:flex;
+        gap:14px;
+
+        margin-inline:calc(var(--page-padding) * -1);
+        padding:4px var(--page-padding) 16px;
+
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        scroll-padding-inline:var(--page-padding);
+
+    }
+
+    .testimonial-card{
+
+        flex:0 0 min(86%,360px);
+
+        scroll-snap-align:start;
+
+    }
+
+}
+
 @media (max-width: 900px){
 
     .hero{
@@ -2160,6 +2530,23 @@ footer a:hover{
     .hero-name-card{
 
         left:0;
+
+    }
+
+    .contact-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* On small screens the photo comes first, a friendly face before the form */
+    .contact-photo{
+
+        order:-1;
+
+        min-height:0;
+        aspect-ratio:1 / 1;
+        max-width:380px;
 
     }
 
